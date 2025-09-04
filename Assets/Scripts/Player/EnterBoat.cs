@@ -5,8 +5,13 @@ using UnityEngine;
 public class EnterBoat : MonoBehaviour
 {
     [SerializeField] private LayerMask interactable;
+    [SerializeField] private GameObject boatCollider;
+    [SerializeField] private GameObject boatInside;
+    [SerializeField] private GameObject boatInsideCollider;
+    [SerializeField] private Transform enterLocation;
+    [SerializeField] private Transform exitLocation;
 
-    
+
     void Update()
     {
        // float vert = Input.GetAxisRaw("Vertical");
@@ -21,11 +26,30 @@ public class EnterBoat : MonoBehaviour
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.tag == "Exit")
+                {
+                    Exit();
+                }
+            }
+        }
     }
     private void Enter()
     {
-        // enter the boat
-        // Add enter Boat Function
-        Debug.Log("You did it!");
+        transform.position = enterLocation.position;
+        boatCollider.SetActive(false);
+        boatInside.SetActive(true);
+        boatInsideCollider.SetActive(true);
+    }
+    private void Exit()
+    {
+        transform.position = exitLocation.position;
+        boatCollider.SetActive(true);
+        boatInside.SetActive(false);
+        boatInsideCollider.SetActive(false);
     }
 }
