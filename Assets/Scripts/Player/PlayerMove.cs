@@ -7,18 +7,27 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float horizontalInput;
+    [SerializeField] private EnterFishing enterFScript;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        enterFScript = GetComponent<EnterFishing>();
     }
 
    
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-
+        
+        
+        if (enterFScript.isFishing)
+        {
+            horizontalInput = 0;
+        }else
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+        }
     }
     private void FixedUpdate()
     {

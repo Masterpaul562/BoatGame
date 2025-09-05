@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 812580404}
   m_Layer: 6
   m_Name: 'nterFishingTrigger '
-  m_TagString: Enter
+  m_TagString: Fishing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1224,6 +1224,7 @@ GameObject:
   - component: {fileID: 1351622657}
   - component: {fileID: 1351622661}
   - component: {fileID: 1351622662}
+  - component: {fileID: 1351622663}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1405,6 +1406,23 @@ MonoBehaviour:
   boatInsideCollider: {fileID: 1538091464}
   enterLocation: {fileID: 1029392209}
   exitLocation: {fileID: 1949189117}
+--- !u!114 &1351622663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351622656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a7b0c5521cbd8f469ed8dc2f46d6b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable:
+    serializedVersion: 2
+    m_Bits: 64
+  isFishing: 0
+  rb: {fileID: 0}
 --- !u!1 &1496981763
 GameObject:
   m_ObjectHideFlags: 0
