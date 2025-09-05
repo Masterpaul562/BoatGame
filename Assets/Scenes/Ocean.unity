@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249506148}
+  - component: {fileID: 249506149}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -148,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 249506147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25425437, y: 0.4018843, z: 0.08187149}
+  m_LocalPosition: {x: -0.25425437, y: 0.35, z: 0.08187149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -161,6 +162,20 @@ Transform:
   - {fileID: 1949189117}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &249506149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249506147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0389d96d11160541a6517fbeda7a155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveMax: 0.35
+  waveMin: 0.25
 --- !u!1 &331849853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1401,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   moveSpeed: 7
   horizontalInput: 0
+  enterFScript: {fileID: 0}
 --- !u!114 &1351622662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,8 +1437,9 @@ MonoBehaviour:
   interactable:
     serializedVersion: 2
     m_Bits: 64
-  isFishing: 0
   rb: {fileID: 0}
+  cam: {fileID: 519420031}
+  isFishing: 0
 --- !u!1 &1496981763
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class EnterFishing : MonoBehaviour
 {
     [SerializeField] private LayerMask interactable;
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Camera cam;
     public bool isFishing;
 
 
@@ -36,6 +37,7 @@ public class EnterFishing : MonoBehaviour
     private void StartFishing()
     {
        // rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyContraints.FreezeRotationZ;
+       cam.transform.Translate(new Vector3(10,0,0));
         isFishing = true;
 
         //doo this to fishing menu/game
@@ -44,6 +46,7 @@ public class EnterFishing : MonoBehaviour
     private void ExitFishing()
     {
         //rb.constraints = RigidbodyConstraints2D.FreezeRotationZ;
+        cam.transform.Translate(new Vector3(-10,0,0));
         isFishing = false;
     }
 

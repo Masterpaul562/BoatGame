@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Floater : MonoBehaviour
 {
-    public float speed;
-    public float displacement;
-    public float depthBeforeSub;
-    public Rigidbody2D rb;
+   [SerializeField] private float waveMax;
+   [SerializeField] private float waveMin;
+   [SerializeField] private Vector2 wave;
 
    private void FixedUpdate()
-    {
-        float displacementMultiplier = Mathf.Clamp01(-transform.position.y / depthBeforeSub) * displacement;
-        rb.AddForce(new Vector3(0f, Mathf.Abs(Physics.gravity.y)*displacementMultiplier, 0f), ForceMode2D.Force);
+    { 
+          // float wave = (Mathf.PingPong(Time.time, waveMax));
+          // Debug.Log((Mathf.PingPong(Time.time, waveMax)));
+            wave = Vector2.Lerp(new Vector2(0,waveMin),new Vector2(0,waveMax),Time.deltaTime);
+         transform.position = Vector2.Lerp(transform.position,new Vector2 (-0.25f,Mathf.PingPong(Time.time/10, wave.y)),Time.deltaTime);
     }
 }
