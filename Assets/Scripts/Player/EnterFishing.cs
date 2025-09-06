@@ -7,6 +7,7 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Camera cam;
+    [SerializeField] private Transform fishingCamSpot;
     public bool isFishing;
 
 
@@ -32,16 +33,28 @@ public class EnterFishing : MonoBehaviour
         {
             ExitFishing();
         }
+        
+       
 
+    }
+    private void FixedUpdate()
+    {
+        if (isFishing)
+        { 
+          
+                Vector2 pos = Vector2.MoveTowards(cam.transform.position, fishingCamSpot.position, Time.deltaTime*10);
+            cam.transform.position = new Vector3(pos.x,pos.y,-10);
+        }
     }
     private void StartFishing()
     {
-       // rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyContraints.FreezeRotationZ;
-       cam.transform.Translate(new Vector3(10,0,0));
+        // rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyContraints.FreezeRotationZ;
+       
         isFishing = true;
 
         //doo this to fishing menu/game
        //.SetActive(true) 
+       
     }
     private void ExitFishing()
     {
