@@ -8,12 +8,15 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Camera cam;
     [SerializeField] private Transform fishingCamSpot;
+    [SerializeField] private Transform ogPos;
     public bool isFishing;
 
 
-    private void Start()
+    private void Awake()
     {
+       
         rb = GetComponent<Rigidbody2D>();
+       
     }
     void Update()
     {
@@ -39,16 +42,19 @@ public class EnterFishing : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (isFishing)
+        if (isFishing && cam.transform.position != fishingCamSpot.position)
         { 
           
                 Vector2 pos = Vector2.MoveTowards(cam.transform.position, fishingCamSpot.position, Time.deltaTime*10);
             cam.transform.position = new Vector3(pos.x,pos.y,-10);
+        }else if (!isFishing && cam.transform.position != ogPos.position) {
+            Vector2 pos = Vector2.MoveTowards(cam.transform.position, ogPos.position, Time.deltaTime * 10);
+            cam.transform.position = new Vector3(pos.x, pos.y, -10);
         }
     }
     private void StartFishing()
     {
-        // rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyContraints.FreezeRotationZ;
+        
        
         isFishing = true;
 
@@ -58,8 +64,7 @@ public class EnterFishing : MonoBehaviour
     }
     private void ExitFishing()
     {
-        //rb.constraints = RigidbodyConstraints2D.FreezeRotationZ;
-        cam.transform.Translate(new Vector3(-10,0,0));
+      
         isFishing = false;
     }
 
