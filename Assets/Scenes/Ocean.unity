@@ -259,8 +259,8 @@ Transform:
   m_GameObject: {fileID: 331849853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.12546152, y: 5.675268, z: 0}
-  m_LocalScale: {x: 3.6270711, y: 1, z: 1.2750534}
+  m_LocalPosition: {x: 3.6032, y: 5.675268, z: 0}
+  m_LocalScale: {x: 4.373089, y: 1, z: 1.2750534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1727736320}
@@ -517,8 +517,8 @@ Transform:
   m_GameObject: {fileID: 748486941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0965, y: -6.7438, z: 0}
-  m_LocalScale: {x: 36.592133, y: 12.198082, z: 1.1698686}
+  m_LocalPosition: {x: 3.5694, y: -6.7438, z: 0}
+  m_LocalScale: {x: 43.925198, y: 12.198082, z: 1.1698686}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1727736320}
@@ -652,6 +652,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &995794914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995794915}
+  m_Layer: 0
+  m_Name: OgPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995794915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995794914}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 1.77, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1017895114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,6 +1406,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   cam: {fileID: 519420031}
   fishingCamSpot: {fileID: 1566587319}
+  ogPos: {fileID: 995794915}
   isFishing: 0
 --- !u!1 &1496981763
 GameObject:
@@ -1750,3 +1782,4 @@ SceneRoots:
   - {fileID: 249506148}
   - {fileID: 1566587319}
   - {fileID: 519420032}
+  - {fileID: 995794915}
