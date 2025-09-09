@@ -9,29 +9,47 @@ public class Fishing : MonoBehaviour
     [SerializeField] private float power;
     [SerializeField] private float step;
     [SerializeField] private float maxPower;
-    [SerializeField] private GameObject bar;
+    [SerializeField] private Transform[] points;
+    [SerializeField] private LineRenderController line;
+    [SerializeField] private GameObject bobber;
+    [SerializeField] private EnterFishing enterFish;
 
-    void Start()
+
+   
+    private void Awake()
     {
+        enterFish = GetComponent<EnterFishing>();
+    }
 
- //       StartCoroutine(Increase());
+    private void Update ()
+    {
+        if (enterFish.isFishing)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Cast();
+            }
+        }
     }
 
 
     private void FixedUpdate()
     {
         power = Mathf.PingPong(Time.time/3f, maxPower);    
-        bar.transform.localScale = new Vector3(power*10,1,0);
+      
     }
-   // private IEnumerator Increase()
-   // {
-     //   bool yeah = true;
-     //   while (yeah)
-   //     {
-     //       power += 1;
-     //       slider.value = power;
-    //        yield return new WaitForSeconds(1f);
-    //
-     //   }
-  //  }
+
+    private void Cast()
+    {
+        
+        line.enabled = true;
+        bobber.SetActive(true);
+       // transform.GetChild(0).transform.GetChild(2).transform.position = Vector2.zero;
+        transform.GetChild(0).transform.GetChild(2).transform.parent = null;
+       // bobber.transform.parent = null;
+        line.SetUpLine(points);
+        bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(2, 1.5f) * 3,ForceMode2D.Impulse);
+        
+    }
+  
 }

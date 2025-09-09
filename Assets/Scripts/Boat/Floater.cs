@@ -5,21 +5,23 @@ using UnityEngine;
 public class Floater : MonoBehaviour
 {
    [SerializeField] private float waveMax;
-   [SerializeField] private float waveMin;
    [SerializeField] private Vector2 wave;
    [SerializeField] private float rotMax;
-   [SerializeField] private float rotMin;
     [SerializeField] private float rotwave;
+    [SerializeField] private float offset;
 
     public float speed;
-    
+    private void Start()
+    {
+        offset = transform.position.y;
+    }
 
    private void FixedUpdate()
     { 
        //Up Down
           
-        transform.position = Vector2.Lerp(transform.position,new Vector2 (-0.25f,Mathf.PingPong(Time.time/7,waveMax)),Time.deltaTime);
-
+        wave = Vector2.Lerp(transform.position,new Vector2 (transform.position.x,offset-Mathf.PingPong(Time.time/7,waveMax)),Time.deltaTime);
+        transform.position = wave;
         //Rotation
 
         rotwave = Mathf.Lerp(rotwave, Mathf.PingPong(Time.time/3,rotMax),Time.deltaTime);

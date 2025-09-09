@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LineRenderController : MonoBehaviour
+{
+    [SerializeField] LineRenderer linerender;
+    [SerializeField] private Transform[] points;
+
+    private void Awake()
+    {
+        linerender = GetComponent<LineRenderer>();
+    }
+
+    public void SetUpLine(Transform[] points)
+    {
+        linerender.positionCount = points.Length;
+        this.points = points;
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i <points.Length; i++)
+        {
+            linerender.SetPosition(i, points[i].position);
+        }
+    }
+}

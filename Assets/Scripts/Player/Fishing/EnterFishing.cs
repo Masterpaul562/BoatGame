@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnterFishing : MonoBehaviour
+{
+    [SerializeField] private LayerMask interactable;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Camera cam;
+    [SerializeField] private Transform fishingCamSpot;
+    [SerializeField] private Transform ogPos;
+    public bool isFishing;
+
+
+    private void Awake()
+    {
+       
+        rb = GetComponent<Rigidbody2D>();
+       
+    }
+    void Update()
+    {
+        // float vert = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.tag == "Fishing")
+                {
+                    StartFishing();
+                }
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && isFishing)
+        {
+            ExitFishing();
+        }
+        
+       
+
+    }
+    private void FixedUpdate()
+    {
+        if (isFishing && cam.transform.position != fishingCamSpot.position)
+        { 
+          
+                Vector2 pos = Vector2.MoveTowards(cam.transform.position, fishingCamSpot.position, Time.deltaTime*10);
+            cam.transform.position = new Vector3(pos.x,pos.y,-10);
+        }else if (!isFishing && cam.transform.position != ogPos.position) {
+            Vector2 pos = Vector2.MoveTowards(cam.transform.position, ogPos.position, Time.deltaTime * 10);
+            cam.transform.position = new Vector3(pos.x, pos.y, -10);
+        }
+    }
+    private void StartFishing()
+    {
+        
+       
+        isFishing = true;
+
+        //doo this to fishing menu/game
+       //.SetActive(true) 
+       
+    }
+    private void ExitFishing()
+    {
+      
+        isFishing = false;
+    }
+
+}
