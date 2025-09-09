@@ -13,6 +13,7 @@ public class Fishing : MonoBehaviour
     [SerializeField] private LineRenderController line;
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFish;
+    private bool hasCast;
 
 
    
@@ -25,7 +26,7 @@ public class Fishing : MonoBehaviour
     {
         if (enterFish.isFishing)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E)&&!hasCast)
             {
                 Cast();
             }
@@ -41,14 +42,14 @@ public class Fishing : MonoBehaviour
 
     private void Cast()
     {
-        
+        hasCast = true;
         line.enabled = true;
         bobber.SetActive(true);
        // transform.GetChild(0).transform.GetChild(2).transform.position = Vector2.zero;
         transform.GetChild(0).transform.GetChild(2).transform.parent = null;
        // bobber.transform.parent = null;
         line.SetUpLine(points);
-        bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(2, 1.5f) * 3,ForceMode2D.Impulse);
+        bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(-3, 1.5f) * 3,ForceMode2D.Impulse);
         
     }
   
