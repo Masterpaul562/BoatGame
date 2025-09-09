@@ -9,12 +9,13 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private Transform fishingCamSpot;
     [SerializeField] private Transform ogPos;
+    [SerializeField] private SpriteRenderer render;
     public bool isFishing;
 
 
     private void Awake()
     {
-       
+       render = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
        
     }
@@ -57,6 +58,7 @@ public class EnterFishing : MonoBehaviour
         
        
         isFishing = true;
+        render.flipX = true;
 
         //doo this to fishing menu/game
        //.SetActive(true) 
@@ -66,6 +68,7 @@ public class EnterFishing : MonoBehaviour
     {
       
         isFishing = false;
+        render.flipX = false;
     }
 
 }
