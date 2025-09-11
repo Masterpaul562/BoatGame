@@ -10,6 +10,7 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Transform fishingCamSpot;
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
+    [SerializeField] private CastFishingLine castLineScript;
     public bool isFishing;
 
 
