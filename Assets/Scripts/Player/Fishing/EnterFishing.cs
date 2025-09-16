@@ -18,7 +18,7 @@ public class EnterFishing : MonoBehaviour
     {
        render = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-       
+       castLineScript = GetComponent<CastFishingLine>();
     }
     void Update()
     {
@@ -60,6 +60,7 @@ public class EnterFishing : MonoBehaviour
        
         isFishing = true;
         render.flipX = true;
+        //castLineScript.bobber.GetComponent<Bobber>().rb.simulated = true;
 
         //doo this to fishing menu/game
        //.SetActive(true) 
@@ -70,6 +71,8 @@ public class EnterFishing : MonoBehaviour
       
         isFishing = false;
         render.flipX = false;
+       // castLineScript.hasCast = false;
+        //castLineScript.bobber.GetComponent<Bobber>().rb.simulated = true;
     }
 
 }

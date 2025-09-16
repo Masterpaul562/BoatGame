@@ -935,8 +935,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd5ed686c349a5440bcaffe2fce071f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1
-  direction: 0.06
+  scrollSpeed: 0.24
+  direction: 0.03
 --- !u!1 &975169347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1932,7 @@ MonoBehaviour:
   fishingCamSpot: {fileID: 1566587319}
   ogPos: {fileID: 995794915}
   render: {fileID: 0}
+  castLineScript: {fileID: 0}
   isFishing: 0
 --- !u!114 &1351622664
 MonoBehaviour:
@@ -1954,6 +1955,8 @@ MonoBehaviour:
   line: {fileID: 1401774804}
   bobber: {fileID: 2056419627}
   enterFish: {fileID: 0}
+  bobberHolder: {fileID: 45553092}
+  hasCast: 0
 --- !u!1 &1401774801
 GameObject:
   m_ObjectHideFlags: 0
