@@ -10,6 +10,12 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject boatInsideCollider;
     [SerializeField] private Transform enterLocation;
     [SerializeField] private Transform exitLocation;
+    [SerializeField] private ZoomCamera camZoom;
+    
+    void Start()
+    {
+        camZoom = GetComponent<ZoomCamera>();
+    }
 
 
     void Update()
@@ -40,16 +46,25 @@ public class EnterBoat : MonoBehaviour
     }
     private void Enter()
     {
+        StopAllCoroutines();
         transform.position = enterLocation.position;
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
+       
+        StartCoroutine(camZoom.ZoomCam("1"));
+        
     }
     private void Exit()
     {
+        StopAllCoroutines();
         transform.position = exitLocation.position;
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
         boatInsideCollider.SetActive(false);
+        
+        StartCoroutine(camZoom.ZoomCam("0"));
+        
     }
+   
 }
