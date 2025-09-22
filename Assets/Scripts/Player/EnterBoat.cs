@@ -11,6 +11,9 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Transform enterLocation;
     [SerializeField] private Transform exitLocation;
     [SerializeField] private ZoomCamera camZoom;
+    [SerializeField] private SpriteRenderer insideBG;
+    public bool zoom;
+    private float alpha = 120;
     
     void Start()
     {
@@ -20,7 +23,22 @@ public class EnterBoat : MonoBehaviour
 
     void Update()
     {
-       // float vert = Input.GetAxisRaw("Vertical");
+        camZoom.ZoomCam(zoom);
+        if ( zoom)
+        {
+             alpha = Mathf.Lerp(alpha, 255, Time.deltaTime*20);
+            FadeBG(alpha);
+        } else if (!zoom)
+        {
+            alpha = Mathf.Lerp(alpha, 0, Time.deltaTime *10 );
+            FadeBG(alpha);
+          //  if (alpha <= 10)
+          //  {
+               // insideBG.enabled = false;
+          //  }
+        }
+        
+        
         if (Input.GetKeyDown(KeyCode.S))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
@@ -46,25 +64,30 @@ public class EnterBoat : MonoBehaviour
     }
     private void Enter()
     {
-        StopAllCoroutines();
+        zoom = true;
+       // alpha = 120;
+        insideBG.enabled = true;
         transform.position = enterLocation.position;
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
-       
-        StartCoroutine(camZoom.ZoomCam("1"));
         
     }
     private void Exit()
     {
-        StopAllCoroutines();
+       // alpha = 255;
+        insideBG.color = new Color(0, 0, 0, alpha);
+        zoom = false;
         transform.position = exitLocation.position;
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
         boatInsideCollider.SetActive(false);
         
-        StartCoroutine(camZoom.ZoomCam("0"));
-        
     }
-   
+    private void FadeBG(float change)
+    {
+            
+            insideBG.color = new Color(0, 0, 0, change/255);
+            Debug.Log(change);
+    }
 }
