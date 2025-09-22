@@ -6,15 +6,17 @@ using UnityEngine.UI;
 public class CastFishingLine : MonoBehaviour
 {
 
-    [SerializeField] private float power;
+  //  [SerializeField] private float power;
     [SerializeField] private float step;
-    [SerializeField] private float maxPower;
+    //[SerializeField] private float maxPower;
     [SerializeField] private Transform[] points;
     [SerializeField] private LineRenderController line;
     [SerializeField] public GameObject bobber;
     [SerializeField] private EnterFishing enterFish;
     [SerializeField] private GameObject bobberHolder;
     public bool hasCast;
+    public bool canCast;
+    public bool shouldReel;
 
 
    
@@ -27,44 +29,57 @@ public class CastFishingLine : MonoBehaviour
     {
         if (enterFish.isFishing)
         {
-            if (Input.GetKeyDown(KeyCode.E)&&!hasCast)
+            if (Input.GetKeyDown(KeyCode.E)&&!hasCast && canCast)
             {
                 Cast();
             }
         }
-         if(!enterFish.isFishing&& hasCast){
-        Vector2 pos = Vector2.MoveTowards(bobber.transform.position, this.transform.position, Time.deltaTime * 10);
-        bobber.transform.position = pos;
-        float distance = Vector2.Distance(transform.position,bobber.transform.position);
-        if(distance <1){
-            bobber.SetActive(false);
-            line.gameObject.SetActive(false);
-            bobber.GetComponent<Bobber>().rb.simulated = true;
-            hasCast = false;
+        if (shouldReel)
+        {
+            bobber.GetComponent<Bobber>().rb.simulated = false;
+            ExitFishingReel();
         }
-      }
     }
 
 
     private void FixedUpdate()
     {
-        power = Mathf.PingPong(Time.time/3f, maxPower);    
+       // power = Mathf.PingPong(Time.time/3f, maxPower);    
      
     }
 
     private void Cast()
     {
+        
         bobber.transform.position = new Vector2(transform.position.x,transform.position.y+0.1f);
-        line.gameObject.SetActive(false);
+        line.gameObject.SetActive(true);
         hasCast = true;
+        canCast = false;
         line.enabled = true;
         bobber.SetActive(true);
-       // transform.GetChild(0).transform.GetChild(2).transform.position = Vector2.zero;
-        bobberHolder.transform.parent = null;
-       // bobber.transform.parent = null;
+        bobberHolder.transform.parent = null;      
         line.SetUpLine(points);
-        bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(-3, 1.5f) * 3,ForceMode2D.Impulse);
+        bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(-3, 2f) * 3,ForceMode2D.Impulse);
         
     }
-  
+    
+    public void ExitFishingReel()
+    {      
+           
+            Vector2 pos = Vector2.MoveTowards(bobber.transform.position, this.transform.position, Time.deltaTime * 10);
+            bobber.transform.position = pos;
+            float distance = Vector2.Distance(transform.position, bobber.transform.position);
+            if (distance < 1)
+            {
+                bobber.SetActive(false);
+                line.gameObject.SetActive(false);
+                bobber.GetComponent<Bobber>().rb.simulated = true;
+                hasCast = false;
+                shouldReel = false;
+                canCast = true;
+            }
+
+        
+    }
+
 }

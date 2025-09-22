@@ -88,6 +88,6 @@ public class EnterBoat : MonoBehaviour
     {
             
             insideBG.color = new Color(0, 0, 0, change/255);
-            Debug.Log(change);
+            //Debug.Log(change);
     }
 }

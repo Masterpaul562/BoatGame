@@ -71,8 +71,9 @@ public class EnterFishing : MonoBehaviour
       
         isFishing = false;
         render.flipX = false;
-       // castLineScript.hasCast = false;
-        //castLineScript.bobber.GetComponent<Bobber>().rb.simulated = true;
+        castLineScript.shouldReel = true;
+
+
     }
 
 }
