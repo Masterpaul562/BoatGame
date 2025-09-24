@@ -19,6 +19,7 @@ public class CastFishingLine : MonoBehaviour
     public bool shouldReel;
 
 
+
    
     private void Awake()
     {
@@ -29,12 +30,12 @@ public class CastFishingLine : MonoBehaviour
     {
         if (enterFish.isFishing)
         {
-            if (Input.GetKeyDown(KeyCode.E)&&!hasCast && canCast)
+            if (Input.GetKeyDown(KeyCode.Z)&&!hasCast && canCast)
             {
                 Cast();
             }
         }
-        if (shouldReel)
+        if (shouldReel && hasCast)
         {
             bobber.GetComponent<Bobber>().rb.simulated = false;
             ExitFishingReel();

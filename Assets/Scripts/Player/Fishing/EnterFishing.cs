@@ -11,7 +11,9 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
+    
     public bool isFishing;
+
 
 
     private void Awake()
@@ -22,8 +24,8 @@ public class EnterFishing : MonoBehaviour
     }
     void Update()
     {
-        // float vert = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.S))
+         float vert = Input.GetAxisRaw("Vertical");
+        if (vert < 0 && !isFishing)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
@@ -33,8 +35,9 @@ public class EnterFishing : MonoBehaviour
                     StartFishing();
                 }
             }
+          
         }
-        else if (Input.GetKeyDown(KeyCode.W) && isFishing)
+        else if (vert > 0 && isFishing)
         {
             ExitFishing();
         }
@@ -71,8 +74,10 @@ public class EnterFishing : MonoBehaviour
       
         isFishing = false;
         render.flipX = false;
-        castLineScript.shouldReel = true;
-
+        if (castLineScript.hasCast)
+        {
+            castLineScript.shouldReel = true;
+        }
 
     }
 

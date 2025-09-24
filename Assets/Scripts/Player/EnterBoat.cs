@@ -23,6 +23,7 @@ public class EnterBoat : MonoBehaviour
 
     void Update()
     {
+        float vert = Input.GetAxisRaw("Vertical");
         camZoom.ZoomCam(zoom);
         if ( zoom)
         {
@@ -39,7 +40,7 @@ public class EnterBoat : MonoBehaviour
         }
         
         
-        if (Input.GetKeyDown(KeyCode.S))
+        if (vert < 0)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
             if (hit.collider != null)
@@ -50,7 +51,7 @@ public class EnterBoat : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (vert >0)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
