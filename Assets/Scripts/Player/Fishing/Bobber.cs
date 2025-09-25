@@ -8,6 +8,7 @@ public class Bobber : MonoBehaviour
     [SerializeField] private float y;
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Floater floaterScript;
+    public bool submerged;
    
    
 
@@ -29,6 +30,7 @@ public class Bobber : MonoBehaviour
 
             floaterScript.enabled = true;
             rb.simulated = false;
+            submerged = true;
             //Destroy(rb);
             
             // rb.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezePositionY;
