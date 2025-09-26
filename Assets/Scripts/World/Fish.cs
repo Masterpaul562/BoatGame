@@ -12,8 +12,8 @@ public class Fish : MonoBehaviour
 
     private void Awake()
     {
-        randomX = Random.Range(-20f, 20f);
-        randomY = Random.Range(-3f, -12f);
+        randomX = Random.Range(-30f, 8f);
+        randomY = Random.Range(-8f, -3f);
     }
     private void Update()
     {
@@ -31,8 +31,8 @@ public class Fish : MonoBehaviour
            
             transform.position = Vector2.MoveTowards(transform.position, new Vector2 (randomX, randomY),Time.deltaTime / 2);
             if(Vector2.Distance(transform.position,new Vector2(randomX,randomY))< 1f){
-            randomX = Random.Range(-20f, 20f);
-            randomY = Random.Range(-3f, -12f);
+            randomX = Random.Range(-27f, 7f);
+            randomY = Random.Range(-8f, -3f);
             }
         }
     
