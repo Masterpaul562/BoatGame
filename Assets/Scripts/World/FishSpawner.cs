@@ -8,12 +8,16 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject fishPrefab;
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFishing;
+    [SerializeField] float closestDistance;
+    [SerializeField] GameObject closestFish;   
     private bool hasSpawned;
     public int numOfFish;
+     public bool shouldReel;
 
     private void Update()
     {
-        
+         FindClosestFish();
+         ShouldReelIn();
         
         if (bobber.GetComponent<Bobber>().submerged)
         {
@@ -29,6 +33,8 @@ public class FishSpawner : MonoBehaviour
                 Destroy(fish[i]);
                 fish.RemoveAt(i);
             }
+
+            hasSpawned = false;
         }
 
 
@@ -55,14 +61,30 @@ public class FishSpawner : MonoBehaviour
 
     public void Bait()
     {
-        for (int i = 0; i < fish.Count; i++)
-        {
-            float distance = Vector2.Distance(bobber.transform.position, fish[i].transform.position);
-            if(distance <5)
-            {
-                fish[i].GetComponent<Fish>().shouldSwimToBobber = true;
-            }
+        if(closestDistance<10){
+            closestFish.GetComponent<Fish>().shouldSwimToBobber = true;
+        }
+    }
 
+    private void FindClosestFish() {
+
+        closestDistance = 10000000000;
+         for (int i = 0; i < fish.Count; i++){            
+        float distance = Vector2.Distance(bobber.transform.position, fish[i].transform.position);
+        if(closestDistance > distance ){
+            closestDistance = distance;
+            closestFish = fish[i];
+        }       
+      
+    }
+
+
+    }
+
+    private void ShouldReelIn() {
+        if(Vector2.Distance(bobber.transform.position, closestFish.transform.position)<1){
+            shouldReel = true;
+            closestFish.transform.parent = bobber.transform;
         }
     }
 

@@ -355,7 +355,10 @@ MonoBehaviour:
   fishPrefab: {fileID: 1981255956818205823, guid: 33b34d4d793aee0448ade45258ce21c4, type: 3}
   bobber: {fileID: 2056419627}
   enterFishing: {fileID: 1351622663}
+  closestDistance: 1000000
+  closestFish: {fileID: 0}
   numOfFish: 8
+  shouldReel: 0
 --- !u!1 &249506147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishList: {fileID: 216235006}
+  bobber: {fileID: 2056419627}
+  line: {fileID: 1401774804}
+  castScript: {fileID: 1351622664}
   canBait: 0
 --- !u!1 &1401774801
 GameObject:
