@@ -4,8 +4,39 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-   private void Update()
-    {
+    public Transform bobber;
+   public bool shouldSwimToBobber;
+   private float randomY;
+    private float randomX;
 
+
+    private void Awake()
+    {
+        randomX = Random.Range(-20f, 20f);
+        randomY = Random.Range(-3f, -12f);
     }
+    private void Update()
+    {
+        fishySwim();
+    }
+    
+
+    private void fishySwim() {
+        if (shouldSwimToBobber&& bobber.GetComponent<Bobber>().submerged == true )
+        {
+            transform.position = Vector2.MoveTowards(transform.position, bobber.position, Time.deltaTime / 2);
+        }
+        else
+        {
+           
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2 (randomX, randomY),Time.deltaTime / 2);
+            if(Vector2.Distance(transform.position,new Vector2(randomX,randomY))< 1f){
+            randomX = Random.Range(-20f, 20f);
+            randomY = Random.Range(-3f, -12f);
+            }
+        }
+    
+    }
+
+
 }

@@ -13,10 +13,9 @@ public class FishSpawner : MonoBehaviour
 
     private void Update()
     {
-        int childNum = Random.Range(0,3);
-        Debug.Log(childNum);
         
-        if (enterFishing.isFishing)
+        
+        if (bobber.GetComponent<Bobber>().submerged)
         {
             if (!hasSpawned)
             {
@@ -48,9 +47,23 @@ public class FishSpawner : MonoBehaviour
             Vector2 spawnLocation = new Vector2(spawnChild.x + Random.Range(-4, 4), spawnChild.y + Random.Range(-2, 2));
 
             var fishs = Instantiate(fishPrefab,spawnLocation, Quaternion.identity);
+            var fishScript = fishs.GetComponent<Fish>();
+            fishScript.bobber = bobber.transform;
             fish.Add(fishs);
         }
-
-
     }
+
+    public void Bait()
+    {
+        for (int i = 0; i < fish.Count; i++)
+        {
+            float distance = Vector2.Distance(bobber.transform.position, fish[i].transform.position);
+            if(distance <5)
+            {
+                fish[i].GetComponent<Fish>().shouldSwimToBobber = true;
+            }
+
+        }
+    }
+
 }

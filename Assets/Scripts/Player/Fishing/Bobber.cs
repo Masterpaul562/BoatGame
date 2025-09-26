@@ -17,10 +17,7 @@ public class Bobber : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         floaterScript = GetComponent<Floater>();
     }
-    private void Update()
-    {
-       
-    }
+  
     void FixedUpdate()
     {
         

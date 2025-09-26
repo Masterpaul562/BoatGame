@@ -14,6 +14,7 @@ public class CastFishingLine : MonoBehaviour
     [SerializeField] public GameObject bobber;
     [SerializeField] private EnterFishing enterFish;
     [SerializeField] private GameObject bobberHolder;
+    private Fishing fishingScript;
     public bool hasCast;
     public bool canCast;
     public bool shouldReel;
@@ -24,12 +25,17 @@ public class CastFishingLine : MonoBehaviour
     private void Awake()
     {
         enterFish = GetComponent<EnterFishing>();
+        fishingScript = GetComponent<Fishing>();
     }
 
     private void Update ()
     {
         if (enterFish.isFishing)
         {
+            if (bobber.GetComponent<Bobber>().submerged)
+            {
+                fishingScript.enabled = true;
+            }
             if (Input.GetKeyDown(KeyCode.Z)&&!hasCast && canCast)
             {
                 Cast();
@@ -75,6 +81,7 @@ public class CastFishingLine : MonoBehaviour
                 bobber.SetActive(false);
                 line.gameObject.SetActive(false);
                 bobber.GetComponent<Bobber>().rb.simulated = true;
+                bobber.GetComponent<Bobber>().submerged = false;
                 hasCast = false;
                 shouldReel = false;
                 canCast = true;

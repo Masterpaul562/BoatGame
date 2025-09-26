@@ -11,13 +11,14 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
-    
+    private Fishing fishingScript;
     public bool isFishing;
 
 
 
     private void Awake()
     {
+        fishingScript = GetComponent<Fishing>();
        render = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
        castLineScript = GetComponent<CastFishingLine>();
@@ -63,7 +64,7 @@ public class EnterFishing : MonoBehaviour
        
         isFishing = true;
         render.flipX = true;
-        //castLineScript.bobber.GetComponent<Bobber>().rb.simulated = true;
+
 
         //doo this to fishing menu/game
        //.SetActive(true) 
@@ -72,6 +73,7 @@ public class EnterFishing : MonoBehaviour
     private void ExitFishing()
     {
       
+        fishingScript.enabled = false;
         isFishing = false;
         render.flipX = false;
         if (castLineScript.hasCast)
