@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class FishSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> fish = new List<GameObject>();
+    [SerializeField] public List<GameObject> fish = new List<GameObject>();
     [SerializeField] private GameObject fishPrefab;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFishing;
     [SerializeField] float closestDistance;
-    [SerializeField] GameObject closestFish;
+    [SerializeField]public GameObject closestFish;
     [SerializeField] private bool hasSpawned;
-    [SerializeField] private int closestFishIndex;
+    [SerializeField] public int closestFishIndex;
     public int numOfFish;
     public bool shouldReel;
+   // public bool 
     
-    private bool shouldDestroy = true;
+    //private bool shouldDestroy = true;
     
 
     private void Update()
@@ -116,19 +117,8 @@ public class FishSpawner : MonoBehaviour
         }
         //Debug.Log(Vector2.Distance(closestFish.transform.position, player.transform.position));
 
-        if (Vector2.Distance(closestFish.transform.position, player.transform.position) < 2 && shouldDestroy)
-        {
-            Debug.Log(1);
-            shouldDestroy = false;
-            fish.RemoveAt(closestFishIndex);
-            Destroy(closestFish);            
-            FindClosestFish();
-           CaughtFish();
-        }
+       
     }
-    private void CaughtFish()
-    {
-        shouldDestroy = true;
-    }
+    
 
 }
