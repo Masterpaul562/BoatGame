@@ -335,7 +335,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2026963543}
-  - {fileID: 1449791585}
   - {fileID: 440194427}
   m_Father: {fileID: 900264482}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -353,10 +352,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: []
   fishPrefab: {fileID: 1981255956818205823, guid: 33b34d4d793aee0448ade45258ce21c4, type: 3}
+  player: {fileID: 1351622656}
   bobber: {fileID: 2056419627}
   enterFishing: {fileID: 1351622663}
   closestDistance: 1000000
   closestFish: {fileID: 0}
+  hasSpawned: 0
+  closestFishIndex: 0
   numOfFish: 8
   shouldReel: 0
 --- !u!1 &249506147
@@ -603,7 +605,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440194427}
   m_Layer: 0
-  m_Name: SpawnLocation3
+  m_Name: SpawnLocation2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,7 +620,7 @@ Transform:
   m_GameObject: {fileID: 440194426}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.83, y: -9.44, z: 0}
+  m_LocalPosition: {x: 15.83, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2342,37 +2344,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linerender: {fileID: 0}
   points: []
---- !u!1 &1449791584
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1449791585}
-  m_Layer: 0
-  m_Name: SpawnLocation2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1449791585
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449791584}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.54, y: -12.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 216235005}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485452371
 GameObject:
   m_ObjectHideFlags: 0
@@ -3170,7 +3141,7 @@ Transform:
   m_GameObject: {fileID: 2026963542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.82, y: -11.21, z: 0}
+  m_LocalPosition: {x: -34.43, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

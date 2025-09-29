@@ -15,7 +15,8 @@ public class Fishing : MonoBehaviour
 
    private  void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z)) {
+        if (Input.GetKeyDown(KeyCode.Z)&& bobber.GetComponent<Bobber>().submerged) {
+            
             fishList.Bait();
         }
         if(fishList.shouldReel){
