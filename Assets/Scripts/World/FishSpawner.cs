@@ -29,7 +29,7 @@ public class FishSpawner : MonoBehaviour
 
             if (!hasSpawned)
             {
-                SpawnFish();
+                SpawnFish(numOfFish);
             }
             FindClosestFish();
             ShouldReelIn();
@@ -50,11 +50,11 @@ public class FishSpawner : MonoBehaviour
 
     }
 
-    public void SpawnFish()
+    public void SpawnFish(int spawnAmount)
     {
         hasSpawned = true;
 
-        for (int i = 0; i < numOfFish; i++)
+        for (int i = 0; i < spawnAmount; i++)
         {
 
             int childNum = Random.Range(0, 2);
@@ -69,7 +69,7 @@ public class FishSpawner : MonoBehaviour
             fishScript.swimDirection = childNum;
             fishScript.leftX = transform.GetChild(0).position.x;
             fishScript.rightX = transform.GetChild(1).position.x;
-            fishScript.speed = Random.Range(0, 5);
+            fishScript.speed = Random.Range(0.3f, 5);
             fish.Add(fishs);
         }
     }
@@ -78,9 +78,26 @@ public class FishSpawner : MonoBehaviour
     {
         if (closestFish != null)
         {
-            if (closestDistance < 10)
+            if (closestDistance < 5)
             {
+                var script = closestFish.GetComponent<Fish>();
                 closestFish.GetComponent<Fish>().shouldSwimToBobber = true;
+                if (script.speed > 0.2f)
+                {
+                    script.speed -= 0.2f;
+                }
+            }
+            else
+            {
+                var script = closestFish.GetComponent<Fish>();
+                if (script.randomY < -2.5)
+                {
+                    script.randomY += .5f;
+                }
+                if (script.speed > 0.2f)
+                {
+                    script.speed -= 0.2f;
+                }
             }
         }
     }

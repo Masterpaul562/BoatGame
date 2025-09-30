@@ -2192,7 +2192,8 @@ MonoBehaviour:
   bobber: {fileID: 2056419627}
   line: {fileID: 1401774804}
   castScript: {fileID: 1351622664}
-  canBait: 0
+  amountCaughtInSession: 0
+  canBait: 1
 --- !u!1 &1401774801
 GameObject:
   m_ObjectHideFlags: 0

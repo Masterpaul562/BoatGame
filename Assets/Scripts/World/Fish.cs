@@ -6,7 +6,7 @@ public class Fish : MonoBehaviour
 {
     public Transform bobber;
    public bool shouldSwimToBobber;
-   private float randomY;   
+   public float randomY;   
     public int swimDirection;
     public float leftX;
     public float rightX;
