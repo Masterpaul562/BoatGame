@@ -15,22 +15,30 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] public int closestFishIndex;
     public int numOfFish;
     public bool shouldReel;
+    private bool shouldBeSpawning;
+    private bool startCoroutine = true;
    // public bool 
     
     //private bool shouldDestroy = true;
     
 
-    private void Update()
+    private void Update()   
     {
-
+       
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
+    if(startCoroutine){
+            shouldBeSpawning = true;
+    startCoroutine= false;
+    StartCoroutine(FishySpawning());
+    Debug.Log("YAY");
 
-            if (!hasSpawned)
-            {
-                SpawnFish(numOfFish);
-            }
+        }
+           // if (!hasSpawned)
+            //{
+           //     SpawnFish(numOfFish);
+           // }
             FindClosestFish();
             ShouldReelIn();
             
@@ -38,6 +46,7 @@ public class FishSpawner : MonoBehaviour
         }
         else if (enterFishing.isFishing == false)
         {
+            shouldBeSpawning = false;
             for (int i = 0; i < fish.Count; i++)
             {
                 Destroy(fish[i]);
@@ -136,6 +145,16 @@ public class FishSpawner : MonoBehaviour
 
        
     }
-    
+    private IEnumerator FishySpawning(){
+        while(shouldBeSpawning){
+            yield return new WaitForSeconds(Random.Range(2,5));
+            SpawnFish(1);
+            Debug.Log("yay");
+
+
+        }
+        yield return null;
+    }    
+
 
 }

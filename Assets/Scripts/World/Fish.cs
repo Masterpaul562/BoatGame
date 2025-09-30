@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer fishSwimRender;
     public Transform bobber;
    public bool shouldSwimToBobber;
    public float randomY;   
@@ -16,7 +17,7 @@ public class Fish : MonoBehaviour
 
     private void Awake()
     {
-       // randomX = Random.Range(-30f, 8f);
+       fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
     }
     private void Update()
@@ -34,6 +35,8 @@ public class Fish : MonoBehaviour
         {
             if (swimDirection == 0)
             {
+                //FLIPTHE FISH
+                //fishSwimRender.flipX = false;
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(rightX, randomY)) < 1f)
                 {
@@ -43,6 +46,7 @@ public class Fish : MonoBehaviour
             }
             else
             {
+                fishSwimRender.flipX = true;
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(leftX, randomY)) < 1f)
                 {
