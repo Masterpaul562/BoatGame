@@ -31,7 +31,7 @@ public class FishSpawner : MonoBehaviour
             shouldBeSpawning = true;
     startCoroutine= false;
     StartCoroutine(FishySpawning());
-    Debug.Log("YAY");
+
 
         }
          
@@ -63,6 +63,7 @@ public class FishSpawner : MonoBehaviour
         {
 
             int childNum = Random.Range(0, 2);
+            int swimBobber = Random.Range(0,100);
 
             Vector2 spawnChild = transform.GetChild(childNum).position;
 
@@ -70,6 +71,9 @@ public class FishSpawner : MonoBehaviour
 
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             var fishScript = fishs.GetComponent<Fish>();
+            if(swimBobber>70){
+                fishScript.shouldSwimToBobber = true;
+            }
             fishScript.bobber = bobber.transform;
             fishScript.swimDirection = childNum;
             fishScript.leftX = transform.GetChild(0).position.x;
@@ -117,11 +121,11 @@ public class FishSpawner : MonoBehaviour
     }
     private IEnumerator FishySpawning(){
         while(shouldBeSpawning){
-            yield return new WaitForSeconds(Random.Range(2,5));
-            SpawnFish(1);
-            Debug.Log("yay");
-
-
+            yield return new WaitForSeconds(Random.Range(3,7));
+            if(fish.Count < 10){
+        SpawnFish(1);
+            }
+            
         }
         yield return null;
     }    

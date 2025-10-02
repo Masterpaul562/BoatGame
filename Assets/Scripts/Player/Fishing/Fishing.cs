@@ -8,23 +8,21 @@ public class Fishing : MonoBehaviour
     [SerializeField] private GameObject bobber;
     [SerializeField] private LineRenderController line;
     [SerializeField] private CastFishingLine castScript;
-    public int amountCaughtInSession;
+  
     public bool canBait;
 
 
     private void Awake()
     {
-        amountCaughtInSession = 0;
+       
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z) && bobber.GetComponent<Bobber>().submerged && canBait)
-        {
-           
-           
+        {                    
             canBait = false;
-           // StartCoroutine(BaitCooldown());
+
         }
         if (fishList.shouldReel)
         {
@@ -52,11 +50,7 @@ public class Fishing : MonoBehaviour
     }
     private void SecureFish()
     {
-        amountCaughtInSession++;
-        if (amountCaughtInSession > 4)
-        {
-            fishList.SpawnFish(amountCaughtInSession);
-        }
+        
         fishList.fish.RemoveAt(fishList.closestFishIndex);
         Destroy(fishList.closestFish);
     }

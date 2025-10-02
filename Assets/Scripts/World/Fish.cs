@@ -19,7 +19,7 @@ public class Fish : MonoBehaviour
 
     private void Awake()
     {
-        size = Random.Range(0.5f,2.5f);
+        size = Random.Range(0.5f,1.5f);
         transform.localScale = new Vector2(size,size);
         if(swimDirection == 1){
            transform.localScale = new Vector2 (transform.localScale.x*-1,transform.localScale.y);
@@ -36,6 +36,9 @@ public class Fish : MonoBehaviour
     private void fishySwim() {
         if (shouldSwimToBobber&& bobber.GetComponent<Bobber>().submerged == true )
         {
+            if(transform.localScale.x >0 && swimDirection == 1) {
+                    Flip();
+            }
             transform.position = Vector2.MoveTowards(transform.position, bobber.position, Time.deltaTime / speed);
         }
         else
@@ -59,7 +62,7 @@ public class Fish : MonoBehaviour
             {
                if(transform.localScale.x >0) {
                     Flip();
-                    Debug.Log("FLIPPED");
+                    //Debug.Log("FLIPPED");
                 }
                 
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX, randomY), Time.deltaTime / speed);
