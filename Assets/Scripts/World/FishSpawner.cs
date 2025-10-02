@@ -10,16 +10,15 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFishing;
     [SerializeField] float closestDistance;
-    [SerializeField]public GameObject closestFish;
-    [SerializeField] private bool hasSpawned;
+    [SerializeField]public GameObject closestFish;  
     [SerializeField] public int closestFishIndex;
     public int numOfFish;
     public bool shouldReel;
     private bool shouldBeSpawning;
     private bool startCoroutine = true;
-   // public bool 
+
     
-    //private bool shouldDestroy = true;
+   
     
 
     private void Update()   
@@ -35,10 +34,7 @@ public class FishSpawner : MonoBehaviour
     Debug.Log("YAY");
 
         }
-           // if (!hasSpawned)
-            //{
-           //     SpawnFish(numOfFish);
-           // }
+         
             FindClosestFish();
             ShouldReelIn();
             
@@ -53,7 +49,7 @@ public class FishSpawner : MonoBehaviour
                 fish.RemoveAt(i);
             }
 
-            hasSpawned = false;
+         
         }
 
 
@@ -61,7 +57,7 @@ public class FishSpawner : MonoBehaviour
 
     public void SpawnFish(int spawnAmount)
     {
-        hasSpawned = true;
+      
 
         for (int i = 0; i < spawnAmount; i++)
         {
@@ -83,33 +79,7 @@ public class FishSpawner : MonoBehaviour
         }
     }
 
-    public void Bait()
-    {
-        if (closestFish != null)
-        {
-            if (closestDistance < 5)
-            {
-                var script = closestFish.GetComponent<Fish>();
-                closestFish.GetComponent<Fish>().shouldSwimToBobber = true;
-                if (script.speed > 0.2f)
-                {
-                    script.speed -= 0.2f;
-                }
-            }
-            else
-            {
-                var script = closestFish.GetComponent<Fish>();
-                if (script.randomY < -2.5)
-                {
-                    script.randomY += .5f;
-                }
-                if (script.speed > 0.2f)
-                {
-                    script.speed -= 0.2f;
-                }
-            }
-        }
-    }
+   
 
     private void FindClosestFish()
     {
@@ -141,7 +111,7 @@ public class FishSpawner : MonoBehaviour
                 closestFish.transform.parent = bobber.transform;
             }
         }
-        //Debug.Log(Vector2.Distance(closestFish.transform.position, player.transform.position));
+      
 
        
     }

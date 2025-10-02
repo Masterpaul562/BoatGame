@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer fishSwimRender;
+    private float size;
     public Transform bobber;
    public bool shouldSwimToBobber;
    public float randomY;   
@@ -12,11 +13,17 @@ public class Fish : MonoBehaviour
     public float leftX;
     public float rightX;
     public float speed;
+   [SerializeField] private bool shouldFlip = true;
         
 
 
     private void Awake()
     {
+        size = Random.Range(0.5f,2.5f);
+        transform.localScale = new Vector2(size,size);
+        if(swimDirection == 1){
+           transform.localScale = new Vector2 (transform.localScale.x*-1,transform.localScale.y);
+       }
        fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
     }
@@ -36,21 +43,30 @@ public class Fish : MonoBehaviour
             if (swimDirection == 0)
             {
                 //FLIPTHE FISH
-                //fishSwimRender.flipX = false;
+                if(transform.localScale.x <0) {
+                    Flip();
+                }
+              
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(rightX, randomY)) < 1f)
                 {
+                    shouldFlip = true;
                     swimDirection = 1;
                     randomY = Random.Range(-8f, -1f);
                 }
-            }
-            else
+            }   
+            else if (swimDirection == 1)
             {
-                fishSwimRender.flipX = true;
+               if(transform.localScale.x >0) {
+                    Flip();
+                    Debug.Log("FLIPPED");
+                }
+                
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(leftX, randomY)) < 1f)
                 {
-                    swimDirection = 0;
+                    shouldFlip = true;
+                    swimDirection = 0;                  
                     randomY = Random.Range(-8f, -1f);
                 }
             }
@@ -58,6 +74,12 @@ public class Fish : MonoBehaviour
         }
     
     }
+ private void Flip(){
 
+if(shouldFlip){
+    shouldFlip = false;
+ transform.localScale = new Vector2(transform.localScale.x *-1,transform.localScale.y);
+}
+ }
 
 }

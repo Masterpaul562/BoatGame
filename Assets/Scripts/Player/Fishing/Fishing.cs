@@ -22,9 +22,9 @@ public class Fishing : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && bobber.GetComponent<Bobber>().submerged && canBait)
         {
            
-            fishList.Bait();
+           
             canBait = false;
-            StartCoroutine(BaitCooldown());
+           // StartCoroutine(BaitCooldown());
         }
         if (fishList.shouldReel)
         {
