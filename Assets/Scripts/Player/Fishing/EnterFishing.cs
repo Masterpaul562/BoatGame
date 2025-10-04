@@ -19,13 +19,13 @@ public class EnterFishing : MonoBehaviour
     private void Awake()
     {
         fishingScript = GetComponent<Fishing>();
-       render = GetComponent<SpriteRenderer>();
+        render = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-       castLineScript = GetComponent<CastFishingLine>();
+        castLineScript = GetComponent<CastFishingLine>();
     }
     void Update()
     {
-         float vert = Input.GetAxisRaw("Vertical");
+        float vert = Input.GetAxisRaw("Vertical");
         if (vert < 0 && !isFishing)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
@@ -36,43 +36,45 @@ public class EnterFishing : MonoBehaviour
                     StartFishing();
                 }
             }
-          
+
         }
         else if (vert > 0 && isFishing)
         {
             ExitFishing();
         }
-        
-       
+
+
 
     }
     private void FixedUpdate()
     {
         if (isFishing && cam.transform.position != fishingCamSpot.position)
-        { 
-          
-                Vector2 pos = Vector2.MoveTowards(cam.transform.position, fishingCamSpot.position, Time.deltaTime*10);
-            cam.transform.position = new Vector3(pos.x,pos.y,-10);
-        }else if (!isFishing && cam.transform.position != ogPos.position) {
+        {
+
+            Vector2 pos = Vector2.MoveTowards(cam.transform.position, fishingCamSpot.position, Time.deltaTime * 10);
+            cam.transform.position = new Vector3(pos.x, pos.y, -10);
+        }
+        else if (!isFishing && cam.transform.position != ogPos.position)
+        {
             Vector2 pos = Vector2.MoveTowards(cam.transform.position, ogPos.position, Time.deltaTime * 10);
             cam.transform.position = new Vector3(pos.x, pos.y, -10);
         }
     }
     private void StartFishing()
     {
-        
-       
+
+
         isFishing = true;
         render.flipX = true;
 
 
         //doo this to fishing menu/game
-       //.SetActive(true) 
-       
+        //.SetActive(true) 
+
     }
     private void ExitFishing()
     {
-      
+        fishingScript.fishHooked = false;
         fishingScript.enabled = false;
         isFishing = false;
         render.flipX = false;

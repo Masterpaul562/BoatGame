@@ -9,47 +9,42 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFishing;
-    [SerializeField] float closestDistance;
-    [SerializeField]public GameObject closestFish;  
-    [SerializeField] public int closestFishIndex;
-    public int numOfFish;
-    public bool shouldReel;
+    
+    public int maxNumOfFish;
+
     private bool shouldBeSpawning;
     private bool startCoroutine = true;
 
-    
-   
-    
 
-    private void Update()   
+
+
+
+    private void Update()
     {
-       
+
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
-    if(startCoroutine){
-            shouldBeSpawning = true;
-    startCoroutine= false;
-    StartCoroutine(FishySpawning());
+            if (startCoroutine)
+            {
+                shouldBeSpawning = true;
+                startCoroutine = false;
+                StartCoroutine(FishySpawning());
 
 
-        }
-         
-            FindClosestFish();
-            ShouldReelIn();
-            
-
+            }
         }
         else if (enterFishing.isFishing == false)
         {
             shouldBeSpawning = false;
+            startCoroutine = true;
             for (int i = 0; i < fish.Count; i++)
             {
                 Destroy(fish[i]);
                 fish.RemoveAt(i);
             }
 
-         
+
         }
 
 
@@ -57,13 +52,13 @@ public class FishSpawner : MonoBehaviour
 
     public void SpawnFish(int spawnAmount)
     {
-      
+
 
         for (int i = 0; i < spawnAmount; i++)
         {
 
             int childNum = Random.Range(0, 2);
-            int swimBobber = Random.Range(0,100);
+            int swimBobber = Random.Range(0, 100);
 
             Vector2 spawnChild = transform.GetChild(childNum).position;
 
@@ -71,7 +66,8 @@ public class FishSpawner : MonoBehaviour
 
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             var fishScript = fishs.GetComponent<Fish>();
-            if(swimBobber>70){
+            if (swimBobber > 70)
+            {
                 fishScript.shouldSwimToBobber = true;
             }
             fishScript.bobber = bobber.transform;
@@ -83,52 +79,21 @@ public class FishSpawner : MonoBehaviour
         }
     }
 
-   
 
-    private void FindClosestFish()
+
+    private IEnumerator FishySpawning()
     {
-
-        closestDistance = 10000000000;
-        for (int i = 0; i < fish.Count; i++)
+        while (shouldBeSpawning)
         {
-            float distance = Vector2.Distance(bobber.transform.position, fish[i].transform.position);
-            if (closestDistance > distance)
+            yield return new WaitForSeconds(Random.Range(3, 7));
+            if (fish.Count < maxNumOfFish)
             {
-                closestDistance = distance;
-                closestFish = fish[i];
-                closestFishIndex = i;
+                SpawnFish(1);
             }
 
-        }
-
-
-    }
-
-    private void ShouldReelIn()
-    {
-        if (closestFish != null)
-        {
-            if (Vector2.Distance(bobber.transform.position, closestFish.transform.position) < 1)
-            {
-                shouldReel = true;
-                closestFish.transform.position = bobber.transform.position;
-                closestFish.transform.parent = bobber.transform;
-            }
-        }
-      
-
-       
-    }
-    private IEnumerator FishySpawning(){
-        while(shouldBeSpawning){
-            yield return new WaitForSeconds(Random.Range(3,7));
-            if(fish.Count < 10){
-        SpawnFish(1);
-            }
-            
         }
         yield return null;
-    }    
+    }
 
 
 }

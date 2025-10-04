@@ -7,37 +7,42 @@ public class Fish : MonoBehaviour
     [SerializeField] private SpriteRenderer fishSwimRender;
     private float size;
     public Transform bobber;
-   public bool shouldSwimToBobber;
-   public float randomY;   
+    public bool shouldSwimToBobber;
+    public float randomY;
     public int swimDirection;
     public float leftX;
     public float rightX;
     public float speed;
-   [SerializeField] private bool shouldFlip = true;
-        
+    [SerializeField] public bool shouldFlip = true;
+    public bool shouldBeDestroyed;
+
 
 
     private void Awake()
     {
-        size = Random.Range(0.5f,1.5f);
-        transform.localScale = new Vector2(size,size);
-        if(swimDirection == 1){
-           transform.localScale = new Vector2 (transform.localScale.x*-1,transform.localScale.y);
-       }
-       fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
+        shouldBeDestroyed = false;
+        size = Random.Range(0.5f, .7f);
+        transform.localScale = new Vector2(size, size);
+        if (swimDirection == 1)
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
+        fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
     }
     private void Update()
     {
         fishySwim();
     }
-    
 
-    private void fishySwim() {
-        if (shouldSwimToBobber&& bobber.GetComponent<Bobber>().submerged == true )
+
+    private void fishySwim()
+    {
+        if (shouldSwimToBobber && bobber.GetComponent<Bobber>().submerged == true)
         {
-            if(transform.localScale.x >0 && swimDirection == 1) {
-                    Flip();
+            if (transform.localScale.x > 0 && swimDirection == 1)
+            {
+                Flip();
             }
             transform.position = Vector2.MoveTowards(transform.position, bobber.position, Time.deltaTime / speed);
         }
@@ -45,44 +50,44 @@ public class Fish : MonoBehaviour
         {
             if (swimDirection == 0)
             {
-                //FLIPTHE FISH
-                if(transform.localScale.x <0) {
+
+                if (transform.localScale.x < 0)
+                {
                     Flip();
                 }
-              
+
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(rightX, randomY)) < 1f)
                 {
-                    shouldFlip = true;
-                    swimDirection = 1;
-                    randomY = Random.Range(-8f, -1f);
+                    shouldBeDestroyed = true;
                 }
-            }   
+            }
             else if (swimDirection == 1)
             {
-               if(transform.localScale.x >0) {
+                if (transform.localScale.x > 0)
+                {
                     Flip();
-                    //Debug.Log("FLIPPED");
+
                 }
-                
+
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX, randomY), Time.deltaTime / speed);
                 if (Vector2.Distance(transform.position, new Vector2(leftX, randomY)) < 1f)
                 {
-                    shouldFlip = true;
-                    swimDirection = 0;                  
-                    randomY = Random.Range(-8f, -1f);
+                    shouldBeDestroyed = true;
                 }
             }
 
         }
-    
-    }
- private void Flip(){
 
-if(shouldFlip){
-    shouldFlip = false;
- transform.localScale = new Vector2(transform.localScale.x *-1,transform.localScale.y);
-}
- }
+    }
+    public void Flip()
+    {
+
+        if (shouldFlip)
+        {
+            shouldFlip = false;
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        }
+    }
 
 }
