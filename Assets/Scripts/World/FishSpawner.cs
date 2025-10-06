@@ -25,13 +25,13 @@ public class FishSpawner : MonoBehaviour
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
+            shouldBeSpawning = false;
             if (startCoroutine)
             {
                 shouldBeSpawning = true;
                 startCoroutine = false;
+                maxNumOfFish = 10;
                 StartCoroutine(FishySpawning());
-
-
             }
         }
         else if (enterFishing.isFishing == false)

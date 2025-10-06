@@ -53,3 +53,6 @@ TagManager:
   - name: Inside
     uniqueID: 4155491763
     locked: 0
+  - name: Menu
+    uniqueID: 756293159
+    locked: 0
