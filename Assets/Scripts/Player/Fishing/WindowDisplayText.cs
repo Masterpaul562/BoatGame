@@ -6,14 +6,17 @@ using TMPro;
 public class WindowDisplayText : MonoBehaviour
 {
     [SerializeField] private TextMeshPro text;
-    [SerializeField] private FishInventory fishAmount;
+    
+    public string textToDisplay;
 
    void Awake()
     {
-        text.text = "Fish Pile";
+        text.text =textToDisplay;
     }
     void Update()
     {
-        text.text = "Fish Pile: " + fishAmount.fishAmountOutside;
+        text.text = textToDisplay;
     }
+
+
 }
