@@ -25,7 +25,7 @@ public class FishSpawner : MonoBehaviour
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
-            shouldBeSpawning = false;
+           // shouldBeSpawning = false;
             if (startCoroutine)
             {
                 shouldBeSpawning = true;
