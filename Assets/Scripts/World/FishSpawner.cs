@@ -38,11 +38,11 @@ public class FishSpawner : MonoBehaviour
         {
             shouldBeSpawning = false;
             startCoroutine = true;
-            for (int i = 0; i < fish.Count; i++)
-            {
-                Destroy(fish[i]);
-                fish.RemoveAt(i);
-            }
+           // for (int i = 0; i < fish.Count; i++)
+           // {
+           //     Destroy(fish[i]);
+          //      fish.RemoveAt(i);
+          //  }
 
 
         }

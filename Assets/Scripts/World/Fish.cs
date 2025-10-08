@@ -15,11 +15,13 @@ public class Fish : MonoBehaviour
     public float speed;
     [SerializeField] public bool shouldFlip = true;
     public bool shouldBeDestroyed;
+    private BgScroller scroller;
 
 
 
     private void Awake()
     {
+        scroller = GetComponent<BgScroller>();
         shouldBeDestroyed = false;
         size = Random.Range(0.5f, .7f);
         transform.localScale = new Vector2(size, size);
@@ -88,6 +90,9 @@ public class Fish : MonoBehaviour
             shouldFlip = false;
             transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
+    }
+    public void MoveWithOcean(bool active){
+        scroller.enabled = active;
     }
 
 }

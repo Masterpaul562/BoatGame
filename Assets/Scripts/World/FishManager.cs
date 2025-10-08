@@ -36,6 +36,14 @@ public class FishManager : MonoBehaviour
                 fishList.fish.RemoveAt(i);
                 
             }
+            if (bobber.submerged)
+        {
+
+           fishList.fish[i].GetComponent<Fish>().MoveWithOcean(false);
+        }else 
+        {
+            fishList.fish[i].GetComponent<Fish>().MoveWithOcean(true);
+        }
         }
     }
 

@@ -5,7 +5,7 @@ public class BgScroller : MonoBehaviour
 {
     public float scrollSpeed;
     private float startPos;
-   [SerializeField] private float direction;
+   [SerializeField] public float direction;
     private float length;
 
     void Start()
@@ -22,4 +22,5 @@ public class BgScroller : MonoBehaviour
             transform.position = new Vector2(transform.position.x + length,transform.position.y);
         }
     }
+    
 }
