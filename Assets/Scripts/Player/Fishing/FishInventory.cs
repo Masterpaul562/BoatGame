@@ -19,4 +19,15 @@ public class FishInventory : MonoBehaviour
         fishAmountInside += amount;
 
     }
+    public int GetFishAmount(bool inside)
+    {
+        if (inside)
+        {
+            return fishAmountInside;
+        }else 
+        {
+            return fishAmountOutside;
+        }
+       
+    }
 }

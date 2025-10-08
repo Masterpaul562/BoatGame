@@ -8,6 +8,7 @@ public class FishPopUpWindow : MonoBehaviour
     [SerializeField] private GameObject window;
     [SerializeField] private FishInventory fishAmount;
     [SerializeField] private MoveFish moveFish;
+    [SerializeField] private bool inside;
     public bool shouldDisplay;
 
     private void Awake()
@@ -19,11 +20,12 @@ public class FishPopUpWindow : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Player" && fishAmount.fishAmountOutside > 0)
+        if (other.gameObject.tag == "Player" )
         {
-
-            window.SetActive(true);
-
+            if (!inside && fishAmount.fishAmountOutside > 0 || inside && fishAmount.fishAmountInside > 0)
+            {
+                window.SetActive(true);
+            }
         }
     }
 
@@ -31,7 +33,7 @@ public class FishPopUpWindow : MonoBehaviour
     {
         if (moveFish.displayed == false)
         {
-            window.GetComponent<WindowDisplayText>().textToDisplay = "Fish Pile: " + fishAmount.fishAmountOutside;
+            window.GetComponent<WindowDisplayText>().textToDisplay = "Fish: " + fishAmount.GetFishAmount(inside);
        }
     }
 

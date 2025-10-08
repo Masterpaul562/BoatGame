@@ -7,6 +7,7 @@ public class MoveFish : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private GameObject window;
     [SerializeField] private FishInventory inventory;
+    [SerializeField] private bool inside;
     public bool displayed;
     bool canMove = false;
 
@@ -65,10 +66,18 @@ public class MoveFish : MonoBehaviour
     }
     private void FishMove()
     {
-        inventory.fishAmountInside += inventory.fishAmountOutside;
-        inventory.fishAmountOutside = 0;
-        window.SetActive(false );
-
+        if (inside)
+        {
+            inventory.fishAmountOutside += inventory.fishAmountInside;
+            inventory.fishAmountInside = 0;
+            window.SetActive(false);
+        }
+        else
+        {
+            inventory.fishAmountInside += inventory.fishAmountOutside;
+            inventory.fishAmountOutside = 0;
+            window.SetActive(false);
+        }
 
     }
 
