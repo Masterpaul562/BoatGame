@@ -26,5 +26,9 @@ public class FishPile : MonoBehaviour
                 sprite.sprite = fishPile[7];
             }
         }
+        else
+        {
+            sprite.sprite = null;
+        }
     }
 }

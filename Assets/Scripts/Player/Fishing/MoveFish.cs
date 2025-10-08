@@ -6,43 +6,53 @@ public class MoveFish : MonoBehaviour
 {
     [SerializeField] private LayerMask interactable;
     [SerializeField] private GameObject window;
-    [SerializeField] private int amountToMove;
-    private bool displayed;
+    [SerializeField] private FishInventory inventory;
+    public bool displayed;
+    bool canMove = false;
 
     private void Awake()
     {
         displayed = false;
+        window = transform.GetChild(0).gameObject;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        
+
         float vert = Input.GetAxisRaw("Vertical");
-       // Debug.Log
+        if (vert == 0)
+        {
+            canMove = true;
+        }
+
+        // Debug.Log
         if (vert < 0)
         {
             if (!displayed)
             {
-                window.SetActive(true);
+                canMove = false;
                 displayed = true;
-            }else
-            {
-                // CHANGE TO INCREMENT ONCE PER PRESS
-                amountToMove++;
             }
         }
-        window.GetComponent<WindowDisplayText>().textToDisplay = "Move amount: " + amountToMove;
-        
+        if (displayed)
+        {
+
+            if (vert < 0&& canMove)
+            {
+                FishMove();
+            }
+            window.GetComponent<WindowDisplayText>().textToDisplay = "Move Fish?";           
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z)&&displayed)
+        if (Input.GetKeyDown(KeyCode.Z) && displayed)
         {
-            Debug.Log("yay");
+            //  Debug.Log("yay");
             displayed = false;
-            window.SetActive(false);
-            amountToMove = 0;
+
+
         }
     }
 
@@ -51,9 +61,16 @@ public class MoveFish : MonoBehaviour
     {
         displayed = false;
         window.SetActive(false);
-        amountToMove = 0;
+
+    }
+    private void FishMove()
+    {
+        inventory.fishAmountInside += inventory.fishAmountOutside;
+        inventory.fishAmountOutside = 0;
+        window.SetActive(false );
+
+
     }
 
 
-   
 }
