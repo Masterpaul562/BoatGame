@@ -71,6 +71,7 @@ public class FishSpawner : MonoBehaviour
                 fishScript.shouldSwimToBobber = true;
             }
             fishScript.bobber = bobber.transform;
+            fishScript.GetComponent<FloaterMovement>().enabled = false;
             fishScript.swimDirection = childNum;
             fishScript.leftX = transform.GetChild(0).position.x;
             fishScript.rightX = transform.GetChild(1).position.x;

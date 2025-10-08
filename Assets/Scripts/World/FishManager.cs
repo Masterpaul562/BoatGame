@@ -10,41 +10,26 @@ public class FishManager : MonoBehaviour
     [SerializeField] public int closestFishIndex;
     [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
+    [SerializeField] private VanityFishSpawner vanityFish;
     public bool canHook;
 
 
-    void Start()
-    {
-
-    }
-
+  
 
     void Update()
     {
+        DestroyVanityFish();
         if (bobber.submerged)
         {
-
+            vanityFish.shouldBeSpawning = false;
             FindClosestFish();
             CanHookCheck();
-        }
-        for (int i = 0; i < fishList.fish.Count; i++)
+        }else
         {
-            if (fishList.fish[i].GetComponent<Fish>().shouldBeDestroyed)
-            {
-                fishList.maxNumOfFish--;
-                Destroy(fishList.fish[i]);
-                fishList.fish.RemoveAt(i);
-                
-            }
-            if (bobber.submerged)
-        {
-
-           fishList.fish[i].GetComponent<Fish>().MoveWithOcean(false);
-        }else 
-        {
-            fishList.fish[i].GetComponent<Fish>().MoveWithOcean(true);
+            vanityFish.shouldBeSpawning = true;
         }
-        }
+        DestroyRealFish();
+       
     }
 
 
@@ -90,6 +75,32 @@ public class FishManager : MonoBehaviour
             
         }
     }
+    private void DestroyRealFish()
+    {
+        for (int i = 0; i < fishList.fish.Count; i++)
+        {
+            if (fishList.fish[i].GetComponent<Fish>().shouldBeDestroyed)
+            {
+                fishList.maxNumOfFish--;
+                Destroy(fishList.fish[i]);
+                fishList.fish.RemoveAt(i);
 
+            }
+        }
+    }
+    private void DestroyVanityFish()
+    {
+
+        for(int i = 0; i < vanityFish.fish.Count; i++)
+        {
+    
+            if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
+            {
+                Destroy(vanityFish.fish[i]);
+                vanityFish.fish.RemoveAt(i);
+
+            }
+        }
+    }
 
 }
