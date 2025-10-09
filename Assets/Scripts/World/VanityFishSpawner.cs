@@ -27,6 +27,8 @@ private void Start()
             fishs.GetComponent<FloaterMovement>().enabled = true;
             fishs.GetComponent<FloaterMovement>().moveAmount = Random.Range(0.001f, 0.01f);
             fish.Add(fishs);
+            fishs.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        
             
         
 

@@ -12,6 +12,7 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
     [SerializeField] private BgScroller[] backGrounds; 
+
     private Fishing fishingScript;
     public bool isFishing;
 
@@ -43,7 +44,7 @@ public class EnterFishing : MonoBehaviour
         {
             ExitFishing();
         }
-
+    
 
 
     }
@@ -67,11 +68,7 @@ public class EnterFishing : MonoBehaviour
 
         isFishing = true;
         render.flipX = true;
-        for(int i = 0; i < backGrounds.Length;i++){
-
-            backGrounds[i].direction /= 3.3f;
-        }
-
+       
 
         //doo this to fishing menu/game
         //.SetActive(true) 
@@ -87,36 +84,9 @@ public class EnterFishing : MonoBehaviour
         {
             castLineScript.shouldReel = true;
         }
-         for(int i = 0; i < backGrounds.Length;i++){
-            //float lerpTarget = backGrounds[i].direction * 3.3f;
-           // backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget,Time.deltaTime);
-
-            backGrounds[i].direction *= 3.3f;
-        }
-
-    }
-    private void SlowOceanDown() {
-          for(int i = 0; i < backGrounds.Length;i++){
-
-            float lerpTarget = backGrounds[i].direction;
-            lerpTarget/=3.3f;
-
-            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget,Time.deltaTime);
-        }
         
-            
-        }
-private void SpeedOceanUp(){
-
- for(int i = 0; i < backGrounds.Length;i++){
-
-            float lerpTarget = backGrounds[i].direction;
-            lerpTarget*=3.3f;
-
-            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget,Time.deltaTime);
-        }
-
 
     }
+   
 
 }
