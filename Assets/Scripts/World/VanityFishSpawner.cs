@@ -20,18 +20,15 @@ private void Start()
 
         for (int i = 0; i < spawnAmount; i++)
         {
-            int random = Random.Range(0, 2);
+            
             Vector2 spawnLocation = new Vector2(spawnLocationBase.position.x + Random.Range(-10,10), spawnLocationBase.position.y+Random.Range(-3,2));
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             fishs.GetComponent<Fish>().enabled = false;
             fishs.GetComponent<FloaterMovement>().enabled = true;
             fishs.GetComponent<FloaterMovement>().moveAmount = Random.Range(0.001f, 0.01f);
             fish.Add(fishs);
-            if(random == 0)
-            {
-                fishs.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
-            }
-            Debug.Log(random);
+            
+        
 
         }
 
@@ -41,10 +38,10 @@ private void Start()
     {
         while (shouldBeSpawning)
         {
-            yield return new WaitForSeconds(Random.Range(1, 5));
+            yield return new WaitForSeconds(Random.Range(4, 7));
             if (fish.Count < maxNumOfFish)
             {
-                int random = Random.Range(1, 5);
+                int random = Random.Range(1, 3);
                 SpawnFish(random);
             }
 

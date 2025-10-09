@@ -95,6 +95,28 @@ public class EnterFishing : MonoBehaviour
         }
 
     }
-    
+    private void SlowOceanDown() {
+          for(int i = 0; i < backGrounds.Length;i++){
+
+            float lerpTarget = backGrounds[i].direction;
+            lerpTarget/=3.3f;
+
+            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget,Time.deltaTime);
+        }
+        
+            
+        }
+private void SpeedOceanUp(){
+
+ for(int i = 0; i < backGrounds.Length;i++){
+
+            float lerpTarget = backGrounds[i].direction;
+            lerpTarget*=3.3f;
+
+            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget,Time.deltaTime);
+        }
+
+
+    }
 
 }
