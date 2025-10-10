@@ -15,7 +15,7 @@ public class Floater : MonoBehaviour
     private void Start()
     {
         offset = transform.position.y;
-        offsetZ = transform.rotation.z;
+        offsetZ = transform.rotation.z+0.2f;
     }
 
    private void FixedUpdate()

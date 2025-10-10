@@ -11,6 +11,7 @@ public class FishManager : MonoBehaviour
     [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
     [SerializeField] private VanityFishSpawner vanityFish;
+    [SerializeField] private EnterFishing isFishing;
     public bool canHook;
 
 
@@ -93,6 +94,10 @@ public class FishManager : MonoBehaviour
 
         for(int i = 0; i < vanityFish.fish.Count; i++)
         {
+            if(vanityFish.fish[i].transform.position.x>7&&isFishing.isFishing&&vanityFish.fish.Count!=0){
+                Destroy(vanityFish.fish[i]);
+                vanityFish.fish.RemoveAt(i);
+            }
     
             if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
             {

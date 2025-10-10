@@ -381,7 +381,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249506147}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.003490679, w: 0.9999939}
   m_LocalPosition: {x: -0.26, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -396,7 +396,7 @@ Transform:
   - {fileID: 1949189117}
   - {fileID: 1530605711}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.4}
 --- !u!114 &249506149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   rotMax: 0.5
   rotwave: 0
   offset: 0
-  offsetZ: 0.15
+  offsetZ: 0.2
   speed: 7
 --- !u!1 &377191248
 GameObject:
@@ -1128,6 +1128,7 @@ MonoBehaviour:
   bobber: {fileID: 2056419629}
   fishList: {fileID: 216235006}
   vanityFish: {fileID: 1352642769}
+  isFishing: {fileID: 1351622663}
   canHook: 0
 --- !u!1 &918458452
 GameObject:
@@ -1499,7 +1500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 1
-  direction: 0.02
+  direction: 0.01
 --- !u!1 &995794914
 GameObject:
   m_ObjectHideFlags: 0
