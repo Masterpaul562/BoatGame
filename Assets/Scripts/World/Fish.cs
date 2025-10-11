@@ -16,11 +16,13 @@ public class Fish : MonoBehaviour
     [SerializeField] public bool shouldFlip = true;
     public bool shouldBeDestroyed;
     private BgScroller scroller;
+    private bool bait;
 
 
 
     private void Awake()
     {
+        bait = true;
         scroller = GetComponent<BgScroller>();
         shouldBeDestroyed = false;
         size = Random.Range(0.5f, .7f);
@@ -31,10 +33,15 @@ public class Fish : MonoBehaviour
         }
         fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
+        fishSwimRender.sortingOrder = Random.Range(0, 9);
     }
     private void Update()
     {
         fishySwim();
+        if (Mathf.Abs(transform.position.x - bobber.position.x) < 4&& bait&&bobber.gameObject.GetComponent<Bobber>().submerged)
+        {
+            Baited();
+        }
     }
 
 
@@ -91,6 +98,18 @@ public class Fish : MonoBehaviour
             transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         }
     }
+    private void Baited()
+    {
+        bait = false;
+        int dist = Mathf.RoundToInt(Vector2.Distance(transform.position, bobber.position));
+        int random = Random.Range(0,dist);
+        Debug.Log(random+"  ");
+        if(random == 0)
+        {
+            shouldSwimToBobber = true;  
+        }
 
+
+    }
 
 }

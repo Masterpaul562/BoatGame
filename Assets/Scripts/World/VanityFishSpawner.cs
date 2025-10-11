@@ -10,8 +10,9 @@ public class VanityFishSpawner : MonoBehaviour
     [SerializeField] private Transform spawnLocationBase;
     public bool shouldBeSpawning;
 
-private void Start()
+public void Start()
     {
+        Debug.Log("yay");
         shouldBeSpawning = true;
         StartCoroutine(SpawnFish());
     }

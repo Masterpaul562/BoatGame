@@ -10,12 +10,13 @@ public class Floater : MonoBehaviour
     [SerializeField] private float rotwave;
     [SerializeField] private float offset;
     [SerializeField] private float offsetZ;
+    [SerializeField] private float rotation;
 
     public float speed;
     private void Start()
     {
         offset = transform.position.y;
-        offsetZ = transform.rotation.z+0.2f;
+        offsetZ = transform.rotation.z+rotation;
     }
 
    private void FixedUpdate()
