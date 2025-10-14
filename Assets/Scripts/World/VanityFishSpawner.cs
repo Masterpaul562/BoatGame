@@ -12,7 +12,7 @@ public class VanityFishSpawner : MonoBehaviour
 
 public void Start()
     {
-        Debug.Log("yay");
+       
         shouldBeSpawning = true;
         StartCoroutine(SpawnFish());
     }

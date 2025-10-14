@@ -2249,8 +2249,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1149555038}
   - component: {fileID: 1149555039}
+  - component: {fileID: 1149555040}
   m_Layer: 0
-  m_Name: JunkSpawner
+  m_Name: CitySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,6 +2290,24 @@ MonoBehaviour:
   junkPrefab: {fileID: 7332509467309326102, guid: 5b6aef23e1abb1c44a44b2f87b3fd0c4, type: 3}
   shouldBeSpawning: 0
   shouldSpawn: 0
+--- !u!114 &1149555040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149555037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57029e84df06f95489c6e7b2d0ba0ae0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 5
+  randomMax: 10
+  cityPrefabs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1183558243
 GameObject:
   m_ObjectHideFlags: 0
