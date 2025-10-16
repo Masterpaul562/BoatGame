@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FloaterMovement : MonoBehaviour
 {
- 
+    [SerializeField] public Camera cam;
     public float moveAmount;
 
     void Update()
@@ -15,7 +15,8 @@ public class FloaterMovement : MonoBehaviour
     }
     public bool DestroyThis()
     {
-        if (transform.position.x < -55)
+        Vector3 point = cam.WorldToViewportPoint(transform.position);
+        if (point.x < -0.2f)
         {
             return true;
         }

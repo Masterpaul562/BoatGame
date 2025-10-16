@@ -14,6 +14,7 @@ public class Fish : MonoBehaviour
     public float rightX;
     public float speed;
     [SerializeField] public bool shouldFlip = true;
+    public Camera cam;
     public bool shouldBeDestroyed;
     private BgScroller scroller;
     private bool bait;
@@ -38,7 +39,7 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         fishySwim();
-        if (Mathf.Abs(transform.position.x - bobber.position.x) < 4&& bait&&bobber.gameObject.GetComponent<Bobber>().submerged)
+        if (Mathf.Abs(transform.position.x - bobber.position.x) < 4 && bait && bobber.gameObject.GetComponent<Bobber>().submerged)
         {
             Baited();
         }
@@ -64,12 +65,9 @@ public class Fish : MonoBehaviour
                 {
                     Flip();
                 }
+                rightX = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth /2;
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX + 6, randomY), Time.deltaTime / speed);
 
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX, randomY), Time.deltaTime / speed);
-                if (Vector2.Distance(transform.position, new Vector2(rightX, randomY)) < 1f)
-                {
-                    shouldBeDestroyed = true;
-                }
             }
             else if (swimDirection == 1)
             {
@@ -78,12 +76,9 @@ public class Fish : MonoBehaviour
                     Flip();
 
                 }
+                leftX = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX-6, randomY), Time.deltaTime / speed);
 
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX, randomY), Time.deltaTime / speed);
-                if (Vector2.Distance(transform.position, new Vector2(leftX, randomY)) < 1f)
-                {
-                    shouldBeDestroyed = true;
-                }
             }
 
         }
@@ -102,14 +97,36 @@ public class Fish : MonoBehaviour
     {
         bait = false;
         int dist = Mathf.RoundToInt(Vector2.Distance(transform.position, bobber.position));
-        int random = Random.Range(0,dist);
-        Debug.Log(random+"  ");
-        if(random == 0)
+        int random = Random.Range(0, dist);
+        Debug.Log(random + "  ");
+        if (random == 0)
         {
-            shouldSwimToBobber = true;  
+            shouldSwimToBobber = true;
         }
 
 
+    }
+    public bool DestroyCheck()
+    {
+        Vector3 point = cam.WorldToViewportPoint(transform.position);
+       // Debug.Log(point);
+        if (swimDirection == 1)
+        {
+            
+            if (point.x < -0.1f)
+            {
+                return true;
+            }
+            else { return false; }
+        }
+        else
+        {
+            if (point.x > 1.1f)
+            {
+                return true;
+            }
+            else { return false; }
+        }
     }
 
 }

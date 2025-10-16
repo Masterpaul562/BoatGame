@@ -97,7 +97,7 @@ public class FishManager : MonoBehaviour
     {
         for (int i = 0; i < fishList.fish.Count; i++)
         {
-            if (fishList.fish[i].GetComponent<Fish>().shouldBeDestroyed)
+            if (fishList.fish[i].GetComponent<Fish>().DestroyCheck())
             {
                 fishList.maxNumOfFish--;
                 Destroy(fishList.fish[i]);

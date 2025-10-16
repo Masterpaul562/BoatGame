@@ -9,10 +9,12 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject bobber;
     [SerializeField] private EnterFishing enterFishing;
-    
+    [SerializeField] private Camera cam;
+    [SerializeField] private Vector2 spawnLocation;
+
     public int maxNumOfFish;
 
-    private bool shouldBeSpawning;
+    [SerializeField] private bool shouldBeSpawning;
     private bool startCoroutine = true;
 
 
@@ -21,11 +23,17 @@ public class FishSpawner : MonoBehaviour
 
     private void Update()
     {
+        float aspect = (float)Screen.width / Screen.height;
+        float worldHeight = cam.orthographicSize * 2;
+        float worldWidth = worldHeight * aspect;
+        float outside = cam.transform.position.x + worldWidth / 2;
+        float outside2 = cam.transform.position.x - worldWidth / 2;
+
 
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
-           // shouldBeSpawning = false;
+          
             if (startCoroutine)
             {
                 shouldBeSpawning = true;
@@ -38,11 +46,7 @@ public class FishSpawner : MonoBehaviour
         {
             shouldBeSpawning = false;
             startCoroutine = true;
-           // for (int i = 0; i < fish.Count; i++)
-           // {
-           //     Destroy(fish[i]);
-          //      fish.RemoveAt(i);
-          //  }
+            
 
 
         }
@@ -57,13 +61,21 @@ public class FishSpawner : MonoBehaviour
         for (int i = 0; i < spawnAmount; i++)
         {
 
-            int childNum = Random.Range(0, 2);
+            int side = Random.Range(0, 2);
             int swimBobber = Random.Range(0, 100);
 
-            Vector2 spawnChild = transform.GetChild(childNum).position;
+           
 
-            Vector2 spawnLocation = new Vector2(spawnChild.x + Random.Range(-4, 4), spawnChild.y + Random.Range(-2, 2));
-
+            if (side == 0)
+            {
+                float outside = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
+                spawnLocation = new Vector2(outside - 4, Random.Range(-7, -1));
+            }
+            else
+            {
+                float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
+                spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
+            }
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             var fishScript = fishs.GetComponent<Fish>();
             if (swimBobber > 70)
@@ -72,10 +84,10 @@ public class FishSpawner : MonoBehaviour
             }
             fishScript.bobber = bobber.transform;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
-            fishScript.swimDirection = childNum;
-            fishScript.leftX = transform.GetChild(0).position.x;
-            fishScript.rightX = transform.GetChild(1).position.x;
+            fishScript.swimDirection = side;
             fishScript.speed = Random.Range(0.3f, 5);
+            fishScript.cam = cam;
+            fishs.GetComponent<FloaterMovement>().cam = cam;
             fish.Add(fishs);
         }
     }

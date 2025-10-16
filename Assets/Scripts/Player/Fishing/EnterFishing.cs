@@ -7,7 +7,7 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Camera cam;
-    [SerializeField] private Transform fishingCamSpot;
+    [SerializeField] public Transform fishingCamSpot;
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;

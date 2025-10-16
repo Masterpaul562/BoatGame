@@ -7,7 +7,8 @@ public class VanityFishSpawner : MonoBehaviour
     public List<GameObject> fish = new List<GameObject>();
     [SerializeField] private GameObject fishPrefab;
     [SerializeField] private int maxNumOfFish;
-    [SerializeField] private Transform spawnLocationBase;
+    private Vector2 spawnLocation;
+    [SerializeField] private Camera cam;
     public bool shouldBeSpawning;
 
 public void Start()
@@ -21,11 +22,17 @@ public void Start()
 
         for (int i = 0; i < spawnAmount; i++)
         {
+
+
+
             
-            Vector2 spawnLocation = new Vector2(spawnLocationBase.position.x + Random.Range(-10,10), spawnLocationBase.position.y+Random.Range(-3,2));
+            float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
+            
+            spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             fishs.GetComponent<Fish>().enabled = false;
             fishs.GetComponent<FloaterMovement>().enabled = true;
+            fishs.GetComponent<FloaterMovement>().cam = cam;
             fishs.GetComponent<FloaterMovement>().moveAmount = Random.Range(0.001f, 0.01f);
             fish.Add(fishs);
             fishs.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
