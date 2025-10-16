@@ -5,6 +5,7 @@ using UnityEngine;
 public class CityManager : MonoBehaviour
 {
     public GameObject currentCity;
+    [SerializeField] JunkSpawner junk; 
     [SerializeField] private GameObject player;
     [SerializeField] private Camera cam;
     [SerializeField] private int camSize;
@@ -12,10 +13,11 @@ public class CityManager : MonoBehaviour
    [SerializeField] public bool justEnteredCity = true;
     public bool inCity;
     public bool shouldZoom;
+    [SerializeField] private bool startCo = true;
 
     private void Update()
     {
-        Debug.Log(FindDistance());
+       // Debug.Log(FindDistance());
 
         if (currentCity != null)
         {
@@ -26,6 +28,7 @@ public class CityManager : MonoBehaviour
                 {
                     Destroy(currentCity );
                     justEnteredCity = true;
+                    startCo = true;
                 }
             }
             else
@@ -70,6 +73,13 @@ public class CityManager : MonoBehaviour
             }
         }
         inCity = true;
+        if(startCo)
+        {
+ 
+            startCo = false;
+            junk.shouldBeSpawning = true;
+            StartCoroutine(junk.Spawning());
+        }
     }
     private void OutsideCity()
     {

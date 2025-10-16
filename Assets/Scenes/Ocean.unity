@@ -2107,6 +2107,7 @@ MonoBehaviour:
   junk: []
   spawnLocationBase: {fileID: 0}
   junkPrefab: {fileID: 7332509467309326102, guid: 5b6aef23e1abb1c44a44b2f87b3fd0c4, type: 3}
+  cam: {fileID: 519420031}
   shouldBeSpawning: 0
   shouldSpawn: 0
 --- !u!114 &1149555040
@@ -2144,13 +2145,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCity: {fileID: 0}
+  junk: {fileID: 1149555039}
   player: {fileID: 1351622656}
   cam: {fileID: 519420031}
   camSize: 18
-  fishManager: {fileID: 0}
+  fishManager: {fileID: 900264483}
   justEnteredCity: 1
   inCity: 0
   shouldZoom: 1
+  startCo: 1
 --- !u!1 &1183558243
 GameObject:
   m_ObjectHideFlags: 0
