@@ -215,6 +215,7 @@ MonoBehaviour:
   rightX: 0
   speed: 0
   shouldFlip: 1
+  cam: {fileID: 0}
   shouldBeDestroyed: 0
 --- !u!95 &3250412156104219370
 Animator:
@@ -249,4 +250,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5123f48e4eab48f48a438929795d9cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: 0.006
+  cam: {fileID: 0}
+  moveAmount: 0.1

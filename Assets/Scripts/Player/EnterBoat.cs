@@ -12,6 +12,8 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Transform exitLocation;
     [SerializeField] private ZoomCamera camZoom;
     [SerializeField] private SpriteRenderer insideBG;
+    [SerializeField] private CityManager inCity;
+    public bool shouldZoom;
     public bool zoom;
     private float alpha = 120;
     
@@ -24,7 +26,14 @@ public class EnterBoat : MonoBehaviour
     void Update()
     {
         float vert = Input.GetAxisRaw("Vertical");
-        camZoom.ZoomCam(zoom);
+        if (inCity.inCity == false|| zoom)
+        {
+            if (shouldZoom||zoom)
+            {
+                camZoom.ZoomCam(zoom);
+                
+            }
+        }
         if ( zoom)
         {
              alpha = Mathf.Lerp(alpha, 255, Time.deltaTime*20);
@@ -33,6 +42,10 @@ public class EnterBoat : MonoBehaviour
         {
             alpha = Mathf.Lerp(alpha, 0, Time.deltaTime *10 );
             FadeBG(alpha);
+            if(camZoom.cam.orthographicSize == camZoom.ogZoom)
+            {
+                shouldZoom = false;
+            }
           //  if (alpha <= 10)
           //  {
                // insideBG.enabled = false;
@@ -66,12 +79,18 @@ public class EnterBoat : MonoBehaviour
     private void Enter()
     {
         zoom = true;
+        shouldZoom = true;
        // alpha = 120;
         insideBG.enabled = true;
         transform.position = enterLocation.position;
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
+        if (inCity.inCity)
+        {
+            inCity.justEnteredCity = false;
+            inCity.shouldZoom = false;
+        }
         
     }
     private void Exit()
@@ -79,11 +98,13 @@ public class EnterBoat : MonoBehaviour
        // alpha = 255;
         insideBG.color = new Color(0, 0, 0, alpha);
         zoom = false;
+        shouldZoom = true;
         transform.position = exitLocation.position;
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
         boatInsideCollider.SetActive(false);
-        
+        inCity.shouldZoom = true;
+
     }
     private void FadeBG(float change)
     {

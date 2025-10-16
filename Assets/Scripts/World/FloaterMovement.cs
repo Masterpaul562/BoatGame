@@ -7,7 +7,7 @@ public class FloaterMovement : MonoBehaviour
     [SerializeField] public Camera cam;
     public float moveAmount;
 
-    void Update()
+    void FixedUpdate()
     {
        
             transform.position = new Vector2(transform.position.x- moveAmount,transform.position.y);

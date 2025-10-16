@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7132057923763645860}
   - component: {fileID: 1344757606704710991}
-  - component: {fileID: 3096809725493644376}
+  - component: {fileID: 3242308705642256096}
   m_Layer: 0
   m_Name: CityScavenger
   m_TagString: Untagged
@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1656603911
+  m_SortingLayer: -1
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 086046e0386ff4147a54fc76db001161, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &3096809725493644376
+--- !u!114 &3242308705642256096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9052464697396152459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5ed686c349a5440bcaffe2fce071f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5123f48e4eab48f48a438929795d9cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0
-  direction: 0.015
+  cam: {fileID: 0}
+  moveAmount: 0.015

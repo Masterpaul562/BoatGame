@@ -31,11 +31,10 @@ public class CitySpawner : MonoBehaviour
         {
             Debug.Log("Spawned City");
             shouldSpawn = false;
-            float aspect = (float)Screen.width / Screen.height;
-            float worldHeight = cam.orthographicSize * 2;
-            worldWidth = worldHeight * aspect;
-            spawnLocation = new Vector2(worldWidth + Random.Range(30, 65), Random.Range(1, 5.5f));
+            
+            spawnLocation = new Vector2(cam.GetComponent<CamSizeManager>().worldWidth + Random.Range(30, 65), Random.Range(1, 5.5f));
             var city = Instantiate(cityPrefabs[1], spawnLocation, Quaternion.identity);
+            city.GetComponent<FloaterMovement>().cam = cam; 
             manager.currentCity = city;
         }
     }

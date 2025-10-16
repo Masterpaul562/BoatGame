@@ -11,11 +11,11 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private EnterFishing enterFishing;
     [SerializeField] private Camera cam;
     [SerializeField] private Vector2 spawnLocation;
-
     public int maxNumOfFish;
 
-    [SerializeField] private bool shouldBeSpawning;
-    private bool startCoroutine = true;
+    [SerializeField] public bool shouldBeSpawning;
+   
+    public bool isCity;
 
 
 
@@ -23,33 +23,15 @@ public class FishSpawner : MonoBehaviour
 
     private void Update()
     {
-        float aspect = (float)Screen.width / Screen.height;
-        float worldHeight = cam.orthographicSize * 2;
-        float worldWidth = worldHeight * aspect;
-        float outside = cam.transform.position.x + worldWidth / 2;
-        float outside2 = cam.transform.position.x - worldWidth / 2;
+       
 
 
 
         if (bobber.GetComponent<Bobber>().submerged)
         {
           
-            if (startCoroutine)
-            {
-                shouldBeSpawning = true;
-                startCoroutine = false;
-                maxNumOfFish = 10;
-                StartCoroutine(FishySpawning());
-            }
         }
-        else if (enterFishing.isFishing == false)
-        {
-            shouldBeSpawning = false;
-            startCoroutine = true;
-            
-
-
-        }
+        
 
 
     }
@@ -92,9 +74,16 @@ public class FishSpawner : MonoBehaviour
         }
     }
 
+    public void StartFishy()
+    {
+        shouldBeSpawning = true;
+        
+        maxNumOfFish = 10;
+        StartCoroutine(FishySpawning());
 
+    }
 
-    private IEnumerator FishySpawning()
+    public IEnumerator FishySpawning()
     {
         while (shouldBeSpawning)
         {

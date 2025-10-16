@@ -12,8 +12,10 @@ public class FishManager : MonoBehaviour
     [SerializeField] public FishSpawner fishList;
     [SerializeField] private VanityFishSpawner vanityFish;
     [SerializeField] private EnterFishing isFishing;
+    [SerializeField] private CityManager city;
     public bool canHook;
-    private bool startCo;
+    private bool startCoVanity;
+    private bool startCoReal;
 
 
 
@@ -21,34 +23,53 @@ public class FishManager : MonoBehaviour
     void Update()
     {
         DestroyVanityFish();
+        DestroyRealFish();
         if (bobber.submerged)
         {
-
             FindClosestFish();
             CanHookCheck();
+            if ( city.inCity == false) {
+                if (startCoReal)
+                {
+                    startCoReal = false;
+                    fishList.StartFishy();
+                }
+            }
         }
         else if (isFishing.isFishing == false)
         {
-            //  vanityFish.shouldBeSpawning = true;
+
             MoveRealFishOff();
+            fishList.shouldBeSpawning = false;
+            startCoReal = true;
             vanityFish.enabled = true;
-            if (startCo)
+            if (startCoVanity && city.inCity == false)
             {
-                startCo = false;
+                startCoVanity = false;
                 vanityFish.Start();
             }
         }
-        else
+        else //you are fishing but not in cast
         {
-            startCo = true;
-            vanityFish.enabled = false ;
+            startCoVanity = true;
+            vanityFish.enabled = false;
             vanityFish.shouldBeSpawning = false;
-        }
 
-        DestroyRealFish();
+        }
+          if (city.inCity)
+         {
+             vanityFish.shouldBeSpawning = false;
+             fishList.shouldBeSpawning = false;
+            startCoVanity = true;
+            startCoReal = true;
+         }
+
 
 
     }
+
+
+
 
 
     private void FindClosestFish()

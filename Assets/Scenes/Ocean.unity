@@ -261,7 +261,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1656603911
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: ae72e1687a3354cacb15b6fa7238efc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -357,6 +357,7 @@ MonoBehaviour:
   spawnLocation: {x: 0, y: 0}
   maxNumOfFish: 1
   shouldBeSpawning: 0
+  isCity: 0
 --- !u!1 &249506147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1117,7 @@ MonoBehaviour:
   fishList: {fileID: 216235006}
   vanityFish: {fileID: 1352642769}
   isFishing: {fileID: 1351622663}
+  city: {fileID: 1149555041}
   canHook: 0
 --- !u!1 &918458452
 GameObject:
@@ -1445,7 +1447,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1656603911
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: ae72e1687a3354cacb15b6fa7238efc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2120,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 5
-  randomMax: 10
+  randomMax: 0
   cam: {fileID: 519420031}
   fishing: {fileID: 1351622663}
   cityPrefabs:
@@ -2128,7 +2130,7 @@ MonoBehaviour:
   - {fileID: 7436238692329508606, guid: 23e3942584e0768459ee5b46a67184e2, type: 3}
   - {fileID: 0}
   spawnLocation: {x: 0, y: 0}
-  shouldSpawn: 0
+  shouldSpawn: 1
 --- !u!114 &1149555041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2143,6 +2145,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCity: {fileID: 0}
   player: {fileID: 1351622656}
+  cam: {fileID: 519420031}
+  camSize: 18
+  fishManager: {fileID: 0}
+  justEnteredCity: 1
+  inCity: 0
+  shouldZoom: 1
 --- !u!1 &1183558243
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,6 +2797,8 @@ MonoBehaviour:
   exitLocation: {fileID: 1949189117}
   camZoom: {fileID: 0}
   insideBG: {fileID: 1606903422}
+  inCity: {fileID: 1149555041}
+  shouldZoom: 0
   zoom: 0
 --- !u!114 &1351622663
 MonoBehaviour:
@@ -3854,8 +3864,8 @@ Transform:
   m_GameObject: {fileID: 1606903420}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.19999999, y: 1.1500001, z: 0}
-  m_LocalScale: {x: 48.100002, y: 48.100002, z: 0.7315589}
+  m_LocalPosition: {x: 3.7412, y: 8.6556, z: 0}
+  m_LocalScale: {x: 98.78154, y: 63.109703, z: 0.7315589}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 249506148}
