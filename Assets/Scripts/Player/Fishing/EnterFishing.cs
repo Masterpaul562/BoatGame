@@ -11,7 +11,8 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
-    [SerializeField] private BgScroller[] backGrounds; 
+    [SerializeField] private BgScroller[] backGrounds;
+    [SerializeField] private Fishing fishing;
 
     private Fishing fishingScript;
     public bool isFishing;
@@ -40,7 +41,7 @@ public class EnterFishing : MonoBehaviour
             }
 
         }
-        else if (vert > 0 && isFishing)
+        else if (vert > 0 && isFishing&&fishing.securingItem == false)
         {
             ExitFishing();
         }

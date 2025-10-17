@@ -89,6 +89,7 @@ public class CityManager : MonoBehaviour
         {
             cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, camSize, Time.deltaTime);
         }
+        junk.shouldBeSpawning = false;  
         inCity = false;
     }
 }

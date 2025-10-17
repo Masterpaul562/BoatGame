@@ -40,6 +40,7 @@ public class FishManager : MonoBehaviour
         {
 
             MoveRealFishOff();
+            canHook = false;
             fishList.shouldBeSpawning = false;
             startCoReal = true;
             vanityFish.enabled = true;
