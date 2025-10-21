@@ -68,7 +68,7 @@ public class EnterFishing : MonoBehaviour
 
 
         isFishing = true;
-        render.flipX = true;
+       
        
 
         //doo this to fishing menu/game
@@ -80,7 +80,7 @@ public class EnterFishing : MonoBehaviour
         fishingScript.fishHooked = false;
         fishingScript.enabled = false;
         isFishing = false;
-        render.flipX = false;
+        
         if (castLineScript.hasCast)
         {
             castLineScript.shouldReel = true;
