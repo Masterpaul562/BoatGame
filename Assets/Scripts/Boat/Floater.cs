@@ -29,8 +29,11 @@ public class Floater : MonoBehaviour
 
         rotwave = Mathf.Lerp(rotwave, Mathf.PingPong(Time.time/3,rotMax),Time.deltaTime);
 
-       // rotwave = new Vector2 (0,Mathf.PingPong(Time.time/7,0.3f));        
-       // float rot = Mathf.Lerp(rotMin,rotwave.y,Time.deltaTime);
-       transform.rotation = Quaternion.Euler(0, 0, ((transform.position.y+offsetZ)*10));
+        // rotwave = new Vector2 (0,Mathf.PingPong(Time.time/7,0.3f));        
+        // float rot = Mathf.Lerp(rotMin,rotwave.y,Time.deltaTime);
+        if (rotation != 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, ((transform.position.y + offsetZ) * 10));
+        }
     }
 }
