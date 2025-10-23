@@ -68,7 +68,11 @@ public class EnterFishing : MonoBehaviour
 
 
         isFishing = true;
-       
+       if(transform.localScale.x > 0 )
+       {
+         transform.localScale = new Vector2 (transform.localScale.x *-1, transform.localScale.y);
+         
+       }
        
 
         //doo this to fishing menu/game

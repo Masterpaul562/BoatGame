@@ -17,6 +17,8 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enterFScript = GetComponent<EnterFishing>();
         animator = GetComponent<Animator>();
+        animator.SetFloat("Speed", 0);
+        animator.SetBool("isFacingRight", isFacingRight);
     }
 
    
@@ -27,12 +29,16 @@ public class PlayerMove : MonoBehaviour
         if (enterFScript.isFishing)
         {
             horizontalInput = 0;
+            isFacingRight = false;
+            animator.SetBool("isFacingRight", isFacingRight);
         }else
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
         }
         Flip();
+        
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        
     }
     private void FixedUpdate()
     {
