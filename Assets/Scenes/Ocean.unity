@@ -3055,6 +3055,7 @@ MonoBehaviour:
   - {fileID: 936422572}
   - {fileID: 975169350}
   fishing: {fileID: 1351622666}
+  monster: {fileID: 1474347593}
   isFishing: 0
 --- !u!114 &1351622664
 MonoBehaviour:
@@ -3381,6 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shouldAppear: 1
+  isHere: 0
   spawnChance: 0
   spawnTimer: 1
   feedAmount: 0

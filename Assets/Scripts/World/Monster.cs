@@ -5,6 +5,7 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     public bool shouldAppear;
+    public bool isHere;
     public int spawnChance;
     public float spawnTimer;
     public int feedAmount;
@@ -29,6 +30,7 @@ public class Monster : MonoBehaviour
     public IEnumerator Spawn()
     {
         var camShake = cam.GetComponent<CameraShake>();
+        isHere = true;
         feedAmount = Random.Range(feedAmountMin, feedAmountMax);    
         monster.SetActive(true);
         monster.transform.position = new Vector2 (spawnPos.position.x,spawnPos.position.y);  
@@ -45,6 +47,11 @@ public class Monster : MonoBehaviour
         }
         yield return null;
 
+    }
+    public IEnumerator Leave()
+    {
+        isHere = false;
+        yield return null;
     }
     private IEnumerator SpawnCheck()
     {

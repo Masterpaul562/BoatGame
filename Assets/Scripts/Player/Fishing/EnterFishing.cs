@@ -7,12 +7,13 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Camera cam;
-    [SerializeField] public Transform fishingCamSpot;
+     public Transform fishingCamSpot;
     [SerializeField] private Transform ogPos;
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
     [SerializeField] private BgScroller[] backGrounds;
     [SerializeField] private Fishing fishing;
+    [SerializeField] private Monster monster;
 
     private Fishing fishingScript;
     public bool isFishing;
@@ -29,7 +30,7 @@ public class EnterFishing : MonoBehaviour
     void Update()
     {
         float vert = Input.GetAxisRaw("Vertical");
-        if (vert < 0 && !isFishing)
+        if (vert < 0 && !isFishing && monster.isHere== false)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
