@@ -21,6 +21,7 @@ public class CitySpawner : MonoBehaviour
     {
         StartCoroutine(SpawnCityCoolDown());
         manager = GetComponent<CityManager>();
+        
 
     }
 
@@ -29,11 +30,13 @@ public class CitySpawner : MonoBehaviour
     {
         if (shouldSpawn)
         {
+            randomMax = 10;
+            int  cityNum = Random.Range(0, cityPrefabs.Length);
             Debug.Log("Spawned City");
             shouldSpawn = false;
             
             spawnLocation = new Vector2(cam.GetComponent<CamSizeManager>().worldWidth + Random.Range(30, 65), Random.Range(1, 5.5f));
-            var city = Instantiate(cityPrefabs[1], spawnLocation, Quaternion.identity);
+            var city = Instantiate(cityPrefabs[cityNum], spawnLocation, Quaternion.identity);
             city.GetComponent<FloaterMovement>().cam = cam; 
             manager.currentCity = city;
         }
@@ -56,6 +59,7 @@ public class CitySpawner : MonoBehaviour
             }
             else
             {
+                randomMax--;
                 yield return null;
             }
         }

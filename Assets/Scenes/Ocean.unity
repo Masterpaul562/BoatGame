@@ -2329,14 +2329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57029e84df06f95489c6e7b2d0ba0ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5
-  randomMax: 0
+  waitTime: 60
+  randomMax: 100
   cam: {fileID: 519420031}
   fishing: {fileID: 1351622663}
   cityPrefabs:
   - {fileID: 9052464697396152459, guid: 47d1e6cdb157bd345913fdee0e734589, type: 3}
   - {fileID: 7436238692329508606, guid: 23e3942584e0768459ee5b46a67184e2, type: 3}
-  - {fileID: 0}
   spawnLocation: {x: 0, y: 0}
   shouldSpawn: 1
 --- !u!114 &1149555041
