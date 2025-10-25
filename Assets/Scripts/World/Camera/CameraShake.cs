@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool rumble = false;
+
+
+    public IEnumerator Shake(float duration, float magnitude)
     {
-        
+        Vector2 ogPositon = transform.localPosition;
+        float elapse = 0.0f;
+
+        while (elapse < duration)
+        {
+
+
+            float x = Random.Range(-1, 1) * magnitude;
+            float y = Random.Range(-1, 1) * magnitude;
+            transform.localPosition = new Vector2(x, y);
+
+            elapse += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.localPosition = ogPositon;
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator Rumble(float magnitude)
     {
-        
+        Vector3 ogPosition = transform.localPosition;
+        while (rumble)
+        {
+            float x = (Random.Range(-1, 1) * magnitude)+ogPosition.x;
+            float y = (Random.Range(-1, 1) * magnitude)+ogPosition.y;
+            transform.localPosition = new Vector3(x, y,ogPosition.z);
+            yield return null;
+        }
+        transform.localPosition = ogPosition;
     }
+
 }

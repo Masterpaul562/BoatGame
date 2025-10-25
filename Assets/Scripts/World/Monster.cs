@@ -12,10 +12,14 @@ public class Monster : MonoBehaviour
     private int randomValue;
     [SerializeField] private GameObject monster;
     [SerializeField] private Camera cam;
+    private Transform spawnPos;
+    private Transform movePos;
     
     private void Start()
     {
         StartCoroutine(SpawnCheck());
+        spawnPos = transform.GetChild(1);
+        movePos = transform.GetChild(2);
         feedAmountMin = 5;
         feedAmountMax = 15;
         spawnTimerMin = 30;
@@ -24,10 +28,23 @@ public class Monster : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        
+        var camShake = cam.GetComponent<CameraShake>();
         feedAmount = Random.Range(feedAmountMin, feedAmountMax);    
         monster.SetActive(true);
+        monster.transform.position = new Vector2 (spawnPos.position.x,spawnPos.position.y);  
         yield return null;
+        camShake.rumble = true;
+        StartCoroutine(camShake.Rumble(0.1f));
+        yield return new WaitForSeconds(2.5f);
+        camShake.rumble = false;
+        while(monster.transform.position != movePos.position)
+        {
+            Vector2 move = Vector2.MoveTowards(monster.transform.position, movePos.position, Time.deltaTime * 10);
+            monster.transform.position = move;
+            yield return null;  
+        }
+        yield return null;
+
     }
     private IEnumerator SpawnCheck()
     {
