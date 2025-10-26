@@ -9,41 +9,60 @@ public class Monster : MonoBehaviour
     public int spawnChance;
     public float spawnTimer;
     public int feedAmount;
-    private int feedAmountMin, feedAmountMax, spawnTimerMin, spawnTimerMax;
+    public int feedAmountMin, feedAmountMax, spawnTimerMin, spawnTimerMax;
     private int randomValue;
     [SerializeField] private GameObject monster;
     [SerializeField] private Camera cam;
+    [SerializeField] private FishManager fishManager;
+    [SerializeField] private EnterFishing fishing;
+    [SerializeField] private BgSpeedControler bgSpeed;
     private Transform spawnPos;
     private Transform movePos;
-    
+    private bool startCo;
+
     private void Start()
     {
-        StartCoroutine(SpawnCheck());
+        StartCoroutine(SpawnCheck(true));
         spawnPos = transform.GetChild(1);
         movePos = transform.GetChild(2);
         feedAmountMin = 5;
         feedAmountMax = 15;
         spawnTimerMin = 30;
         spawnTimerMax = 120;
+        startCo = false;
+    }
+    private void Update()
+    {
+        if(startCo)
+        {
+            StartCoroutine(SpawnCheck(true));
+            startCo = false;
+        }
     }
 
     public IEnumerator Spawn()
     {
+        fishing.ExitFishing();
+        StartCoroutine(bgSpeed.SlowDownOcean());
+        bgSpeed.inEvent = true;
+        fishManager.MoveVanityFishOff();
         var camShake = cam.GetComponent<CameraShake>();
+        fishManager.inEvent = true;
         isHere = true;
-        feedAmount = Random.Range(feedAmountMin, feedAmountMax);    
+        feedAmount = Random.Range(feedAmountMin, feedAmountMax);
         monster.SetActive(true);
-        monster.transform.position = new Vector2 (spawnPos.position.x,spawnPos.position.y);  
+        monster.transform.position = new Vector2(spawnPos.position.x, spawnPos.position.y);
         yield return null;
+        fishManager.MoveVanityFishOff();
         camShake.rumble = true;
         StartCoroutine(camShake.Rumble(0.1f));
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         camShake.rumble = false;
-        while(monster.transform.position != movePos.position)
+        while (monster.transform.position != movePos.position)
         {
             Vector2 move = Vector2.MoveTowards(monster.transform.position, movePos.position, Time.deltaTime * 10);
             monster.transform.position = move;
-            yield return null;  
+            yield return null;
         }
         yield return null;
 
@@ -51,11 +70,21 @@ public class Monster : MonoBehaviour
     public IEnumerator Leave()
     {
         isHere = false;
+        StartCoroutine(bgSpeed.SpeedUpOcean());
+        fishManager.inEvent = false;
+        startCo = true;
+        yield return null;
+        while (monster.transform.position != spawnPos.position)
+        {
+            Vector2 move = Vector2.MoveTowards(monster.transform.position, spawnPos.position, Time.deltaTime * 10);
+            monster.transform.position = move;
+            yield return null;
+        }
         yield return null;
     }
-    private IEnumerator SpawnCheck()
+    private IEnumerator SpawnCheck(bool shouldTry)
     {
-        while (true)
+        while (shouldTry)
         {
 
             if (shouldAppear)
@@ -71,6 +100,8 @@ public class Monster : MonoBehaviour
                 if (shouldAppear)
                 {
                     StartCoroutine(Spawn());
+                    shouldTry = false;
+                    
                 }
                 yield return null;
             }

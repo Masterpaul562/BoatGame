@@ -12,6 +12,7 @@ public class EnterFishing : MonoBehaviour
     [SerializeField] private SpriteRenderer render;
     [SerializeField] private CastFishingLine castLineScript;
     [SerializeField] private BgScroller[] backGrounds;
+    [SerializeField] private BgSpeedControler bgSpeed;
     [SerializeField] private Fishing fishing;
     [SerializeField] private Monster monster;
 
@@ -74,18 +75,18 @@ public class EnterFishing : MonoBehaviour
          transform.localScale = new Vector2 (transform.localScale.x *-1, transform.localScale.y);
          
        }
-       
+        StartCoroutine(bgSpeed.SlowDownOcean());
 
         //doo this to fishing menu/game
         //.SetActive(true) 
 
     }
-    private void ExitFishing()
+    public void ExitFishing()
     {
         fishingScript.fishHooked = false;
         fishingScript.enabled = false;
         isFishing = false;
-        
+        StartCoroutine(bgSpeed.SpeedUpOcean());
         if (castLineScript.hasCast)
         {
             castLineScript.shouldReel = true;

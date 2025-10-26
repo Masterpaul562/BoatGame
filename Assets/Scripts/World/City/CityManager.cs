@@ -5,7 +5,8 @@ using UnityEngine;
 public class CityManager : MonoBehaviour
 {
     public GameObject currentCity;
-    [SerializeField] JunkSpawner junk; 
+    [SerializeField] JunkSpawner junk;
+    
     [SerializeField] private GameObject player;
     [SerializeField] private Camera cam;
     [SerializeField] private int camSize;
@@ -72,7 +73,7 @@ public class CityManager : MonoBehaviour
                 cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, camSize, Time.deltaTime*10);
             }
         }
-        inCity = true;
+        fishManager.inEvent = true;
         if(startCo)
         {
  
@@ -90,6 +91,6 @@ public class CityManager : MonoBehaviour
             cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, camSize, Time.deltaTime);
         }
         junk.shouldBeSpawning = false;  
-        inCity = false;
+        fishManager.inEvent = false;
     }
 }

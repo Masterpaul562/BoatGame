@@ -8,6 +8,7 @@ public class BgSpeedControler : MonoBehaviour
     [SerializeField] private EnterFishing enterFishing;
    [SerializeField] private float[] lerpTarget;
    [SerializeField] private float[] ogPos;
+    public bool inEvent;
 
     private void Start(){
         for(int i =0; i<lerpTarget.Length;i++){
@@ -16,39 +17,34 @@ public class BgSpeedControler : MonoBehaviour
         lerpTarget[i] /= 3.3f;
         }
     }
-    private void Update() {
-        if(enterFishing.isFishing) {
-            SlowOceanDown();
-
-        }else if(enterFishing.isFishing == false){
-            SpeedOceanUp();
-        }
-
-
-    }
    
-     private void SlowOceanDown() {
 
-          for(int i = 0; i < backGrounds.Length;i++){
+    public IEnumerator SpeedUpOcean()
+    {
 
-            
-           //lerpTarget[i]/=3.3f;
-
-            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget[i],Time.deltaTime);
+        for (int i = 0; i < backGrounds.Length; i++)
+        {
+            while(backGrounds[i].direction < ogPos[i] - 0.001f)
+            {
+                backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction, ogPos[i], Time.deltaTime);
+                yield return null;
+            }
+            yield return null;
         }
-        
-            
+    }
+    public IEnumerator SlowDownOcean()
+    {
+        for (int i = 0; i < backGrounds.Length; i++)
+        {
+            while (backGrounds[i].direction > lerpTarget[i] + 0.001f)
+            {
+                Debug.Log("yay");
+                backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget[i], Time.deltaTime);
+                float yay = backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction, lerpTarget[i], Time.deltaTime);
+                Debug.Log(yay + "   " + i);
+                yield return null;
+            }
+            yield return null;
         }
-private void SpeedOceanUp(){
-
- for(int i = 0; i < backGrounds.Length;i++){
-
-            //float lerpTarget = backGrounds[i].direction;
-           // lerpTarget[i]*=3.3f;
-
-            backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,ogPos[i],Time.deltaTime);
-        }
-
-
     }
 }

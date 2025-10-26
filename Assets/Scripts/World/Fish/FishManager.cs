@@ -16,6 +16,7 @@ public class FishManager : MonoBehaviour
     public bool canHook;
     private bool startCoVanity;
     private bool startCoReal;
+    public bool inEvent;
 
 
 
@@ -28,7 +29,8 @@ public class FishManager : MonoBehaviour
         {
             FindClosestFish();
             CanHookCheck();
-            if ( city.inCity == false) {
+            if (inEvent == false)
+            {
                 if (startCoReal)
                 {
                     startCoReal = false;
@@ -44,9 +46,10 @@ public class FishManager : MonoBehaviour
             fishList.shouldBeSpawning = false;
             startCoReal = true;
             vanityFish.enabled = true;
-            if (startCoVanity && city.inCity == false)
+            if (startCoVanity && inEvent == false)
             {
                 startCoVanity = false;
+                vanityFish.maxNumOfFish = 7;
                 vanityFish.Start();
             }
         }
@@ -57,13 +60,15 @@ public class FishManager : MonoBehaviour
             vanityFish.shouldBeSpawning = false;
 
         }
-          if (city.inCity)
-         {
-             vanityFish.shouldBeSpawning = false;
-             fishList.shouldBeSpawning = false;
+        if (inEvent)
+        {
+            
+            
+            vanityFish.shouldBeSpawning = false;
+            fishList.shouldBeSpawning = false;
             startCoVanity = true;
             startCoReal = true;
-         }
+        }
 
 
 
@@ -132,17 +137,6 @@ public class FishManager : MonoBehaviour
     {
 
 
-        if (isFishing.isFishing && vanityFish.fish.Count != 0)
-        {
-            for (int i = 0; i < vanityFish.fish.Count; i++)
-            {
-                if (vanityFish.fish[i].transform.position.x > 7)
-                {
-                    Destroy(vanityFish.fish[i]);
-                    vanityFish.fish.RemoveAt(i);
-                }
-            }
-        }
         for (int i = 0; i < vanityFish.fish.Count; i++)
         {
             if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
@@ -164,6 +158,21 @@ public class FishManager : MonoBehaviour
             {
                 Destroy(fishList.fish[i]);
                 fishList.fish.RemoveAt(i);
+            }
+
+        }
+    }
+    public void MoveVanityFishOff()
+    {
+        for (int i = 0; i < vanityFish.fish.Count; i++)
+        {
+
+            vanityFish.fish[i].GetComponent<FloaterMovement>().moveAmount = 0.2f;
+            vanityFish.maxNumOfFish = 0;
+            if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
+            {
+                Destroy(vanityFish.fish[i]);
+                vanityFish.fish.RemoveAt(i);
             }
 
         }

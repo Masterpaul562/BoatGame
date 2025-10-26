@@ -6,7 +6,7 @@ public class VanityFishSpawner : MonoBehaviour
 {
     public List<GameObject> fish = new List<GameObject>();
     [SerializeField] private GameObject fishPrefab;
-    [SerializeField] private int maxNumOfFish;
+    public int maxNumOfFish;
     private Vector2 spawnLocation;
     [SerializeField] private Camera cam;
     public bool shouldBeSpawning;

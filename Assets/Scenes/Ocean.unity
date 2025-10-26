@@ -847,6 +847,7 @@ MonoBehaviour:
   ogPos:
   - 0
   - 0
+  inEvent: 0
 --- !u!4 &566185720
 Transform:
   m_ObjectHideFlags: 0
@@ -1323,6 +1324,7 @@ MonoBehaviour:
   isFishing: {fileID: 1351622663}
   city: {fileID: 1149555041}
   canHook: 0
+  inEvent: 0
 --- !u!1 &918458452
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,6 +3056,7 @@ MonoBehaviour:
   backGrounds:
   - {fileID: 936422572}
   - {fileID: 975169350}
+  bgSpeed: {fileID: 566185719}
   fishing: {fileID: 1351622666}
   monster: {fileID: 1474347593}
   isFishing: 0
@@ -3383,11 +3386,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldAppear: 1
   isHere: 0
-  spawnChance: 0
-  spawnTimer: 1
+  spawnChance: 10
+  spawnTimer: 10
   feedAmount: 0
+  feedAmountMin: 0
+  feedAmountMax: 0
+  spawnTimerMin: 0
+  spawnTimerMax: 0
   monster: {fileID: 303469310}
   cam: {fileID: 519420031}
+  fishManager: {fileID: 900264483}
+  fishing: {fileID: 1351622663}
+  bgSpeed: {fileID: 566185719}
 --- !u!4 &1474347594
 Transform:
   m_ObjectHideFlags: 0
