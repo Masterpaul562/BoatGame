@@ -38,10 +38,9 @@ public class BgSpeedControler : MonoBehaviour
         {
             while (backGrounds[i].direction > lerpTarget[i] + 0.001f)
             {
-                Debug.Log("yay");
+              
                 backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction,lerpTarget[i], Time.deltaTime);
-                float yay = backGrounds[i].direction = Mathf.Lerp(backGrounds[i].direction, lerpTarget[i], Time.deltaTime);
-                Debug.Log(yay + "   " + i);
+                
                 yield return null;
             }
             yield return null;

@@ -12,6 +12,7 @@ public class Monster : MonoBehaviour
     public int feedAmountMin, feedAmountMax, spawnTimerMin, spawnTimerMax;
     private int randomValue;
     [SerializeField] private GameObject monster;
+    [SerializeField] private FishInventory inventory;
     [SerializeField] private Camera cam;
     [SerializeField] private FishManager fishManager;
     [SerializeField] private EnterFishing fishing;
@@ -28,7 +29,7 @@ public class Monster : MonoBehaviour
         feedAmountMin = 5;
         feedAmountMax = 15;
         spawnTimerMin = 30;
-        spawnTimerMax = 120;
+        spawnTimerMax = 60;
         startCo = false;
     }
     private void Update()
@@ -64,8 +65,9 @@ public class Monster : MonoBehaviour
             monster.transform.position = move;
             yield return null;
         }
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(Feed());
         yield return null;
-
     }
     public IEnumerator Leave()
     {
@@ -80,6 +82,7 @@ public class Monster : MonoBehaviour
             monster.transform.position = move;
             yield return null;
         }
+        monster.SetActive(false);
         yield return null;
     }
     private IEnumerator SpawnCheck(bool shouldTry)
@@ -113,7 +116,21 @@ public class Monster : MonoBehaviour
 
         }
     }
-
+    private IEnumerator Feed()
+    {
+        feedAmount -= inventory.fishAmountOutside;
+        inventory.fishAmountOutside = 0;
+        yield return null;
+        if(feedAmount > 0)
+        {
+            Debug.Log("You lost");
+        }
+        yield return null;
+        //DO stuff here like display text/give item or reward for feed
+        yield return new WaitForSeconds(4.5f);
+        StartCoroutine(Leave());
+        yield return null;
+    }
 
 }
 
