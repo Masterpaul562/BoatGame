@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Waves : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float amplitude, frequency, verticalOffset, xValue;
+   
+     private float xValueIncrease = 0.3f;
+    [SerializeField] private int speed;
+
+
+    private void FixedUpdate()
     {
-        
+        // x value just needs to increase
+        float position = amplitude * Mathf.Sin(xValue/frequency)+verticalOffset;
+        Debug.Log(position);
+        float step = position - transform.position.y;
+        transform.Translate(new Vector2(speed * Time.deltaTime,step));
+        xValue += xValueIncrease;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
