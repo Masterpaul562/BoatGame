@@ -15,6 +15,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private CityManager inCity;
     [SerializeField] private GameObject Player;
     [SerializeField] private string insideLayer,outsideLayer;
+    [SerializeField] private Animator animator;
     public bool shouldZoom;
     public bool zoom;
     private float alpha = 120;
@@ -23,6 +24,7 @@ public class EnterBoat : MonoBehaviour
     {
         camZoom = GetComponent<ZoomCamera>();
         Player = this.gameObject;
+        animator = GetComponent<Animator>();
     }
 
 
@@ -84,6 +86,7 @@ public class EnterBoat : MonoBehaviour
         zoom = true;
         shouldZoom = true;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
+        animator.SetBool("IsInside", true);
        // alpha = 120;
         insideBG.enabled = true;
         transform.position = enterLocation.position;
@@ -101,6 +104,7 @@ public class EnterBoat : MonoBehaviour
     {
        // alpha = 255;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
+        animator.SetBool("IsInside", false);
         insideBG.color = new Color(0, 0, 0, alpha);
         zoom = false;
         shouldZoom = true;
