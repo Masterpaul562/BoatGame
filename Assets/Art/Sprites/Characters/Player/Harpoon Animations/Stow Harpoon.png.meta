@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Stow Harpoon_0
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 3234
+        width: 825
+        height: 776
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5162110ff065b947806e5cb3dcbc13a
+      internalID: 167106021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_1
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 3234
+        width: 825
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f37d56618f1e6429e21a4fcdb40091
+      internalID: 865519191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_2
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 3234
+        width: 825
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d927f0407d93e4199902fa9fa058e5
+      internalID: -382698506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_3
+      rect:
+        serializedVersion: 2
+        x: 6429
+        y: 3234
+        width: 818
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad246f34c394704790c4905f269d117
+      internalID: -1328042572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_4
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 2154
+        width: 750
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f99d99d7406824c85656672ff16433
+      internalID: -60394085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_5
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 2154
+        width: 622
+        height: 769
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60f6b98e1947d34d9e2f6a083619c0c
+      internalID: 1921115721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_6
+      rect:
+        serializedVersion: 2
+        x: 4524
+        y: 2154
+        width: 439
+        height: 769
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e718713986105834f96c5398349729a1
+      internalID: 1763171030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_7
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 2154
+        width: 428
+        height: 773
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf78ce135cbfe4459b6408f5d82c51a
+      internalID: 166903287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_8
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1074
+        width: 427
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ffbe74383885b4a8ecc99ca98c4694
+      internalID: 674579158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_9
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 1074
+        width: 454
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deea2156b721e094886acaa4ad708c29
+      internalID: -450091264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_10
+      rect:
+        serializedVersion: 2
+        x: 4476
+        y: 1074
+        width: 472
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b97f1af9f96066429b1b9d95d575a74
+      internalID: 1072806778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_11
+      rect:
+        serializedVersion: 2
+        x: 6414
+        y: 1074
+        width: 454
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be53c4cad665274bba87efa8c81cbcc
+      internalID: 126416013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon_12
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 0
+        width: 427
+        height: 771
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2668fbada09474aad7a0bf0cdfbfdd
+      internalID: 453481778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stow Harpoon_0: 167106021
+      Stow Harpoon_1: 865519191
+      Stow Harpoon_10: 1072806778
+      Stow Harpoon_11: 126416013
+      Stow Harpoon_12: 453481778
+      Stow Harpoon_2: -382698506
+      Stow Harpoon_3: -1328042572
+      Stow Harpoon_4: -60394085
+      Stow Harpoon_5: 1921115721
+      Stow Harpoon_6: 1763171030
+      Stow Harpoon_7: 166903287
+      Stow Harpoon_8: 674579158
+      Stow Harpoon_9: -450091264
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

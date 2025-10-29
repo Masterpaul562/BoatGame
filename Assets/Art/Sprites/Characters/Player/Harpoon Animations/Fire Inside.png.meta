@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Fire Inside_0
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 3234
+        width: 769
+        height: 764
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c0574d516e50946ace60a2edfb9240
+      internalID: 251638613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_1
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 3234
+        width: 637
+        height: 773
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3241d2a5105e7554fa544111219a352a
+      internalID: 710003775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_2
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 3234
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b146832ff74317448bb9ca2ec280d48
+      internalID: 1878926226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_3
+      rect:
+        serializedVersion: 2
+        x: 6414
+        y: 3234
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.42384893, y: 0.49999967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca45ef17b408fea45bee981e5034e971
+      internalID: 655902371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 2154
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122eff15a3aeb8c4ca75e10be8d1f344
+      internalID: -333987243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_5
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 2154
+        width: 637
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2480306706072429955e124a53ba5b
+      internalID: -1089836208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_6
+      rect:
+        serializedVersion: 2
+        x: 4524
+        y: 2154
+        width: 638
+        height: 776
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d1e6c429e63754bb10efdb23050907
+      internalID: -355041864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_7
+      rect:
+        serializedVersion: 2
+        x: 6489
+        y: 2154
+        width: 638
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa123fb92bf6364d925cda05d27861d
+      internalID: -2032616405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_8
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1074
+        width: 687
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cc4a46a0b560f49bc1ac7a9fd4efa1
+      internalID: -2066323282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_9
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1074
+        width: 732
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25877807, y: 0.49999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85aeb9e1e1242474caba9b65b82804e9
+      internalID: 434597905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_10
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 1074
+        width: 754
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7d59661257cdf4d867f68fef7ce6b6
+      internalID: 523165055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_11
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 1074
+        width: 762
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b38ad2c907c0d44b810c81fbb487748
+      internalID: -60913755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Inside_12
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 765
+        height: 771
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9be24e4a32a06478d66f6b0497f9a8
+      internalID: 1672505907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fire Inside_0: 251638613
+      Fire Inside_1: 710003775
+      Fire Inside_10: 523165055
+      Fire Inside_11: -60913755
+      Fire Inside_12: 1672505907
+      Fire Inside_2: 1878926226
+      Fire Inside_3: 655902371
+      Fire Inside_4: -333987243
+      Fire Inside_5: -1089836208
+      Fire Inside_6: -355041864
+      Fire Inside_7: -2032616405
+      Fire Inside_8: -2066323282
+      Fire Inside_9: 434597905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

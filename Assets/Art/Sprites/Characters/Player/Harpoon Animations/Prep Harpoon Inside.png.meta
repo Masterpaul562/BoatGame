@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,568 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_0
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 6474
+        width: 364
+        height: 775
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314ed18faa4b4384ea6096499bf28a3c
+      internalID: -1573867758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_1
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 6474
+        width: 364
+        height: 770
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d925fd604419b194d8c2d2b9b9e9c673
+      internalID: 774759327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_2
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 6474
+        width: 368
+        height: 773
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb36c861560722458138dcf42a3dc82
+      internalID: 408519300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_3
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 6474
+        width: 368
+        height: 769
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 562c69af5c7940849a2726620bf8036b
+      internalID: -508667735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_4
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 5394
+        width: 368
+        height: 769
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb472b0cc705ba46b07f329f636e71a
+      internalID: 1311502476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_5
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 5394
+        width: 368
+        height: 769
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0180e9b06f2816c46baad45c78e4852a
+      internalID: 443359487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_6
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 5394
+        width: 368
+        height: 769
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ea4e200b079704091709cde7f7fbf2
+      internalID: -97305313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_7
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 5394
+        width: 368
+        height: 773
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c9bfc027f2e1942b2d0601212af52e
+      internalID: -1140526279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_8
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 4314
+        width: 364
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02291aac54c8f2340bc2ff7903fc839f
+      internalID: -1784719891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_9
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 4314
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 375d9f0e0e57e29419da4e5dae54c08c
+      internalID: 350612088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_10
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 4314
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc17c9246d45ec47b77919fe7a129a1
+      internalID: 2080243747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_11
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 4314
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1bbe6c1fe8aed4087039d1c2c62d9c
+      internalID: 665851503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_12
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 3234
+        width: 461
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8fa3c9b9b56da478f4763d2b76d390
+      internalID: -501841971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_13
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 3234
+        width: 578
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468cb544e674bdc4a9854b1585fc48cc
+      internalID: 2056214224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_14
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 3234
+        width: 735
+        height: 773
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e90e80c23852ef4fa9c84d1eb96e0ed
+      internalID: 780340524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_15
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 3234
+        width: 792
+        height: 773
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe42d500d50db842a8bb452abfc3049
+      internalID: 1055731255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_16
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 2154
+        width: 739
+        height: 769
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a89829bf34bacc49b7e1c032fbd78ef
+      internalID: -103615152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_17
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 2154
+        width: 717
+        height: 769
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a2fbd6c761c2f40b43326232a52043
+      internalID: 1392277545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_18
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 2154
+        width: 769
+        height: 769
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b5465d5ae7b114ab0f27c1665bffea
+      internalID: -74357589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_19
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 2154
+        width: 769
+        height: 769
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf778c4e0fd7dd9409503745335292cc
+      internalID: -856144956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_20
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1074
+        width: 762
+        height: 773
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac08642f0663f941a0b180faba48627
+      internalID: 790485711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_21
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1074
+        width: 750
+        height: 776
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063c67fa37263274680283304a410eed
+      internalID: 2011300761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_22
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 1074
+        width: 769
+        height: 777
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79506d12dfeda964aa69e980072cbe30
+      internalID: -1765402732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_23
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 1074
+        width: 765
+        height: 777
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5ab3e78cda9b04eb40a1565470a434
+      internalID: -1354113515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_24
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 765
+        height: 771
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e5ef60ad8bf6541a5629ffedf2ab80
+      internalID: -864619920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Inside_25
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 0
+        width: 765
+        height: 771
+      alignment: 9
+      pivot: {x: 0.22, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabbe31891615094ba3d5ace9c42d956
+      internalID: 1629727542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +678,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prep Harpoon Inside_0: -1573867758
+      Prep Harpoon Inside_1: 774759327
+      Prep Harpoon Inside_10: 2080243747
+      Prep Harpoon Inside_11: 665851503
+      Prep Harpoon Inside_12: -501841971
+      Prep Harpoon Inside_13: 2056214224
+      Prep Harpoon Inside_14: 780340524
+      Prep Harpoon Inside_15: 1055731255
+      Prep Harpoon Inside_16: -103615152
+      Prep Harpoon Inside_17: 1392277545
+      Prep Harpoon Inside_18: -74357589
+      Prep Harpoon Inside_19: -856144956
+      Prep Harpoon Inside_2: 408519300
+      Prep Harpoon Inside_20: 790485711
+      Prep Harpoon Inside_21: 2011300761
+      Prep Harpoon Inside_22: -1765402732
+      Prep Harpoon Inside_23: -1354113515
+      Prep Harpoon Inside_24: -864619920
+      Prep Harpoon Inside_25: 1629727542
+      Prep Harpoon Inside_3: -508667735
+      Prep Harpoon Inside_4: 1311502476
+      Prep Harpoon Inside_5: 443359487
+      Prep Harpoon Inside_6: -97305313
+      Prep Harpoon Inside_7: -1140526279
+      Prep Harpoon Inside_8: -1784719891
+      Prep Harpoon Inside_9: 350612088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,568 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_0
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 6474
+        width: 326
+        height: 752
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e755b5f2b053a3b42a5d398b277858e4
+      internalID: 302888797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_1
+      rect:
+        serializedVersion: 2
+        x: 2732
+        y: 6474
+        width: 311
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f8df60121ed55479463396656f8b72
+      internalID: 1894502485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_2
+      rect:
+        serializedVersion: 2
+        x: 4588
+        y: 6474
+        width: 371
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c1a4ce78cc4084a919bcca8d9baf21
+      internalID: 409203779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_3
+      rect:
+        serializedVersion: 2
+        x: 6527
+        y: 6474
+        width: 356
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b42264e5ecc48ca4991eeed0e441a5d2
+      internalID: 1748383946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_4
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 5394
+        width: 334
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31bc0b43f3b85e64f9bc7382ce964fe8
+      internalID: 1695886247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_5
+      rect:
+        serializedVersion: 2
+        x: 2717
+        y: 5394
+        width: 318
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073feb04a2372a749beb49206d2090c0
+      internalID: 771998265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_6
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 5394
+        width: 318
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 587a9545dd6aad84988dfb0bfaa60786
+      internalID: -1368092146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_7
+      rect:
+        serializedVersion: 2
+        x: 6557
+        y: 5394
+        width: 322
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e84278dd3b9f9418c86daab2e79126
+      internalID: -886315911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 4314
+        width: 312
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60119b8a314eae4f8710d399fe16b4d
+      internalID: -1009300494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_9
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 4314
+        width: 338
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5972fb16d404d4dacbcf8b42e9eb16
+      internalID: -28140951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_10
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 4314
+        width: 326
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ab2ebeeb91d3224c9ec19c1ad847411
+      internalID: -1914193483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_11
+      rect:
+        serializedVersion: 2
+        x: 6564
+        y: 4314
+        width: 315
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5942e643c084f4b855f2f9e60e3578
+      internalID: -1253049344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_12
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 3234
+        width: 434
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a8d2638fcaf1d4abaf83aa660611a4
+      internalID: 975375411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_13
+      rect:
+        serializedVersion: 2
+        x: 2713
+        y: 3234
+        width: 529
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f42395a622d1fc14f8687df3924964cc
+      internalID: -1475503981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_14
+      rect:
+        serializedVersion: 2
+        x: 4652
+        y: 3234
+        width: 667
+        height: 773
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a852f6efe962a034f8ff7da439f6394a
+      internalID: -6063852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_15
+      rect:
+        serializedVersion: 2
+        x: 6508
+        y: 3234
+        width: 788
+        height: 773
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03a88293dd0fb347acb84fb4a360d19
+      internalID: 435862069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_16
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 2154
+        width: 716
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b07fb7e78b4ac46bbb9522c592d9aa
+      internalID: -710927051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_17
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 2154
+        width: 672
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a8760f870430c439ee8a37a1f8a2ab
+      internalID: 1274487006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_18
+      rect:
+        serializedVersion: 2
+        x: 4637
+        y: 2154
+        width: 716
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.4857081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f7301f13c81a248938b92743bd69ee
+      internalID: 650346017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_19
+      rect:
+        serializedVersion: 2
+        x: 6561
+        y: 2154
+        width: 712
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857556ad7b6796d4ca3e2149d7a933c8
+      internalID: 2137155102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_20
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1074
+        width: 709
+        height: 773
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5000005}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d6633e29db79324592370317d5683d8
+      internalID: -553121877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_21
+      rect:
+        serializedVersion: 2
+        x: 2724
+        y: 1074
+        width: 690
+        height: 776
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f8982d2d6416345b1e6d8b5a6a0ce7
+      internalID: -245550684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_22
+      rect:
+        serializedVersion: 2
+        x: 4618
+        y: 1074
+        width: 735
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.4929276}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222600fad73f7c5489e7fb4a23f4c881
+      internalID: 402175125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_23
+      rect:
+        serializedVersion: 2
+        x: 6553
+        y: 1074
+        width: 716
+        height: 777
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5070725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e3a3cf77730e74cb3c26f8f949ee5d
+      internalID: -289992243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_24
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 0
+        width: 705
+        height: 771
+      alignment: 9
+      pivot: {x: 0.3, y: 0.49346104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3b83ddc7a8b1649b1da84cb0ea622f
+      internalID: 294246693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prep Harpoon Backwards_25
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 0
+        width: 738
+        height: 771
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067003b04c724a04c912fd42f118dd93
+      internalID: 1306449079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +678,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Prep Harpoon Backwards_0: 302888797
+      Prep Harpoon Backwards_1: 1894502485
+      Prep Harpoon Backwards_10: -1914193483
+      Prep Harpoon Backwards_11: -1253049344
+      Prep Harpoon Backwards_12: 975375411
+      Prep Harpoon Backwards_13: -1475503981
+      Prep Harpoon Backwards_14: -6063852
+      Prep Harpoon Backwards_15: 435862069
+      Prep Harpoon Backwards_16: -710927051
+      Prep Harpoon Backwards_17: 1274487006
+      Prep Harpoon Backwards_18: 650346017
+      Prep Harpoon Backwards_19: 2137155102
+      Prep Harpoon Backwards_2: 409203779
+      Prep Harpoon Backwards_20: -553121877
+      Prep Harpoon Backwards_21: -245550684
+      Prep Harpoon Backwards_22: 402175125
+      Prep Harpoon Backwards_23: -289992243
+      Prep Harpoon Backwards_24: 294246693
+      Prep Harpoon Backwards_25: 1306449079
+      Prep Harpoon Backwards_3: 1748383946
+      Prep Harpoon Backwards_4: 1695886247
+      Prep Harpoon Backwards_5: 771998265
+      Prep Harpoon Backwards_6: -1368092146
+      Prep Harpoon Backwards_7: -886315911
+      Prep Harpoon Backwards_8: -1009300494
+      Prep Harpoon Backwards_9: -28140951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

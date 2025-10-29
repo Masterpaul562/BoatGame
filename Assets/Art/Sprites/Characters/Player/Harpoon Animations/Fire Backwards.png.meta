@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Fire Backwards_0
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 3234
+        width: 716
+        height: 764
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3356cfae99433349bc133a107c899b0
+      internalID: 1458220529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_1
+      rect:
+        serializedVersion: 2
+        x: 2649
+        y: 3234
+        width: 637
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f726319084d6244490fe19078cfc737
+      internalID: 30285133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_2
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 3234
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8b2856c3d584145909d0be732ff0ea
+      internalID: -640237418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_3
+      rect:
+        serializedVersion: 2
+        x: 6414
+        y: 3234
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c19bb470755e134185a0f37cce23de1
+      internalID: -1842071575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_4
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 2154
+        width: 634
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555aa29710947c14f8791ae5a31db0a1
+      internalID: -508768983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_5
+      rect:
+        serializedVersion: 2
+        x: 2582
+        y: 2154
+        width: 637
+        height: 773
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d92d855607b3c49804076248e903a0
+      internalID: -927929000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_6
+      rect:
+        serializedVersion: 2
+        x: 4524
+        y: 2154
+        width: 638
+        height: 776
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c418c9b6b750a544fb523cb7c31dbd4d
+      internalID: 213012552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_7
+      rect:
+        serializedVersion: 2
+        x: 6489
+        y: 2154
+        width: 638
+        height: 777
+      alignment: 9
+      pivot: {x: 0.4, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ffb7beed20d484b9eb3d857a03f510
+      internalID: -1136733261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_8
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 1074
+        width: 638
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8545eaee7188644ba058032e2a5121
+      internalID: -698487732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_9
+      rect:
+        serializedVersion: 2
+        x: 2691
+        y: 1074
+        width: 705
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266047af1a98de34c9febf1517ee6da9
+      internalID: 801806166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_10
+      rect:
+        serializedVersion: 2
+        x: 4592
+        y: 1074
+        width: 746
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454dfabd3b34a904da01928d844f4424
+      internalID: -2049448666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_11
+      rect:
+        serializedVersion: 2
+        x: 6534
+        y: 1074
+        width: 732
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 699e94d8f4f3f4b4782ee133cfc4ffb7
+      internalID: 1071199790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fire Backwards_12
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 0
+        width: 712
+        height: 771
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f3e5dc6cfccb2448319b3ea5a69162
+      internalID: 1195881339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fire Backwards_0: 1458220529
+      Fire Backwards_1: 30285133
+      Fire Backwards_10: -2049448666
+      Fire Backwards_11: 1071199790
+      Fire Backwards_12: 1195881339
+      Fire Backwards_2: -640237418
+      Fire Backwards_3: -1842071575
+      Fire Backwards_4: -508768983
+      Fire Backwards_5: -927929000
+      Fire Backwards_6: 213012552
+      Fire Backwards_7: -1136733261
+      Fire Backwards_8: -698487732
+      Fire Backwards_9: 801806166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

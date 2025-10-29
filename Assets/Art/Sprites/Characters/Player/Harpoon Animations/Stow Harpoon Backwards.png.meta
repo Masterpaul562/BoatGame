@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_0
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 3234
+        width: 720
+        height: 764
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80cea1d6259cc384899caa9f8caee756
+      internalID: -1248121430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_1
+      rect:
+        serializedVersion: 2
+        x: 2721
+        y: 3234
+        width: 712
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599223229e8f17d428647d438072c3f1
+      internalID: -1505831590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_2
+      rect:
+        serializedVersion: 2
+        x: 4588
+        y: 3234
+        width: 758
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747c87abbf1388d469d239c31120544f
+      internalID: -810090129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_3
+      rect:
+        serializedVersion: 2
+        x: 6527
+        y: 3234
+        width: 720
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c3b7a005148594e87f63d8ccef663d
+      internalID: -1235776754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_4
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 2154
+        width: 642
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8350dcd9a4311c54d8107842b74fee9c
+      internalID: -54794944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_5
+      rect:
+        serializedVersion: 2
+        x: 2717
+        y: 2154
+        width: 506
+        height: 769
+      alignment: 9
+      pivot: {x: 0.3, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d8c595e47ee2841bc91cd413769b8e
+      internalID: -1618026710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_6
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 2154
+        width: 322
+        height: 769
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a58a8a0f55eafb44888115697c442979
+      internalID: -1042109776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_7
+      rect:
+        serializedVersion: 2
+        x: 6557
+        y: 2154
+        width: 322
+        height: 773
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8548f00c90b91e4d98c70776b2d641b
+      internalID: -1774755500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_8
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1074
+        width: 315
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd74eddc7d884504593e996bdd007f1e
+      internalID: 1509944703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_9
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1074
+        width: 338
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9db6e2ba64d4774c96cac048042d6a1
+      internalID: -105672158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_10
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 1074
+        width: 326
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd46117aa595c245adc22affb4f6062
+      internalID: -1898881646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_11
+      rect:
+        serializedVersion: 2
+        x: 6561
+        y: 1074
+        width: 318
+        height: 777
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b2d1e26be40054a8c157d57e215813
+      internalID: 760781052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stow Harpoon Backwards_12
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 0
+        width: 348
+        height: 771
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4147fc35b0dc749b5b65d60262ec4d
+      internalID: 630745243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stow Harpoon Backwards_0: -1248121430
+      Stow Harpoon Backwards_1: -1505831590
+      Stow Harpoon Backwards_10: -1898881646
+      Stow Harpoon Backwards_11: 760781052
+      Stow Harpoon Backwards_12: 630745243
+      Stow Harpoon Backwards_2: -810090129
+      Stow Harpoon Backwards_3: -1235776754
+      Stow Harpoon Backwards_4: -54794944
+      Stow Harpoon Backwards_5: -1618026710
+      Stow Harpoon Backwards_6: -1042109776
+      Stow Harpoon Backwards_7: -1774755500
+      Stow Harpoon Backwards_8: 1509944703
+      Stow Harpoon Backwards_9: -105672158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

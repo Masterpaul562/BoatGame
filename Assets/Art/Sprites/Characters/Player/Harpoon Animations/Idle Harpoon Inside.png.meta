@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_0
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 3234
+        width: 769
+        height: 768
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25be5ce7b0638d45924e7d8e8c61c1c
+      internalID: -891765049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_1
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 3234
+        width: 769
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ef69922c6255354faf84860e8851bec
+      internalID: -362686028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_2
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 3234
+        width: 772
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23573eacfff9c564c916ea4af0ea22bc
+      internalID: 1699166342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_3
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 3234
+        width: 773
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e211e971f181e469d0a74866fd406c
+      internalID: -1394872065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_4
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 2154
+        width: 773
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea32dd0c609206f45aafb42856434c5a
+      internalID: -518976684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_5
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 2154
+        width: 773
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5fc72b4030ac842847dffbbfed4a86
+      internalID: 419030328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_6
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 2154
+        width: 773
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d5d9faa8b3fca449727192f0e11bf3
+      internalID: -1044933334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_7
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 2154
+        width: 773
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661ab629f667c0b42899b152c30d87cd
+      internalID: 1255628479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_8
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1074
+        width: 773
+        height: 776
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e56fafb62d53bf40914eaf7b80cc306
+      internalID: 651956871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_9
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1074
+        width: 773
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a97a611d24f5b5409a857eb1afc0e91
+      internalID: 444804062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_10
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 1074
+        width: 772
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08fe032c89ae1814cb58eca561da2aa0
+      internalID: -1696256862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_11
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 1074
+        width: 769
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00266e5bfc3f27479252e59901693f0
+      internalID: -2074149323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Inside_12
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 769
+        height: 771
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d514e498e37cc42baa411b87304df6
+      internalID: 1066237201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle Harpoon Inside_0: -891765049
+      Idle Harpoon Inside_1: -362686028
+      Idle Harpoon Inside_10: -1696256862
+      Idle Harpoon Inside_11: -2074149323
+      Idle Harpoon Inside_12: 1066237201
+      Idle Harpoon Inside_2: 1699166342
+      Idle Harpoon Inside_3: -1394872065
+      Idle Harpoon Inside_4: -518976684
+      Idle Harpoon Inside_5: 419030328
+      Idle Harpoon Inside_6: -1044933334
+      Idle Harpoon Inside_7: 1255628479
+      Idle Harpoon Inside_8: 651956871
+      Idle Harpoon Inside_9: 444804062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

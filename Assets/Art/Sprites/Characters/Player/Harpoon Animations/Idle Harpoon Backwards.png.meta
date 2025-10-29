@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,9 +106,295 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_0
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 3234
+        width: 720
+        height: 764
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3b7127ac75e334da022cf1476e5447
+      internalID: -1058025375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_1
+      rect:
+        serializedVersion: 2
+        x: 2732
+        y: 3234
+        width: 701
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d386c6c99b2d740b6aa8a30762bae9
+      internalID: -1179155942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_2
+      rect:
+        serializedVersion: 2
+        x: 4588
+        y: 3234
+        width: 768
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ed03bd93c710864a99b798e062fbfd4
+      internalID: 1411833235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_3
+      rect:
+        serializedVersion: 2
+        x: 6527
+        y: 3234
+        width: 750
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b348ed8d155f4548bf8c3427c477eae
+      internalID: 2083327266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_4
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 2154
+        width: 728
+        height: 769
+      alignment: 9
+      pivot: {x: 0.23, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb125504d15d9394897fa42effcc78d3
+      internalID: -1917260667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_5
+      rect:
+        serializedVersion: 2
+        x: 2717
+        y: 2154
+        width: 720
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c63a90f8511c924586b04687f11b41e
+      internalID: -1332440585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_6
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 2154
+        width: 716
+        height: 769
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee8630fb551e1942b75e101626f3d95
+      internalID: -691860826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_7
+      rect:
+        serializedVersion: 2
+        x: 6557
+        y: 2154
+        width: 720
+        height: 773
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a526feba95717498edfa9bad53b197
+      internalID: 206665424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_8
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1074
+        width: 713
+        height: 776
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f407f4d88e47cf64f80d40bfe0a996fc
+      internalID: -495187474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_9
+      rect:
+        serializedVersion: 2
+        x: 2698
+        y: 1074
+        width: 739
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfc1fe8e14568541a9ac70afcd26193
+      internalID: 762976228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_10
+      rect:
+        serializedVersion: 2
+        x: 4633
+        y: 1074
+        width: 723
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a5ff2490094e240b03d3b7a73fdbfe
+      internalID: 1994714642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_11
+      rect:
+        serializedVersion: 2
+        x: 6564
+        y: 1074
+        width: 709
+        height: 777
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a69aa732f706d4ea0e8376732f3ad1
+      internalID: 1491574370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Harpoon Backwards_12
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 0
+        width: 742
+        height: 771
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ce9bc84fc914940bde2e69419ff9a5
+      internalID: -1635859684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle Harpoon Backwards_0: -1058025375
+      Idle Harpoon Backwards_1: -1179155942
+      Idle Harpoon Backwards_10: 1994714642
+      Idle Harpoon Backwards_11: 1491574370
+      Idle Harpoon Backwards_12: -1635859684
+      Idle Harpoon Backwards_2: 1411833235
+      Idle Harpoon Backwards_3: 2083327266
+      Idle Harpoon Backwards_4: -1917260667
+      Idle Harpoon Backwards_5: -1332440585
+      Idle Harpoon Backwards_6: -691860826
+      Idle Harpoon Backwards_7: 206665424
+      Idle Harpoon Backwards_8: -495187474
+      Idle Harpoon Backwards_9: 762976228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
