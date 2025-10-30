@@ -18,6 +18,7 @@ public class WaveMesh : MonoBehaviour
         for (int i = 0; i < 11; i++)
         {
             wave.xValueIncrease[i] = Random.Range(0.05f, 0.1f);
+            wave.xValue[i] = Random.Range(-2,2); 
         }
     }
 
@@ -38,8 +39,13 @@ public class WaveMesh : MonoBehaviour
         }
         mesh.vertices = vertices;
        
+       mesh.RecalculateBounds();
+       mesh.RecalculateNormals();
         
-       // GetComponent<MeshRenderer>().material = mat;
+       Destroy(gameObject.GetComponent<MeshCollider>());
+       MeshCollider collider = gameObject.AddComponent<MeshCollider>();
+       collider.sharedMesh = null;
+       collider.sharedMesh = mesh;
     }
    
 
