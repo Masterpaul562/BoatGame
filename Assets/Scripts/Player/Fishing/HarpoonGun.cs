@@ -11,6 +11,7 @@ public class HarpoonGun : MonoBehaviour
     private PlayerMove freezePlayer;
     [SerializeField] private GameObject bobber;
     [SerializeField]private float harpoonPower;
+    private bool  shouldFire;
 
     private void Start()
     {
@@ -23,10 +24,15 @@ public class HarpoonGun : MonoBehaviour
     {
         horz = Input.GetAxisRaw("Horizontal");
         if (Input.GetKeyDown(key))
-        {
-            
+        {            
             freezePlayer.freeze = true;
             StartCoroutine(Harpoon());
+        }
+        if(Input.GetKeyUp(key))
+        {
+            
+            Fire();
+            animator.SetTrigger("Fire");
         }
     }
 
@@ -42,25 +48,17 @@ public class HarpoonGun : MonoBehaviour
         {
             Debug.Log("yayaya");
          
-           // if(harpoonPower <7)
-           // {
+            shouldFire = true;
             harpoonPower++;
             
-          //  }
             
             yield return new WaitForSeconds(1f);;
         }
-        if(Input.GetKeyUp(key))
-        {
-            yield return new WaitForSeconds(0.3f);
-            Fire();
-            animator.SetTrigger("Fire");
-        }
-        else
-        {
-            animator.SetTrigger("StowHarpoon");
+        
+       
+            //animator.SetTrigger("StowHarpoon");
            
-        }
+        
         
         yield return new WaitForSeconds(1f);
         Debug.Log("UnFreeze");
