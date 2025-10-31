@@ -9,6 +9,8 @@ public class HarpoonGun : MonoBehaviour
     private Animator animator;
     private float horz;
     private PlayerMove freezePlayer;
+    [SerializeField] private GameObject bobber;
+    [SerializeField]private float harpoonPower;
 
     private void Start()
     {
@@ -22,7 +24,8 @@ public class HarpoonGun : MonoBehaviour
         horz = Input.GetAxisRaw("Horizontal");
         if (Input.GetKeyDown(key))
         {
-            Debug.Log("yay");
+            
+            freezePlayer.freeze = true;
             StartCoroutine(Harpoon());
         }
     }
@@ -30,21 +33,27 @@ public class HarpoonGun : MonoBehaviour
     private IEnumerator Harpoon()
     {
         animator.SetTrigger("PullHarpoonOut");
-        freezePlayer.freeze = true;
+        
         freezePlayer.horizontalInput = 0;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         yield return new WaitForSeconds(1f);
-        
+         
         while (Input.GetKey(key)&& horz == 0) 
         {
             Debug.Log("yayaya");
-            //Charge thing
-            yield return null;
+         
+           // if(harpoonPower <7)
+           // {
+            harpoonPower++;
+            
+          //  }
+            
+            yield return new WaitForSeconds(1f);;
         }
         if(Input.GetKeyUp(key))
         {
-            yield return new WaitForSeconds(0.5f);
-
+            yield return new WaitForSeconds(0.3f);
+            Fire();
             animator.SetTrigger("Fire");
         }
         else
@@ -58,4 +67,12 @@ public class HarpoonGun : MonoBehaviour
         freezePlayer.freeze = false;
         yield return null;
     }
+    private void Fire()
+    {
+        bobber.SetActive(true);
+       bobber.GetComponent<Rigidbody2D>().simulated = true;
+       bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower*2,harpoonPower*0.5f),ForceMode2D.Impulse);
+       harpoonPower = 0;
+    }
+
 }
