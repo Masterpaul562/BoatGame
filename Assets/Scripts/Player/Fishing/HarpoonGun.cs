@@ -12,6 +12,7 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private GameObject bobber;
     [SerializeField]private float harpoonPower;
     private bool  shouldFire;
+    private bool noFire;
 
     private void Start()
     {
@@ -30,14 +31,22 @@ public class HarpoonGun : MonoBehaviour
         }
         if(Input.GetKeyUp(key))
         {
-            
-            Fire();
-            animator.SetTrigger("Fire");
+            if (shouldFire)
+            {
+                noFire = false;
+                shouldFire = false; 
+                Fire();
+                animator.SetTrigger("Fire");
+                animator.SetBool("StowHarpoon", false);
+                StopCoroutine(Harpoon());
+            }
         }
     }
 
     private IEnumerator Harpoon()
     {
+        noFire = true;
+        bool shouldStow = true;
         animator.SetTrigger("PullHarpoonOut");
         
         freezePlayer.horizontalInput = 0;
@@ -47,30 +56,40 @@ public class HarpoonGun : MonoBehaviour
         while (Input.GetKey(key)&& horz == 0) 
         {
             Debug.Log("yayaya");
-         
+            shouldStow = false;
             shouldFire = true;
-            harpoonPower++;
-            
-            
-            yield return new WaitForSeconds(1f);;
+            if (harpoonPower < 8)
+            {
+                harpoonPower++;
+            }
+            yield return new WaitForSeconds(.5f);;
         }
-        
-       
-            //animator.SetTrigger("StowHarpoon");
-           
-        
-        
-        yield return new WaitForSeconds(1f);
-        Debug.Log("UnFreeze");
-        freezePlayer.freeze = false;
-        yield return null;
+        yield return new WaitForSeconds(.2f);
+        if (horz != 0&&noFire||shouldStow)
+        {
+            shouldFire=false;
+            animator.SetTrigger("StowHarpoon");
+
+
+
+            yield return new WaitForSeconds(1f);
+            Debug.Log("UnFreeze");
+            freezePlayer.freeze = false;
+            yield return null;
+        }
     }
     private void Fire()
     {
         bobber.SetActive(true);
        bobber.GetComponent<Rigidbody2D>().simulated = true;
-       bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower*2,harpoonPower*0.5f),ForceMode2D.Impulse);
-       harpoonPower = 0;
+        if (animator.GetBool("isFacingRight"))
+        {
+            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * 2, harpoonPower * 0.5f), ForceMode2D.Impulse);
+        }else
+        {
+            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * -2, harpoonPower * -0.5f), ForceMode2D.Impulse);
+        }
+       harpoonPower = 1;
     }
 
 }
