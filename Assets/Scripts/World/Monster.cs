@@ -15,7 +15,7 @@ public class Monster : MonoBehaviour
     [SerializeField] private FishInventory inventory;
     [SerializeField] private Camera cam;
     [SerializeField] private FishManager fishManager;
-    [SerializeField] private EnterFishing fishing;
+    [SerializeField] private HarpoonGun fishing;
     [SerializeField] private BgSpeedControler bgSpeed;
     private Transform spawnPos;
     private Transform movePos;
@@ -43,7 +43,7 @@ public class Monster : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        fishing.ExitFishing();
+        fishing.isFishing = false;
         StartCoroutine(bgSpeed.SlowDownOcean());
         bgSpeed.inEvent = true;
         fishManager.MoveVanityFishOff();

@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     [SerializeField] public float horizontalInput;
-    [SerializeField] private EnterFishing enterFScript;
+    [SerializeField] private HarpoonGun enterFScript;
     [SerializeField] private bool isFacingRight;
     [SerializeField] private Animator animator;
     public bool freeze;
@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        enterFScript = GetComponent<EnterFishing>();
+        enterFScript = GetComponent<HarpoonGun>();
         animator = GetComponent<Animator>();
         animator.SetFloat("Speed", 0);
         animator.SetBool("isFacingRight", isFacingRight);
@@ -25,17 +25,13 @@ public class PlayerMove : MonoBehaviour
    
     void Update()
     {
-
-        Flip();
-        if (enterFScript.isFishing )
+        if(enterFScript.isFishing == false)
         {
-            horizontalInput = 0;
-            isFacingRight = false;
-            animator.SetBool("isFacingRight", isFacingRight);
-        }else
-        {
-            horizontalInput = Input.GetAxisRaw("Horizontal");
+        Flip(); 
         }
+       
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        
         
         
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));

@@ -8,7 +8,7 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject fishPrefab;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject bobber;
-    [SerializeField] private EnterFishing enterFishing;
+    [SerializeField] private HarpoonGun enterFishing;
     [SerializeField] private Camera cam;
     [SerializeField] private Vector2 spawnLocation;
     public int maxNumOfFish;

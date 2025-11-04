@@ -8,7 +8,7 @@ public class CitySpawner : MonoBehaviour
     private int randomValue;
     [SerializeField] private int randomMax;
     [SerializeField] Camera cam;
-    [SerializeField] EnterFishing fishing;
+    
     [SerializeField] GameObject[] cityPrefabs;
     [SerializeField] Vector2 spawnLocation;
     private CityManager manager;

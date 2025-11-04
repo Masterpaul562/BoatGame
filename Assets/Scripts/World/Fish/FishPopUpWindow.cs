@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishPopUpWindow : MonoBehaviour
 {
-    [SerializeField] private EnterFishing enterFishing;
+    
     [SerializeField] private GameObject window;
     [SerializeField] private FishInventory fishAmount;
     [SerializeField] private MoveFish moveFish;
@@ -46,11 +46,5 @@ public class FishPopUpWindow : MonoBehaviour
 
         }
     }
-    private void Update()
-    {
-        if (enterFishing.isFishing)
-        {
-            window.SetActive(false);
-        }
-    }
+   
 }

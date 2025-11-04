@@ -5,7 +5,6 @@ using UnityEngine;
 public class BgSpeedControler : MonoBehaviour
 {
     [SerializeField] private BgScroller[] backGrounds; 
-    [SerializeField] private EnterFishing enterFishing;
    [SerializeField] private float[] lerpTarget;
    [SerializeField] private float[] ogPos;
     public bool inEvent;

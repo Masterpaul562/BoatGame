@@ -11,8 +11,12 @@ public class HarpoonGun : MonoBehaviour
     private PlayerMove freezePlayer;
     [SerializeField] private GameObject bobber;
     [SerializeField]private float harpoonPower;
+    [SerializeField] private LineRenderController line;
     private bool  shouldFire;
     private bool noFire;
+    public bool isFishing;
+    [SerializeField]private float distance = 100;
+
 
     private void Start()
     {
@@ -24,10 +28,16 @@ public class HarpoonGun : MonoBehaviour
     private void Update()
     {
         horz = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(key))
+        if (Input.GetKeyDown(key) )
         {            
+            if( !isFishing)
+            {
             freezePlayer.freeze = true;
             StartCoroutine(Harpoon());
+            }else 
+            {
+                StartCoroutine(ReelIn());
+            }
         }
         if(Input.GetKeyUp(key))
         {
@@ -82,6 +92,8 @@ public class HarpoonGun : MonoBehaviour
     {
         bobber.SetActive(true);
        bobber.GetComponent<Rigidbody2D>().simulated = true;
+        isFishing = true;
+        line.gameObject.SetActive(true);
         if (animator.GetBool("isFacingRight"))
         {
             bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * 2, harpoonPower * 0.5f), ForceMode2D.Impulse);
@@ -90,6 +102,25 @@ public class HarpoonGun : MonoBehaviour
             bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * -2, harpoonPower * -0.5f), ForceMode2D.Impulse);
         }
        harpoonPower = 1;
+    }
+
+    private IEnumerator ReelIn()
+    {
+        Debug.Log("didit");
+        while(distance>1)
+        {       
+            Debug.Log("yay");
+          Vector2 pos = Vector2.MoveTowards(bobber.transform.position, this.transform.position, Time.deltaTime * 10);
+            bobber.transform.position = pos;
+            distance = Vector2.Distance(transform.position, bobber.transform.position);
+            yield return null;
+        }                      
+         bobber.SetActive(false);
+         line.gameObject.SetActive(false);
+         bobber.GetComponent<Bobber>().rb.simulated = true;
+         bobber.GetComponent<Bobber>().submerged = false;      
+         yield return null;         
+            
     }
 
 }

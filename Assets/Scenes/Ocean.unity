@@ -446,7 +446,7 @@ MonoBehaviour:
   fishPrefab: {fileID: 1981255956818205823, guid: 33b34d4d793aee0448ade45258ce21c4, type: 3}
   player: {fileID: 1351622656}
   bobber: {fileID: 2056419627}
-  enterFishing: {fileID: 1351622663}
+  enterFishing: {fileID: 0}
   cam: {fileID: 519420031}
   spawnLocation: {x: 0, y: 0}
   maxNumOfFish: 1
@@ -1107,7 +1107,6 @@ MonoBehaviour:
   backGrounds:
   - {fileID: 975169350}
   - {fileID: 936422572}
-  enterFishing: {fileID: 1351622663}
   lerpTarget:
   - 0
   - 0
@@ -1776,7 +1775,7 @@ MonoBehaviour:
   bobber: {fileID: 2056419629}
   fishList: {fileID: 216235006}
   vanityFish: {fileID: 1352642769}
-  isFishing: {fileID: 1351622663}
+  isFishing: {fileID: 1351622669}
   city: {fileID: 1149555041}
   canHook: 0
   inEvent: 0
@@ -1846,7 +1845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf2da0bfd37d5441bc785b79436fdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterFishing: {fileID: 1351622663}
   window: {fileID: 0}
   fishAmount: {fileID: 1351622667}
   moveFish: {fileID: 0}
@@ -2875,7 +2873,6 @@ MonoBehaviour:
   waitTime: 60
   randomMax: 100
   cam: {fileID: 519420031}
-  fishing: {fileID: 1351622663}
   cityPrefabs:
   - {fileID: 9052464697396152459, guid: 47d1e6cdb157bd345913fdee0e734589, type: 3}
   - {fileID: 7436238692329508606, guid: 23e3942584e0768459ee5b46a67184e2, type: 3}
@@ -3224,7 +3221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf2da0bfd37d5441bc785b79436fdd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enterFishing: {fileID: 1351622663}
   window: {fileID: 0}
   fishAmount: {fileID: 1351622667}
   moveFish: {fileID: 0}
@@ -3511,10 +3507,7 @@ GameObject:
   - component: {fileID: 1351622657}
   - component: {fileID: 1351622661}
   - component: {fileID: 1351622662}
-  - component: {fileID: 1351622663}
-  - component: {fileID: 1351622664}
   - component: {fileID: 1351622665}
-  - component: {fileID: 1351622666}
   - component: {fileID: 1351622667}
   - component: {fileID: 1351622669}
   - component: {fileID: 1351622668}
@@ -3713,57 +3706,6 @@ MonoBehaviour:
   animator: {fileID: 0}
   shouldZoom: 0
   zoom: 0
---- !u!114 &1351622663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351622656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a7b0c5521cbd8f469ed8dc2f46d6b1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactable:
-    serializedVersion: 2
-    m_Bits: 64
-  rb: {fileID: 0}
-  cam: {fileID: 519420031}
-  fishingCamSpot: {fileID: 1566587319}
-  ogPos: {fileID: 995794915}
-  render: {fileID: 0}
-  castLineScript: {fileID: 0}
-  backGrounds:
-  - {fileID: 936422572}
-  - {fileID: 975169350}
-  bgSpeed: {fileID: 566185719}
-  fishing: {fileID: 1351622666}
-  monster: {fileID: 1474347593}
-  isFishing: 0
---- !u!114 &1351622664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351622656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766d10f2aa9512741af34a223a2525df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  step: 0
-  points:
-  - {fileID: 157874372}
-  - {fileID: 2056419628}
-  line: {fileID: 1401774804}
-  bobber: {fileID: 2056419627}
-  enterFish: {fileID: 0}
-  bobberHolder: {fileID: 45553092}
-  hasCast: 0
-  canCast: 1
-  shouldReel: 0
 --- !u!114 &1351622665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3779,27 +3721,6 @@ MonoBehaviour:
   cam: {fileID: 519420031}
   ogZoom: 0
   targetZoom: 5
---- !u!114 &1351622666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351622656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea2443acfe2df5498cb253e9d396fbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fishManager: {fileID: 900264483}
-  junkManager: {fileID: 1149555042}
-  bobber: {fileID: 2056419627}
-  line: {fileID: 1401774804}
-  castScript: {fileID: 1351622664}
-  inventory: {fileID: 1351622667}
-  fishHooked: 0
-  junkHooked: 0
-  securingItem: 0
 --- !u!114 &1351622667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3852,6 +3773,8 @@ MonoBehaviour:
   camShake: {fileID: 519420034}
   bobber: {fileID: 2056419627}
   harpoonPower: 0
+  line: {fileID: 1401774804}
+  isFishing: 0
 --- !u!1 &1352642768
 GameObject:
   m_ObjectHideFlags: 0
@@ -4140,7 +4063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &1401774802
 LineRenderer:
   serializedVersion: 2
@@ -4273,7 +4196,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linerender: {fileID: 0}
-  points: []
+  points:
+  - {fileID: 157874372}
+  - {fileID: 2056419628}
 --- !u!1 &1430223277
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,7 +4325,7 @@ MonoBehaviour:
   inventory: {fileID: 1351622667}
   cam: {fileID: 519420031}
   fishManager: {fileID: 900264483}
-  fishing: {fileID: 1351622663}
+  fishing: {fileID: 1351622669}
   bgSpeed: {fileID: 566185719}
 --- !u!4 &1474347594
 Transform:
@@ -6083,7 +6008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1972990814
 Transform:
   m_ObjectHideFlags: 0
