@@ -3775,6 +3775,9 @@ MonoBehaviour:
   harpoonPower: 0
   line: {fileID: 1401774804}
   isFishing: 0
+  distance: 100
+  harpoonEnd: {fileID: 157874372}
+  fish: {fileID: 900264483}
 --- !u!1 &1352642768
 GameObject:
   m_ObjectHideFlags: 0

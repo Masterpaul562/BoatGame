@@ -16,6 +16,8 @@ public class HarpoonGun : MonoBehaviour
     private bool noFire;
     public bool isFishing;
     [SerializeField]private float distance = 100;
+    [SerializeField]public Transform harpoonEnd;
+    [SerializeField]private FishManager fish;
 
 
     private void Start()
@@ -47,6 +49,7 @@ public class HarpoonGun : MonoBehaviour
                 shouldFire = false; 
                 Fire();
                 animator.SetTrigger("Fire");
+                harpoonEnd.position = new Vector2(harpoonEnd.transform.position.x-0.1f,line.transform.position.y);
                 animator.SetBool("StowHarpoon", false);
                 StopCoroutine(Harpoon());
             }
@@ -72,16 +75,13 @@ public class HarpoonGun : MonoBehaviour
             {
                 harpoonPower++;
             }
-            yield return new WaitForSeconds(.5f);;
+            yield return new WaitForSeconds(.3f);;
         }
         yield return new WaitForSeconds(.2f);
         if (horz != 0&&noFire||shouldStow)
         {
             shouldFire=false;
             animator.SetTrigger("StowHarpoon");
-
-
-
             yield return new WaitForSeconds(1f);
             Debug.Log("UnFreeze");
             freezePlayer.freeze = false;
@@ -90,35 +90,44 @@ public class HarpoonGun : MonoBehaviour
     }
     private void Fire()
     {
-        bobber.SetActive(true);
-       bobber.GetComponent<Rigidbody2D>().simulated = true;
+        bobber.SetActive(true);    
         isFishing = true;
         line.gameObject.SetActive(true);
+        bobber.GetComponent<Floater>().enabled = false;
         if (animator.GetBool("isFacingRight"))
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * 2, harpoonPower * 0.5f), ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * 2.5f, 1), ForceMode2D.Impulse);
         }else
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * -2, harpoonPower * -0.5f), ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * -2.5f,1), ForceMode2D.Impulse);
         }
+        bobber.GetComponent<Rigidbody2D>().simulated = true;
+        
        harpoonPower = 1;
     }
 
     private IEnumerator ReelIn()
     {
         Debug.Log("didit");
-        while(distance>1)
+        bobber.GetComponent<Rigidbody2D>().simulated = false;
+        distance = 100;
+        fish.HookRealFish();
+        while(distance>0.1f)
         {       
             Debug.Log("yay");
-          Vector2 pos = Vector2.MoveTowards(bobber.transform.position, this.transform.position, Time.deltaTime * 10);
+          Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 10);
             bobber.transform.position = pos;
-            distance = Vector2.Distance(transform.position, bobber.transform.position);
+            distance = Vector2.Distance(harpoonEnd.position, bobber.transform.position);
             yield return null;
         }                      
          bobber.SetActive(false);
          line.gameObject.SetActive(false);
          bobber.GetComponent<Bobber>().rb.simulated = true;
          bobber.GetComponent<Bobber>().submerged = false;      
+         isFishing = false;
+         freezePlayer.freeze = false;
+         shouldFire=false;
+          animator.SetTrigger("StowHarpoon");
          yield return null;         
             
     }

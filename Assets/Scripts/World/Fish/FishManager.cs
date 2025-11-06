@@ -25,6 +25,7 @@ public class FishManager : MonoBehaviour
     {
         DestroyVanityFish();
         DestroyRealFish();
+        
         if (bobber.submerged)
         {
             FindClosestFish();
@@ -58,6 +59,9 @@ public class FishManager : MonoBehaviour
             startCoVanity = true;
             vanityFish.enabled = false;
             vanityFish.shouldBeSpawning = false;
+            if(closestFish != null){
+            SecureFish();
+            }
 
         }
         if (inEvent)
@@ -104,13 +108,10 @@ public class FishManager : MonoBehaviour
             if (Vector2.Distance(bobber.transform.position, closestFish.transform.position) < 1)
             {
                 canHook = true;
-
             }
         }
-
-
-
     }
+
     public void StopSwimmingToBobber()
     {
         for (int i = 0; i < fishList.fish.Count; i++)
@@ -177,5 +178,17 @@ public class FishManager : MonoBehaviour
 
         }
     }
-
+    public void HookRealFish()
+    {
+        if(canHook)
+        {
+            closestFish.transform.parent = bobber.transform;
+        }
+    }
+    private void SecureFish(){
+        if(Vector2.Distance(closestFish.transform.position,isFishing.harpoonEnd.position)<1){
+            Destroy(closestFish);
+             fishList.fish.RemoveAt(closestFishIndex);
+        }
+    }
 }
