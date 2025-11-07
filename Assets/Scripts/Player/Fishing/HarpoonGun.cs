@@ -111,10 +111,10 @@ public class HarpoonGun : MonoBehaviour
         Debug.Log("didit");
         bobber.GetComponent<Rigidbody2D>().simulated = false;
         distance = 100;
-        fish.HookRealFish();
+        fish.HookFish();
         while(distance>0.1f)
         {       
-            Debug.Log("yay");
+            
           Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 10);
             bobber.transform.position = pos;
             distance = Vector2.Distance(harpoonEnd.position, bobber.transform.position);
@@ -127,6 +127,11 @@ public class HarpoonGun : MonoBehaviour
          isFishing = false;
          freezePlayer.freeze = false;
          shouldFire=false;
+        if (fish.canHook)
+        {
+            Debug.Log("catch");
+            fish.SecureFish();
+        }
           animator.SetTrigger("StowHarpoon");
          yield return null;         
             
