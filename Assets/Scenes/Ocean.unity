@@ -3778,6 +3778,8 @@ MonoBehaviour:
   distance: 100
   harpoonEnd: {fileID: 157874372}
   fish: {fileID: 900264483}
+  canCast: 1
+  canReel: 1
 --- !u!1 &1352642768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,6 +6293,7 @@ MonoBehaviour:
   y: -1.14
   rb: {fileID: 0}
   floaterScript: {fileID: 0}
+  gun: {fileID: 1351622669}
   submerged: 0
 --- !u!50 &2056419630
 Rigidbody2D:
