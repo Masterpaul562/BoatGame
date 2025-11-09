@@ -59,10 +59,8 @@ public class FishManager : MonoBehaviour
             startCoVanity = true;
             vanityFish.enabled = false;
             vanityFish.shouldBeSpawning = false;
-
-
         }
-        if (inEvent)
+        if (isFishing.isFishing)
         {
 
 

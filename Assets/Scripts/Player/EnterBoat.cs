@@ -18,6 +18,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Animator animator;
     public bool shouldZoom;
     public bool zoom;
+    public bool canEnter = true;
     private float alpha = 120;
     
     void Start()
@@ -51,10 +52,7 @@ public class EnterBoat : MonoBehaviour
             {
                 shouldZoom = false;
             }
-          //  if (alpha <= 10)
-          //  {
-               // insideBG.enabled = false;
-          //  }
+
         }
         
         
@@ -63,8 +61,9 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Enter")
+                if (hit.collider.gameObject.tag == "Enter"&&canEnter)
                 {
+                    
                     Enter();
                 }
             }
@@ -74,7 +73,7 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Exit")
+                if (hit.collider.gameObject.tag == "Exit"&&canEnter)
                 {
                     Exit();
                 }
