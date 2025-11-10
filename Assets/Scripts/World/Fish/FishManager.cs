@@ -26,18 +26,19 @@ public class FishManager : MonoBehaviour
         DestroyVanityFish();
         DestroyRealFish();
 
-        if (bobber.submerged)
+        if (isFishing.isFishing)
         {
             FindClosestFish();
             CanHookCheck();
-            if (inEvent == false)
+            startCoVanity = true;
+            vanityFish.shouldBeSpawning = false;
+            startCoVanity = true;
+            if (startCoReal)
             {
-                if (startCoReal)
-                {
-                    startCoReal = false;
-                    fishList.StartFishy();
-                }
+                startCoReal = false;
+                fishList.StartFishy();
             }
+
         }
         else if (isFishing.isFishing == false)
         {
@@ -47,31 +48,13 @@ public class FishManager : MonoBehaviour
             fishList.shouldBeSpawning = false;
             startCoReal = true;
             vanityFish.enabled = true;
-            if (startCoVanity && inEvent == false)
+            if (startCoVanity)
             {
                 startCoVanity = false;
                 vanityFish.maxNumOfFish = 7;
                 vanityFish.Start();
             }
         }
-        else //you are fishing but not in cast
-        {
-            startCoVanity = true;
-            vanityFish.enabled = false;
-            vanityFish.shouldBeSpawning = false;
-        }
-        if (isFishing.isFishing)
-        {
-
-
-            vanityFish.shouldBeSpawning = false;
-            fishList.shouldBeSpawning = false;
-            startCoVanity = true;
-            startCoReal = true;
-        }
-
-
-
     }
 
 
@@ -180,6 +163,8 @@ public class FishManager : MonoBehaviour
     {
         if (canHook)
         {
+            canHook = false;
+            closestFish.GetComponent<Fish>().shouldSwimToBobber = true;
             closestFish.transform.parent = bobber.transform;
         }
     }

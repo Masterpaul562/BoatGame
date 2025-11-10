@@ -53,10 +53,11 @@ public class FishSpawner : MonoBehaviour
                 float outside = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
                 spawnLocation = new Vector2(outside - 4, Random.Range(-7, -1));
             }
-            else
+            else if (side == 1) 
             {
                 float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
                 spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
+                Debug.Log(outside);
             }
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             var fishScript = fishs.GetComponent<Fish>();
