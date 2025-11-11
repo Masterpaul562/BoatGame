@@ -41,6 +41,7 @@ Jonathan Gallego - Concept Art
 <details>
 <summary>Downloads</summary>
 <p><a href="">Windows Download</a></p>
+<p><a href="https://drive.google.com/file/d/1OX4vxm1ZnpDbvTQGeF9yilKB3uu2N0Cc/view?usp=sharing">MacOs Download</a></p>
 
 Download and unzip. Extract with executable and run.
   
