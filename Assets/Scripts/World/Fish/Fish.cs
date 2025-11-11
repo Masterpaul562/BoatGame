@@ -65,8 +65,8 @@ public class Fish : MonoBehaviour
                 {
                     Flip();
                 }
-                rightX = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth /2;
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(rightX + 6, randomY), Time.deltaTime / speed);
+                 leftX = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX-6, randomY), Time.deltaTime / speed);
 
             }
             else if (swimDirection == 1)

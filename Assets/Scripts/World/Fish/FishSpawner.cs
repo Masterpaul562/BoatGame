@@ -23,17 +23,10 @@ public class FishSpawner : MonoBehaviour
 
     private void Update()
     {
-       
-
-
-
         if (bobber.GetComponent<Bobber>().submerged)
         {
           
         }
-        
-
-
     }
 
     public void SpawnFish(int spawnAmount)
@@ -43,18 +36,22 @@ public class FishSpawner : MonoBehaviour
         for (int i = 0; i < spawnAmount; i++)
         {
 
-            int side = Random.Range(0, 2);
+            int side = 1;
             int swimBobber = Random.Range(0, 100);
-
-           
+            float speedTemp = Random.Range(0.3f, 5);
+           if(speedTemp<3){
+            side = 0;
+           }
 
             if (side == 0)
             {
-                float outside = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
-                spawnLocation = new Vector2(outside - 4, Random.Range(-7, -1));
+                //Fish is facing right
+                float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
+                spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
             }
             else if (side == 1) 
             {
+                //Fish is facing left
                 float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
                 spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
                 Debug.Log(outside);
@@ -67,8 +64,8 @@ public class FishSpawner : MonoBehaviour
             }
             fishScript.bobber = bobber.transform;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
-            fishScript.swimDirection = side;
-            fishScript.speed = Random.Range(0.3f, 5);
+            fishScript.swimDirection = 1;
+            fishScript.speed = speedTemp;
             fishScript.cam = cam;
             fishs.GetComponent<FloaterMovement>().cam = cam;
             fish.Add(fishs);

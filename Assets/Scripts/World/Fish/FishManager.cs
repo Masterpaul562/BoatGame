@@ -19,41 +19,44 @@ public class FishManager : MonoBehaviour
     public bool inEvent;
 
 
-
+    private void Start()
+    {
+        fishList.StartFishy();
+    }
 
     void Update()
     {
-        DestroyVanityFish();
+       // DestroyVanityFish();
         DestroyRealFish();
 
         if (isFishing.isFishing)
         {
             FindClosestFish();
             CanHookCheck();
-            startCoVanity = true;
-            vanityFish.shouldBeSpawning = false;
-            startCoVanity = true;
-            if (startCoReal)
-            {
-                startCoReal = false;
-                fishList.StartFishy();
-            }
+          //  startCoVanity = true;
+           // vanityFish.shouldBeSpawning = false;
+           // startCoVanity = true;
+            //if (startCoReal)
+           // {
+            //    startCoReal = false;
+                
+           // }
 
         }
         else if (isFishing.isFishing == false)
         {
 
-            MoveRealFishOff();
+            //MoveRealFishOff();
             canHook = false;
-            fishList.shouldBeSpawning = false;
-            startCoReal = true;
-            vanityFish.enabled = true;
-            if (startCoVanity)
-            {
-                startCoVanity = false;
-                vanityFish.maxNumOfFish = 7;
-                vanityFish.Start();
-            }
+           // fishList.shouldBeSpawning = false;
+           // startCoReal = true;
+            //vanityFish.enabled = true;
+           // if (startCoVanity)
+          //  {
+            //    startCoVanity = false;
+             //   vanityFish.maxNumOfFish = 7;
+             //   vanityFish.Start();
+           // }
         }
     }
 
