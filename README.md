@@ -15,9 +15,9 @@ Jonathan Gallego - Concept Art
 <details>
 <summary>Mock Ups</summary>
 
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/ALBATROSS.png?raw=true" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/BoatGameUI.png?raw=true" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/Restart%3F.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/ALBATROSS.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/Restart_.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/BoatGameUI.png?raw=true" alt="Example"></p>
 </details>
 
 
@@ -25,14 +25,14 @@ Jonathan Gallego - Concept Art
 <details>
 <summary>Class Diagram</summary>
 
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/BoatUML.drawio.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/BoatUML.drawio.png?raw=true" alt="Example"></p>
 </details>
 
 <details>
 <summary>TimeLine</summary>
 
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/BoatGameTrello.png?raw=true" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/Albatross/blob/main/Docs/ToDoTrello.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/BoatGameTrello.png" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/ToDoTrello.png" alt="Example"></p>
 
 </details>
 
