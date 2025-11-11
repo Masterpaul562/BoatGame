@@ -4,8 +4,6 @@
 <details>
 <summary>Team Members</summary>
 
-Eli Wright - Writing
-
 Paul Tokhtuev - Coding
 
 Jame Olsen - Artist
