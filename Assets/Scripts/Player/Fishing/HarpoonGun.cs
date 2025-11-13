@@ -128,7 +128,7 @@ public class HarpoonGun : MonoBehaviour
 
     }
 
-    private IEnumerator ReelIn()
+    public IEnumerator ReelIn()
     {
         Debug.Log("StartReelIn");
 
@@ -162,6 +162,7 @@ public class HarpoonGun : MonoBehaviour
         canReel = true;
         enter.canEnter = true;
         cam.shouldMove = false;
+        fish.StopSwimmingToBobber();
         yield return null;
 
     }

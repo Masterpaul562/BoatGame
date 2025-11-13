@@ -37,9 +37,9 @@ public class FishSpawner : MonoBehaviour
         {
 
             int side = 1;
-            int swimBobber = Random.Range(0, 100);
-            float speedTemp = Random.Range(0.3f, 5);
-           if(speedTemp<3){
+            //int swimBobber = Random.Range(0, 100);
+            float speedTemp = Random.Range(0.3f, 3);
+           if(speedTemp>3){
             side = 0;
            }
 
@@ -54,14 +54,11 @@ public class FishSpawner : MonoBehaviour
                 //Fish is facing left
                 float outside = cam.transform.position.x + cam.GetComponent<CamSizeManager>().worldWidth / 2;
                 spawnLocation = new Vector2(outside + 4, Random.Range(-7, -1));
-                Debug.Log(outside);
+                
             }
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
-            var fishScript = fishs.GetComponent<Fish>();
-            if (swimBobber > 70)
-            {
-                fishScript.shouldSwimToBobber = true;
-            }
+            var fishScript = fishs.GetComponent<Fish>();          
+            fishScript.shouldSwimToBobber = false;           
             fishScript.bobber = bobber.transform;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
             fishScript.swimDirection = 1;

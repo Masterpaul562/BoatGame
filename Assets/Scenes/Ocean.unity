@@ -1877,6 +1877,7 @@ MonoBehaviour:
   vanityFish: {fileID: 1352642769}
   isFishing: {fileID: 1351622669}
   city: {fileID: 1149555041}
+  inventory: {fileID: 0}
   canHook: 0
   inEvent: 0
 --- !u!1 &918458452
@@ -4423,7 +4424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldAppear: 1
   isHere: 0
-  spawnChance: 10
+  spawnChance: 0
   spawnTimer: 10
   feedAmount: 0
   feedAmountMin: 0
@@ -6408,7 +6409,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056419627}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1

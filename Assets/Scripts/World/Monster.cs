@@ -43,18 +43,18 @@ public class Monster : MonoBehaviour
 
     public IEnumerator Spawn()
     {
-        fishing.isFishing = false;
-        StartCoroutine(bgSpeed.SlowDownOcean());
-        bgSpeed.inEvent = true;
-        fishManager.MoveVanityFishOff();
+        StartCoroutine(fishing.ReelIn());
+        //StartCoroutine(bgSpeed.SlowDownOcean());
+        //bgSpeed.inEvent = true;
+        //fishManager.MoveVanityFishOff();
         var camShake = cam.GetComponent<CameraShake>();
-        fishManager.inEvent = true;
+        //fishManager.inEvent = true;
         isHere = true;
         feedAmount = Random.Range(feedAmountMin, feedAmountMax);
         monster.SetActive(true);
         monster.transform.position = new Vector2(spawnPos.position.x, spawnPos.position.y);
         yield return null;
-        fishManager.MoveVanityFishOff();
+        //fishManager.MoveVanityFishOff();
         camShake.rumble = true;
         StartCoroutine(camShake.Rumble(0.1f));
         yield return new WaitForSeconds(1.5f);
@@ -73,7 +73,7 @@ public class Monster : MonoBehaviour
     {
         isHere = false;
         StartCoroutine(bgSpeed.SpeedUpOcean());
-        fishManager.inEvent = false;
+        //fishManager.inEvent = false;
         startCo = true;
         yield return null;
         while (monster.transform.position != spawnPos.position)

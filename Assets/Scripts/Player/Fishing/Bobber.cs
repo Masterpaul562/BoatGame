@@ -13,7 +13,7 @@ public class Bobber : MonoBehaviour
    
    
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         floaterScript = GetComponent<Floater>();

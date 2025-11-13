@@ -13,6 +13,7 @@ public class FishManager : MonoBehaviour
     [SerializeField] private VanityFishSpawner vanityFish;
     [SerializeField] private HarpoonGun isFishing;
     [SerializeField] private CityManager city;
+    [SerializeField] private FishInventory inventory;
     public bool canHook;
     private bool startCoVanity;
     private bool startCoReal;
@@ -98,8 +99,9 @@ public class FishManager : MonoBehaviour
     {
         for (int i = 0; i < fishList.fish.Count; i++)
         {
-
+            Debug.Log("STOP SWIMING");
             fishList.fish[i].GetComponent<Fish>().shouldSwimToBobber = false;
+            fishList.fish[i].GetComponent<Fish>().bait = true;
 
         }
     }
@@ -177,6 +179,7 @@ public class FishManager : MonoBehaviour
         Debug.Log("destroy");
         Destroy(closestFish);
         fishList.fish.RemoveAt(closestFishIndex);
+        inventory.AddFishOutside(1);
 
 
     }

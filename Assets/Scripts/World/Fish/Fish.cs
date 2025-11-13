@@ -17,7 +17,7 @@ public class Fish : MonoBehaviour
     public Camera cam;
     public bool shouldBeDestroyed;
     private BgScroller scroller;
-    private bool bait;
+    public bool bait;
 
 
 
@@ -41,7 +41,10 @@ public class Fish : MonoBehaviour
         fishySwim();
         if (Mathf.Abs(transform.position.x - bobber.position.x) < 4 && bait && bobber.gameObject.GetComponent<Bobber>().submerged)
         {
+            if(bobber.position.x<transform.position.x){
+                Debug.Log("Baited");
             Baited();
+            }
         }
     }
 
