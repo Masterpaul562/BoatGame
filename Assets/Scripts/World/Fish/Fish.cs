@@ -18,6 +18,7 @@ public class Fish : MonoBehaviour
     public bool shouldBeDestroyed;
     private BgScroller scroller;
     public bool bait;
+    [SerializeField]private bool flipped;
 
 
 
@@ -28,22 +29,27 @@ public class Fish : MonoBehaviour
         shouldBeDestroyed = false;
         size = Random.Range(0.5f, .7f);
         transform.localScale = new Vector2(size, size);
-        if (swimDirection == 1)
-        {
-            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        }
         fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
         fishSwimRender.sortingOrder = Random.Range(0, 9);
+        flipped = true;
+    }
+    private void Start(){
+        if (speed<1.5f)
+        {
+            transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+            flipped = false;
+        }
     }
     private void Update()
     {
         fishySwim();
         if (Mathf.Abs(transform.position.x - bobber.position.x) < 4 && bait && bobber.gameObject.GetComponent<Bobber>().submerged)
         {
-            if(bobber.position.x<transform.position.x){
+            if(bobber.position.x<transform.position.x&&!flipped||bobber.position.x>transform.position.x+3f&&flipped)
+            {
                 Debug.Log("Baited");
-            Baited();
+                Baited();
             }
         }
     }
@@ -53,43 +59,18 @@ public class Fish : MonoBehaviour
     {
         if (shouldSwimToBobber && bobber.GetComponent<Bobber>().submerged == true)
         {
-            if (transform.localScale.x > 0 && swimDirection == 1)
-            {
-                Flip();
-            }
+          
             transform.position = Vector2.MoveTowards(transform.position, bobber.position, Time.deltaTime / speed);
         }
         else
-        {
-            if (swimDirection == 0)
-            {
-
-                if (transform.localScale.x < 0)
-                {
-                    Flip();
-                }
-                 leftX = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX-6, randomY), Time.deltaTime / speed);
-
-            }
-            else if (swimDirection == 1)
-            {
-                if (transform.localScale.x > 0)
-                {
-                    Flip();
-
-                }
+        {               
                 leftX = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX-6, randomY), Time.deltaTime / speed);
-
-            }
-
         }
 
     }
     public void Flip()
     {
-
         if (shouldFlip)
         {
             shouldFlip = false;
@@ -106,30 +87,14 @@ public class Fish : MonoBehaviour
         {
             shouldSwimToBobber = true;
         }
-
-
     }
     public bool DestroyCheck()
     {
-        Vector3 point = cam.WorldToViewportPoint(transform.position);
-       // Debug.Log(point);
-        if (swimDirection == 1)
+        Vector3 point = cam.WorldToViewportPoint(transform.position);           
+        if (point.x < -0.1f)
         {
-            
-            if (point.x < -0.1f)
-            {
-                return true;
-            }
-            else { return false; }
+            return true;
         }
-        else
-        {
-            if (point.x > 1.1f)
-            {
-                return true;
-            }
-            else { return false; }
-        }
-    }
-
+        else { return false; }
+    }   
 }

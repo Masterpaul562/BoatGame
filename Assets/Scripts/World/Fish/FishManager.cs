@@ -27,37 +27,16 @@ public class FishManager : MonoBehaviour
 
     void Update()
     {
-       // DestroyVanityFish();
         DestroyRealFish();
 
         if (isFishing.isFishing)
         {
             FindClosestFish();
             CanHookCheck();
-          //  startCoVanity = true;
-           // vanityFish.shouldBeSpawning = false;
-           // startCoVanity = true;
-            //if (startCoReal)
-           // {
-            //    startCoReal = false;
-                
-           // }
-
         }
         else if (isFishing.isFishing == false)
         {
-
-            //MoveRealFishOff();
             canHook = false;
-           // fishList.shouldBeSpawning = false;
-           // startCoReal = true;
-            //vanityFish.enabled = true;
-           // if (startCoVanity)
-          //  {
-            //    startCoVanity = false;
-             //   vanityFish.maxNumOfFish = 7;
-             //   vanityFish.Start();
-           // }
         }
     }
 
@@ -99,7 +78,6 @@ public class FishManager : MonoBehaviour
     {
         for (int i = 0; i < fishList.fish.Count; i++)
         {
-           // Debug.Log("STOP SWIMING");
             fishList.fish[i].GetComponent<Fish>().shouldSwimToBobber = false;
             fishList.fish[i].GetComponent<Fish>().bait = true;
 

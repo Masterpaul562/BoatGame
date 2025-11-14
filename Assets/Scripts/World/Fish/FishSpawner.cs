@@ -61,7 +61,6 @@ public class FishSpawner : MonoBehaviour
             fishScript.shouldSwimToBobber = false;           
             fishScript.bobber = bobber.transform;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
-            fishScript.swimDirection = 1;
             fishScript.speed = speedTemp;
             fishScript.cam = cam;
             fishs.GetComponent<FloaterMovement>().cam = cam;
