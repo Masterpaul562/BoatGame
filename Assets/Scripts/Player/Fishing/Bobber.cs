@@ -9,6 +9,7 @@ public class Bobber : MonoBehaviour
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Floater floaterScript;
     [SerializeField] private HarpoonGun gun;
+    private SpriteRenderer render;
     public bool submerged;
    
    
@@ -17,6 +18,7 @@ public class Bobber : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         floaterScript = GetComponent<Floater>();
+        render = GetComponent<SpriteRenderer>();
     }
   
     void FixedUpdate()
@@ -29,13 +31,22 @@ public class Bobber : MonoBehaviour
             floaterScript.enabled = true;
             rb.simulated = false;
             submerged = true;
-            gun.isFishing = true;
-            //Destroy(rb);
+            if (!gun.enter.inBoat)
+            {
+                gun.isFishing = true;
+            }
+        }
+        if (gun.enter.inBoat)
+        {
+            render.sortingLayerName = "Inside";
+        }
+    }
 
-            // rb.constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezePositionY;
-            // rb.bodyType = RigidbodyType2D.Kinematic;
-            //  rb.velocity = Vector2.zero;
-            //   
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+       if(other.collider.tag == "Inside")
+        {
+           Debug.Log("reel");
         }
     }
 }

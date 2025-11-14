@@ -20,6 +20,7 @@ public class EnterBoat : MonoBehaviour
     public bool zoom;
     public bool canEnter = true;
     private float alpha = 120;
+    public bool inBoat;
     
     void Start()
     {
@@ -82,11 +83,11 @@ public class EnterBoat : MonoBehaviour
     }
     private void Enter()
     {
+        inBoat = true;
         zoom = true;
         shouldZoom = true;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
         animator.SetBool("IsInside", true);
-       // alpha = 120;
         insideBG.enabled = true;
         transform.position = enterLocation.position;
         boatCollider.SetActive(false);
@@ -101,7 +102,7 @@ public class EnterBoat : MonoBehaviour
     }
     private void Exit()
     {
-       // alpha = 255;
+        inBoat = false;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
         animator.SetBool("IsInside", false);
         insideBG.color = new Color(0, 0, 0, alpha);

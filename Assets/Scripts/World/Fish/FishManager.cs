@@ -99,7 +99,7 @@ public class FishManager : MonoBehaviour
     {
         for (int i = 0; i < fishList.fish.Count; i++)
         {
-            Debug.Log("STOP SWIMING");
+           // Debug.Log("STOP SWIMING");
             fishList.fish[i].GetComponent<Fish>().shouldSwimToBobber = false;
             fishList.fish[i].GetComponent<Fish>().bait = true;
 

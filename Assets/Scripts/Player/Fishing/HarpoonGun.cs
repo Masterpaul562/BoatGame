@@ -20,7 +20,7 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private FishManager fish;
     [SerializeField] private bool canCast;
     [SerializeField] private bool canReel = true;
-    [SerializeField] private EnterBoat enter;
+    [SerializeField] public EnterBoat enter;
     [SerializeField] private FollowBobber cam;
 
 

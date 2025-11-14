@@ -1877,7 +1877,7 @@ MonoBehaviour:
   vanityFish: {fileID: 1352642769}
   isFishing: {fileID: 1351622669}
   city: {fileID: 1149555041}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1351622667}
   canHook: 0
   inEvent: 0
 --- !u!1 &918458452
@@ -2296,7 +2296,7 @@ GameObject:
   - component: {fileID: 1017895117}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Inside
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2544,7 +2544,7 @@ GameObject:
   - component: {fileID: 1042597576}
   m_Layer: 0
   m_Name: Stairs
-  m_TagString: Untagged
+  m_TagString: Inside
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3809,6 +3809,7 @@ MonoBehaviour:
   shouldZoom: 0
   zoom: 0
   canEnter: 1
+  inBoat: 0
 --- !u!114 &1351622665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,7 +4820,7 @@ GameObject:
   - component: {fileID: 1538091465}
   m_Layer: 0
   m_Name: InsideBoatColliders
-  m_TagString: Untagged
+  m_TagString: Inside
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6396,7 +6397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   y: -1.14
-  rb: {fileID: 0}
+  rb: {fileID: 2056419630}
   floaterScript: {fileID: 0}
   gun: {fileID: 1351622669}
   submerged: 0
