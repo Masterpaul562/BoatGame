@@ -46,7 +46,7 @@ public class Bobber : MonoBehaviour
     {
        if(other.collider.tag == "Inside")
         {
-           Debug.Log("reel");
+            gun.StartReel();
         }
     }
 }

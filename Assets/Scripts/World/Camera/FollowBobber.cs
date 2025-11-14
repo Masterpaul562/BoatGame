@@ -31,5 +31,9 @@ public class FollowBobber : MonoBehaviour
         {
             moveToMiddle();
         }
+        else
+        {
+            transform.position = Vector3.MoveTowards(transform.position, ogPosition, Time.deltaTime * 5);
+        }
     }
 }
