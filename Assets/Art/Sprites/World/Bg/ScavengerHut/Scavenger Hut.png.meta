@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,973 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Scavenger Hut_0
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 11872
+        width: 284
+        height: 556
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c18200202d5fd40b72cdae918c1489
+      internalID: -893692263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_1
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 11872
+        width: 284
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c25a3c6e582a1043bf17a42f4fea36b
+      internalID: -352642671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_2
+      rect:
+        serializedVersion: 2
+        x: 4748
+        y: 11872
+        width: 284
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4bb392f74c26b43ac7064564e42077
+      internalID: 698532535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_3
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 11872
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e78e3f784eb7d14e92748b0bf74e6cb
+      internalID: 1121667825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_4
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 10793
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c73a6be9089b38b4cb1037a6fe806ec8
+      internalID: 1178266255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_5
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 10793
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba6549030b36ff4686530e2734f3118
+      internalID: -1043227841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_6
+      rect:
+        serializedVersion: 2
+        x: 4748
+        y: 10793
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd5f247b54547f4aab1fe994d27e385
+      internalID: 1561731003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_7
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 10793
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eb2cc5e431f8a440a9e0f8cd03de594
+      internalID: -317017715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_8
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 9711
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66828021d1ef88a4ba49c0c42170e4e2
+      internalID: -144319074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_9
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 9711
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd187098f36bda54a984bcd875850476
+      internalID: 281402590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_10
+      rect:
+        serializedVersion: 2
+        x: 4748
+        y: 9711
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4793c5c8f94bc4baba0c20da311048
+      internalID: 220907840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_11
+      rect:
+        serializedVersion: 2
+        x: 6661
+        y: 9711
+        width: 288
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215d1d8a5dd77294384f6261281408c0
+      internalID: 1094667762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_12
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 8632
+        width: 297
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8287258061749478937bb77aa33261
+      internalID: -555473247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_13
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 8632
+        width: 297
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa1ad2a57f627d4ca37490341f0f82d
+      internalID: 10205856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_14
+      rect:
+        serializedVersion: 2
+        x: 4729
+        y: 8632
+        width: 303
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6567e81596c0941a285d828fd5c2aa
+      internalID: -1985458177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_15
+      rect:
+        serializedVersion: 2
+        x: 6646
+        y: 8632
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5ff129e1f770a4fbe881cd11c12b63
+      internalID: -95495791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_16
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 7553
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bfdfdc14158758498663f5064ca8702
+      internalID: 1085517719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_17
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 7553
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdaa55a87cb319418204855142b01b3
+      internalID: 695414566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_18
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 7553
+        width: 309
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330ed1491cb09f642af951a81a6c8018
+      internalID: 1311835885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_19
+      rect:
+        serializedVersion: 2
+        x: 6646
+        y: 7553
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e984712a10eb85b4c8e90d2a6113b972
+      internalID: 2041690365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_20
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 6471
+        width: 309
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920db63a10f9cbd4aa6b3692a957e646
+      internalID: 530078668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_21
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 6471
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dca7c775ccbed248987ec84f30ad40e
+      internalID: 1906011871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_22
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 6471
+        width: 309
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6f9068767155549b4b79862d9f1928
+      internalID: -2101848252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_23
+      rect:
+        serializedVersion: 2
+        x: 6646
+        y: 6471
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e472d7f44537540a84dfd5e75601e2
+      internalID: -1599666452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_24
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 5392
+        width: 309
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ada500a71eac1c42896956d749b55f0
+      internalID: 633939738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_25
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 5392
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed029b129e114c42b9809e45cb1afe0
+      internalID: -1192878010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_26
+      rect:
+        serializedVersion: 2
+        x: 4723
+        y: 5392
+        width: 309
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfdddb91daba5f4ab243f6beca70577
+      internalID: -1457229987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_27
+      rect:
+        serializedVersion: 2
+        x: 6646
+        y: 5392
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9eac7b5bdf03764aafb1fe543dc137e
+      internalID: 1623380068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_28
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 4313
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8f42abef3247943a82036ac6f7878a
+      internalID: -1877710470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_29
+      rect:
+        serializedVersion: 2
+        x: 2806
+        y: 4313
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f25e6ea09117da4e9fe52ee44122315
+      internalID: 1509897132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_30
+      rect:
+        serializedVersion: 2
+        x: 4729
+        y: 4313
+        width: 303
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e741eaf4b2dd0419b650741b1d5b5f
+      internalID: 936171828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_31
+      rect:
+        serializedVersion: 2
+        x: 6652
+        y: 4313
+        width: 297
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dafcecea7613bf4e999ffccfe18af5b
+      internalID: 1057285394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_32
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 3231
+        width: 297
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6145cddf76bbb284385488136fe1ed67
+      internalID: -2084427496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_33
+      rect:
+        serializedVersion: 2
+        x: 2818
+        y: 3231
+        width: 291
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1074f847f06c54b4a9678c6e3aa92d1f
+      internalID: 388027299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_34
+      rect:
+        serializedVersion: 2
+        x: 4742
+        y: 3231
+        width: 290
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c68540648b3a9243a2de87f9421618b
+      internalID: -1888075430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_35
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 3231
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164e2ddee94d23d42bd5c20cb626b7af
+      internalID: -1090182710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_36
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 2152
+        width: 284
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81b88845e966f3b48805d6f624fe919c
+      internalID: -1079227156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_37
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 2152
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 208c5f72d1a0b6140856b79558bf5b97
+      internalID: -1210692454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_38
+      rect:
+        serializedVersion: 2
+        x: 4748
+        y: 2152
+        width: 284
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 447055220ef742641addede6dcb211b8
+      internalID: 1414542764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_39
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 2152
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baac59f3d7f35fa48870b64e12f7d864
+      internalID: 705982491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_40
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1073
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6809ccbf856e6549a8a116a5e54e3ae
+      internalID: 1710631321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_41
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 1073
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f16245b6066f34581e1acc42760666
+      internalID: 1930059753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_42
+      rect:
+        serializedVersion: 2
+        x: 4748
+        y: 1073
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73cd5686ef7d1e48bf50646f469f864
+      internalID: -1217553834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_43
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 1073
+        width: 284
+        height: 563
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 392a5abe9c760934bad5d8705a38d385
+      internalID: -112370164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_44
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 0
+        width: 284
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdffb56d39827ae4e9aec772fbb3c19a
+      internalID: 105987574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scavenger Hut_45
+      rect:
+        serializedVersion: 2
+        x: 2825
+        y: 0
+        width: 284
+        height: 554
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6f283ff3cff654a90dfb12c32f5826
+      internalID: -1150198488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +1098,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Scavenger Hut_0: -893692263
+      Scavenger Hut_1: -352642671
+      Scavenger Hut_10: 220907840
+      Scavenger Hut_11: 1094667762
+      Scavenger Hut_12: -555473247
+      Scavenger Hut_13: 10205856
+      Scavenger Hut_14: -1985458177
+      Scavenger Hut_15: -95495791
+      Scavenger Hut_16: 1085517719
+      Scavenger Hut_17: 695414566
+      Scavenger Hut_18: 1311835885
+      Scavenger Hut_19: 2041690365
+      Scavenger Hut_2: 698532535
+      Scavenger Hut_20: 530078668
+      Scavenger Hut_21: 1906011871
+      Scavenger Hut_22: -2101848252
+      Scavenger Hut_23: -1599666452
+      Scavenger Hut_24: 633939738
+      Scavenger Hut_25: -1192878010
+      Scavenger Hut_26: -1457229987
+      Scavenger Hut_27: 1623380068
+      Scavenger Hut_28: -1877710470
+      Scavenger Hut_29: 1509897132
+      Scavenger Hut_3: 1121667825
+      Scavenger Hut_30: 936171828
+      Scavenger Hut_31: 1057285394
+      Scavenger Hut_32: -2084427496
+      Scavenger Hut_33: 388027299
+      Scavenger Hut_34: -1888075430
+      Scavenger Hut_35: -1090182710
+      Scavenger Hut_36: -1079227156
+      Scavenger Hut_37: -1210692454
+      Scavenger Hut_38: 1414542764
+      Scavenger Hut_39: 705982491
+      Scavenger Hut_4: 1178266255
+      Scavenger Hut_40: 1710631321
+      Scavenger Hut_41: 1930059753
+      Scavenger Hut_42: -1217553834
+      Scavenger Hut_43: -112370164
+      Scavenger Hut_44: 105987574
+      Scavenger Hut_45: -1150198488
+      Scavenger Hut_46: -1094716789
+      Scavenger Hut_5: -1043227841
+      Scavenger Hut_6: 1561731003
+      Scavenger Hut_7: -317017715
+      Scavenger Hut_8: -144319074
+      Scavenger Hut_9: 281402590
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

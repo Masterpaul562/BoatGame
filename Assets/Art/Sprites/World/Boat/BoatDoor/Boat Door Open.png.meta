@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Boat Door Open_0
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 2357
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fce2aadd635e544871b72ec7a9a471
+      internalID: -666667901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_1
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 2357
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90026fd6172376346976410ece435cc8
+      internalID: 94582870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_2
+      rect:
+        serializedVersion: 2
+        x: 4419
+        y: 2357
+        width: 60
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef94afa00455434fa41f909c40107ab
+      internalID: -713767382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_3
+      rect:
+        serializedVersion: 2
+        x: 6306
+        y: 2349
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c888acc1cbe78a4aa88b486dabdd82b
+      internalID: -1845500781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_4
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 1269
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176ae543645135146a0274ef566bb3df
+      internalID: 2122564256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_5
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 1269
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d96f2d58691f04fac98fc9520ea0bf
+      internalID: -856590799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_6
+      rect:
+        serializedVersion: 2
+        x: 4386
+        y: 1269
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed21e363f44a6a4697a3215a01b96c0
+      internalID: -476344225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_7
+      rect:
+        serializedVersion: 2
+        x: 6306
+        y: 1269
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5a555b3018e764b9214b76df8cc872
+      internalID: -1026915636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_8
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 197
+        width: 60
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdd32afa13f83444a030bc2776495f0
+      internalID: 1858035811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_9
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 197
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac21951f42ec4248864db895a265ad2
+      internalID: 1180889384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boat Door Open_10
+      rect:
+        serializedVersion: 2
+        x: 4423
+        y: 197
+        width: 56
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5254ac2e86976b4d93f73710e603602
+      internalID: 1477912529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +363,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boat Door Open_0: -666667901
+      Boat Door Open_1: 94582870
+      Boat Door Open_10: 1477912529
+      Boat Door Open_2: -713767382
+      Boat Door Open_3: -1845500781
+      Boat Door Open_4: 2122564256
+      Boat Door Open_5: -856590799
+      Boat Door Open_6: -476344225
+      Boat Door Open_7: -1026915636
+      Boat Door Open_8: 1858035811
+      Boat Door Open_9: 1180889384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
