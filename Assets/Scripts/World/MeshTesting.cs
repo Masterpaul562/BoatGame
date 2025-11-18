@@ -43,6 +43,12 @@ public class MeshTesting : MonoBehaviour
 
         }
         mesh.vertices = vertices;
+        mesh.RecalculateBounds();
+        mesh.RecalculateNormals();
+        Destroy(gameObject.GetComponent<MeshCollider>());
+        MeshCollider collider = gameObject.AddComponent<MeshCollider>();
+        collider.sharedMesh = null;
+        collider.sharedMesh = mesh;
 
     }
 }

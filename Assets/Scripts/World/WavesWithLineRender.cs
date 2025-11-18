@@ -2,29 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VertIceTest : MonoBehaviour
+public class WavesWithLineRender : MonoBehaviour
 {
-    [SerializeField] Transform[] vertices;
+    [SerializeField] Vector3[] vertices;
+    [SerializeField] LineRenderer linerender;
     float phase;
-    private float amp1,amp2,len1,len2;
+    private float amp1, amp2, len1, len2;
 
     private void Start()
     {
+        linerender = GetComponent<LineRenderer>();
+        vertices = new Vector3[linerender.positionCount];
         for (int i = 0; i < vertices.Length; i++)
         {
-            vertices[i].position = new Vector3(i, vertices[i].position.y, vertices[i].position.z);
-        }
+            // vertices[i].position = new Vector3(i, vertices[i].position.y, vertices[i].position.z);
+            vertices[i] = linerender.GetPosition(i);
+        }              
+        //vertices = linerender.GetPositions(out Vector3[], linerender.positionCount);
     }
 
     private void Update()
     {
         phase += Time.deltaTime;
-       
+
 
         
         float x = phase;
 
-       
+
 
         for (int i = 0; i < vertices.Length; i++)
         {
@@ -38,19 +43,10 @@ public class VertIceTest : MonoBehaviour
             len2 = 2;
             x -= amp2 * Mathf.Sin(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
             y += amp2 * Mathf.Cos(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
-            vertices[i].position = new Vector2(vertices[i].position.x, y);
-            
+            vertices[i] = new Vector2(vertices[i].x, y);
+            linerender.SetPosition(i, vertices[i]);
         }
 
 
     }
-
-    
 }
-
-//for (int i = 0; i < vertices.Length; i++)
-//{
-
- //   vertices[i].position = new Vector2(vertices[i].position.x, Mathf.Sin(phase - i));
-
-//}
