@@ -7,7 +7,7 @@ public class WavesWithLineRender : MonoBehaviour
     [SerializeField] Vector3[] vertices;
     [SerializeField] LineRenderer linerender;
     float phase;
-    private float amp1, amp2, len1, len2;
+    [SerializeField] private float amp1, amp2, len1, len2;
 
     private void Start()
     {
@@ -17,6 +17,7 @@ public class WavesWithLineRender : MonoBehaviour
         {
             // vertices[i].position = new Vector3(i, vertices[i].position.y, vertices[i].position.z);
             vertices[i] = linerender.GetPosition(i);
+            vertices[i].x = vertices[i].x *-1;
         }              
         //vertices = linerender.GetPositions(out Vector3[], linerender.positionCount);
     }
@@ -34,17 +35,17 @@ public class WavesWithLineRender : MonoBehaviour
         for (int i = 0; i < vertices.Length; i++)
         {
             float y = 0;
-            amp1 = .5f;
-            len1 = 4;
+            float amp1 = this.amp1;
+            float len1 = this.len1;
             x -= amp1 * Mathf.Sin(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
             y += amp1 * Mathf.Cos(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
 
-            amp2 = .25f;
-            len2 = 2;
+            float amp2 = this.amp2;
+            float len2 = this.len2;
             x -= amp2 * Mathf.Sin(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
             y += amp2 * Mathf.Cos(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
-            vertices[i] = new Vector2(vertices[i].x, y);
-            linerender.SetPosition(i, vertices[i]);
+            vertices[i] = new Vector2(vertices[i].x, -1*y);
+            linerender.SetPosition( i, vertices[i]);
         }
 
 
