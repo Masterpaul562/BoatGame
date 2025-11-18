@@ -27,7 +27,7 @@ public class MeshTesting : MonoBehaviour
 
 
 
-        for (int i = 0; i < vertices.Length-11; i++)
+        for (int i = 0; i < 11; i++)
         {
             float y = 0;
            // amp1 = .5f;
@@ -39,7 +39,7 @@ public class MeshTesting : MonoBehaviour
            // len2 = 2;
             x -= amp2 * Mathf.Sin(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
             y += amp2 * Mathf.Cos(phase / len2 - (phase - i) / Mathf.Sqrt(len2));
-            vertices[i] = new Vector3(vertices[i].x, vertices[i].y, y );
+            vertices[i] = new Vector3(vertices[i].x, vertices[i].y, y+5 );
 
         }
         mesh.vertices = vertices;

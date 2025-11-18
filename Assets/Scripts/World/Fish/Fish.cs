@@ -31,7 +31,7 @@ public class Fish : MonoBehaviour
         transform.localScale = new Vector2(size, size);
         fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
-        fishSwimRender.sortingOrder = Random.Range(0, 9);
+        fishSwimRender.sortingOrder = Random.Range(-9, 0);
         flipped = true;
     }
     private void Start(){
