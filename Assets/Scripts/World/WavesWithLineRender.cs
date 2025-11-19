@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WavesWithLineRender : MonoBehaviour
 {
-    [SerializeField] Vector3[] vertices;
-    [SerializeField] LineRenderer linerender;
+    [SerializeField] public Vector3[] vertices;
+    [SerializeField] public LineRenderer linerender;
     float phase;
     [SerializeField] private float amp1, amp2, len1, len2;
 
-    private void Start()
+    private void Awake()
     {
         linerender = GetComponent<LineRenderer>();
         vertices = new Vector3[linerender.positionCount];
