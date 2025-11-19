@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowBobber : MonoBehaviour
 {
     public bool shouldMove;
+    public bool shouldGoToCenter;
     private Vector3 ogPosition;
     [SerializeField] private Transform player;
     [SerializeField] private Transform bobber;
@@ -31,7 +32,7 @@ public class FollowBobber : MonoBehaviour
         {
             moveToMiddle();
         }
-        else
+        else if(shouldGoToCenter)
         {
             transform.position = Vector3.MoveTowards(transform.position, ogPosition, Time.deltaTime * 5);
         }

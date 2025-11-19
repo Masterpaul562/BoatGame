@@ -16,6 +16,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private string insideLayer,outsideLayer;
     [SerializeField] private Animator animator;
+    [SerializeField] private Camera cam;
     public bool shouldZoom;
     public bool zoom;
     public bool canEnter = true;
@@ -83,6 +84,7 @@ public class EnterBoat : MonoBehaviour
     }
     private void Enter()
     {
+        cam.GetComponent<FollowBobber>().shouldGoToCenter = false;
         inBoat = true;
         zoom = true;
         shouldZoom = true;
@@ -102,6 +104,7 @@ public class EnterBoat : MonoBehaviour
     }
     private void Exit()
     {
+        cam.GetComponent<FollowBobber>().shouldGoToCenter = true;
         inBoat = false;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
         animator.SetBool("IsInside", false);
