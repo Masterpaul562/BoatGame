@@ -16,10 +16,12 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private string insideLayer,outsideLayer;
     [SerializeField] private Animator animator;
+    [SerializeField] private Animator doorAnim;
     [SerializeField] private Camera cam;
     public bool shouldZoom;
     public bool zoom;
     public bool canEnter = true;
+    private bool EnterCd = true;
     private float alpha = 120;
     public bool inBoat;
     
@@ -63,10 +65,10 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Enter"&&canEnter)
+                if (hit.collider.gameObject.tag == "Enter"&&canEnter && EnterCd)
                 {
                     
-                    Enter();
+                    StartCoroutine(Enter());
                 }
             }
         }
@@ -82,8 +84,14 @@ public class EnterBoat : MonoBehaviour
             }
         }
     }
-    private void Enter()
+    private IEnumerator Enter()
     {
+        EnterCd = false;
+        doorAnim.SetTrigger("Open");
+        this.GetComponent<PlayerMove>().freeze = true;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        yield return new WaitForSeconds(.5f);
+        this.GetComponent<PlayerMove>().freeze = false;
         cam.GetComponent<FollowBobber>().shouldGoToCenter = false;
         inBoat = true;
         zoom = true;
@@ -100,10 +108,13 @@ public class EnterBoat : MonoBehaviour
             inCity.justEnteredCity = false;
             inCity.shouldZoom = false;
         }
-        
+        yield return null;
     }
     private void Exit()
     {
+        EnterCd = true;
+        doorAnim.SetBool("Open", false);
+        doorAnim.SetTrigger("Close");
         cam.GetComponent<FollowBobber>().shouldGoToCenter = true;
         inBoat = false;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;

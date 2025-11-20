@@ -23,7 +23,7 @@ public class ZoomCamera : MonoBehaviour
         {
             
             cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime*10);
-            cam.transform.position = Vector3.MoveTowards(cam.transform.position, insidePos.position, Time.deltaTime*10);
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, insidePos.position, Time.deltaTime*5);
                 
 
                                
