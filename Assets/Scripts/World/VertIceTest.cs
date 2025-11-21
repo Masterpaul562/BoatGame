@@ -31,8 +31,8 @@ public class VertIceTest : MonoBehaviour
             float y = 0;
             amp1 = .5f;
             len1 = 4;
-            x -= amp1 * Mathf.Sin(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
-            y += amp1 * Mathf.Cos(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
+            x -= amp1 * Mathf.Sin(phase-i / len1 - (phase - i) / Mathf.Sqrt(len1));
+            y += amp1 * Mathf.Cos(phase-i / len1 - (phase - i) / Mathf.Sqrt(len1));
 
             amp2 = .25f;
             len2 = 2;

@@ -38,7 +38,7 @@ public class WavesWithLineRender : MonoBehaviour
             float amp1 = this.amp1;
             float len1 = this.len1;
             x -= amp1 * Mathf.Sin(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
-            y += amp1 * Mathf.Cos(phase / len1 - (phase - i) / Mathf.Sqrt(len1));
+            y += amp1 * Mathf.Cos(phase-i / len1 - (phase - i) / Mathf.Sqrt(len1));
 
             float amp2 = this.amp2;
             float len2 = this.len2;
