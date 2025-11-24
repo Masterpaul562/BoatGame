@@ -5,13 +5,14 @@ using UnityEngine;
 public class MixedWaveWithLine : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] LineRenderer line;
+    [SerializeField] public LineRenderer line;
     [SerializeField] private float[] phasePer;
     private float phase;
     private float phaseOffset;
     [SerializeField] private float amp1, amp2, len1, len2;
     [SerializeField] private Vector3 point;
     public float closestPoint;
+    public int closestIndex;
     [SerializeField] Transform center;
 
     
@@ -84,6 +85,7 @@ public class MixedWaveWithLine : MonoBehaviour
             {
                 minDist = distance;
                 closestPoint = line.GetPosition(i).y;
+                closestIndex = i;
             }
         }
     }
