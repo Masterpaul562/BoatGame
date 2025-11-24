@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FollowLineWave : MonoBehaviour
 {
-    [SerializeField] LineRenderer line;
+    [SerializeField] MixedWaveWithLine line;
     void Update()
     {
-        transform.position = line.GetPosition(7);
+        transform.position = new Vector3 (transform.position.x,line.closestPoint,transform.position.z);
        // Vector3 pos = line.GetPosition(7);
        // Vector3 back = line.GetPosition(6);
 
