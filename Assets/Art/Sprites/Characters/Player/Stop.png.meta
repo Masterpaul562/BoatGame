@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Stop_0
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1074
+        width: 355
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f069028327c3d3847be1d4539acdedcc
+      internalID: 157181035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stop_1
+      rect:
+        serializedVersion: 2
+        x: 2653
+        y: 1086
+        width: 458
+        height: 747
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd6e88f2dde91347ac51c02e808b2a4
+      internalID: 2106635852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stop_2
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 1078
+        width: 401
+        height: 765
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73cc5198467c9c43b44533ded4ddd1d
+      internalID: 2009788488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stop_3
+      rect:
+        serializedVersion: 2
+        x: 6501
+        y: 1074
+        width: 352
+        height: 784
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b1e17647f7cd549bd8b458f30ec1b3
+      internalID: -1395045965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stop_4
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 0
+        width: 454
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d1898922a1d6f4e969ddc2eaf4ef98
+      internalID: -1829459885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stop_5
+      rect:
+        serializedVersion: 2
+        x: 2672
+        y: 0
+        width: 319
+        height: 774
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f784b536c57b2c64a92d035f45229286
+      internalID: -1371280271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stop_0: 157181035
+      Stop_1: 2106635852
+      Stop_2: 2009788488
+      Stop_3: -1395045965
+      Stop_4: -1829459885
+      Stop_5: -1371280271
+      Stop_6: 511327570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
