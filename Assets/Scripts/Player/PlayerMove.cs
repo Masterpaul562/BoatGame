@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private bool isFacingRight;
     [SerializeField] private Animator animator;
     public bool freeze;
+    public bool isMoving;
+    private float currentVel;
 
 
     void Start()
@@ -31,7 +33,11 @@ public class PlayerMove : MonoBehaviour
         }
        
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        
+        if (horizontalInput != 0){
+            isMoving = true;
+        }else {
+            isMoving = false;
+        }
         
         
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
@@ -43,15 +49,23 @@ public class PlayerMove : MonoBehaviour
         {
             Move();
         }
-        else
-        {
 
-        }
     }
 
     private void Move()
     {
+        if(isMoving)
+        {
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        currentVel = rb.velocity.x;
+        animator.SetBool("isMoving",true);
+        }else if (!isMoving && !this.GetComponent<EnterBoat>().inBoat){
+            animator.SetBool("isMoving",false);
+            currentVel = Mathf.MoveTowards(currentVel,0,Time.deltaTime*10); 
+            rb.velocity = new Vector2(currentVel,rb.velocity.y);
+        }else {
+             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        }
     }
     private void Flip()
     {
