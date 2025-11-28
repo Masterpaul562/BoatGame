@@ -4360,6 +4360,8 @@ MonoBehaviour:
   isFacingRight: 1
   animator: {fileID: 0}
   freeze: 0
+  isMoving: 0
+  maxSpeed: 6
 --- !u!114 &1351622662
 MonoBehaviour:
   m_ObjectHideFlags: 0

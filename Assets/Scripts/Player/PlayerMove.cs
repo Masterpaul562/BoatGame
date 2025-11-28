@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public bool freeze;
     public bool isMoving;
     private float currentVel;
+    [SerializeField] private float maxSpeed;
 
 
     void Start()
@@ -24,24 +25,43 @@ public class PlayerMove : MonoBehaviour
         animator.SetBool("isFacingRight", isFacingRight);
     }
 
-   
+
     void Update()
     {
-        if(enterFScript.isFishing == false)
+        if (enterFScript.isFishing == false)
         {
-        Flip(); 
+            Flip();
         }
-       
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (horizontalInput != 0){
+        if (horizontalInput != 0)
+        {
             isMoving = true;
-        }else {
-            isMoving = false;
+            if (!this.GetComponent<EnterBoat>().inBoat)
+            {
+                moveSpeed = Mathf.MoveTowards(moveSpeed, maxSpeed, Time.deltaTime * 5);
+            }
+            else
+            {
+                moveSpeed = 3;
+            }
         }
-        
-        
+        else
+        {
+            isMoving = false;
+            if (!this.GetComponent<EnterBoat>().inBoat)
+            {
+                moveSpeed = Mathf.MoveTowards(moveSpeed, 1, Time.deltaTime * 10);
+            }
+            else
+            {
+                moveSpeed = 3;
+            }
+        }
+
+
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        
+
     }
     private void FixedUpdate()
     {
@@ -54,17 +74,22 @@ public class PlayerMove : MonoBehaviour
 
     private void Move()
     {
-        if(isMoving)
+        if (isMoving)
         {
-        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
-        currentVel = rb.velocity.x;
-        animator.SetBool("isMoving",true);
-        }else if (!isMoving && !this.GetComponent<EnterBoat>().inBoat){
-            animator.SetBool("isMoving",false);
-            currentVel = Mathf.MoveTowards(currentVel,0,Time.deltaTime*10); 
-            rb.velocity = new Vector2(currentVel,rb.velocity.y);
-        }else {
-             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+            currentVel = rb.velocity.x;
+            animator.SetBool("isMoving", true);
+        }
+        else if (!isMoving && !this.GetComponent<EnterBoat>().inBoat)
+        {
+
+            animator.SetBool("isMoving", false);
+            currentVel = Mathf.MoveTowards(currentVel, 0, Time.deltaTime * 10);
+            rb.velocity = new Vector2(currentVel, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
     }
     private void Flip()
@@ -77,7 +102,7 @@ public class PlayerMove : MonoBehaviour
             transform.localScale = localScale;
             animator.SetBool("isFacingRight", isFacingRight);
         }
-        
+
 
     }
 }
