@@ -11,7 +11,7 @@ public class FollowLineWave : MonoBehaviour
         float highPot = Vector3.Distance(line.line.GetPosition(line.closestIndex), line.line.GetPosition(line.closestIndex + 1));
         float adj = (line.closestPoint - line.line.GetPosition(line.closestIndex + 1).y);
         float rotTarget = Mathf.Rad2Deg*Mathf.Acos(adj/highPot);
-        Debug.Log(rotTarget);
+        //Debug.Log(rotTarget);
 
         //transform.Rotate(0,0,Mathf.Asin(Mathf.Abs(pos.y - back.y) / Mathf.Abs(pos.x - back.x)));
     }

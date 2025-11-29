@@ -35,6 +35,7 @@ public class EnterBoat : MonoBehaviour
 
     void Update()
     {
+       
         float vert = Input.GetAxisRaw("Vertical");
         if (inCity.inCity == false|| zoom)
         {
