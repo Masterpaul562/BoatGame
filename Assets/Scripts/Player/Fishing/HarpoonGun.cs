@@ -10,6 +10,7 @@ public class HarpoonGun : MonoBehaviour
     private float horz;
     private PlayerMove freezePlayer;
     [SerializeField] private GameObject bobber;
+    [SerializeField] private GameObject harpoon;
     [SerializeField] private float harpoonPower;
     [SerializeField] private LineRenderController line;
     private bool shouldFire;
@@ -22,6 +23,7 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private bool canReel = true;
     [SerializeField] public EnterBoat enter;
     [SerializeField] private FollowBobber cam;
+    [SerializeField] private float rotSpeed;
 
 
     private void Start()
@@ -68,6 +70,7 @@ public class HarpoonGun : MonoBehaviour
                 shouldFire = false;
                 Fire();
                 animator.SetTrigger("Fire");
+                harpoon.GetComponent<Animator>().SetTrigger("Fire");
                 harpoonEnd.position = new Vector2(harpoonEnd.transform.position.x - 0.1f, line.transform.position.y);
                 animator.SetBool("StowHarpoon", false);
                 StopCoroutine(Harpoon());
@@ -88,7 +91,13 @@ public class HarpoonGun : MonoBehaviour
 
         while (Input.GetKey(key) && horz == 0)
         {
-            Debug.Log("Charching");
+            //Debug.Log("Charching");
+            float vert = Input.GetAxisRaw("Vertical");
+            harpoon.transform.Rotate(0,0,vert*rotSpeed);
+            Vector3 rot = harpoon.transform.rotation.eulerAngles;
+            rot.z = Mathf.Clamp(rot.z, 310, 410);
+            Debug.Log(rot.z);
+            harpoon.transform.rotation = Quaternion.Euler(rot);
             shouldStow = false;
             // noFire = false;
             shouldFire = true;
@@ -123,13 +132,14 @@ public class HarpoonGun : MonoBehaviour
         Debug.Log("Fired");
         line.gameObject.SetActive(true);
         bobber.GetComponent<Floater>().enabled = false;
+        bobber.transform.position = transform.GetChild(0).gameObject.transform.GetChild(0).position;
         if (animator.GetBool("isFacingRight"))
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * 2.5f, 1), ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce(harpoon.transform.right*harpoonPower, ForceMode2D.Impulse);
         }
         else
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce(new Vector2(harpoonPower * -2.5f, 1), ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce((harpoon.transform.right * harpoonPower)*-1, ForceMode2D.Impulse);
         }
         bobber.GetComponent<Rigidbody2D>().simulated = true;
 
@@ -178,6 +188,17 @@ public class HarpoonGun : MonoBehaviour
     public void StartReel()
     {
         StartCoroutine(ReelIn());
+    }
+    public void ActiveHarpoon()
+    {
+        harpoon.SetActive(true);
+        Quaternion rotation = Quaternion.identity;
+        rotation.eulerAngles = new Vector3(0, 0, 0);
+        harpoon.transform.rotation =rotation;
+    }
+    public void DeactiveHarpoon()
+    {
+        harpoon.SetActive(false);
     }
 
 }

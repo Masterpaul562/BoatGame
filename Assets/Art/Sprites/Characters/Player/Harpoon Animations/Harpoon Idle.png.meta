@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Harpoon Idle_0
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 3542
+        width: 634
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d719793ba637a4bb50bdf43b67ddee
+      internalID: 309612224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_1
+      rect:
+        serializedVersion: 2
+        x: 2799
+        y: 3542
+        width: 634
+        height: 157
+      alignment: 9
+      pivot: {x: 0.338181, y: 0.4615595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b05af878c7ca2b479da7b51ccc16c18
+      internalID: -540955561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_2
+      rect:
+        serializedVersion: 2
+        x: 4719
+        y: 3538
+        width: 637
+        height: 161
+      alignment: 9
+      pivot: {x: 0.4242091, y: 0.49999848}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee20ea1341950743857cf03b73e22e8
+      internalID: -1935294608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_3
+      rect:
+        serializedVersion: 2
+        x: 6639
+        y: 3538
+        width: 638
+        height: 158
+      alignment: 9
+      pivot: {x: 0.23514645, y: 0.6145854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671db9c120e1733409e1ddf445ad4606
+      internalID: 374411768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_4
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 2454
+        width: 638
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb174349a36a7343be806b974f1fd01
+      internalID: 165523854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_5
+      rect:
+        serializedVersion: 2
+        x: 2799
+        y: 2454
+        width: 638
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e9533b86b56c244bf429ac767dda88
+      internalID: 175427719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_6
+      rect:
+        serializedVersion: 2
+        x: 4719
+        y: 2454
+        width: 638
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de229425667da7a44a0e82d5f048bd2f
+      internalID: 956753620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_7
+      rect:
+        serializedVersion: 2
+        x: 6639
+        y: 2454
+        width: 638
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4a3a93bbf783a45b0d91b26e61783d
+      internalID: -931270446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_8
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1374
+        width: 638
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a666f96aecfd1364facb8ea1a0aeda59
+      internalID: 1469778557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_9
+      rect:
+        serializedVersion: 2
+        x: 2799
+        y: 1378
+        width: 638
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4caf82927f705549a7f8a96b48a5297
+      internalID: -1224347569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_10
+      rect:
+        serializedVersion: 2
+        x: 4719
+        y: 1378
+        width: 637
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ec4a9ec8d62fd43a741365d5258f54
+      internalID: 143158686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_11
+      rect:
+        serializedVersion: 2
+        x: 6639
+        y: 1382
+        width: 634
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a1a7a58fbfe824caf0c30c275192df
+      internalID: 1800610516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Idle_12
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 302
+        width: 634
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9f73ba97c469e4782ae0a8f90f32bf
+      internalID: 627925332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Harpoon Idle_0: 309612224
+      Harpoon Idle_1: -540955561
+      Harpoon Idle_10: 143158686
+      Harpoon Idle_11: 1800610516
+      Harpoon Idle_12: 627925332
+      Harpoon Idle_2: -1935294608
+      Harpoon Idle_3: 374411768
+      Harpoon Idle_4: 165523854
+      Harpoon Idle_5: 175427719
+      Harpoon Idle_6: 956753620
+      Harpoon Idle_7: -931270446
+      Harpoon Idle_8: 1469778557
+      Harpoon Idle_9: -1224347569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
