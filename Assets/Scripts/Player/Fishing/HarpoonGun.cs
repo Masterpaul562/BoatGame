@@ -24,6 +24,7 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] public EnterBoat enter;
     [SerializeField] private FollowBobber cam;
     [SerializeField] private float rotSpeed;
+    [SerializeField] private Transform rot1,rot2;
 
 
     private void Start()
@@ -31,6 +32,7 @@ public class HarpoonGun : MonoBehaviour
         animator = GetComponent<Animator>();
         freezePlayer = GetComponent<PlayerMove>();
         enter = GetComponent<EnterBoat>();
+       
     }
 
 
@@ -93,13 +95,17 @@ public class HarpoonGun : MonoBehaviour
         {
             //Debug.Log("Charching");
             float vert = Input.GetAxisRaw("Vertical");
-            harpoon.transform.Rotate(0,0,vert*rotSpeed);
-            Vector3 rot = harpoon.transform.rotation.eulerAngles;
-            rot.z = Mathf.Clamp(rot.z, 310, 410);
-            Debug.Log(rot.z);
-            harpoon.transform.rotation = Quaternion.Euler(rot);
+            if(vert <0 ){
+                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime*100);
+                Debug.Log("Down");
+            } else if (vert >0 ) {
+                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime*100);
+                Debug.Log("up");
+            }
+            //harpoon.transform.Rotate(0,0,vert*rotSpeed);
+            //Vector3 rot = harpoon.transform.rotation.eulerAngles;
+            //harpoon.transform.rotation = Quaternion.Euler(rot);
             shouldStow = false;
-            // noFire = false;
             shouldFire = true;
             if (harpoonPower < 8)
             {
