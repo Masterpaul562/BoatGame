@@ -25,6 +25,8 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private FollowBobber cam;
     [SerializeField] private float rotSpeed;
     [SerializeField] private Transform rot1,rot2;
+    private bool canRotate;
+
 
 
     private void Start()
@@ -68,15 +70,34 @@ public class HarpoonGun : MonoBehaviour
         {
             if (shouldFire)
             {
+                canRotate = false;
                 noFire = false;
                 shouldFire = false;
                 Fire();
                 animator.SetTrigger("Fire");
-                harpoon.GetComponent<Animator>().SetTrigger("Fire");
+                harpoon.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Fire");
                 harpoonEnd.position = new Vector2(harpoonEnd.transform.position.x - 0.1f, line.transform.position.y);
                 animator.SetBool("StowHarpoon", false);
                 StopCoroutine(Harpoon());
             }
+        }
+
+        if(canRotate)
+        {
+         float vert = Input.GetAxisRaw("Vertical");
+           // if(vert <0 ){
+          //      harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime);
+           //     Debug.Log("Down");
+          //  } else if (vert >0 ) {
+          //      harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime);
+         //       Debug.Log("up");
+         //   }
+         
+            float currentZ = harpoon.transform.rotation.eulerAngles.z;
+            float newRotation = currentZ + vert * rotSpeed;
+            Debug.Log(newRotation);
+            Mathf.Clamp(newRotation,-30,40);
+            harpoon.transform.rotation = Quaternion.Euler(0,0,newRotation);
         }
     }
 
@@ -93,18 +114,11 @@ public class HarpoonGun : MonoBehaviour
 
         while (Input.GetKey(key) && horz == 0)
         {
-            //Debug.Log("Charching");
-            float vert = Input.GetAxisRaw("Vertical");
-            if(vert <0 ){
-                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime*100);
-                Debug.Log("Down");
-            } else if (vert >0 ) {
-                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime*100);
-                Debug.Log("up");
-            }
+            //Debug.Log("Charching");         
             //harpoon.transform.Rotate(0,0,vert*rotSpeed);
             //Vector3 rot = harpoon.transform.rotation.eulerAngles;
             //harpoon.transform.rotation = Quaternion.Euler(rot);
+            canRotate = true;
             shouldStow = false;
             shouldFire = true;
             if (harpoonPower < 8)
@@ -117,7 +131,7 @@ public class HarpoonGun : MonoBehaviour
         yield return new WaitForSeconds(.2f);
         if (horz != 0 && noFire || shouldStow)
         {
-           
+           canRotate = false;
             shouldFire = false;
             animator.SetTrigger("StowHarpoon");
             yield return new WaitForSeconds(1f);

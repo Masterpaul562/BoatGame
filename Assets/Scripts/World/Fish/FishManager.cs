@@ -144,7 +144,5 @@ public class FishManager : MonoBehaviour
         Destroy(closestFish);
         fishList.fish.RemoveAt(closestFishIndex);
         inventory.AddFishOutside(1);
-
-
     }
 }
