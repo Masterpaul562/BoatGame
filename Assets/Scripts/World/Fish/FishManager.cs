@@ -96,35 +96,21 @@ public class FishManager : MonoBehaviour
             }
         }
     }
-    private void DestroyVanityFish()
-    {
+   // private void DestroyVanityFish()
+   // {
 
 
-        for (int i = 0; i < vanityFish.fish.Count; i++)
-        {
-            if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
-            {
-                Destroy(vanityFish.fish[i]);
-                vanityFish.fish.RemoveAt(i);
+     //   for (int i = 0; i < vanityFish.fish.Count; i++)
+     //   {
+    //        if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
+    //        {
+     //           Destroy(vanityFish.fish[i]);
+    //            vanityFish.fish.RemoveAt(i);
 
-            }
-        }
-    }
-    private void MoveRealFishOff()
-    {
-        for (int i = 0; i < fishList.fish.Count; i++)
-        {
-
-            fishList.fish[i].GetComponent<FloaterMovement>().enabled = true;
-            fishList.fish[i].GetComponent<Fish>().enabled = false;
-            if (fishList.fish[i].GetComponent<FloaterMovement>().DestroyThis())
-            {
-                Destroy(fishList.fish[i]);
-                fishList.fish.RemoveAt(i);
-            }
-
-        }
-    }
+     //       }
+    //    }
+   // }
+    
     public void MoveVanityFishOff()
     {
         for (int i = 0; i < vanityFish.fish.Count; i++)
