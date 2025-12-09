@@ -22,7 +22,7 @@ public class FollowBobber : MonoBehaviour
     }
     private void moveToMiddle()
     {
-        Vector3 pos = Vector3.MoveTowards(transform.position, Middle(bobber, player), Time.deltaTime*10);
+        Vector3 pos = Vector3.MoveTowards(transform.position, Middle(bobber, player), Time.deltaTime*20);
         transform.position = pos;   
     }
     private void Update()

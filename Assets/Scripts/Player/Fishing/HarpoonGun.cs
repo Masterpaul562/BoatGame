@@ -121,7 +121,7 @@ public class HarpoonGun : MonoBehaviour
             canRotate = true;
             shouldStow = false;
             shouldFire = true;
-            if (harpoonPower < 8)
+            if (harpoonPower < 16)
             {
                 harpoonPower++;
             }
@@ -177,7 +177,7 @@ public class HarpoonGun : MonoBehaviour
         while (distance > 0.1f)
         {
 
-            Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 10);
+            Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 20);
             bobber.transform.position = pos;
             distance = Vector2.Distance(harpoonEnd.position, bobber.transform.position);
             yield return null;

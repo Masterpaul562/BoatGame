@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_0
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 3234
+        width: 423
+        height: 772
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566c2434a848e4259bf197ba9f17c957
+      internalID: 1050676455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_1
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 3234
+        width: 420
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 501a3e92eda1b4c778e12e01f463d17c
+      internalID: 608447435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_2
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 3234
+        width: 431
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2776ee66efd141178dc2e79c990bb5d
+      internalID: -505501493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_3
+      rect:
+        serializedVersion: 2
+        x: 6429
+        y: 3234
+        width: 443
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1281b61c868584ee4b251cf0cc19e85e
+      internalID: -1497679491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_4
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 2154
+        width: 431
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0bf04d12d4e456eb68bfc63363cfaa
+      internalID: 1415497054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_5
+      rect:
+        serializedVersion: 2
+        x: 2601
+        y: 2154
+        width: 431
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3286ecb99f99e420e9cd567c7c594a2e
+      internalID: -1799423457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_6
+      rect:
+        serializedVersion: 2
+        x: 4524
+        y: 2154
+        width: 428
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b4acf03c6db64fe8878c6bbb5fc2824
+      internalID: 295067814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_7
+      rect:
+        serializedVersion: 2
+        x: 6444
+        y: 2154
+        width: 428
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2110b68b68cf458faa371ca59a9f7f5
+      internalID: -1712248533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_8
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 1074
+        width: 427
+        height: 776
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c5f94d26e084121acec5fea0fce55f
+      internalID: 1930033033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_9
+      rect:
+        serializedVersion: 2
+        x: 2574
+        y: 1074
+        width: 454
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19d4382bf5814b17925bf2c2a89b51a
+      internalID: -1597641416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_10
+      rect:
+        serializedVersion: 2
+        x: 4476
+        y: 1074
+        width: 472
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ba88cc6d88f4b44a1a804ee62945f2
+      internalID: 1908980082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_11
+      rect:
+        serializedVersion: 2
+        x: 6414
+        y: 1074
+        width: 454
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4d8ba765d4046b39a307155abc80b9
+      internalID: -696697942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards No Hands_12
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 0
+        width: 427
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d06663ccfca40d3865607bd5fa85c0
+      internalID: 283051105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle Forwards No Hands_0: 1050676455
+      Idle Forwards No Hands_1: 608447435
+      Idle Forwards No Hands_10: 1908980082
+      Idle Forwards No Hands_11: -696697942
+      Idle Forwards No Hands_12: 283051105
+      Idle Forwards No Hands_2: -505501493
+      Idle Forwards No Hands_3: -1497679491
+      Idle Forwards No Hands_4: 1415497054
+      Idle Forwards No Hands_5: -1799423457
+      Idle Forwards No Hands_6: 295067814
+      Idle Forwards No Hands_7: -1712248533
+      Idle Forwards No Hands_8: 1930033033
+      Idle Forwards No Hands_9: -1597641416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

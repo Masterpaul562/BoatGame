@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,280 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Idle Inside No Hands_0
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 3234
+        width: 367
+        height: 773
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32073316c19534304af04d6ba01a2ddd
+      internalID: -1023441419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_1
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 3234
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87c4abfae64d4f0b9725be859eb1cc3
+      internalID: 118598247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_2
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 3234
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd759eaefb88748dc847d288449d71f9
+      internalID: -997299973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_3
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 3234
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b31f7a8dd1244bc681f51948eeaa9d6
+      internalID: 601701712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_4
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 2154
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84d4c909a66d4773a00acd3f659f361
+      internalID: -1559102714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_5
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 2154
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 903916f69ea3544099fd682c28765045
+      internalID: 1850922611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_6
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 2154
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3090a63629d4348fe977be9578c429d9
+      internalID: -473378588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_7
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 2154
+        width: 364
+        height: 780
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305d6f0af62ba4ccfb0752e2aabd0902
+      internalID: -163140479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_8
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1074
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4bf43d602a4542238910d884bbf2eb7
+      internalID: -1065856832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_9
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1074
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ea4b96434d44f8bbff2b4599807155
+      internalID: 1931557597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_10
+      rect:
+        serializedVersion: 2
+        x: 4584
+        y: 1074
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25886ddef383409c829237f816e277c
+      internalID: -1991373181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_11
+      rect:
+        serializedVersion: 2
+        x: 6504
+        y: 1074
+        width: 364
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9aaa8140adf04634907ad9953196e11
+      internalID: -2123579491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside No Hands_12
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 0
+        width: 364
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658b6e99dd2b147e489d3c7bbe81394e
+      internalID: 1976327980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +405,20 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Idle Inside No Hands_0: -1023441419
+      Idle Inside No Hands_1: 118598247
+      Idle Inside No Hands_10: -1991373181
+      Idle Inside No Hands_11: -2123579491
+      Idle Inside No Hands_12: 1976327980
+      Idle Inside No Hands_2: -997299973
+      Idle Inside No Hands_3: 601701712
+      Idle Inside No Hands_4: -1559102714
+      Idle Inside No Hands_5: 1850922611
+      Idle Inside No Hands_6: -473378588
+      Idle Inside No Hands_7: -163140479
+      Idle Inside No Hands_8: -1065856832
+      Idle Inside No Hands_9: 1931557597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

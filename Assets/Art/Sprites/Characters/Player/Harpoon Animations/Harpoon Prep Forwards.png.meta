@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,553 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_0
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 4312
+        width: 427
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67214d99748e446c883e5a2e8b4542ef
+      internalID: 126049969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_1
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 4312
+        width: 422
+        height: 770
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bccbe238244b440aba402dcddd94b2a3
+      internalID: 26372807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_2
+      rect:
+        serializedVersion: 2
+        x: 4520
+        y: 4312
+        width: 433
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d52d6a073f104309b27584dba7f624a
+      internalID: 1237924971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_3
+      rect:
+        serializedVersion: 2
+        x: 6427
+        y: 4312
+        width: 449
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61480e80710a41bba518e389bab9dff
+      internalID: 1479420024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_4
+      rect:
+        serializedVersion: 2
+        x: 8356
+        y: 4312
+        width: 439
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3152d42977ab54bcea3d3a3ced1cc6ab
+      internalID: 1134446856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_5
+      rect:
+        serializedVersion: 2
+        x: 10274
+        y: 4312
+        width: 443
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee8b02dd8a5b4636a7ea82d90d902ce
+      internalID: -462040483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_6
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 3232
+        width: 433
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e25ef09cc6a4259a75caff79e9c8e4
+      internalID: 29738733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_7
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 3232
+        width: 433
+        height: 776
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a25d4ffffa44148aefbb5bee013c51
+      internalID: -61469101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_8
+      rect:
+        serializedVersion: 2
+        x: 4520
+        y: 3232
+        width: 433
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d4606a5847d4d1ab0f19b466fa9f0b
+      internalID: -2082025637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_9
+      rect:
+        serializedVersion: 2
+        x: 6410
+        y: 3232
+        width: 461
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e147c714cfa014709b5e5e2b24f7c9b6
+      internalID: 2035865805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_10
+      rect:
+        serializedVersion: 2
+        x: 8311
+        y: 3232
+        width: 478
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595867f3586064450884b63e4c8d394a
+      internalID: 246253040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_11
+      rect:
+        serializedVersion: 2
+        x: 10252
+        y: 3232
+        width: 460
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf9a760ff8c04e02ae26d0064467114
+      internalID: 1988885250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_12
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 2152
+        width: 529
+        height: 781
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edcc128fc61c84fe49d8495019aec273
+      internalID: 495789999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_13
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 2152
+        width: 636
+        height: 781
+      alignment: 9
+      pivot: {x: 0.4999996, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8c781b838dfd428e85a51d92f5a99ee
+      internalID: 467031253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_14
+      rect:
+        serializedVersion: 2
+        x: 4525
+        y: 2152
+        width: 793
+        height: 781
+      alignment: 9
+      pivot: {x: 0.4464547, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d34b44b74320491c82a206802aef0ae
+      internalID: -1001221168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_15
+      rect:
+        serializedVersion: 2
+        x: 6438
+        y: 2152
+        width: 860
+        height: 776
+      alignment: 9
+      pivot: {x: 0.42593908, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241ae77c107a24f39b4e9e550ae45b51
+      internalID: -2098619186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_16
+      rect:
+        serializedVersion: 2
+        x: 8345
+        y: 2152
+        width: 821
+        height: 776
+      alignment: 9
+      pivot: {x: 0.42242098, y: 0.47264114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0129271ecd344f99b18737e7b0df684
+      internalID: 600826323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_17
+      rect:
+        serializedVersion: 2
+        x: 10274
+        y: 2152
+        width: 788
+        height: 776
+      alignment: 9
+      pivot: {x: 0.44611433, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e34dcc0f67da348bf8e9687b1d8186b1
+      internalID: -2004287166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_18
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1072
+        width: 838
+        height: 776
+      alignment: 9
+      pivot: {x: 0.3986608, y: 0.47264114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54cd93b5773d348d98b4995913730c62
+      internalID: 1265963706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_19
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 1072
+        width: 832
+        height: 776
+      alignment: 9
+      pivot: {x: 0.39792985, y: 0.527359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28e53c20fb7274f8886850059c872fd8
+      internalID: -199164772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_20
+      rect:
+        serializedVersion: 2
+        x: 4525
+        y: 1072
+        width: 822
+        height: 776
+      alignment: 9
+      pivot: {x: 0.42251593, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f2eb9ac9f724ff08ff96ea9623fc6f
+      internalID: -276061955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_21
+      rect:
+        serializedVersion: 2
+        x: 6438
+        y: 1072
+        width: 815
+        height: 781
+      alignment: 9
+      pivot: {x: 0.36975053, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b12145a269364a45a3a1a68e8e58258
+      internalID: 1150692990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_22
+      rect:
+        serializedVersion: 2
+        x: 8333
+        y: 1072
+        width: 861
+        height: 781
+      alignment: 9
+      pivot: {x: 0.45068303, y: 0.5000003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 272f2fd35721f47778985ed4173bc203
+      internalID: 2102857557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_23
+      rect:
+        serializedVersion: 2
+        x: 10230
+        y: 1072
+        width: 882
+        height: 781
+      alignment: 9
+      pivot: {x: 0.40371448, y: 0.5271842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82aa0b1bf1b674e7e831b056230b99f7
+      internalID: 1858885203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_24
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 0
+        width: 855
+        height: 773
+      alignment: 9
+      pivot: {x: 0.42550677, y: 0.49999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1dda1047f5b475db46c86804941dae
+      internalID: 1911269079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_25
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 0
+        width: 838
+        height: 773
+      alignment: 9
+      pivot: {x: 0.37332597, y: 0.49999985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab015c1dbb9e94ff999fa41c4083598e
+      internalID: 144260408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +678,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Harpoon Prep Forwards_0: 126049969
+      Harpoon Prep Forwards_1: 26372807
+      Harpoon Prep Forwards_10: 246253040
+      Harpoon Prep Forwards_11: 1988885250
+      Harpoon Prep Forwards_12: 495789999
+      Harpoon Prep Forwards_13: 467031253
+      Harpoon Prep Forwards_14: -1001221168
+      Harpoon Prep Forwards_15: -2098619186
+      Harpoon Prep Forwards_16: 600826323
+      Harpoon Prep Forwards_17: -2004287166
+      Harpoon Prep Forwards_18: 1265963706
+      Harpoon Prep Forwards_19: -199164772
+      Harpoon Prep Forwards_2: 1237924971
+      Harpoon Prep Forwards_20: -276061955
+      Harpoon Prep Forwards_21: 1150692990
+      Harpoon Prep Forwards_22: 2102857557
+      Harpoon Prep Forwards_23: 1858885203
+      Harpoon Prep Forwards_24: 1911269079
+      Harpoon Prep Forwards_25: 144260408
+      Harpoon Prep Forwards_3: 1479420024
+      Harpoon Prep Forwards_4: 1134446856
+      Harpoon Prep Forwards_5: -462040483
+      Harpoon Prep Forwards_6: 29738733
+      Harpoon Prep Forwards_7: -61469101
+      Harpoon Prep Forwards_8: -2082025637
+      Harpoon Prep Forwards_9: 2035865805
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
