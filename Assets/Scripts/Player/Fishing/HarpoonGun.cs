@@ -85,19 +85,19 @@ public class HarpoonGun : MonoBehaviour
         if(canRotate)
         {
          float vert = Input.GetAxisRaw("Vertical");
-           // if(vert <0 ){
-          //      harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime);
-           //     Debug.Log("Down");
-          //  } else if (vert >0 ) {
-          //      harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime);
-         //       Debug.Log("up");
-         //   }
+            if(vert <0 ){
+               harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime*2.5f);               
+           } else if (vert >0 ) {
+               harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime*2.5f);               
+           }
          
-            float currentZ = harpoon.transform.rotation.eulerAngles.z;
-            float newRotation = currentZ + vert * rotSpeed;
-            Debug.Log(newRotation);
-            Mathf.Clamp(newRotation,-30,40);
-            harpoon.transform.rotation = Quaternion.Euler(0,0,newRotation);
+           // float currentZ = harpoon.transform.rotation.eulerAngles.z;
+           // if(vert >0 1 && currentZ <50 || vert <0 && currentZ)
+            //float newRotation = currentZ + vert * rotSpeed;
+           // Debug.Log(newRotation);
+           // Mathf.Clamp(newRotation,-30,40);
+           // Debug.Log(newRotation + "Clamped");
+            //harpoon.transform.rotation = Quaternion.Euler(0,0,newRotation);
         }
     }
 
