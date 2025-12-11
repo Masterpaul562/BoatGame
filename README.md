@@ -40,6 +40,7 @@ Jonathan Gallego - Concept Art
 
 <details>
 <summary>Downloads</summary>
+  Download zip and open it. Then click on boat game file and extract.
 <p><a href="https://drive.google.com/file/d/1V1T638ZCQhoY58rO3eC5AC8O3z_GOlpJ/view?usp=sharing">New Windows Download</a></p> 
 <p><a href="https://drive.google.com/file/d/1OX4vxm1ZnpDbvTQGeF9yilKB3uu2N0Cc/view?usp=sharing">MacOs Download</a></p>
 
