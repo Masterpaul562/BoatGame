@@ -15,9 +15,10 @@ Jonathan Gallego - Concept Art
 <details>
 <summary>Mock Ups</summary>
 
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/ALBATROSS.png?raw=true" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/Restart_.png?raw=true" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/BoatGameUI.png?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/IMG_4289.jpeg?raw=true" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/IMG_4291.jpeg?raw=true" alt="Example"></p>
+<p><a href="https://drive.google.com/file/d/104lOLB8xdr_hxfn8_UdprB7kuytE9zoQ/view?usp=sharing">New Windows Download</a></p> 
+
 </details>
 
 
