@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer fishSwimRender;
+    [SerializeField] private SpriteMask mask;
     private float size;
     public Transform bobber;
     public bool shouldSwimToBobber;
@@ -43,6 +44,7 @@ public class Fish : MonoBehaviour
     }
     private void Update()
     {
+        mask.sprite = fishSwimRender.sprite;
         fishySwim();
         if (Mathf.Abs(transform.position.x - bobber.position.x) < 4 && bait && bobber.gameObject.GetComponent<Bobber>().submerged)
         {

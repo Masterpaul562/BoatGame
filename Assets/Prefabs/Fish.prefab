@@ -259,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishSwimRender: {fileID: 0}
+  mask: {fileID: 6595649034024586890}
   bobber: {fileID: 0}
   shouldSwimToBobber: 0
   randomY: 0
