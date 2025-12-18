@@ -96,6 +96,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
+            animator.SetTrigger("Turn");
             isFacingRight = !isFacingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
