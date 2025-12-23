@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (enterFScript.isFishing == false)
         {
-            Flip();
+            FlipCheck();
         }
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -92,18 +92,21 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
     }
-    private void Flip()
+    private void FlipCheck()
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
             animator.SetTrigger("Turn");
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            isFacingRight = !isFacingRight;            
             animator.SetBool("isFacingRight", isFacingRight);
         }
 
 
+    }
+    public void Flip()
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 }
