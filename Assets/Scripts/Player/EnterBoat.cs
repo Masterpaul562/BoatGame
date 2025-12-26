@@ -14,6 +14,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private SpriteRenderer insideBG;
     [SerializeField] private CityManager inCity;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject harpoon;
     [SerializeField] private string insideLayer,outsideLayer;
     [SerializeField] private Animator animator;
     [SerializeField] private Animator doorAnim;
@@ -98,6 +99,7 @@ public class EnterBoat : MonoBehaviour
         zoom = true;
         shouldZoom = true;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
+        harpoon.GetComponent<SpriteRenderer>().sortingLayerName = insideLayer;
         animator.SetBool("IsInside", true);
         insideBG.enabled = true;
         transform.position = enterLocation.position;
@@ -119,6 +121,7 @@ public class EnterBoat : MonoBehaviour
         cam.GetComponent<FollowBobber>().shouldGoToCenter = true;
         inBoat = false;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
+        harpoon.GetComponent<SpriteRenderer>().sortingLayerName = outsideLayer;
         animator.SetBool("IsInside", false);
         insideBG.color = new Color(0, 0, 0, alpha);
         zoom = false;

@@ -1734,6 +1734,8 @@ MonoBehaviour:
   shouldGoToCenter: 0
   player: {fileID: 1351622660}
   bobber: {fileID: 2056419628}
+  inside: {fileID: 1351622662}
+  waterOverlay: {fileID: 0}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5145,6 +5147,7 @@ MonoBehaviour:
   insideBG: {fileID: 1606903422}
   inCity: {fileID: 1149555041}
   Player: {fileID: 0}
+  harpoon: {fileID: 1014687534}
   insideLayer: Inside
   outsideLayer: Default
   animator: {fileID: 0}

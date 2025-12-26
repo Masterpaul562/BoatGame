@@ -9,9 +9,14 @@ public class FollowBobber : MonoBehaviour
     private Vector3 ogPosition;
     [SerializeField] private Transform player;
     [SerializeField] private Transform bobber;
+    [SerializeField] private EnterBoat inside;
+    [SerializeField] private GameObject waterOverlay;
+    
+    
 
     private void Start()
     {
+        waterOverlay = transform.GetChild(1).gameObject;
         ogPosition = transform.position;
     }
     public Vector3 Middle(Transform point1, Transform point2)
@@ -28,13 +33,18 @@ public class FollowBobber : MonoBehaviour
     private void Update()
     {
         
-        if (shouldMove)
+        if (shouldMove && !inside.inBoat)
         {
+            waterOverlay.transform.parent = this.transform;
             moveToMiddle();
         }
         else if(shouldGoToCenter)
         {
             transform.position = Vector3.MoveTowards(transform.position, ogPosition, Time.deltaTime * 5);
+        }
+        if (inside.inBoat)
+        {
+            waterOverlay.transform.parent = null;
         }
     }
 }
