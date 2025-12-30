@@ -10,7 +10,6 @@ public class FishManager : MonoBehaviour
     [SerializeField] public int closestFishIndex;
     [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
-    [SerializeField] private VanityFishSpawner vanityFish;
     [SerializeField] private HarpoonGun isFishing;
     [SerializeField] private CityManager city;
     [SerializeField] private FishInventory inventory;
@@ -74,15 +73,7 @@ public class FishManager : MonoBehaviour
         }
     }
 
-    public void StopSwimmingToBobber()
-    {
-        for (int i = 0; i < fishList.fish.Count; i++)
-        {
-            fishList.fish[i].GetComponent<Fish>().shouldSwimToBobber = false;
-            fishList.fish[i].GetComponent<Fish>().bait = true;
-
-        }
-    }
+  
     private void DestroyRealFish()
     {
         for (int i = 0; i < fishList.fish.Count; i++)
@@ -96,44 +87,16 @@ public class FishManager : MonoBehaviour
             }
         }
     }
-   // private void DestroyVanityFish()
-   // {
-
-
-     //   for (int i = 0; i < vanityFish.fish.Count; i++)
-     //   {
-    //        if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
-    //        {
-     //           Destroy(vanityFish.fish[i]);
-    //            vanityFish.fish.RemoveAt(i);
-
-     //       }
-    //    }
-   // }
+  
     
-    public void MoveVanityFishOff()
-    {
-        for (int i = 0; i < vanityFish.fish.Count; i++)
-        {
-
-            vanityFish.fish[i].GetComponent<FloaterMovement>().moveAmount = 0.2f;
-            vanityFish.maxNumOfFish = 0;
-            if (vanityFish.fish[i].GetComponent<FloaterMovement>().DestroyThis())
-            {
-                Destroy(vanityFish.fish[i]);
-                vanityFish.fish.RemoveAt(i);
-            }
-
-        }
-    }
+   
 
 
     public void HookFish()
     {
         if (canHook)
         {
-            canHook = false;
-            closestFish.GetComponent<Fish>().shouldSwimToBobber = true;
+            canHook = false;           
             closestFish.transform.parent = bobber.transform;
         }
     }

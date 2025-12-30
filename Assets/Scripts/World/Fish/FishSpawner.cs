@@ -23,10 +23,7 @@ public class FishSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (bobber.GetComponent<Bobber>().submerged)
-        {
-          
-        }
+       
     }
 
     public void SpawnFish(int spawnAmount)
@@ -58,7 +55,7 @@ public class FishSpawner : MonoBehaviour
             }
             var fishs = Instantiate(fishPrefab, spawnLocation, Quaternion.identity);
             var fishScript = fishs.GetComponent<Fish>();          
-            fishScript.shouldSwimToBobber = false;           
+                
             fishScript.bobber = bobber.transform;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
             fishScript.speed = speedTemp;

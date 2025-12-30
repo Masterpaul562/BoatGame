@@ -19,7 +19,7 @@ public class BgScroller : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x-direction,transform.position.y,transform.position.z);
         if(transform.position.x< startPos - length ){
-            transform.position = new Vector2(transform.position.x + length,transform.position.y);
+            transform.position = new Vector3(transform.position.x + length,transform.position.y,transform.position.z);
         }
     }
     

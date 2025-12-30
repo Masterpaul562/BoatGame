@@ -1831,7 +1831,7 @@ Transform:
   m_GameObject: {fileID: 566185718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.076538324, y: 3.409091, z: 0.027071994}
+  m_LocalPosition: {x: 0.076538324, y: 3.409091, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2967,7 +2967,6 @@ Transform:
   m_Children:
   - {fileID: 377191249}
   - {fileID: 216235005}
-  - {fileID: 1352642770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &900264483
@@ -2987,7 +2986,6 @@ MonoBehaviour:
   closestFishIndex: 0
   bobber: {fileID: 2056419629}
   fishList: {fileID: 216235006}
-  vanityFish: {fileID: 1352642769}
   isFishing: {fileID: 1351622669}
   city: {fileID: 1149555041}
   inventory: {fileID: 1351622667}
@@ -3342,7 +3340,7 @@ Transform:
   m_GameObject: {fileID: 975169347}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.033461675, y: 5.45, z: 2.972928}
+  m_LocalPosition: {x: 0.033461675, y: 5.45, z: 3.2}
   m_LocalScale: {x: 1, y: 1.5068939, z: 0.6153467}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5225,7 +5223,7 @@ MonoBehaviour:
   camShake: {fileID: 519420034}
   bobber: {fileID: 2056419627}
   harpoon: {fileID: 863534861}
-  harpoonPower: 0
+  harpoonPower: 2
   line: {fileID: 1401774804}
   isFishing: 0
   distance: 100
@@ -5238,55 +5236,6 @@ MonoBehaviour:
   rotSpeed: 0.1
   rot1: {fileID: 1118321509}
   rot2: {fileID: 418317423}
---- !u!1 &1352642768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1352642770}
-  - component: {fileID: 1352642769}
-  m_Layer: 0
-  m_Name: VanityFishySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1352642769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352642768}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74566d2024bff1246bd9079cbb4fc07f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fish: []
-  fishPrefab: {fileID: 1981255956818205823, guid: 33b34d4d793aee0448ade45258ce21c4, type: 3}
-  maxNumOfFish: 7
-  cam: {fileID: 519420031}
-  shouldBeSpawning: 0
---- !u!4 &1352642770
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1352642768}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 900264482}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369321371
 GameObject:
   m_ObjectHideFlags: 0
@@ -7886,7 +7835,7 @@ MonoBehaviour:
   rb: {fileID: 2056419630}
   floaterScript: {fileID: 0}
   gun: {fileID: 1351622669}
-  submerged: 0
+  player: {fileID: 1351622656}
 --- !u!50 &2056419630
 Rigidbody2D:
   serializedVersion: 4
@@ -7993,7 +7942,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056419627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

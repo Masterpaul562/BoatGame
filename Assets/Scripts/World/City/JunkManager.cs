@@ -16,14 +16,7 @@ public class JunkManager : MonoBehaviour
     }
     private void Update()
     {
-        if (bobber.GetComponent<Bobber>().submerged)
-        {
-            FindHookedJunk();
-            if(hookedJunk != null)
-            {
-                HookCheck();
-            }
-        }
+        
     }
     private void FindHookedJunk()
     {

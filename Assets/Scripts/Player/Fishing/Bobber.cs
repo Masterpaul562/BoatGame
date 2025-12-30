@@ -9,8 +9,9 @@ public class Bobber : MonoBehaviour
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Floater floaterScript;
     [SerializeField] private HarpoonGun gun;
+    [SerializeField] private GameObject player;
     private SpriteRenderer render;
-    public bool submerged;
+   // public bool submerged;
    
    
 
@@ -24,17 +25,9 @@ public class Bobber : MonoBehaviour
     void FixedUpdate()
     {
         
-        if ( transform.position.y<y)
+        if ( Vector2.Distance(player.transform.position,this.transform.position)>17)
         {
-
-
-            floaterScript.enabled = true;
-            rb.simulated = false;
-            submerged = true;
-            if (!gun.enter.inBoat)
-            {
-                gun.isFishing = true;
-            }
+            gun.StartReel();  
         }
         if (gun.enter.inBoat)
         {
@@ -50,3 +43,9 @@ public class Bobber : MonoBehaviour
         }
     }
 }
+// floaterScript.enabled = true;
+// rb.simulated = false;
+// if (!gun.enter.inBoat)
+// {
+//      gun.isFishing = true;
+//    }
