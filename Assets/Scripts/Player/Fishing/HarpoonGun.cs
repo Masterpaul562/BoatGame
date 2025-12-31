@@ -26,6 +26,7 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private float rotSpeed;
     [SerializeField] private Transform rot1,rot2;
     private bool canRotate;
+    public bool isReeling;
 
 
 
@@ -165,13 +166,11 @@ public class HarpoonGun : MonoBehaviour
     public IEnumerator ReelIn()
     {
         Debug.Log("StartReelIn");
-
+        isReeling = true;
         bobber.GetComponent<Rigidbody2D>().simulated = false;
         distance = 100;
-        fish.HookFish();
         while (distance > 1f)
-        {
-
+        {   
             Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 20);
             bobber.transform.position = pos;
             distance = Vector2.Distance(harpoonEnd.position, bobber.transform.position);
@@ -183,11 +182,7 @@ public class HarpoonGun : MonoBehaviour
         bobber.GetComponent<Bobber>().rb.simulated = true;
         isFishing = false;    
         shouldFire = false;
-        if (fish.canHook)
-        {
-            Debug.Log("catch");
-            fish.SecureFish();
-        }     
+        fish.SecureFish();    
         cam.shouldMove = false;
         yield return new WaitForSeconds(1f);
         freezePlayer.freeze = false;
@@ -195,6 +190,7 @@ public class HarpoonGun : MonoBehaviour
         canCast = true;
         canReel = true;
         enter.canEnter = true;
+        isReeling = false;
         yield return null;
 
     }

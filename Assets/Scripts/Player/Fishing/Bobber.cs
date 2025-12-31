@@ -8,9 +8,10 @@ public class Bobber : MonoBehaviour
     [SerializeField] private float y;
     [SerializeField] public Rigidbody2D rb;
     [SerializeField] private Floater floaterScript;
-    [SerializeField] private HarpoonGun gun;
+    public HarpoonGun gun;
     [SerializeField] private GameObject player;
     private SpriteRenderer render;
+    public bool hookedFish = false;
    // public bool submerged;
    
    

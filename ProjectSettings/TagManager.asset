@@ -8,6 +8,7 @@ TagManager:
   - Exit
   - Fishing
   - Inside
+  - Bobber
   layers:
   - Default
   - TransparentFX

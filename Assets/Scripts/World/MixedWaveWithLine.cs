@@ -34,7 +34,7 @@ public class MixedWaveWithLine : MonoBehaviour
 
         if (point.x < -0.5f)
         {
-            Debug.Log("yay");
+           
             DeleteWave();
         }
         findClosest();

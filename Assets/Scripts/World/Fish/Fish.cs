@@ -8,7 +8,6 @@ public class Fish : MonoBehaviour
     [SerializeField] private SpriteMask mask;
     private float size;
     public Transform bobber;
-
     public float randomY;
     public int swimDirection;
     public float leftX;
@@ -18,14 +17,15 @@ public class Fish : MonoBehaviour
     public Camera cam;
     public bool shouldBeDestroyed;
     private BgScroller scroller;
-    public bool bait;
+    private bool swim = true;
+    public bool isHooked = false;
    
 
 
 
     private void Awake()
     {
-        bait = true;
+      
         scroller = GetComponent<BgScroller>();
         shouldBeDestroyed = false;
         size = Random.Range(0.5f, .7f);
@@ -46,8 +46,10 @@ public class Fish : MonoBehaviour
     private void Update()
     {
         mask.sprite = fishSwimRender.sprite;
-        fishySwim();
-
+        if (swim)
+        {
+            fishySwim();
+        }
     }
 
     private void fishySwim()
@@ -75,5 +77,23 @@ public class Fish : MonoBehaviour
             return true;
         }
         else { return false; }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if ( other.gameObject.tag == "Bobber")
+        {
+            var script = other.GetComponent<Bobber>();
+            if (!script.hookedFish&& !script.gun.isReeling)
+            {
+                script.hookedFish = true;   
+                transform.parent = other.gameObject.transform;
+                transform.position = other.transform.position;
+                swim = false;
+                isHooked = true;
+                Debug.Log("yay");
+            }
+           
+        }
     }
 }

@@ -13,7 +13,6 @@ public class FishManager : MonoBehaviour
     [SerializeField] private HarpoonGun isFishing;
     [SerializeField] private CityManager city;
     [SerializeField] private FishInventory inventory;
-    public bool canHook;
     private bool startCoVanity;
     private bool startCoReal;
     public bool inEvent;
@@ -27,16 +26,8 @@ public class FishManager : MonoBehaviour
     void Update()
     {
         DestroyRealFish();
+        FindClosestFish();
 
-        if (isFishing.isFishing)
-        {
-            FindClosestFish();
-            CanHookCheck();
-        }
-        else if (isFishing.isFishing == false)
-        {
-            canHook = false;
-        }
     }
 
 
@@ -62,17 +53,6 @@ public class FishManager : MonoBehaviour
 
     }
 
-    private void CanHookCheck()
-    {
-        if (closestFish != null)
-        {
-            if (Vector2.Distance(bobber.transform.position, closestFish.transform.position) < 1)
-            {
-                canHook = true;
-            }
-        }
-    }
-
   
     private void DestroyRealFish()
     {
@@ -80,32 +60,26 @@ public class FishManager : MonoBehaviour
         {
             if (fishList.fish[i].GetComponent<Fish>().DestroyCheck())
             {
-               // fishList.maxNumOfFish--;
                 Destroy(fishList.fish[i]);
                 fishList.fish.RemoveAt(i);
 
             }
         }
-    }
-  
-    
-   
-
-
-    public void HookFish()
-    {
-        if (canHook)
-        {
-            canHook = false;           
-            closestFish.transform.parent = bobber.transform;
-        }
-    }
+    }   
 
     public void SecureFish()
     {
-        Debug.Log("destroy");
-        Destroy(closestFish);
-        fishList.fish.RemoveAt(closestFishIndex);
-        inventory.AddFishOutside(1);
+        for (int i = 0; i < fishList.fish.Count; i++)
+        {
+            if (fishList.fish[i].GetComponent<Fish>().isHooked)
+            {
+                Debug.Log("destroy");
+                bobber.hookedFish = false;
+                Destroy(fishList.fish[i]);
+                fishList.fish.RemoveAt(i);
+                inventory.AddFishOutside(1);
+            }
+        }
+       
     }
 }
