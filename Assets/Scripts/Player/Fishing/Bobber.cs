@@ -26,7 +26,7 @@ public class Bobber : MonoBehaviour
     void FixedUpdate()
     {
         
-        if ( Vector2.Distance(player.transform.position,this.transform.position)>17)
+        if ( Vector2.Distance(player.transform.position,this.transform.position)>7)
         {
             gun.StartReel();  
         }

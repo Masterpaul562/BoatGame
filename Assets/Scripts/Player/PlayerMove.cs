@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     public bool isMoving;
     private float currentVel;
     [SerializeField] private float maxSpeed;
+    public bool canFlip;
 
 
     void Start()
@@ -28,7 +29,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        if (enterFScript.isFishing == false)
+        if (canFlip)
         {
             FlipCheck();
         }
@@ -96,6 +97,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
+            Debug.Log("Turned");
             animator.SetTrigger("Turn");
             isFacingRight = !isFacingRight;            
             animator.SetBool("isFacingRight", isFacingRight);
@@ -105,6 +107,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void Flip()
     {
+
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;

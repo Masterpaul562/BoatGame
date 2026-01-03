@@ -14,17 +14,14 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private float harpoonPower;
     [SerializeField] private LineRenderController line;
     private bool shouldFire;
-    private bool noFire;
-    public bool isFishing;
     [SerializeField] private float distance = 100;
     [SerializeField] public Transform harpoonEnd;
     [SerializeField] private FishManager fish;
     [SerializeField] private bool canCast;
-    [SerializeField] private bool canReel = true;
     [SerializeField] public EnterBoat enter;
     [SerializeField] private FollowBobber cam;
     [SerializeField] private float rotSpeed;
-    [SerializeField] private Transform rot1,rot2;
+    [SerializeField] private Transform rot1, rot2;
     private bool canRotate;
     public bool isReeling;
 
@@ -35,7 +32,7 @@ public class HarpoonGun : MonoBehaviour
         animator = GetComponent<Animator>();
         freezePlayer = GetComponent<PlayerMove>();
         enter = GetComponent<EnterBoat>();
-       
+
     }
 
 
@@ -45,7 +42,8 @@ public class HarpoonGun : MonoBehaviour
         {
             line.GetComponent<LineRenderer>().sortingLayerName = "Inside";
             line.GetComponent<LineRenderer>().sortingOrder = 1;
-        }else if (!enter.inBoat)
+        }
+        else if (!enter.inBoat)
         {
             line.GetComponent<LineRenderer>().sortingLayerName = "Default";
             line.GetComponent<LineRenderer>().sortingOrder = 0;
@@ -54,18 +52,14 @@ public class HarpoonGun : MonoBehaviour
 
         if (Input.GetKeyDown(key))
         {
-            if (!isFishing && canCast && horz == 0)
-            {               
+            if (canCast && horz == 0)
+            {
                 canCast = false;
                 enter.canEnter = false;
                 freezePlayer.freeze = true;
                 StartCoroutine(Harpoon());
             }
-            else if (isFishing && !canCast && canReel)
-            {
-                canReel = false;
-                StartCoroutine(ReelIn());
-            }
+
 
         }
         if (Input.GetKeyUp(key))
@@ -73,7 +67,7 @@ public class HarpoonGun : MonoBehaviour
             if (shouldFire)
             {
                 canRotate = false;
-                noFire = false;
+
                 shouldFire = false;
                 Fire();
                 animator.SetTrigger("Fire");
@@ -83,61 +77,57 @@ public class HarpoonGun : MonoBehaviour
             }
         }
 
-        if(canRotate)
+        if (canRotate)
         {
-         float vert = Input.GetAxisRaw("Vertical");
-            if(vert <0 ){
-               harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot2.rotation,Time.deltaTime*2.5f);               
-           } else if (vert >0 ) {
-               harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation,rot1.rotation,Time.deltaTime*2.5f);               
-           }
+            float vert = Input.GetAxisRaw("Vertical");
+            if (vert < 0)
+            {
+                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation, rot2.rotation, Time.deltaTime * 2.5f);
+            }
+            else if (vert > 0)
+            {
+                harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation, rot1.rotation, Time.deltaTime * 2.5f);
+            }
 
         }
     }
 
     private IEnumerator Harpoon()
     {
-        noFire = true;
+
         bool shouldStow = true;
         shouldFire = false;
         animator.SetTrigger("PullHarpoonOut");
-
+        freezePlayer.canFlip = false;
         freezePlayer.horizontalInput = 0;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
-        // holding harpoon. hold to charge and let go to fire. if move stow harpoon
+        // holding harpoon. let go to fire. if move stow harpoon
         while (Input.GetKey(key) && horz == 0)
         {
-            //Debug.Log("Charching");         
-            //harpoon.transform.Rotate(0,0,vert*rotSpeed);
-            //Vector3 rot = harpoon.transform.rotation.eulerAngles;
-            //harpoon.transform.rotation = Quaternion.Euler(rot);
+
             canRotate = true;
-            shouldStow = false;
-            shouldFire = true;
-            if (harpoonPower < 16)
-            {
-                harpoonPower++;
-            }
-            yield return new WaitForSeconds(.3f); ;
+            shouldStow = false;          
+            Debug.Log("yay");
+            yield return null;
         }
         canCast = false;
-        yield return new WaitForSeconds(.2f);
-        if (horz != 0 && noFire || shouldStow)
+        if (horz != 0 || shouldStow)
         {
-           canRotate = false;
+            canRotate = false;
             shouldFire = false;
             animator.SetTrigger("StowHarpoon");
             yield return new WaitForSeconds(1f);
+            freezePlayer.canFlip = true;
             Debug.Log("UnFreeze");
             freezePlayer.freeze = false;
             canCast = true;
             enter.canEnter = true;
             cam.shouldMove = false;
             yield return null;
-
         }
+
     }
     private void Fire()
     {
@@ -151,15 +141,15 @@ public class HarpoonGun : MonoBehaviour
         bobber.transform.position = transform.GetChild(0).gameObject.transform.GetChild(0).position;
         if (animator.GetBool("isFacingRight"))
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce(harpoon.transform.right*harpoonPower, ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce(harpoon.transform.right * harpoonPower, ForceMode2D.Impulse);
         }
         else
         {
-            bobber.GetComponent<Rigidbody2D>().AddForce((harpoon.transform.right * harpoonPower)*-1, ForceMode2D.Impulse);
+            bobber.GetComponent<Rigidbody2D>().AddForce((harpoon.transform.right * harpoonPower) * -1, ForceMode2D.Impulse);
         }
         bobber.GetComponent<Rigidbody2D>().simulated = true;
 
-        harpoonPower = 2;
+
 
     }
 
@@ -170,7 +160,7 @@ public class HarpoonGun : MonoBehaviour
         bobber.GetComponent<Rigidbody2D>().simulated = false;
         distance = 100;
         while (distance > 1f)
-        {   
+        {
             Vector2 pos = Vector2.MoveTowards(bobber.transform.position, harpoonEnd.position, Time.deltaTime * 20);
             bobber.transform.position = pos;
             distance = Vector2.Distance(harpoonEnd.position, bobber.transform.position);
@@ -180,17 +170,17 @@ public class HarpoonGun : MonoBehaviour
         bobber.SetActive(false);
         line.gameObject.SetActive(false);
         bobber.GetComponent<Bobber>().rb.simulated = true;
-        isFishing = false;    
         shouldFire = false;
-        fish.SecureFish();    
+        fish.SecureFish();
         cam.shouldMove = false;
         yield return new WaitForSeconds(1f);
         freezePlayer.freeze = false;
         Debug.Log("CAnCast");
         canCast = true;
-        canReel = true;
         enter.canEnter = true;
         isReeling = false;
+        animator.SetBool("Turn", false);
+        freezePlayer.canFlip = true;
         yield return null;
 
     }
@@ -203,7 +193,8 @@ public class HarpoonGun : MonoBehaviour
         harpoon.SetActive(true);
         Quaternion rotation = Quaternion.identity;
         rotation.eulerAngles = new Vector3(0, 0, 0);
-        harpoon.transform.rotation =rotation;
+        harpoon.transform.rotation = rotation;
+        shouldFire = true;
     }
     public void DeactiveHarpoon()
     {
