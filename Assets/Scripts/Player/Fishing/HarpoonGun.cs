@@ -118,13 +118,13 @@ public class HarpoonGun : MonoBehaviour
             canRotate = false;
             shouldFire = false;
             animator.SetTrigger("StowHarpoon");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             freezePlayer.canFlip = true;
             Debug.Log("UnFreeze");
             freezePlayer.freeze = false;
             canCast = true;
-            enter.canEnter = true;
             cam.shouldMove = false;
+            enter.canEnter = true;
             yield return null;
         }
 
@@ -199,6 +199,7 @@ public class HarpoonGun : MonoBehaviour
     public void DeactiveHarpoon()
     {
         harpoon.SetActive(false);
+        shouldFire = false;
     }
 
 }

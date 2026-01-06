@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] public float horizontalInput;
     [SerializeField] private HarpoonGun enterFScript;
-    [SerializeField] private bool isFacingRight;
+    public bool isFacingRight;
     [SerializeField] private Animator animator;
     public bool freeze;
     public bool isMoving;
@@ -92,7 +92,7 @@ public class PlayerMove : MonoBehaviour
         {
             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
-    }
+    } 
     private void FlipCheck()
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
