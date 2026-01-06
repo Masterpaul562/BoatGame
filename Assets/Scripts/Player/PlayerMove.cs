@@ -34,7 +34,19 @@ public class PlayerMove : MonoBehaviour
             FlipCheck();
         }
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (!freeze)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+        }else
+        {
+            horizontalInput = 0;
+        }
+        
+        if (this.GetComponent<EnterBoat>().inBoat)
+        {
+            moveSpeed = 3;
+        }
+
         if (horizontalInput != 0)
         {
             isMoving = true;
@@ -42,21 +54,13 @@ public class PlayerMove : MonoBehaviour
             {
                 moveSpeed = Mathf.MoveTowards(moveSpeed, maxSpeed, Time.deltaTime * 5);
             }
-            else
-            {
-                moveSpeed = 3;
-            }
         }
         else
         {
             isMoving = false;
             if (!this.GetComponent<EnterBoat>().inBoat)
             {
-                moveSpeed = Mathf.MoveTowards(moveSpeed, 1, Time.deltaTime * 10);
-            }
-            else
-            {
-                moveSpeed = 3;
+                moveSpeed = Mathf.MoveTowards(moveSpeed, 1, Time.deltaTime * 5);
             }
         }
 
@@ -97,6 +101,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
+            canFlip = false;
             Debug.Log("Turned");
             animator.SetTrigger("Turn");
             isFacingRight = !isFacingRight;            
@@ -107,7 +112,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void Flip()
     {
-
+        canFlip = true;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;

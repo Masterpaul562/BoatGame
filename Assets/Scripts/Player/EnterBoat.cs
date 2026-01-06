@@ -89,14 +89,7 @@ public class EnterBoat : MonoBehaviour
     private IEnumerator Enter()
     {
         EnterCd = false;
-        Vector3 localScale = transform.localScale;
-        if (localScale.x < 0)
-        {
-            localScale.x *= -1f;
-        }
-        transform.localScale = localScale;
-        animator.SetBool("isFacingRight", true);
-        this.GetComponent<PlayerMove>().isFacingRight = true;
+       
         doorAnim.SetTrigger("Open");
         this.GetComponent<PlayerMove>().freeze = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
@@ -111,7 +104,15 @@ public class EnterBoat : MonoBehaviour
         animator.SetBool("IsInside", true);
         insideBG.enabled = true;
         transform.position = enterLocation.position;
-        
+        Vector3 localScale = transform.localScale;
+        if (localScale.x < 0)
+        {
+            localScale.x *= -1f;
+        }
+        transform.localScale = localScale;
+        animator.SetBool("isFacingRight", true);
+        animator.SetBool("Turn", false);
+        this.GetComponent<PlayerMove>().isFacingRight = true;
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
