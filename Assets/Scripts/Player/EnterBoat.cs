@@ -19,6 +19,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Animator doorAnim;
     [SerializeField] private Camera cam;
+    [SerializeField] private GameObject rain;
     public bool shouldZoom;
     public bool zoom;
     public bool canEnter = true;
@@ -94,6 +95,7 @@ public class EnterBoat : MonoBehaviour
         this.GetComponent<PlayerMove>().freeze = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
         yield return new WaitForSeconds(.5f);
+        rain.SetActive(false);
         this.GetComponent<PlayerMove>().freeze = false;
         cam.GetComponent<FollowBobber>().shouldGoToCenter = false;
         inBoat = true;
@@ -125,6 +127,7 @@ public class EnterBoat : MonoBehaviour
     }
     private void Exit()
     {
+        rain.SetActive(true);
         EnterCd = true;
         doorAnim.SetBool("Open", false);
         doorAnim.SetTrigger("Close");

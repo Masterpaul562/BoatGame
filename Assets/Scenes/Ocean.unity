@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 126289109}
   - component: {fileID: 126289108}
   m_Layer: 0
-  m_Name: Rain Particles (1)
+  m_Name: Rain Particles ForeGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -527,8 +527,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1656603911
-  m_SortingLayer: -1
+  m_SortingLayerID: -773443073
+  m_SortingLayer: 1
   m_SortingOrder: -45
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -816,7 +816,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.9
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1193,14 +1193,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 21.014992, y: 0.0020883912, z: -12.253305}
-    m_Rotation: {x: 0.010547713, y: 325.6598, z: 359.99426}
+    m_Position: {x: 8.34, y: 21, z: -3.6}
+    m_Rotation: {x: 180, y: 0, z: 0}
     m_Scale: {x: 52.05, y: 0.1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -1278,7 +1278,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0
+    randomPositionAmount: 0.12
     radius:
       value: 1
       mode: 0
@@ -5294,13 +5294,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126289107}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.47, y: 18.7, z: 1.9}
+  m_LocalRotation: {x: 0, y: 0, z: -0.32323194, w: 0.94631976}
+  m_LocalPosition: {x: -2.401263, y: 9.227495, z: 1.5538423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_Father: {fileID: 486619362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.717}
 --- !u!1 &140325759
 GameObject:
   m_ObjectHideFlags: 0
@@ -6501,6 +6501,40 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &486619361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486619362}
+  m_Layer: 0
+  m_Name: RainParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486619362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486619361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.871263, y: 9.472506, z: 0.3461577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2097410443}
+  - {fileID: 126289110}
+  - {fileID: 1810262717}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10059,6 +10093,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   doorAnim: {fileID: 798613271}
   cam: {fileID: 519420031}
+  rain: {fileID: 486619361}
   shouldZoom: 0
   zoom: 0
   canEnter: 1
@@ -12085,7 +12120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1810262717}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RainLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12099,12 +12134,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810262716}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: 0, z: -1.735333}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.461263, y: -9.53, z: -2.0814908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 486619362}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900979577
 GameObject:
@@ -12261,7 +12296,7 @@ Transform:
   m_GameObject: {fileID: 1914118031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2012999, y: 0.24730015, z: 20}
+  m_LocalPosition: {x: 0.2012999, y: 0.24730015, z: 7.4}
   m_LocalScale: {x: 3.8704622, y: 2.6028695, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13266,7 +13301,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -13643,14 +13678,14 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 12
     angle: 25
     length: 5
-    boxThickness: {x: 0, y: 0, z: 0}
+    boxThickness: {x: 1, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 21.014992, y: 0.0020883912, z: -12.253305}
-    m_Rotation: {x: 0.010547713, y: 325.6598, z: 359.99426}
+    m_Position: {x: 8.34, y: 21, z: -12.253305}
+    m_Rotation: {x: 180, y: 0, z: 0}
     m_Scale: {x: 52.05, y: 0.1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
@@ -13728,7 +13763,7 @@ ParticleSystem:
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
     sphericalDirectionAmount: 0
-    randomPositionAmount: 0
+    randomPositionAmount: 0.22
     radius:
       value: 1
       mode: 0
@@ -17744,13 +17779,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097410440}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.47, y: 18.7, z: 1.9}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3232301, w: 0.9463205}
+  m_LocalPosition: {x: -0.7, y: 12.48, z: 14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_Father: {fileID: 486619362}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.717}
 --- !u!1 &2101094369
 GameObject:
   m_ObjectHideFlags: 0
@@ -17919,6 +17954,4 @@ SceneRoots:
   - {fileID: 388384868}
   - {fileID: 319102679}
   - {fileID: 1503861282}
-  - {fileID: 2097410443}
-  - {fileID: 126289110}
-  - {fileID: 1810262717}
+  - {fileID: 486619362}
