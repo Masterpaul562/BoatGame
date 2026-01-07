@@ -35,4 +35,8 @@ public class FishInventory : MonoBehaviour
         }
        
     }
+    public void FeedFish()
+    {
+        fishAmountOutside = 0;
+    }
 }

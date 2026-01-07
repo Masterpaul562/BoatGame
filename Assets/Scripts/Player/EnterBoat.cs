@@ -15,7 +15,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private CityManager inCity;
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject harpoon;
-    [SerializeField] private string insideLayer,outsideLayer;
+    [SerializeField] private string insideLayer, outsideLayer;
     [SerializeField] private Animator animator;
     [SerializeField] private Animator doorAnim;
     [SerializeField] private Camera cam;
@@ -151,6 +151,7 @@ public class EnterBoat : MonoBehaviour
         }
         transform.localScale = localScale;
         animator.SetBool("isFacingRight", false);
+        animator.SetBool("Turn", false);
         this.GetComponent<PlayerMove>().isFacingRight = false;
 
     }

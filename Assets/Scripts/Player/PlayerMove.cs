@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     public bool canFlip;
 
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -106,12 +107,14 @@ public class PlayerMove : MonoBehaviour
             animator.SetTrigger("Turn");
             isFacingRight = !isFacingRight;            
             animator.SetBool("isFacingRight", isFacingRight);
+            GetComponent<EnterBoat>().canEnter = false;
         }
 
 
     }
     public void Flip()
     {
+        GetComponent<EnterBoat>().canEnter = true;
         canFlip = true;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;

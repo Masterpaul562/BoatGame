@@ -9,6 +9,7 @@ TagManager:
   - Fishing
   - Inside
   - Bobber
+  - Engine
   layers:
   - Default
   - TransparentFX
