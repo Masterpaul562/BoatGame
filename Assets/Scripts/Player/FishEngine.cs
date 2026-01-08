@@ -36,6 +36,7 @@ public class FishEngine : MonoBehaviour
             if(hit.collider.gameObject.tag == "Engine")
             {
                 FeedFish();
+                Debug.Log("Yay");
             }
         }
     }
