@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class HarpoonGun : MonoBehaviour
 {
-    public KeyCode key;
     [SerializeField] CameraShake camShake;
-    private Animator animator;
-    private float horz;
-    private PlayerMove freezePlayer;
     [SerializeField] private GameObject bobber;
     [SerializeField] private GameObject harpoon;
     [SerializeField] private float harpoonPower;
     [SerializeField] private LineRenderController line;
-    private bool shouldFire;
     [SerializeField] private float distance = 100;
     [SerializeField] public Transform harpoonEnd;
     [SerializeField] private FishManager fish;
@@ -23,7 +18,13 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private float rotSpeed;
     [SerializeField] private Transform rot1, rot2;
     private bool canRotate;
+    private bool shouldFire;
+    private Animator animator;
+    private float horz;
+    private PlayerMove freezePlayer;
+    public KeyCode key;
     public bool isReeling;
+    public bool isFishing;
 
 
 
@@ -55,6 +56,7 @@ public class HarpoonGun : MonoBehaviour
             if (canCast && horz == 0)
             {
                 canCast = false;
+                isFishing = true;
                 enter.canEnter = false;
                 freezePlayer.freeze = true;
                 StartCoroutine(Harpoon());
@@ -125,6 +127,7 @@ public class HarpoonGun : MonoBehaviour
             canCast = true;
             cam.shouldMove = false;
             enter.canEnter = true;
+            isFishing = false;
             yield return null;
         }
 
@@ -175,6 +178,7 @@ public class HarpoonGun : MonoBehaviour
         cam.shouldMove = false;
         yield return new WaitForSeconds(1f);
         freezePlayer.freeze = false;
+        isFishing = false;
         Debug.Log("CAnCast");
         canCast = true;
         enter.canEnter = true;
