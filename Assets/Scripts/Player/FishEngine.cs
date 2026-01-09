@@ -36,9 +36,15 @@ public class FishEngine : MonoBehaviour
         //might need a cooldown
         for(int i=0; i<inventory.fishAmountOutside; i++)
         {
-
+            if (powerLevel < 1.6){
+            powerLevel += 0.32f;
+            }else{
+                inventory.fishAmountOutside -= i;
+                i = 10000000;
+                powerLevel = 1.6f; 
+            }
         }
-        inventory.fishAmountOutside = 0;
+        
     }
     private void Interact()
     {
