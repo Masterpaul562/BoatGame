@@ -9,12 +9,15 @@ public class FishEngine : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     private HarpoonGun fishing;
     private FishInventory inventory;
-    private int powerLevel;
+    private float powerLevel;
+    private float maxPowerLevel;
 
     private void Start()
     {
         inventory = player.GetComponent<FishInventory>();
         fishing = player.GetComponent<HarpoonGun>();
+        maxPowerLevel = 1.6f;
+        powerLevel = maxPowerLevel;
     }
 
 
@@ -31,7 +34,11 @@ public class FishEngine : MonoBehaviour
     {
         //Add power based on fish before feeding
         //might need a cooldown
-        inventory.FeedFish();
+        for(int i=0; i<inventory.fishAmountOutside; i++)
+        {
+
+        }
+        inventory.fishAmountOutside = 0;
     }
     private void Interact()
     {
