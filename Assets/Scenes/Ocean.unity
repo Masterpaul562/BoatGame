@@ -10133,7 +10133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d25c36e3f1fb647a425e1ec0ff2e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishAmountOutside: 1
+  fishAmountOutside: 10
   fishAmountInside: 0
   junkAmount: 0
 --- !u!95 &1351622668

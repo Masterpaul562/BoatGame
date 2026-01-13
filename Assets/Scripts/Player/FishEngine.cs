@@ -22,6 +22,7 @@ public class FishEngine : MonoBehaviour
         fishing = player.GetComponent<HarpoonGun>();
         maxPowerLevel = 1.6f;
         powerLevel = maxPowerLevel;
+
         //StartCoroutine(DrainPower());
     }
 
@@ -34,6 +35,7 @@ public class FishEngine : MonoBehaviour
             Interact();
         }
         Debug.Log(FindFeedAmount());
+        Debug.Log(Mathf.CeilToInt(0f) + "Test");
     }
 
     private void FeedFish()
@@ -46,13 +48,18 @@ public class FishEngine : MonoBehaviour
             feedCD = true;
             for (int i = 1; i <= inventory.fishAmountOutside; i++)
             {
-                powerLevel = .32f * i;
-                amountFed++;
-                if (powerLevel > maxPowerLevel)
+                if (i <= FindFeedAmount())
                 {
-                    powerLevel = maxPowerLevel;
-                    i = 100000000;
+
+                    amountFed++;
+                    
                 }
+               
+            }
+            powerLevel += .32f * amountFed;
+            if (powerLevel > maxPowerLevel)
+            {
+                powerLevel = maxPowerLevel;
             }
             inventory.fishAmountOutside -= amountFed;
             amountFed = 0;
