@@ -36,7 +36,10 @@ public class FishEngine : MonoBehaviour
             Interact();
         }
         Debug.Log(FindFeedAmount());
-        Debug.Log(Mathf.CeilToInt(0f) + "Test");
+        if(red){
+            
+        }
+
     }
 
     private void FeedFish()
@@ -90,9 +93,11 @@ public class FishEngine : MonoBehaviour
             {
                 powerLevel = 0;
             }
-            if(powerLevel< = 0.2f)
+            if(powerLevel <= 0.2f)
             {
                 red=true;
+            }else {
+                red = false;
             }
             lightBar.transform.localScale = new Vector3(powerLevel, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
         }
