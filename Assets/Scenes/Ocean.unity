@@ -11605,10 +11605,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1351622656}
-  lightBar: {fileID: 0}
+  lightBar: {fileID: 273278425}
   interactable:
     serializedVersion: 2
     m_Bits: 64
+  powerLevel: 0
+  drainPower: 1
 --- !u!1 &1606903420
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,12 @@ public class FishEngine : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     private HarpoonGun fishing;
     private FishInventory inventory;
-    private float powerLevel;
+    private int amountFed;
+    [SerializeField] private float powerLevel;
     private float maxPowerLevel;
+    private bool feedCD;
+    public bool drainPower = true;
+    
 
     private void Start()
     {
@@ -18,6 +22,7 @@ public class FishEngine : MonoBehaviour
         fishing = player.GetComponent<HarpoonGun>();
         maxPowerLevel = 1.6f;
         powerLevel = maxPowerLevel;
+        //StartCoroutine(DrainPower());
     }
 
 
@@ -28,21 +33,30 @@ public class FishEngine : MonoBehaviour
         {
             Interact();
         }
+        Debug.Log(FindFeedAmount());
     }
 
     private void FeedFish()
     {
         //Add power based on fish before feeding
         //might need a cooldown
-        for(int i=0; i<inventory.fishAmountOutside; i++)
+        if (!feedCD)
         {
-            if (powerLevel < 1.6){
-            powerLevel += 0.32f;
-            }else{
-                inventory.fishAmountOutside -= i;
-                i = 10000000;
-                powerLevel = 1.6f; 
+            Debug.Log("Fed");
+            feedCD = true;
+            for (int i = 1; i <= inventory.fishAmountOutside; i++)
+            {
+                powerLevel = .32f * i;
+                amountFed++;
+                if (powerLevel > maxPowerLevel)
+                {
+                    powerLevel = maxPowerLevel;
+                    i = 100000000;
+                }
             }
+            inventory.fishAmountOutside -= amountFed;
+            amountFed = 0;
+            StartCoroutine(FeedCD());
         }
         
     }
@@ -52,15 +66,36 @@ public class FishEngine : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector3.forward, 10, interactable);
         if(hit.collider != null)
         {
-            if(hit.collider.gameObject.tag == "Engine")
+            if(hit.collider.gameObject.tag == "Engine" && inventory.fishAmountOutside != 0)
             {
                 FeedFish();
-                Debug.Log("Yay");
             }
         }
     }
-    private void DrainPower()
+    private IEnumerator DrainPower()
     {
+        while (drainPower)
+        {
+            yield return new WaitForSeconds(0.1f);
+            powerLevel -= 0.01f;
+            if(powerLevel <= 0)
+            {
+                powerLevel = 0;
+            }
+            lightBar.transform.localScale = new Vector3(powerLevel, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
+        }
+    }
+    private int FindFeedAmount()
+    {
+        float neededAmount = maxPowerLevel - powerLevel;
+        neededAmount = neededAmount / .32f;
+        int returnAmount = Mathf.CeilToInt(neededAmount);
+        return returnAmount;    
 
+    }
+    private IEnumerator FeedCD()
+    {
+        yield return new WaitForSeconds(1f);
+        feedCD = false;
     }
 }
