@@ -10,20 +10,21 @@ public class FishEngine : MonoBehaviour
     private HarpoonGun fishing;
     private FishInventory inventory;
     private int amountFed;
-    [SerializeField] private float powerLevel;
-    private float maxPowerLevel;
+    public float powerLevel;
+    public float maxPowerLevel;
+    public float fishPowerAmount;
     private bool feedCD;
     public bool drainPower = true;
+    private bool red = false;
     
 
     private void Start()
     {
         inventory = player.GetComponent<FishInventory>();
         fishing = player.GetComponent<HarpoonGun>();
-        maxPowerLevel = 1.6f;
         powerLevel = maxPowerLevel;
 
-        //StartCoroutine(DrainPower());
+        StartCoroutine(DrainPower());
     }
 
 
@@ -35,7 +36,10 @@ public class FishEngine : MonoBehaviour
             Interact();
         }
         Debug.Log(FindFeedAmount());
-        Debug.Log(Mathf.CeilToInt(0f) + "Test");
+        if(red){
+            
+        }
+
     }
 
     private void FeedFish()
@@ -84,10 +88,16 @@ public class FishEngine : MonoBehaviour
         while (drainPower)
         {
             yield return new WaitForSeconds(0.1f);
-            powerLevel -= 0.01f;
+            powerLevel -= 0.001f;
             if(powerLevel <= 0)
             {
                 powerLevel = 0;
+            }
+            if(powerLevel <= 0.2f)
+            {
+                red=true;
+            }else {
+                red = false;
             }
             lightBar.transform.localScale = new Vector3(powerLevel, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
         }
