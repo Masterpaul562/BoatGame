@@ -7,6 +7,8 @@ public class FishEngine : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject lightBar;
     [SerializeField] private LayerMask interactable;
+    [SerializeField] private Color whiteBar;
+    [SerializeField] private Color redBar; 
     private HarpoonGun fishing;
     private FishInventory inventory;
     private int amountFed;
@@ -16,6 +18,7 @@ public class FishEngine : MonoBehaviour
     private bool feedCD;
     public bool drainPower = true;
     private bool red = false;
+
     
 
     private void Start()
@@ -23,6 +26,7 @@ public class FishEngine : MonoBehaviour
         inventory = player.GetComponent<FishInventory>();
         fishing = player.GetComponent<HarpoonGun>();
         powerLevel = maxPowerLevel;
+        lightBar.GetComponent<SpriteRenderer>().color = whiteBar;
 
         StartCoroutine(DrainPower());
     }
@@ -37,7 +41,9 @@ public class FishEngine : MonoBehaviour
         }
         Debug.Log(FindFeedAmount());
         if(red){
-            
+            lightBar.GetComponent<SpriteRenderer>().color = redBar;
+        } else {
+            lightBar.GetComponent<SpriteRenderer>().color = whiteBar;
         }
 
     }
@@ -93,7 +99,7 @@ public class FishEngine : MonoBehaviour
             {
                 powerLevel = 0;
             }
-            if(powerLevel <= 0.2f)
+            if(powerLevel <= powerLevel/4)
             {
                 red=true;
             }else {
@@ -114,5 +120,13 @@ public class FishEngine : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         feedCD = false;
+    }
+    private IEnumerator Blink() {
+        Color temp = whiteBar;
+        temp.a = 0; 
+        lightBar.GetComponent<SpriteRenderer>().color = temp;
+        yield return new WaitForSeconds (0.1f);
+        temp.a = 255;
+        lightBar.GetComponent<SpriteRenderer>().color= temp;
     }
 }

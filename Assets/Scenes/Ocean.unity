@@ -5731,7 +5731,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c98ad9ad68d8a4759ba79a5899a8fe10, type: 3}
-  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  m_Color: {r: 0.8207547, g: 0.8168832, b: 0.8168832, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11609,8 +11609,10 @@ MonoBehaviour:
   interactable:
     serializedVersion: 2
     m_Bits: 64
+  whiteBar: {r: 1, g: 1, b: 1, a: 1}
+  redBar: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
   powerLevel: 0
-  maxPowerLevel: 0
+  maxPowerLevel: 1.6
   fishPowerAmount: 0
   drainPower: 1
 --- !u!1 &1606903420
