@@ -4,14 +4,14 @@ using UnityEngine;
 public class BgScroller : MonoBehaviour
 {
     public float scrollSpeed;
-    private float startPos;
+    [SerializeField] private float startPos;
    [SerializeField] public float direction;
     private float length;
 
     void Start()
     {
         startPos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        length = transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     // Update is called once per frame
