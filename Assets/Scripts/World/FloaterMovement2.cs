@@ -17,7 +17,7 @@ public class FloaterMovement2 : MonoBehaviour
     void Update()
     {
         float y = amp*Mathf.Sin(Time.time*speed);
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2 (transform.position.x, y+transform.position.y),Time.deltaTime*2);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2 (transform.position.x, y),Time.deltaTime*2);
         Quaternion rot = Quaternion.Euler(0, 0, y*10);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime*2);
         lastY = y;
