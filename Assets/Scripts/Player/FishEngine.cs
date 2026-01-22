@@ -18,6 +18,7 @@ public class FishEngine : MonoBehaviour
     private bool feedCD;
     public bool drainPower = true;
     private bool red = false;
+    private bool blink = true;
 
     
 
@@ -58,6 +59,9 @@ public class FishEngine : MonoBehaviour
             feedCD = true;
             for (int i = 1; i <= inventory.fishAmountOutside; i++)
             {
+                if(powerLevel == 0){
+                    StartCoroutine(DrainPower());
+                }
                 if (i <= FindFeedAmount())
                 {
 
@@ -98,8 +102,14 @@ public class FishEngine : MonoBehaviour
             if(powerLevel <= 0)
             {
                 powerLevel = 0;
+                if(blink){
+                    Debug.Log("BLInk");
+                    blink = false;
+                    drainPower = false;
+                    StartCoroutine(Blink());
+                }
             }
-            if(powerLevel <= powerLevel/4)
+            if(powerLevel <= maxPowerLevel/4)
             {
                 red=true;
             }else {
@@ -122,11 +132,21 @@ public class FishEngine : MonoBehaviour
         feedCD = false;
     }
     private IEnumerator Blink() {
-        Color temp = whiteBar;
+        yield return new WaitForSeconds (0.1f);
+        Color temp = redBar;
         temp.a = 0; 
         lightBar.GetComponent<SpriteRenderer>().color = temp;
+        lightBar.transform.localScale = new Vector2 (1.6f,lightBar.transform.localScale.y);
         yield return new WaitForSeconds (0.1f);
         temp.a = 255;
         lightBar.GetComponent<SpriteRenderer>().color= temp;
+        yield return new WaitForSeconds (0.1f);
+        temp.a = 0;
+        lightBar.GetComponent<SpriteRenderer>().color= temp;
+        yield return new WaitForSeconds (0.1f);
+        temp.a = 255;
+        lightBar.GetComponent<SpriteRenderer>().color= temp;
+        yield return new WaitForSeconds (0.1f);
+        lightBar.transform.localScale = new Vector2 (0,lightBar.transform.localScale.y);
     }
 }
