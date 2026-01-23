@@ -19,6 +19,7 @@ public class FishEngine : MonoBehaviour
     public bool drainPower = true;
     private bool red = false;
     private bool blink = true;
+    private bool restart;
 
     
 
@@ -59,8 +60,12 @@ public class FishEngine : MonoBehaviour
             feedCD = true;
             for (int i = 1; i <= inventory.fishAmountOutside; i++)
             {
-                if(powerLevel == 0){
+                if(powerLevel == 0 && restart){
+                    drainPower = true;
                     StartCoroutine(DrainPower());
+                    blink = true;
+                    restart = false;
+                    
                 }
                 if (i <= FindFeedAmount())
                 {
@@ -106,6 +111,7 @@ public class FishEngine : MonoBehaviour
                     Debug.Log("BLInk");
                     blink = false;
                     drainPower = false;
+                    restart = true;
                     StartCoroutine(Blink());
                 }
             }
@@ -132,21 +138,22 @@ public class FishEngine : MonoBehaviour
         feedCD = false;
     }
     private IEnumerator Blink() {
+        feedCD =true;
         yield return new WaitForSeconds (0.1f);
         Color temp = redBar;
-        temp.a = 0; 
         lightBar.GetComponent<SpriteRenderer>().color = temp;
-        lightBar.transform.localScale = new Vector2 (1.6f,lightBar.transform.localScale.y);
-        yield return new WaitForSeconds (0.1f);
-        temp.a = 255;
-        lightBar.GetComponent<SpriteRenderer>().color= temp;
-        yield return new WaitForSeconds (0.1f);
-        temp.a = 0;
-        lightBar.GetComponent<SpriteRenderer>().color= temp;
-        yield return new WaitForSeconds (0.1f);
-        temp.a = 255;
-        lightBar.GetComponent<SpriteRenderer>().color= temp;
-        yield return new WaitForSeconds (0.1f);
+        lightBar.transform.localScale = new Vector2 (maxPowerLevel,lightBar.transform.localScale.y);
+        float timeBlink = 0.7f;
+        yield return new WaitForSeconds (timeBlink);
+        lightBar.transform.localScale = new Vector2 (0f,lightBar.transform.localScale.y);
+        yield return new WaitForSeconds (timeBlink);
+        lightBar.transform.localScale = new Vector2 (maxPowerLevel,lightBar.transform.localScale.y);
+        yield return new WaitForSeconds (timeBlink);
+        lightBar.transform.localScale = new Vector2 (0f,lightBar.transform.localScale.y);
+        yield return new WaitForSeconds (timeBlink);
+        lightBar.transform.localScale = new Vector2 (maxPowerLevel,lightBar.transform.localScale.y);
+        yield return new WaitForSeconds (timeBlink);
         lightBar.transform.localScale = new Vector2 (0,lightBar.transform.localScale.y);
+        feedCD = false;
     }
 }
