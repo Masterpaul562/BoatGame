@@ -4,9 +4,9 @@ using UnityEngine;
 public class WaveDeformer : MonoBehaviour
 {
     [Header("Wave Settings")]
-    public float amplitude = 1f;       // vertical wave height
-    public float frequency = 1.5f;     // number of crests along the plane
-    public float speed = 1f;           // animation speed
+    public float amplitude = 1f;        // vertical wave height
+    public float frequency = 1.5f;      // number of crests along the plane
+    public float speed = 1f;            // animation speed
     public float horizontalOffset = 0f; // offset along X for back wave
 
     private Mesh mesh;
@@ -15,7 +15,7 @@ public class WaveDeformer : MonoBehaviour
 
     void Start()
     {
-        // Get mesh from MeshFilter
+
         mesh = GetComponent<MeshFilter>().mesh;
         vertices = mesh.vertices;
         baseVertices = mesh.vertices;
@@ -29,10 +29,9 @@ public class WaveDeformer : MonoBehaviour
         {
             Vector3 v = baseVertices[i];
 
-            // Calculate horizontal X position in world space, add optional offset for back wave
             float worldX = transform.TransformPoint(v).x + horizontalOffset;
 
-            // Move vertex along Z (because plane is rotated -90) to make vertical wave
+
             v.z += Mathf.Sin(worldX * frequency + time) * amplitude;
 
             vertices[i] = v;
@@ -40,5 +39,17 @@ public class WaveDeformer : MonoBehaviour
 
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
+    }
+
+    public float GetWaveHeight(float worldX)
+    {
+        float time = Time.time * speed;
+
+        float wave = Mathf.Sin((worldX + horizontalOffset) * frequency + time) * amplitude;
+
+        Vector3 localOffset = new Vector3(0f, 0f, wave);
+        Vector3 worldOffset = transform.TransformDirection(localOffset);
+
+        return worldOffset.y;
     }
 }
