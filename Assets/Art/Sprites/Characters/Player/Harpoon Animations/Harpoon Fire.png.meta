@@ -126,12 +126,12 @@ TextureImporter:
       name: Harpoon Fire_0
       rect:
         serializedVersion: 2
-        x: 879
-        y: 3542
-        width: 634
-        height: 157
+        x: 0
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Harpoon Fire_1
       rect:
         serializedVersion: 2
-        x: 2649
-        y: 3549
-        width: 765
-        height: 180
+        x: 1920
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Harpoon Fire_2
       rect:
         serializedVersion: 2
-        x: 4539
-        y: 3557
-        width: 806
-        height: 187
+        x: 3840
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Harpoon Fire_3
       rect:
         serializedVersion: 2
-        x: 6414
-        y: 3564
-        width: 859
-        height: 195
+        x: 5760
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Harpoon Fire_4
       rect:
         serializedVersion: 2
-        x: 654
-        y: 2484
-        width: 803
-        height: 176
+        x: 0
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Harpoon Fire_6
       rect:
         serializedVersion: 2
-        x: 2582
-        y: 2484
-        width: 827
-        height: 180
+        x: 3840
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Harpoon Fire_9
       rect:
         serializedVersion: 2
-        x: 4524
-        y: 2484
-        width: 875
-        height: 180
+        x: 1920
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,127 +270,127 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_14
+      name: Harpoon Fire_5
       rect:
         serializedVersion: 2
-        x: 6489
-        y: 2473
-        width: 675
-        height: 161
+        x: 1920
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fef1f1ca1d7744cc9b5fc41ef1e1b5d
-      internalID: 86728524
+      spriteID: df009bf9f39ef48c181bd9cef9094ecc
+      internalID: -552694935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_16
+      name: Harpoon Fire_7
       rect:
         serializedVersion: 2
-        x: 794
-        y: 1393
-        width: 637
-        height: 158
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ee2744f92e2c4e2e931f8d107e0bc17
-      internalID: -1084727538
+      spriteID: cef8846e893204b95837b1fb3324dcb4
+      internalID: 1558253000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_17
+      name: Harpoon Fire_8
       rect:
         serializedVersion: 2
-        x: 2758
-        y: 1389
-        width: 638
-        height: 161
+        x: 0
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9323a3067d8b41f8a057a84448cf318
-      internalID: 947193974
+      spriteID: 204e4c2a41e2a43608aaaccb06bdb696
+      internalID: 1587259737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_18
+      name: Harpoon Fire_10
       rect:
         serializedVersion: 2
-        x: 4704
-        y: 1389
-        width: 634
-        height: 158
+        x: 3840
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b28909002b74c368cac560eea7b465
-      internalID: 1805955746
+      spriteID: 2cd5decdf74854ef18cf1431f46ecb57
+      internalID: -301927818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_19
+      name: Harpoon Fire_11
       rect:
         serializedVersion: 2
-        x: 6632
-        y: 1389
-        width: 634
-        height: 158
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24b30e5cf07304ccfa447644c80c3c38
-      internalID: -891397910
+      spriteID: 091c9837e1a7549adaa8e5f782310e94
+      internalID: 406576309
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harpoon Fire_20
+      name: Harpoon Fire_12
       rect:
         serializedVersion: 2
-        x: 872
-        y: 309
-        width: 637
-        height: 158
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec78c4d1b4b074a2082b51354fb454ff
-      internalID: -262221775
+      spriteID: 4d50bae803f664923ad6aeb81318a1af
+      internalID: 1755947416
       vertices: []
       indices: 
       edges: []
@@ -411,16 +411,7 @@ TextureImporter:
       Harpoon Fire_10: -301927818
       Harpoon Fire_11: 406576309
       Harpoon Fire_12: 1755947416
-      Harpoon Fire_13: -1519108948
-      Harpoon Fire_14: 86728524
-      Harpoon Fire_15: -1910050473
-      Harpoon Fire_16: -1084727538
-      Harpoon Fire_17: 947193974
-      Harpoon Fire_18: 1805955746
-      Harpoon Fire_19: -891397910
       Harpoon Fire_2: -1900222394
-      Harpoon Fire_20: -262221775
-      Harpoon Fire_21: -661876278
       Harpoon Fire_3: -1092659653
       Harpoon Fire_4: -1852272932
       Harpoon Fire_5: -552694935

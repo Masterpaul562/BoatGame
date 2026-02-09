@@ -113,10 +113,10 @@ TextureImporter:
       name: Idle Inside_0
       rect:
         serializedVersion: 2
-        x: 744
-        y: 3234
-        width: 364
-        height: 773
+        x: 0
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: Idle Inside_1
       rect:
         serializedVersion: 2
-        x: 2664
-        y: 3234
-        width: 364
-        height: 780
+        x: 1920
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Idle Inside_2
       rect:
         serializedVersion: 2
-        x: 4584
-        y: 3234
-        width: 364
-        height: 780
+        x: 3840
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: Idle Inside_3
       rect:
         serializedVersion: 2
-        x: 6504
-        y: 3234
-        width: 364
-        height: 780
+        x: 5760
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Idle Inside_4
       rect:
         serializedVersion: 2
-        x: 744
-        y: 2154
-        width: 364
-        height: 780
+        x: 0
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,10 +218,10 @@ TextureImporter:
       name: Idle Inside_5
       rect:
         serializedVersion: 2
-        x: 2664
-        y: 2154
-        width: 364
-        height: 780
+        x: 1920
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,10 +239,10 @@ TextureImporter:
       name: Idle Inside_6
       rect:
         serializedVersion: 2
-        x: 4584
-        y: 2154
-        width: 364
-        height: 780
+        x: 3840
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Idle Inside_7
       rect:
         serializedVersion: 2
-        x: 6504
-        y: 2154
-        width: 364
-        height: 780
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,10 +281,10 @@ TextureImporter:
       name: Idle Inside_8
       rect:
         serializedVersion: 2
-        x: 744
-        y: 1074
-        width: 364
-        height: 777
+        x: 0
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Idle Inside_9
       rect:
         serializedVersion: 2
-        x: 2664
-        y: 1074
-        width: 364
-        height: 777
+        x: 1920
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,10 +323,10 @@ TextureImporter:
       name: Idle Inside_10
       rect:
         serializedVersion: 2
-        x: 4584
-        y: 1074
-        width: 364
-        height: 777
+        x: 3840
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,10 +344,10 @@ TextureImporter:
       name: Idle Inside_11
       rect:
         serializedVersion: 2
-        x: 6504
-        y: 1074
-        width: 364
-        height: 777
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,10 +365,10 @@ TextureImporter:
       name: Idle Inside_12
       rect:
         serializedVersion: 2
-        x: 744
+        x: 0
         y: 0
-        width: 364
-        height: 771
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,6 +378,69 @@ TextureImporter:
       bones: []
       spriteID: 1c9b32cc1a95a4939bdb263bed35fa8b
       internalID: 295316959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside_13
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d767b8f63357241799965d2d88cfb66e
+      internalID: 609927991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside_14
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8da71a0497b8479a88a8b45846b8928
+      internalID: 1750727065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Inside_15
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86485fb7dcc564c6f8f871dbd012eb3c
+      internalID: 860502651
       vertices: []
       indices: 
       edges: []
@@ -398,6 +461,9 @@ TextureImporter:
       Idle Inside_10: -1158907944
       Idle Inside_11: -1855446268
       Idle Inside_12: 295316959
+      Idle Inside_13: 609927991
+      Idle Inside_14: 1750727065
+      Idle Inside_15: 860502651
       Idle Inside_2: -953585641
       Idle Inside_3: -1410465319
       Idle Inside_4: -982127170

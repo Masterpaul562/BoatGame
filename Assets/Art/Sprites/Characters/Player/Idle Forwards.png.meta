@@ -126,10 +126,10 @@ TextureImporter:
       name: Idle Forwards_0
       rect:
         serializedVersion: 2
-        x: 688
-        y: 3234
-        width: 420
-        height: 767
+        x: 0
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Idle Forwards_1
       rect:
         serializedVersion: 2
-        x: 2608
-        y: 3234
-        width: 420
-        height: 773
+        x: 1920
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Idle Forwards_2
       rect:
         serializedVersion: 2
-        x: 4521
-        y: 3234
-        width: 431
-        height: 773
+        x: 3840
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Idle Forwards_3
       rect:
         serializedVersion: 2
-        x: 6429
-        y: 3234
-        width: 443
-        height: 769
+        x: 5760
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: Idle Forwards_4
       rect:
         serializedVersion: 2
-        x: 681
-        y: 2154
-        width: 431
-        height: 769
+        x: 0
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Idle Forwards_5
       rect:
         serializedVersion: 2
-        x: 2601
-        y: 2154
-        width: 431
-        height: 769
+        x: 1920
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Idle Forwards_6
       rect:
         serializedVersion: 2
-        x: 4524
-        y: 2154
-        width: 428
-        height: 769
+        x: 3840
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Idle Forwards_7
       rect:
         serializedVersion: 2
-        x: 6444
-        y: 2154
-        width: 428
-        height: 773
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: Idle Forwards_8
       rect:
         serializedVersion: 2
-        x: 681
-        y: 1074
-        width: 427
-        height: 776
+        x: 0
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: Idle Forwards_9
       rect:
         serializedVersion: 2
-        x: 2574
-        y: 1074
-        width: 454
-        height: 777
+        x: 1920
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: Idle Forwards_10
       rect:
         serializedVersion: 2
-        x: 4476
-        y: 1074
-        width: 472
-        height: 777
+        x: 3840
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,10 +357,10 @@ TextureImporter:
       name: Idle Forwards_11
       rect:
         serializedVersion: 2
-        x: 6414
-        y: 1074
-        width: 454
-        height: 777
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +378,10 @@ TextureImporter:
       name: Idle Forwards_12
       rect:
         serializedVersion: 2
-        x: 681
+        x: 0
         y: 0
-        width: 427
-        height: 771
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,6 +391,69 @@ TextureImporter:
       bones: []
       spriteID: 63ec1e08876fa344dbd625ce06f83839
       internalID: -318690313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards_13
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d343fc1e759414cba8460d5fd4adb015
+      internalID: -499010943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards_14
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072e93fa4e0d14f468c0f37cdb99a705
+      internalID: -1454989209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle Forwards_15
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b6b873218e641229cab5a2df4b1c64
+      internalID: -2082002111
       vertices: []
       indices: 
       edges: []
@@ -411,6 +474,9 @@ TextureImporter:
       Idle Forwards_10: -421186277
       Idle Forwards_11: 309141614
       Idle Forwards_12: -318690313
+      Idle Forwards_13: -499010943
+      Idle Forwards_14: -1454989209
+      Idle Forwards_15: -2082002111
       Idle Forwards_2: 2008324209
       Idle Forwards_3: 819258210
       Idle Forwards_4: -1871847496
