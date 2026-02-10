@@ -15,7 +15,7 @@ Jame Olsen - Artist
 <summary>Artwork</summary>
 
 I made hundreds of drawings and artworks in the form of spritesheets and png images.
-They are used in unity a large number of ways. I don't know how to respond to 'how they are used'. They are used as art and animations, what else?
+The question, 'how they are used' makes little sense to me. They are used as art and animations, what else?
 I used Procreate and Krita for all of the art.
 </details>
 
