@@ -12,7 +12,7 @@ Jame Olsen - Artist
 </details>
 
 <details>
-<summary>Artwork</summary>
+<summary>James's Artwork</summary>
 
 I made hundreds of drawings and artworks in the form of spritesheets and png images.
 The question, 'how they are used' makes little sense to me. They are used as art and animations, what else?
@@ -21,10 +21,10 @@ I used Procreate and Krita for all of the art.
 
 
 <details>
-<summary>TimeLine</summary>
+<summary>Screenshots</summary>
 
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/BoatGameTrello.png" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/main/ReadmeDocs/ToDoTrello.png" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/WorkingBranch/ReadmeDocs/BoatExample.png" alt="Example"></p>
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/WorkingBranch/ReadmeDocs/BoatExample2.png" alt="Example"></p>
 
 </details>
 
