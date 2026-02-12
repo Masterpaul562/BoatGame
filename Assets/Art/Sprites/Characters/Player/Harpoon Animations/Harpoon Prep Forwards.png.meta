@@ -126,12 +126,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_0
       rect:
         serializedVersion: 2
-        x: 684
-        y: 4312
-        width: 427
-        height: 776
+        x: 0
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_1
       rect:
         serializedVersion: 2
-        x: 2607
-        y: 4312
-        width: 422
-        height: 770
+        x: 1920
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_2
       rect:
         serializedVersion: 2
-        x: 4520
-        y: 4312
-        width: 433
-        height: 776
+        x: 3840
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_3
       rect:
         serializedVersion: 2
-        x: 6427
-        y: 4312
-        width: 449
-        height: 776
+        x: 5760
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_4
       rect:
         serializedVersion: 2
-        x: 8356
-        y: 4312
-        width: 439
-        height: 776
+        x: 7680
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_5
       rect:
         serializedVersion: 2
-        x: 10274
-        y: 4312
-        width: 443
-        height: 776
+        x: 9600
+        y: 4320
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_6
       rect:
         serializedVersion: 2
-        x: 683
-        y: 3232
-        width: 433
-        height: 776
+        x: 0
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_7
       rect:
         serializedVersion: 2
-        x: 2602
-        y: 3232
-        width: 433
-        height: 776
+        x: 1920
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_8
       rect:
         serializedVersion: 2
-        x: 4520
-        y: 3232
-        width: 433
-        height: 781
+        x: 3840
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_9
       rect:
         serializedVersion: 2
-        x: 6410
-        y: 3232
-        width: 461
-        height: 781
+        x: 5760
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,12 +336,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_10
       rect:
         serializedVersion: 2
-        x: 8311
-        y: 3232
-        width: 478
-        height: 781
+        x: 7680
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_11
       rect:
         serializedVersion: 2
-        x: 10252
-        y: 3232
-        width: 460
-        height: 781
+        x: 9600
+        y: 3240
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_12
       rect:
         serializedVersion: 2
-        x: 678
-        y: 2152
-        width: 529
-        height: 781
+        x: 0
+        y: 2160
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_13
       rect:
         serializedVersion: 2
-        x: 2607
-        y: 2152
-        width: 636
-        height: 781
-      alignment: 9
-      pivot: {x: 0.4999996, y: 0.5000003}
+        x: 1920
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,12 +420,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_14
       rect:
         serializedVersion: 2
-        x: 4525
-        y: 2152
-        width: 793
-        height: 781
-      alignment: 9
-      pivot: {x: 0.4464547, y: 0.5000003}
+        x: 3840
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +441,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_15
       rect:
         serializedVersion: 2
-        x: 6438
-        y: 2152
-        width: 860
-        height: 776
-      alignment: 9
-      pivot: {x: 0.42593908, y: 0.5}
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,12 +462,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_16
       rect:
         serializedVersion: 2
-        x: 8345
-        y: 2152
-        width: 821
-        height: 776
-      alignment: 9
-      pivot: {x: 0.42242098, y: 0.47264114}
+        x: 7680
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,12 +483,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_17
       rect:
         serializedVersion: 2
-        x: 10274
-        y: 2152
-        width: 788
-        height: 776
-      alignment: 9
-      pivot: {x: 0.44611433, y: 0.5}
+        x: 9600
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_18
       rect:
         serializedVersion: 2
-        x: 678
-        y: 1072
-        width: 838
-        height: 776
-      alignment: 9
-      pivot: {x: 0.3986608, y: 0.47264114}
+        x: 0
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,12 +525,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_19
       rect:
         serializedVersion: 2
-        x: 2602
-        y: 1072
-        width: 832
-        height: 776
-      alignment: 9
-      pivot: {x: 0.39792985, y: 0.527359}
+        x: 1920
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,12 +546,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_20
       rect:
         serializedVersion: 2
-        x: 4525
-        y: 1072
-        width: 822
-        height: 776
-      alignment: 9
-      pivot: {x: 0.42251593, y: 0.5}
+        x: 3840
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_21
       rect:
         serializedVersion: 2
-        x: 6438
-        y: 1072
-        width: 815
-        height: 781
-      alignment: 9
-      pivot: {x: 0.36975053, y: 0.5000003}
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,12 +588,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_22
       rect:
         serializedVersion: 2
-        x: 8333
-        y: 1072
-        width: 861
-        height: 781
-      alignment: 9
-      pivot: {x: 0.45068303, y: 0.5000003}
+        x: 7680
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,12 +609,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_23
       rect:
         serializedVersion: 2
-        x: 10230
-        y: 1072
-        width: 882
-        height: 781
-      alignment: 9
-      pivot: {x: 0.40371448, y: 0.5271842}
+        x: 9600
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -630,12 +630,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_24
       rect:
         serializedVersion: 2
-        x: 655
+        x: 0
         y: 0
-        width: 855
-        height: 773
-      alignment: 9
-      pivot: {x: 0.42550677, y: 0.49999985}
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,12 +651,12 @@ TextureImporter:
       name: Harpoon Prep Forwards_25
       rect:
         serializedVersion: 2
-        x: 2596
+        x: 1920
         y: 0
-        width: 838
-        height: 773
-      alignment: 9
-      pivot: {x: 0.37332597, y: 0.49999985}
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -664,6 +664,90 @@ TextureImporter:
       bones: []
       spriteID: ab015c1dbb9e94ff999fa41c4083598e
       internalID: 144260408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_26
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e166bbd56ce49649b1d6de84e1458f
+      internalID: -1312418318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_27
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e804f0a175b429f9e6bfd56736bfc4
+      internalID: 721936768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_28
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7494c52f1cd0f4f3ba6e8521204f3ff0
+      internalID: -1403100953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harpoon Prep Forwards_29
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d25b0ed57bb4466a85a4b4e9f4dcc3
+      internalID: 1414228219
       vertices: []
       indices: 
       edges: []
@@ -698,6 +782,10 @@ TextureImporter:
       Harpoon Prep Forwards_23: 1858885203
       Harpoon Prep Forwards_24: 1911269079
       Harpoon Prep Forwards_25: 144260408
+      Harpoon Prep Forwards_26: -1312418318
+      Harpoon Prep Forwards_27: 721936768
+      Harpoon Prep Forwards_28: -1403100953
+      Harpoon Prep Forwards_29: 1414228219
       Harpoon Prep Forwards_3: 1479420024
       Harpoon Prep Forwards_4: 1134446856
       Harpoon Prep Forwards_5: -462040483

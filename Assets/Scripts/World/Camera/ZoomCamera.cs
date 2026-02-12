@@ -31,8 +31,8 @@ public class ZoomCamera : MonoBehaviour
         else if (!zoom)
         {
             Debug.Log(camOgPos.position.y);
-                cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, ogZoom, Time.deltaTime*10);   
-                cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOgPos.position, Time.deltaTime*5);                                    
+                cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, ogZoom, Time.deltaTime*1);   
+                cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOgPos.position, Time.deltaTime*1);                                    
         }
       
     }
