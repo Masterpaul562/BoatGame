@@ -5934,9 +5934,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249506148}
-  - component: {fileID: 249506149}
-  - component: {fileID: 249506150}
-  - component: {fileID: 249506151}
   - component: {fileID: 249506152}
   m_Layer: 0
   m_Name: Boat
@@ -5972,53 +5969,6 @@ Transform:
   - {fileID: 1800020385}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &249506149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249506147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0389d96d11160541a6517fbeda7a155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveMax: 0.25
-  wave: {x: 0, y: 0}
-  rotMax: 0.5
-  rotwave: 0
-  offset: 0
-  offsetZ: -0.1
-  rotation: 0.2
-  speed: 5
---- !u!114 &249506150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249506147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54dea0aeacd701b47b42c43bb2b5e99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line: {fileID: 876206980}
---- !u!114 &249506151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249506147}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e67270adac3fec4fad4c7555415e990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amp: 0.15
-  speed: 1
 --- !u!114 &249506152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7127,10 +7077,9 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420035}
-  - component: {fileID: 519420036}
   - component: {fileID: 519420037}
   - component: {fileID: 519420038}
+  - component: {fileID: 519420039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7242,37 +7191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rumble: 0
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a673c26ca1166f64a95f73b4a4597ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shouldMove: 0
-  shouldGoToCenter: 0
-  player: {fileID: 1351622660}
-  bobber: {fileID: 2056419628}
-  inside: {fileID: 1351622662}
-  waterOverlay: {fileID: 0}
---- !u!114 &519420036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54dea0aeacd701b47b42c43bb2b5e99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  line: {fileID: 876206980}
 --- !u!114 &519420037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7377,6 +7295,21 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &519420039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58248161fc36a469484fe1b6486f5625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetZoom: 0
+  targetPosition: {fileID: 0}
+  speedZoom: 1
 --- !u!1 &536662835
 GameObject:
   m_ObjectHideFlags: 0
@@ -17064,7 +16997,6 @@ MonoBehaviour:
   boatInsideCollider: {fileID: 1538091464}
   enterLocation: {fileID: 1029392209}
   exitLocation: {fileID: 1949189117}
-  camZoom: {fileID: 0}
   insideBG: {fileID: 1606903422}
   inCity: {fileID: 1149555041}
   Player: {fileID: 0}
@@ -17076,8 +17008,6 @@ MonoBehaviour:
   cam: {fileID: 519420031}
   rain: {fileID: 486619361}
   waves: {fileID: 549732234}
-  shouldZoom: 0
-  zoom: 0
   canEnter: 1
   inBoat: 0
 --- !u!114 &1351622665
@@ -17154,7 +17084,7 @@ MonoBehaviour:
   fish: {fileID: 900264483}
   canCast: 1
   enter: {fileID: 0}
-  cam: {fileID: 519420035}
+  cam: {fileID: 0}
   rotSpeed: 0.1
   rot1: {fileID: 1118321509}
   rot2: {fileID: 418317423}

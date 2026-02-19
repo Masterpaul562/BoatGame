@@ -10,7 +10,6 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject boatInsideCollider;
     [SerializeField] private Transform enterLocation;
     [SerializeField] private Transform exitLocation;
-    [SerializeField] private ZoomCamera camZoom;
     [SerializeField] private SpriteRenderer insideBG;
     [SerializeField] private CityManager inCity;
     [SerializeField] private GameObject Player;
@@ -21,8 +20,6 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject waves;
-    public bool shouldZoom;
-    public bool zoom;
     public bool canEnter = true;
     private bool EnterCd = true;
     private float alpha = 120;
@@ -30,7 +27,6 @@ public class EnterBoat : MonoBehaviour
     
     void Start()
     {
-        camZoom = GetComponent<ZoomCamera>();
         Player = this.gameObject;
         animator = GetComponent<Animator>();
     }
@@ -40,30 +36,9 @@ public class EnterBoat : MonoBehaviour
     {
        
         float vert = Input.GetAxisRaw("Vertical");
-        if (inCity.inCity == false|| zoom)
-        {
-            if (shouldZoom||zoom)
-            {
-                camZoom.ZoomCam(zoom);
-                
-            }
-        }
-        if ( zoom)
-        {
-             alpha = Mathf.Lerp(alpha, 255, Time.deltaTime*20);
-            FadeBG(alpha);
-        } else if (!zoom)
-        {
-            alpha = Mathf.Lerp(alpha, 0, Time.deltaTime *10 );
-            FadeBG(alpha);
-            //if(camZoom.cam.orthographicSize == camZoom.ogZoom)
-            //{
-               // shouldZoom = false;
-            //}
-
-        }
         
-        
+            // alpha = Mathf.Lerp(alpha, 255, Time.deltaTime*20);
+          //  FadeBG(alpha);         
         if (vert < 0)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
@@ -91,7 +66,9 @@ public class EnterBoat : MonoBehaviour
     private IEnumerator Enter()
     {
         EnterCd = false;
-        
+        cam.GetComponent<CameraZoom>().targetZoom = 4.7f;
+        cam.GetComponent<CameraZoom>().targetPosition.position = new Vector3 (cam.transform.position.x, cam.transform.position.y - 2, cam.transform.position.z);
+        //insideBG.enabled = true;
         doorAnim.SetTrigger("Open");
         this.GetComponent<PlayerMove>().freeze = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
@@ -99,14 +76,10 @@ public class EnterBoat : MonoBehaviour
         waves.SetActive(false);
         rain.SetActive(false);
         this.GetComponent<PlayerMove>().freeze = false;
-        cam.GetComponent<FollowBobber>().shouldGoToCenter = false;
         inBoat = true;
-        zoom = true;
-        shouldZoom = true;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = insideLayer;
         animator.SetBool("IsInside", true);
-        insideBG.enabled = true;
         transform.position = enterLocation.position;
         Vector3 localScale = transform.localScale;
         if (localScale.x < 0)
@@ -134,14 +107,11 @@ public class EnterBoat : MonoBehaviour
         EnterCd = true;
         doorAnim.SetBool("Open", false);
         doorAnim.SetTrigger("Close");
-        cam.GetComponent<FollowBobber>().shouldGoToCenter = true;
         inBoat = false;
         Player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = outsideLayer;
         animator.SetBool("IsInside", false);
         insideBG.color = new Color(0, 0, 0, alpha);
-        zoom = false;
-        shouldZoom = true;
         transform.position = exitLocation.position;
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
@@ -158,10 +128,9 @@ public class EnterBoat : MonoBehaviour
         this.GetComponent<PlayerMove>().isFacingRight = false;
 
     }
-    private void FadeBG(float change)
-    {
+   // private void FadeBG(float change)
+   
             
-            insideBG.color = new Color(0, 0, 0, change/255);
-            //Debug.Log(change);
-    }
+            //insideBG.color = new Color(0, 0, 0, change/255);
+     
 }

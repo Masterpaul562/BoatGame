@@ -57,7 +57,6 @@ public class CityManager : MonoBehaviour
     private void InCity()
     {
         camSize = 18;
-        player.GetComponent<EnterBoat>().shouldZoom = false;
         if (shouldZoom)
         {
             if (justEnteredCity)
