@@ -6,19 +6,21 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
    private Camera cam;
-   private float ogZoom; // Pre zoom size
-   private Transform ogPosition; // Pre zoom position
+   public float ogZoom; // Pre zoom size
+   public Vector3 ogPosition; // Pre zoom position
    public float targetZoom; // Target zoom size
    public Transform targetPosition; // Target zoom position
    public float speedZoom; // Speed of zoom
+    public float moveSpeed;
 
 
-  private void Awake() 
-  {    
-    cam = GetComponent<Camera>();
-    targetZoom = cam.orthographicSize;
-    targetPosition = cam.transform;
-
+  private void Start() 
+  {           
+        cam = GetComponent<Camera>();
+        ogZoom = cam.orthographicSize;
+        ogPosition = cam.transform.position;
+        targetZoom = cam.orthographicSize;
+        targetPosition = cam.transform;
   }
   private void Update() {
     Zoom();
@@ -26,10 +28,10 @@ public class CameraZoom : MonoBehaviour
 
     private void Zoom()
     {
-        ogZoom = cam.orthographicSize;
+        //ogZoom = cam.orthographicSize;
         cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime*speedZoom);
         if( targetPosition != null){
-        cam.transform.position = Vector3.MoveTowards(cam.transform.position, targetPosition.position, Time.deltaTime*speedZoom); 
+        cam.transform.position = Vector3.MoveTowards(cam.transform.position, targetPosition.position, moveSpeed); 
         }
     }
 

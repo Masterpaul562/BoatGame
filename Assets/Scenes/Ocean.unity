@@ -7307,9 +7307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58248161fc36a469484fe1b6486f5625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ogZoom: 0
+  ogPosition: {x: 0, y: 0, z: 0}
   targetZoom: 0
   targetPosition: {fileID: 0}
   speedZoom: 1
+  moveSpeed: 0
 --- !u!1 &536662835
 GameObject:
   m_ObjectHideFlags: 0
@@ -16802,7 +16805,6 @@ GameObject:
   - component: {fileID: 1351622657}
   - component: {fileID: 1351622661}
   - component: {fileID: 1351622662}
-  - component: {fileID: 1351622665}
   - component: {fileID: 1351622667}
   - component: {fileID: 1351622669}
   - component: {fileID: 1351622668}
@@ -16995,37 +16997,24 @@ MonoBehaviour:
   boatCollider: {fileID: 1345763540}
   boatInside: {fileID: 1797254785}
   boatInsideCollider: {fileID: 1538091464}
+  rain: {fileID: 486619361}
+  waves: {fileID: 549732234}
+  player: {fileID: 0}
+  harpoon: {fileID: 1014687534}
+  spray: {fileID: 0}
   enterLocation: {fileID: 1029392209}
   exitLocation: {fileID: 1949189117}
   insideBG: {fileID: 1606903422}
-  inCity: {fileID: 1149555041}
-  Player: {fileID: 0}
-  harpoon: {fileID: 1014687534}
   insideLayer: Inside
   outsideLayer: Default
   animator: {fileID: 0}
   doorAnim: {fileID: 798613271}
   cam: {fileID: 519420031}
-  rain: {fileID: 486619361}
-  waves: {fileID: 549732234}
+  insideZoom: 4.7
+  fadeSpeed: 71
+  zoomSpeed: 5
   canEnter: 1
   inBoat: 0
---- !u!114 &1351622665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351622656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4f401d7892683449a981b89666be6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 519420031}
-  ogZoom: 0
-  targetZoom: 5
-  insidePos: {fileID: 828618808}
 --- !u!114 &1351622667
 MonoBehaviour:
   m_ObjectHideFlags: 0
