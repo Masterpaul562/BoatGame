@@ -32,6 +32,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private float insideZoom;
     [SerializeField] private float fadeSpeed;
     [SerializeField] private float zoomSpeed;
+    [SerializeField] private float moveSpeed;
 
     [Header("")]
     public bool canEnter = true;
@@ -61,7 +62,7 @@ public class EnterBoat : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Enter"&&canEnter && EnterCd)
                 {
-                    
+                    StopAllCoroutines();
                     StartCoroutine(Enter());
                    
                 }
@@ -74,6 +75,7 @@ public class EnterBoat : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Exit"&&canEnter)
                 {
+                    StopAllCoroutines();
                     Exit();
                 }
             }
@@ -87,9 +89,10 @@ public class EnterBoat : MonoBehaviour
         // Zoom and move camera when entering boat. 
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = insideZoom;
-        zoom.targetPosition.position = new Vector3 (cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
+        zoom.targetPosition = new Vector3 (cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
         zoom.speedZoom = zoomSpeed;
-        
+        zoom.moveSpeed = moveSpeed;
+
 
         //Play animation for door opening
         doorAnim.SetTrigger("Open");
@@ -135,8 +138,8 @@ public class EnterBoat : MonoBehaviour
         // Zoom and move camera when exiting boat. 
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = zoom.ogZoom;
-        zoom.targetPosition.position = zoom.ogPosition;
-        zoom.moveSpeed = 2;
+        zoom.targetPosition = zoom.ogPosition;
+        zoom.moveSpeed = moveSpeed;
 
         zoom.speedZoom = zoomSpeed/2;
         StartCoroutine(FadeBG(false));

@@ -9,7 +9,7 @@ public class CameraZoom : MonoBehaviour
    public float ogZoom; // Pre zoom size
    public Vector3 ogPosition; // Pre zoom position
    public float targetZoom; // Target zoom size
-   public Transform targetPosition; // Target zoom position
+   public Vector3 targetPosition; // Target zoom position
    public float speedZoom; // Speed of zoom
     public float moveSpeed;
 
@@ -20,7 +20,7 @@ public class CameraZoom : MonoBehaviour
         ogZoom = cam.orthographicSize;
         ogPosition = cam.transform.position;
         targetZoom = cam.orthographicSize;
-        targetPosition = cam.transform;
+        targetPosition = cam.transform.position;
   }
   private void Update() {
     Zoom();
@@ -31,7 +31,9 @@ public class CameraZoom : MonoBehaviour
         //ogZoom = cam.orthographicSize;
         cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime*speedZoom);
         if( targetPosition != null){
-        cam.transform.position = Vector3.MoveTowards(cam.transform.position, targetPosition.position, moveSpeed); 
+            float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime*moveSpeed);
+            cam.transform.position = new Vector3(transform.position.x, y, transform.position.z);
+       // cam.transform.position = Vector3.MoveTowards(cam.transform.position, targetPosition.position, moveSpeed); 
         }
     }
 
