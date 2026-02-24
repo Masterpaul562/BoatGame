@@ -33,7 +33,6 @@ public class CameraZoom : MonoBehaviour
         if( targetPosition != null){
             float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime*moveSpeed);
             cam.transform.position = new Vector3(transform.position.x, y, transform.position.z);
-       // cam.transform.position = Vector3.MoveTowards(cam.transform.position, targetPosition.position, moveSpeed); 
         }
     }
 

@@ -184,6 +184,9 @@ public class EnterBoat : MonoBehaviour
         if (black)
         {
             insideBG.enabled = true;
+            alpha = 223f;
+            //insideBG.color = new Color(0, 0, 0, 223/255);
+            Debug.Log("BLack");
             while (alpha != 255)
             {
                 alpha = Mathf.MoveTowards(alpha, 255, Time.deltaTime * fadeSpeed);
@@ -193,13 +196,14 @@ public class EnterBoat : MonoBehaviour
         }else
         if (!black)
         {
-            while (alpha != 223)
+            while (alpha != 0)
             {
-                alpha = Mathf.MoveTowards(alpha, 223, Time.deltaTime * fadeSpeed);
+                alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * fadeSpeed);
                 insideBG.color = new Color(0, 0, 0, alpha / 255);
                 yield return null;
             }
             insideBG.enabled = false;
+           // insideBG.color = new Color(0, 0, 0, 223);
         }
 
     }
