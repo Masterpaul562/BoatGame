@@ -23,6 +23,8 @@ public class CameraZoom : MonoBehaviour
         targetPosition = cam.transform.position;
   }
   private void Update() {
+    
+
     Zoom();
   }
 
@@ -31,6 +33,7 @@ public class CameraZoom : MonoBehaviour
         //ogZoom = cam.orthographicSize;
         cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime*speedZoom);
         if( targetPosition != null){
+         // moveSpeed = (cam.orthographicSize - targetZoom)/( Time.deltaTime*speedZoom);
             float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime*moveSpeed);
             cam.transform.position = new Vector3(transform.position.x, y, transform.position.z);
         }

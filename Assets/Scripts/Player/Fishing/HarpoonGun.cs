@@ -14,7 +14,6 @@ public class HarpoonGun : MonoBehaviour
     [SerializeField] private FishManager fish;
     [SerializeField] private bool canCast;
     [SerializeField] public EnterBoat enter;
-    [SerializeField] private FollowBobber cam;
     [SerializeField] private float rotSpeed;
     [SerializeField] private Transform rot1, rot2;
     private bool canRotate;
@@ -125,7 +124,7 @@ public class HarpoonGun : MonoBehaviour
             Debug.Log("UnFreeze");
             freezePlayer.freeze = false;
             canCast = true;
-            cam.shouldMove = false;
+
             enter.canEnter = true;
             isFishing = false;
             yield return null;
@@ -134,9 +133,8 @@ public class HarpoonGun : MonoBehaviour
     }
     private void Fire()
     {
-        // shoot bobber out with camera movement
+        // shoot bobber out 
         bobber.SetActive(true);
-        cam.shouldMove = true;
         canCast = false;
         Debug.Log("Fired");
         line.gameObject.SetActive(true);
@@ -175,7 +173,7 @@ public class HarpoonGun : MonoBehaviour
         bobber.GetComponent<Bobber>().rb.simulated = true;
         shouldFire = false;
         fish.SecureFish();
-        cam.shouldMove = false;
+
         yield return new WaitForSeconds(1f);
         freezePlayer.freeze = false;
         isFishing = false;
