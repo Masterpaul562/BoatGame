@@ -7309,8 +7309,8 @@ MonoBehaviour:
   ogPosition: {x: 0, y: 0, z: 0}
   targetZoom: 0
   targetPosition: {x: 0, y: 0, z: 0}
-  speedZoom: 1
-  moveSpeed: 0
+  zoomSpeed: 0
+  insideBG: {fileID: 1606903422}
 --- !u!1 &536662835
 GameObject:
   m_ObjectHideFlags: 0
@@ -16971,16 +16971,13 @@ MonoBehaviour:
   spray: {fileID: 0}
   enterLocation: {fileID: 1029392209}
   exitLocation: {fileID: 1949189117}
-  insideBG: {fileID: 1606903422}
   insideLayer: Inside
   outsideLayer: Default
   animator: {fileID: 0}
   doorAnim: {fileID: 798613271}
   cam: {fileID: 519420031}
   insideZoom: 4.7
-  fadeSpeed: 71
   zoomSpeed: 5
-  moveSpeed: 3
   canEnter: 1
   inBoat: 0
 --- !u!114 &1351622667
@@ -17041,7 +17038,6 @@ MonoBehaviour:
   fish: {fileID: 900264483}
   canCast: 1
   enter: {fileID: 0}
-  cam: {fileID: 0}
   rotSpeed: 0.1
   rot1: {fileID: 1118321509}
   rot2: {fileID: 418317423}

@@ -20,7 +20,7 @@ public class EnterBoat : MonoBehaviour
     [Header("")]
     [SerializeField] private Transform enterLocation; // Locations for enter and exit 
     [SerializeField] private Transform exitLocation;
-    [SerializeField] private SpriteRenderer insideBG; // Black BG for inside
+     
 
     [SerializeField] private string insideLayer, outsideLayer; // String to change layers 
 
@@ -30,15 +30,14 @@ public class EnterBoat : MonoBehaviour
     [Header("Zoom Settings")]
     [SerializeField] private Camera cam;
     [SerializeField] private float insideZoom;
-    [SerializeField] private float fadeSpeed;
     [SerializeField] private float zoomSpeed;
-    [SerializeField] private float moveSpeed;
+
 
     [Header("")]
     public bool canEnter = true;
     public bool inBoat;
     private bool EnterCd = true;
-    private float alpha = 223;
+
   
     
     void Start()
@@ -53,8 +52,7 @@ public class EnterBoat : MonoBehaviour
        
         float vert = Input.GetAxisRaw("Vertical");
         
-            // alpha = Mathf.Lerp(alpha, 255, Time.deltaTime*20);
-          //  FadeBG(alpha);         
+   
         if (vert < 0)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
@@ -90,8 +88,8 @@ public class EnterBoat : MonoBehaviour
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = insideZoom;
         zoom.targetPosition = new Vector3 (cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
-        zoom.speedZoom = zoomSpeed;
-        zoom.moveSpeed = moveSpeed;
+        zoom.zoomSpeed = 2.5f;
+
 
 
         //Play animation for door opening
@@ -104,7 +102,7 @@ public class EnterBoat : MonoBehaviour
         this.GetComponent<PlayerMove>().freeze = false;
 
         //Set stuff active/inactive for inside        
-        StartCoroutine(FadeBG(true));
+        StartCoroutine(zoom.FadeBG(true, 71));
         waves.SetActive(false);
         rain.SetActive(false);
         inBoat = true;
@@ -139,10 +137,8 @@ public class EnterBoat : MonoBehaviour
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = zoom.ogZoom;
         zoom.targetPosition = zoom.ogPosition;
-        zoom.moveSpeed = moveSpeed;
-
-        zoom.speedZoom = zoomSpeed/2;
-        StartCoroutine(FadeBG(false));
+        zoom.zoomSpeed = 1f;
+        StartCoroutine(zoom.FadeBG(false, 42));
 
 
         //Set stuff active/inactive for outside
@@ -163,7 +159,6 @@ public class EnterBoat : MonoBehaviour
         player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = outsideLayer;
       
-       // insideBG.color = new Color(0, 0, 0, alpha);
 
         // move outside and make character face left
         transform.position = exitLocation.position;
@@ -179,35 +174,5 @@ public class EnterBoat : MonoBehaviour
         this.GetComponent<PlayerMove>().isFacingRight = false;
 
     }
-    private IEnumerator FadeBG(bool black)
-    {
-        if (black)
-        {
-            insideBG.enabled = true;
-            alpha = 223f;
-            //insideBG.color = new Color(0, 0, 0, 223/255);
-            Debug.Log("BLack");
-            while (alpha != 255)
-            {
-                alpha = Mathf.MoveTowards(alpha, 255, Time.deltaTime * fadeSpeed);
-                insideBG.color = new Color(0, 0, 0, alpha / 255);
-                yield return null;
-            }
-        }else
-        if (!black)
-        {
-            while (alpha != 0)
-            {
-                alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * fadeSpeed);
-                insideBG.color = new Color(0, 0, 0, alpha / 255);
-                yield return null;
-            }
-            insideBG.enabled = false;
-           // insideBG.color = new Color(0, 0, 0, 223);
-        }
-
-    }
-            
-            //insideBG.color = new Color(0, 0, 0, change/255);
-     
+   
 }
