@@ -7,12 +7,13 @@ public class PanCamera : MonoBehaviour
     public Transform target; //Location to pan to
     public Camera cam; // Cam to move
     public float speed; // speed of pan
-    private bool pan;
-    private Vector3 camOGpos;
-    [SerializeField] private bool moveY;
+    private bool pan; // should pan or not
+    private Vector3 camOGpos; // position to reset to
+    [SerializeField] private bool moveY; // if it changes the cams y position
 
     private void Start()
     {
+        // sets target's y same as cam so it doesn't move y
         if (!moveY)
         {
             target.position = new Vector2(target.position.x, cam.transform.position.y);
