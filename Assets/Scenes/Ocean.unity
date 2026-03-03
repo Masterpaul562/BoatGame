@@ -6163,13 +6163,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273278425}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33300066, y: 0.36, z: 0}
-  m_LocalScale: {x: 1.6292989, y: 0.1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.010035496, w: 0.9999497}
+  m_LocalPosition: {x: 0.541, y: 0.32, z: 0}
+  m_LocalScale: {x: 1.8, y: 0.11612898, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1602757265}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 1.15}
 --- !u!95 &273278428
 Animator:
   serializedVersion: 5
@@ -18649,20 +18649,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602757264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d43a6c728820eb54398047d90e144eba, type: 3}
+  m_Script: {fileID: 11500000, guid: 704ad06e56e3545cf9ef127bd4c9b050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1351622656}
-  lightBar: {fileID: 273278425}
   interactable:
     serializedVersion: 2
     m_Bits: 64
-  whiteBar: {r: 1, g: 1, b: 1, a: 1}
-  redBar: {r: 1, g: 0.1462264, b: 0.1462264, a: 1}
-  powerLevel: 0
-  maxPowerLevel: 1.6
-  fishPowerAmount: 0
-  drainPower: 1
+  lightBar: {fileID: 273278425}
 --- !u!1 &1606903420
 GameObject:
   m_ObjectHideFlags: 0

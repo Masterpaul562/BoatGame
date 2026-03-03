@@ -41,7 +41,7 @@ public class FishEngine : MonoBehaviour
         {
             Interact();
         }
-        Debug.Log(FindFeedAmount());
+       
         if(red){
             lightBar.GetComponent<SpriteRenderer>().color = redBar;
         } else {
