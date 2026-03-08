@@ -7,7 +7,7 @@ public class PanCamera : MonoBehaviour
     public Transform target; //Location to pan to
     public Camera cam; // Cam to move
     public float speed; // speed of pan
-    private bool pan; // should pan or not
+   [SerializeField] private bool pan; // should pan or not
     private Vector3 camOGpos; // position to reset to
     [SerializeField] private bool moveY; // if it changes the cams y position
 
@@ -19,6 +19,7 @@ public class PanCamera : MonoBehaviour
             target.position = new Vector2(target.position.x, cam.transform.position.y);
         }
         target.position = new Vector3(target.position.x, target.position.y, cam.transform.position.z);
+        camOGpos = cam.transform.position;
     }
 
     private void Update()
@@ -37,7 +38,8 @@ public class PanCamera : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            camOGpos = cam.transform.position;
+            // camOGpos = cam.transform.position;
+            StopAllCoroutines();
             pan = true;
         }
     }
