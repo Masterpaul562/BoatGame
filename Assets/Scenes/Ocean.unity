@@ -18657,6 +18657,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lightBar: {fileID: 273278425}
+  powerLevel: 0
+  maxScale: 0
+  powerStage: 3
+  shouldDrain: 1
+  canFeed: 1
+  drainSpeed: 5
 --- !u!1 &1606903420
 GameObject:
   m_ObjectHideFlags: 0

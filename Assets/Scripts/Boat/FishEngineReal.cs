@@ -9,18 +9,21 @@ public class FishEngineReal : MonoBehaviour
    [SerializeField] private GameObject lightBar;
    private HarpoonGun fishing;
    private FishInventory inventory;
-   private float powerLevel;
-   private float maxScale;
-   private int powerStage = 3;
-   private bool shouldDrain = true;
-   private bool canFeed= true;
+   [SerializeField] private float powerLevel;
+   [SerializeField] private float maxScale;
+   [SerializeField] private int powerStage = 3;
+   [SerializeField] private bool shouldDrain = true;
+   [SerializeField] private bool canFeed= true;
+    public float drainSpeed; 
 
-   
+
+
    private void Start()
    {
      inventory = player.GetComponent<FishInventory>();
      fishing = player.GetComponent<HarpoonGun>();
      maxScale = lightBar.transform.localScale.x;
+        powerLevel = 100;
      SetLightBar();
    }
    private void Update()
@@ -38,7 +41,7 @@ public class FishEngineReal : MonoBehaviour
    }
    private void DrainPower()
    {
-    powerLevel = Mathf.MoveTowards(powerLevel,0,Time.deltaTime);
+    powerLevel = Mathf.MoveTowards(powerLevel,0,Time.deltaTime * drainSpeed);
     if(powerLevel <= 0){
         powerLevel = 100;
         powerStage --;
@@ -46,7 +49,7 @@ public class FishEngineReal : MonoBehaviour
     }
     if(powerStage <= 0){
       shouldDrain = false;
-      canFeed;
+      canFeed = false;
       StartCoroutine(Blink());
     }
    }
@@ -62,15 +65,19 @@ public class FishEngineReal : MonoBehaviour
         }
    }
    private IEnumerator Blink(){
-
+        yield return null;
    }
    private void SetLightBar()
    {
-    float scale;
-      for (int i; i < powerStage;i++)
+    float scale = 0;
+      for (int i = 0; i < powerStage;i++)
       {
         scale += maxScale/3;
       }
-      lightBar.transform.localScale.x = scale;
+      lightBar.transform.localScale = new Vector3(scale, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
    }
+    private void FeedFish()
+    {
+
+    }
 }
