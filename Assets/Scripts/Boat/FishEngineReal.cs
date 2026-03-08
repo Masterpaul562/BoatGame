@@ -4,80 +4,111 @@ using UnityEngine;
 
 public class FishEngineReal : MonoBehaviour
 {
-   [SerializeField] private GameObject player;
-   [SerializeField] private LayerMask interactable;
-   [SerializeField] private GameObject lightBar;
-   private HarpoonGun fishing;
-   private FishInventory inventory;
-   [SerializeField] private float powerLevel;
-   [SerializeField] private float maxScale;
-   [SerializeField] private int powerStage = 3;
-   [SerializeField] private bool shouldDrain = true;
-   [SerializeField] private bool canFeed= true;
-    public float drainSpeed; 
+    [SerializeField] private GameObject player;
+    [SerializeField] private LayerMask interactable;
+    [SerializeField] private GameObject lightBar;
+    private HarpoonGun fishing;
+    private FishInventory inventory;
+    [SerializeField] private float powerLevel;
+    [SerializeField] private int powerStage = 3;
+    [SerializeField] private int powerSet =0;
+    [SerializeField] private float maxScale;
+    [SerializeField] private bool shouldDrain = true;
+    [SerializeField] private bool canFeed = true;
+    public float drainSpeed;
+    private bool feedCD = false;
 
 
 
-   private void Start()
-   {
-     inventory = player.GetComponent<FishInventory>();
-     fishing = player.GetComponent<HarpoonGun>();
-     maxScale = lightBar.transform.localScale.x;
+    private void Start()
+    {
+        inventory = player.GetComponent<FishInventory>();
+        fishing = player.GetComponent<HarpoonGun>();
+        maxScale = lightBar.transform.localScale.x;
         powerLevel = 100;
-     SetLightBar();
-   }
-   private void Update()
-   {
-
-    float vert = Input.GetAxisRaw("Vertical");
-    if(vert<0 && !fishing.isFishing){
-        Interact();
-    }
-
-
-    if(shouldDrain){
-    DrainPower();
-    }
-   }
-   private void DrainPower()
-   {
-    powerLevel = Mathf.MoveTowards(powerLevel,0,Time.deltaTime * drainSpeed);
-    if(powerLevel <= 0){
-        powerLevel = 100;
-        powerStage --;
         SetLightBar();
     }
-    if(powerStage <= 0){
-      shouldDrain = false;
-      canFeed = false;
-      StartCoroutine(Blink());
-    }
-   }
-   private void Interact()
-   {
-       RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector3.forward, 10, interactable);
-        if(hit.collider != null)
+    private void Update()
+    {
+
+        float vert = Input.GetAxisRaw("Vertical");
+        if (vert < 0 && !fishing.isFishing)
         {
-            if(hit.collider.gameObject.tag == "Engine" && inventory.fishAmountOutside != 0 && canFeed)
+            Interact();
+        }
+
+
+        if (shouldDrain)
+        {
+            DrainPower();
+        }
+    }
+    private void DrainPower()
+    {
+        powerLevel = Mathf.MoveTowards(powerLevel, 0, Time.deltaTime * drainSpeed);
+        if (powerLevel <= 0)
+        {
+            powerLevel = 100;
+            powerStage--;
+            SetLightBar();
+        }
+        if (powerStage <= 0)
+        {
+            if (powerSet <= 0)
             {
+                shouldDrain = false;
+                canFeed = false;
+                StartCoroutine(Blink());
+            }
+            else
+            {
+                powerSet--;
+                powerStage = 3;
+                powerLevel = 100;
+            }
+        }
+    }
+    private void Interact()
+    {
+
+        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector3.forward, 10, interactable);
+        
+        if (hit.collider != null)
+        {
+            
+            if (hit.collider.gameObject.tag == "Engine" && inventory.fishAmountOutside != 0 && canFeed && !feedCD)
+            {
+                
                 FeedFish();
             }
         }
-   }
-   private IEnumerator Blink(){
+    }
+    private IEnumerator Blink()
+    {
         yield return null;
-   }
-   private void SetLightBar()
-   {
-    float scale = 0;
-      for (int i = 0; i < powerStage;i++)
-      {
-        scale += maxScale/3;
-      }
-      lightBar.transform.localScale = new Vector3(scale, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
-   }
+    }
+    private void SetLightBar()
+    {
+        float scale = 0;
+        for (int i = 0; i < powerStage; i++)
+        {
+            scale += maxScale / 3;
+        }
+        
+        lightBar.transform.localScale = new Vector3(scale, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
+    }
     private void FeedFish()
     {
+        powerLevel = 100;
+        powerStage++;
+        inventory.fishAmountOutside--;
+        feedCD = true;
 
+        if (powerStage > 3)
+        {
+            powerStage = 1;
+            powerSet++;
+        }
+        SetLightBar();
     }
 }

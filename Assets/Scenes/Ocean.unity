@@ -6096,7 +6096,7 @@ GameObject:
   - component: {fileID: 273278427}
   - component: {fileID: 273278426}
   - component: {fileID: 273278428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16717,7 +16717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1329958491}
   - component: {fileID: 1329958492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fish Engine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18570,6 +18570,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602757265}
+  - component: {fileID: 1602757268}
   - component: {fileID: 1602757266}
   - component: {fileID: 1602757267}
   m_Layer: 6
@@ -18628,7 +18629,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06, y: 0.12}
+  m_Offset: {x: 0.97, y: 0.37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18639,7 +18640,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.18, y: 1.52}
   m_EdgeRadius: 0
 --- !u!114 &1602757267
 MonoBehaviour:
@@ -18659,11 +18660,57 @@ MonoBehaviour:
     m_Bits: 64
   lightBar: {fileID: 273278425}
   powerLevel: 0
-  maxScale: 0
   powerStage: 3
+  powerSet: 1
+  maxScale: 0
   shouldDrain: 1
   canFeed: 1
   drainSpeed: 5
+--- !u!61 &1602757268
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602757264}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.19, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.86, y: 0.72}
+  m_EdgeRadius: 0
 --- !u!1 &1606903420
 GameObject:
   m_ObjectHideFlags: 0
@@ -18797,6 +18844,7 @@ MonoBehaviour:
   target: {fileID: 361505509}
   cam: {fileID: 519420031}
   speed: 1
+  pan: 0
   moveY: 0
 --- !u!61 &1637979300
 BoxCollider2D:
