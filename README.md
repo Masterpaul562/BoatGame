@@ -22,10 +22,11 @@ I used Procreate and Krita for all of the art.
 
 <details>
 <summary>Screenshots</summary>
-
+<picture>
 <p><img src="https://github.com/Masterpaul562/BoatGame/blob/WorkingBranch/ReadmeDocs/BoatExample.png" alt="Example"></p>
-<p><img src="https://github.com/Masterpaul562/BoatGame/blob/WorkingBranch/ReadmeDocs/BoatExample2.png" alt="Example"></p>
 
+<p><img src="https://github.com/Masterpaul562/BoatGame/blob/WorkingBranch/ReadmeDocs/BoatExample2.png" alt="Example"></p>
+</picture>
 </details>
 
 
