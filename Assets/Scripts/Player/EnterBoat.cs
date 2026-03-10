@@ -38,12 +38,21 @@ public class EnterBoat : MonoBehaviour
     public bool inBoat;
     private bool EnterCd = true;
 
+
+    [Header("Audio")]
+    private AudioSource audioSource; 
+    [SerializeField] private AudioClip doorCreak;
+    public AudioSource insideWater;
+    public AudioSource insideCreak;
+    public AudioSource musicPlayer;
+
   
     
     void Start()
     {
         player = this.gameObject;
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -97,6 +106,13 @@ public class EnterBoat : MonoBehaviour
         this.GetComponent<PlayerMove>().freeze = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 
+        //Audio
+        audioSource.clip = doorCreak;
+        audioSource.Play();
+        insideCreak.Play();
+        insideWater.Play();
+        musicPlayer.Stop();
+
         yield return new WaitForSeconds(.5f);
 
         this.GetComponent<PlayerMove>().freeze = false;
@@ -140,6 +156,12 @@ public class EnterBoat : MonoBehaviour
         zoom.zoomSpeed = 1f;
         StartCoroutine(zoom.FadeBG(false, 42));
 
+        // Audio
+        audioSource.clip = doorCreak;
+        audioSource.Play();
+        insideCreak.Stop();
+        insideWater.Stop();
+        musicPlayer.Play();
 
         //Set stuff active/inactive for outside
         EnterCd = true;
