@@ -17384,7 +17384,7 @@ MonoBehaviour:
   doorCreak: {fileID: 8300000, guid: 21e2ac8fe110f4d338f76ff786663694, type: 3}
   insideWater: {fileID: 1458505803}
   insideCreak: {fileID: 687816666}
-  musicPlayer: {fileID: 0}
+  musicPlayer: {fileID: 75165084}
 --- !u!114 &1351622667
 MonoBehaviour:
   m_ObjectHideFlags: 0
