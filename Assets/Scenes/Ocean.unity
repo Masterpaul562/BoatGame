@@ -6273,7 +6273,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c98ad9ad68d8a4759ba79a5899a8fe10, type: 3}
-  m_Color: {r: 0.8207547, g: 0.8168832, b: 0.8168832, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.46666667, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -19180,7 +19180,7 @@ MonoBehaviour:
   lightBar: {fileID: 273278425}
   powerLevel: 0
   powerStage: 3
-  powerSet: 1
+  powerSet: 0
   maxScale: 0
   shouldDrain: 1
   canFeed: 1

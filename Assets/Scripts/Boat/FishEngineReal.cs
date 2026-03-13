@@ -85,7 +85,23 @@ public class FishEngineReal : MonoBehaviour
     }
     private IEnumerator Blink()
     {
-        yield return null;
+        lightBar.transform.localScale = new Vector3(maxScale, lightBar.transform.localScale.y, lightBar.transform.localScale.z);
+        var sprite = lightBar.GetComponent<SpriteRenderer>();
+        Color color = Color.red;
+        color.a = 255;
+        sprite.color = color;
+        for (int i = 1; i < 7; i++)
+        {
+            if (i%2 == 1)
+            {
+                color.a = 255;
+            }else
+            {
+                color.a = 0;
+            }
+            sprite.color = color;
+            yield return new WaitForSeconds(.5f);
+        }
     }
     private void SetLightBar()
     {
@@ -103,12 +119,21 @@ public class FishEngineReal : MonoBehaviour
         powerStage++;
         inventory.fishAmountOutside--;
         feedCD = true;
+        StartCoroutine(FeedCD());
 
         if (powerStage > 3)
         {
             powerStage = 1;
             powerSet++;
+
+            var sprite = lightBar.GetComponent<SpriteRenderer>();
+            sprite.color = new Color(Random.Range(0,2), Random.Range(0, 2), Random.Range(0, 2), 255);
         }
         SetLightBar();
+    }
+    private IEnumerator FeedCD()
+    {
+        yield return new WaitForSeconds(1f);
+        feedCD = false;
     }
 }
