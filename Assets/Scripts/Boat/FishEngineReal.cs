@@ -10,8 +10,8 @@ public class FishEngineReal : MonoBehaviour
     private HarpoonGun fishing;
     private FishInventory inventory;
     [SerializeField] private float powerLevel;
-    [SerializeField] private int powerStage = 3;
-    [SerializeField] private int powerSet =0;
+    public int powerStage = 3; // Section of Bar
+    public int powerSet =0; // how many sets of full bars
     [SerializeField] private float maxScale;
     [SerializeField] private bool shouldDrain = true;
     [SerializeField] private bool canFeed = true;
@@ -58,6 +58,7 @@ public class FishEngineReal : MonoBehaviour
             {
                 shouldDrain = false;
                 canFeed = false;
+                // Stop Propelor
                 StartCoroutine(Blink());
             }
             else
