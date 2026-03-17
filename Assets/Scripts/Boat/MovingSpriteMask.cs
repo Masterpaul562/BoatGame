@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Propelor : MonoBehaviour
+public class MovingSpriteMask : MonoBehaviour
 {
     private SpriteRenderer render;
     private SpriteMask mask;
