@@ -6325,7 +6325,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentSpeed: 0
   engine: {fileID: 1602757267}
-  stageKnotAmount: 2
+  earwigSpeed: 10
+  earwigDistance: 100
+  maxEarwigDistance: 110
+  stageKnotAmount: 1
 --- !u!1 &273278425
 GameObject:
   m_ObjectHideFlags: 0
