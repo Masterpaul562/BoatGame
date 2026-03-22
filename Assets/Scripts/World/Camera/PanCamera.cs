@@ -10,6 +10,7 @@ public class PanCamera : MonoBehaviour
    [SerializeField] private bool pan; // should pan or not
     private Vector3 camOGpos; // position to reset to
     [SerializeField] private bool moveY; // if it changes the cams y position
+    public PanCamera otherPan;
 
     private void Start()
     {
@@ -39,6 +40,7 @@ public class PanCamera : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             // camOGpos = cam.transform.position;
+            otherPan.StopCoroutine();
             StopAllCoroutines();
             pan = true;
         }
@@ -59,5 +61,9 @@ public class PanCamera : MonoBehaviour
             cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOGpos, Time.deltaTime * speed);
             yield return null;
         }
+    }
+    private void StopCoroutine()
+    {
+        StopAllCoroutines();
     }
 }
