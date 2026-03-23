@@ -11,7 +11,6 @@ public class FishManager : MonoBehaviour
     [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
     [SerializeField] private HarpoonGun isFishing;
-    [SerializeField] private CityManager city;
     [SerializeField] private FishInventory inventory;
     private bool startCoVanity;
     private bool startCoReal;
