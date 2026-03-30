@@ -138,7 +138,6 @@ public class HarpoonGun : MonoBehaviour
         canCast = false;
         Debug.Log("Fired");
         line.gameObject.SetActive(true);
-        bobber.GetComponent<Floater>().enabled = false;
         bobber.transform.position = transform.GetChild(0).gameObject.transform.GetChild(0).position;
         if (animator.GetBool("isFacingRight"))
         {

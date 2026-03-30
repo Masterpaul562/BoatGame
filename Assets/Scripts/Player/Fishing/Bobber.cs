@@ -7,7 +7,6 @@ public class Bobber : MonoBehaviour
 
     [SerializeField] private float y;
     [SerializeField] public Rigidbody2D rb;
-    [SerializeField] private Floater floaterScript;
     public HarpoonGun gun;
     [SerializeField] private GameObject player;
     private SpriteRenderer render;
@@ -19,7 +18,6 @@ public class Bobber : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        floaterScript = GetComponent<Floater>();
         render = GetComponent<SpriteRenderer>();
     }
   

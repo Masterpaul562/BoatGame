@@ -8225,6 +8225,8 @@ MonoBehaviour:
   cam: {fileID: 519420031}
   line: {fileID: 0}
   phasePer: []
+  phase: 0
+  phaseOffset: 0
   amp1: 0.01
   amp2: 0.1
   len1: 1
@@ -23903,7 +23905,6 @@ GameObject:
   - component: {fileID: 2056419629}
   - component: {fileID: 2056419630}
   - component: {fileID: 2056419631}
-  - component: {fileID: 2056419632}
   - component: {fileID: 2056419633}
   m_Layer: 9
   m_Name: FishingPointBobber
@@ -23941,7 +23942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   y: -1.14
   rb: {fileID: 2056419630}
-  floaterScript: {fileID: 0}
   gun: {fileID: 1351622669}
   player: {fileID: 1351622656}
   hookedFish: 0
@@ -24024,26 +24024,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2056419632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056419627}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0389d96d11160541a6517fbeda7a155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waveMax: 0.69
-  wave: {x: 0, y: 0}
-  rotMax: 0.6
-  rotwave: 0
-  offset: 0
-  offsetZ: 0
-  rotation: 0
-  speed: 3
 --- !u!61 &2056419633
 BoxCollider2D:
   m_ObjectHideFlags: 0
