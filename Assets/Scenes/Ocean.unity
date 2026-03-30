@@ -15985,7 +15985,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   freeze: 0
   isMoving: 0
-  maxSpeed: 6
+  maxSpeed: 4
   canFlip: 1
 --- !u!114 &1351622662
 MonoBehaviour:
