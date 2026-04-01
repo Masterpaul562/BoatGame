@@ -5729,7 +5729,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 195862233}
-  - component: {fileID: 195862232}
   m_Layer: 0
   m_Name: City
   m_TagString: Untagged
@@ -5737,21 +5736,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &195862232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195862231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5ed686c349a5440bcaffe2fce071f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 1
-  startPos: 0
-  direction: 0.01
 --- !u!4 &195862233
 Transform:
   m_ObjectHideFlags: 0
@@ -6461,6 +6445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390246578}
   - component: {fileID: 390246579}
+  - component: {fileID: 390246580}
   m_Layer: 0
   m_Name: City Bg Layer 3
   m_TagString: Untagged
@@ -6535,6 +6520,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &390246580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390246577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d46f24e088e2494189b7f1b5840b873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 0.05
 --- !u!1 &418317422
 GameObject:
   m_ObjectHideFlags: 0
@@ -7032,6 +7031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541267168}
   - component: {fileID: 541267169}
+  - component: {fileID: 541267170}
   m_Layer: 0
   m_Name: City Bg Layer 4
   m_TagString: Untagged
@@ -7106,6 +7106,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &541267170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541267167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d46f24e088e2494189b7f1b5840b873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 0.05
 --- !u!1 &549732234
 GameObject:
   m_ObjectHideFlags: 0
@@ -17192,6 +17206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684029624}
   - component: {fileID: 1684029625}
+  - component: {fileID: 1684029626}
   m_Layer: 0
   m_Name: City Bg Layer 1
   m_TagString: Untagged
@@ -17266,6 +17281,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1684029626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684029623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d46f24e088e2494189b7f1b5840b873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 0.05
 --- !u!1 &1688449572
 GameObject:
   m_ObjectHideFlags: 0
@@ -22175,6 +22204,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2021121705}
   - component: {fileID: 2021121706}
+  - component: {fileID: 2021121707}
   m_Layer: 0
   m_Name: City Bg Layer 2
   m_TagString: Untagged
@@ -22249,6 +22279,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2021121707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021121704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d46f24e088e2494189b7f1b5840b873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 1
+  speed: 0.05
 --- !u!1 &2032807115
 GameObject:
   m_ObjectHideFlags: 0
