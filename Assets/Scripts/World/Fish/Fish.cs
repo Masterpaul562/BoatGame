@@ -28,7 +28,7 @@ public class Fish : MonoBehaviour
       
         scroller = GetComponent<BgScroller>();
         shouldBeDestroyed = false;
-        size = Random.Range(0.5f, .7f);
+        size = Random.Range(0.3f, .5f);
         transform.localScale = new Vector2(size, size);
         fishSwimRender = transform.GetChild(0).transform.GetComponent<SpriteRenderer>();
         randomY = Random.Range(-6f, -1f);
