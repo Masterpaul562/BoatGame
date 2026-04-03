@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+
 public class MoveWithWaves : MonoBehaviour
 {
     float y;
@@ -20,15 +21,18 @@ public class MoveWithWaves : MonoBehaviour
 
     void Update()
     {
-        float time = Time.time * wave.speed;
-        float waveValue = Mathf.Sin(transform.position.x * wave.frequency + time);
+        // Use the continuous wave phase from WaveDeformer
+        float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
         y = waveValue * wave.amplitude;
 
+        // Move boat vertically
         transform.position = new Vector2(transform.position.x, y + yOffset);
 
+        // Rotate boat based on wave tilt
         Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower);
         transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
 
+        // Spray detection
         float verticalSpeed = y - lastY;
         bool goingUp = verticalSpeed > 0;
         bool nearCrest = waveValue > crestThreshold;
@@ -49,27 +53,22 @@ public class MoveWithWaves : MonoBehaviour
 
         lastSprayTime = Time.time;
 
-        StopAllCoroutines(); // Important: prevents overlap bugs
-
+        StopAllCoroutines(); // Prevent overlapping
         StartCoroutine(SprayRoutine());
     }
 
     IEnumerator SprayRoutine()
     {
-        // Enable
         sprayObject.SetActive(true);
 
-        // Restart animation
         Animator anim = sprayObject.GetComponent<Animator>();
         if (anim != null)
         {
             anim.Play(0, 0, 0f);
         }
 
-        // Wait for duration
         yield return new WaitForSeconds(sprayDuration);
 
-        // Disable
         sprayObject.SetActive(false);
     }
 
