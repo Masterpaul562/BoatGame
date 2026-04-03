@@ -6220,7 +6220,6 @@ MonoBehaviour:
   earwigSpeed: 10
   earwigDistance: 100
   maxEarwigDistance: 110
-  stageKnotAmount: 1
 --- !u!1 &273278425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6279,9 +6278,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c98ad9ad68d8a4759ba79a5899a8fe10, type: 3}
-  m_Color: {r: 0, g: 0, b: 0.46666667, a: 1}
+  m_Color: {r: 0.9622642, g: 0.86977446, b: 0.86694556, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6300,8 +6299,8 @@ Transform:
   m_GameObject: {fileID: 273278425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.010035496, w: 0.9999497}
-  m_LocalPosition: {x: 0.541, y: 0.32, z: 0}
-  m_LocalScale: {x: 1.8, y: 0.11612898, z: 1}
+  m_LocalPosition: {x: -0.1, y: 0.38, z: 0}
+  m_LocalScale: {x: 1.6873024, y: 0.11612898, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1602757265}
@@ -6641,7 +6640,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 35dd167f3b9dc4dc5a0a38a61c1af20b, type: 3}
-  m_Color: {r: 0.8113208, g: 0.7692239, b: 0.7692239, a: 1}
+  m_Color: {r: 1, g: 0.9464421, b: 0.9098039, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11301,6 +11300,8 @@ MonoBehaviour:
   frequency: 0.1
   speed: 0.5
   horizontalOffset: 0
+  engine: {fileID: 1602757267}
+  knotSpeedMultiplier: 0.2
 --- !u!1 &1014687534
 GameObject:
   m_ObjectHideFlags: 0
@@ -11923,6 +11924,8 @@ MonoBehaviour:
   frequency: 0.1
   speed: 0.5
   horizontalOffset: 0
+  engine: {fileID: 1602757267}
+  knotSpeedMultiplier: 0.2
 --- !u!64 &1284961696
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15348,7 +15351,7 @@ Transform:
   m_GameObject: {fileID: 1329958490}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.010035496, w: 0.9999497}
-  m_LocalPosition: {x: 4.96, y: 4.01, z: 0}
+  m_LocalPosition: {x: 4.3, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16547,7 +16550,7 @@ Transform:
   m_GameObject: {fileID: 1530605708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.013874852, w: 0.99990374}
-  m_LocalPosition: {x: -2.54, y: 2.02, z: 0}
+  m_LocalPosition: {x: -3.25, y: 2.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16890,12 +16893,12 @@ MonoBehaviour:
     m_Bits: 64
   lightBar: {fileID: 273278425}
   powerLevel: 0
-  powerStage: 3
-  powerSet: 0
-  maxScale: 0
+  drainSpeed: 5
   shouldDrain: 1
   canFeed: 1
-  drainSpeed: 5
+  powerStage: 0
+  powerSet: 0
+  knots: 0
 --- !u!61 &1602757268
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17369,6 +17372,8 @@ MonoBehaviour:
   frequency: 0.1
   speed: 0.5
   horizontalOffset: 0
+  engine: {fileID: 1602757267}
+  knotSpeedMultiplier: 0.2
 --- !u!64 &1688449574
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20661,8 +20666,8 @@ Transform:
   m_GameObject: {fileID: 1690719109}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.821, y: 0.683, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0.803, y: 0.865, z: 0}
+  m_LocalScale: {x: 0.07301, y: 0.07301, z: 0.07301}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1602757265}
@@ -21246,6 +21251,8 @@ MonoBehaviour:
   frequency: 0.1
   speed: 0.5
   horizontalOffset: -0.7
+  engine: {fileID: 1602757267}
+  knotSpeedMultiplier: 0.2
 --- !u!64 &1906464835
 MeshCollider:
   m_ObjectHideFlags: 0
