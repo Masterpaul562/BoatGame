@@ -6,7 +6,7 @@ public class EnterBoat : MonoBehaviour
 {
     [SerializeField] private LayerMask interactable;
 
-    [Header("")]
+    [Header("RefrenceObj")]
 
     [SerializeField] private GameObject boatCollider; // outside colliders
     [SerializeField] private GameObject boatInside; // inside boat art BG
@@ -15,6 +15,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject waves;
     [SerializeField] private GameObject player; // Player Object
     [SerializeField] private GameObject harpoon; // Harpoon Object
+    [SerializeField] private HarpoonGun2 harpScript;
     [SerializeField] private GameObject spray;
 
     [Header("")]
@@ -67,7 +68,7 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Enter"&&canEnter && EnterCd)
+                if (hit.collider.gameObject.tag == "Enter"&&canEnter && EnterCd && !harpScript.isFishing)
                 {
                     StopAllCoroutines();
                     StartCoroutine(Enter());
@@ -80,7 +81,7 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Exit"&&canEnter)
+                if (hit.collider.gameObject.tag == "Exit"&&canEnter && !harpScript.isFishing)
                 {
                     StopAllCoroutines();
                     Exit();

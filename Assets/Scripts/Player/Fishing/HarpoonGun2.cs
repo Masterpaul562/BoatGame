@@ -16,6 +16,7 @@ public class HarpoonGun2 : MonoBehaviour
     public KeyCode inputKey;
     public KeyCode fireKey;
     private bool canCast = true;
+    private Quaternion ogRotation;
 
     [Header("Info")]
     [SerializeField] private int powerLevel;
@@ -25,6 +26,7 @@ public class HarpoonGun2 : MonoBehaviour
     {
         harpoon = transform.GetChild(0).gameObject;
         anim = harpoon.GetComponent<Animator>();
+        ogRotation = harpoon.transform.rotation;
     }
 
     private void Update()
@@ -43,6 +45,7 @@ public class HarpoonGun2 : MonoBehaviour
 
     private void PrepHarpoon()
     {
+        isFishing = true;
         canCast = false;
         harpoon.SetActive(true);
         anim.SetTrigger("Prep");
@@ -50,8 +53,10 @@ public class HarpoonGun2 : MonoBehaviour
 
     public void StowHarpoon()
     {
+        isFishing = false;  
         canCast = true;
         harpoon.SetActive(false);
+        harpoon.transform.rotation = ogRotation;
     }
 
     private void Fire()

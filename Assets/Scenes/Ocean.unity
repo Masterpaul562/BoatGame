@@ -7962,7 +7962,7 @@ MonoBehaviour:
   closestFishIndex: 0
   bobber: {fileID: 2056419629}
   fishList: {fileID: 216235006}
-  isFishing: {fileID: 1351622669}
+  isFishing: {fileID: 0}
   inventory: {fileID: 1351622667}
   inEvent: 0
 --- !u!1 &995794914
@@ -15503,7 +15503,6 @@ GameObject:
   - component: {fileID: 1351622661}
   - component: {fileID: 1351622662}
   - component: {fileID: 1351622667}
-  - component: {fileID: 1351622669}
   - component: {fileID: 1351622668}
   - component: {fileID: 1351622670}
   m_Layer: 0
@@ -15699,6 +15698,7 @@ MonoBehaviour:
   waves: {fileID: 549732234}
   player: {fileID: 0}
   harpoon: {fileID: 1014687534}
+  harpScript: {fileID: 863534863}
   spray: {fileID: 0}
   enterLocation: {fileID: 1029392209}
   exitLocation: {fileID: 1949189117}
@@ -15751,34 +15751,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1351622669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351622656}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5947f80cffbe9e49986bd7ac038fd4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camShake: {fileID: 519420034}
-  bobber: {fileID: 2056419627}
-  harpoon: {fileID: 863534861}
-  harpoonPower: 17
-  line: {fileID: 1401774804}
-  distance: 100
-  harpoonEnd: {fileID: 157874372}
-  fish: {fileID: 900264483}
-  canCast: 1
-  enter: {fileID: 0}
-  rotSpeed: 0.1
-  rot1: {fileID: 1118321509}
-  rot2: {fileID: 418317423}
-  key: 122
-  isReeling: 0
-  isFishing: 0
 --- !u!82 &1351622670
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16894,6 +16866,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lightBar: {fileID: 273278425}
+  fishing: {fileID: 863534863}
   powerLevel: 0
   drainSpeed: 10
   shouldDrain: 1
@@ -22314,7 +22287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   y: -1.14
   rb: {fileID: 2056419630}
-  gun: {fileID: 1351622669}
+  gun: {fileID: 0}
   player: {fileID: 1351622656}
   hookedFish: 0
 --- !u!50 &2056419630

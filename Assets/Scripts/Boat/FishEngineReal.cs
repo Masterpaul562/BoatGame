@@ -6,8 +6,8 @@ public class FishEngineReal : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private LayerMask interactable;
     [SerializeField] private GameObject lightBar;
+    [SerializeField] private HarpoonGun2 fishing;
 
-    private HarpoonGun fishing;
     private FishInventory inventory;
     private SpriteRenderer sprite;
 
@@ -32,7 +32,6 @@ public class FishEngineReal : MonoBehaviour
         shouldDrain = true;
         canFeed = true;
         inventory = player.GetComponent<FishInventory>();
-        fishing = player.GetComponent<HarpoonGun>();
         sprite = lightBar.GetComponent<SpriteRenderer>();
 
         SetLightBar();
