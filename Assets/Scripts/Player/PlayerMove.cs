@@ -7,21 +7,21 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     [SerializeField] public float horizontalInput;
-    [SerializeField] private HarpoonGun enterFScript;
+    [SerializeField] private HarpoonGun2 harpoon;
     public bool isFacingRight;
-    [SerializeField] private Animator animator;
+    public Animator animator;
     public bool freeze;
     public bool isMoving;
     private float currentVel;
     [SerializeField] private float maxSpeed;
     public bool canFlip;
+    
 
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        enterFScript = GetComponent<HarpoonGun>();
         animator = GetComponent<Animator>();
         animator.SetFloat("Speed", 0);
         animator.SetBool("isFacingRight", isFacingRight);
@@ -104,7 +104,10 @@ public class PlayerMove : MonoBehaviour
         {
             canFlip = false;
             Debug.Log("Turned");
+
             animator.SetTrigger("Turn");
+            harpoon.Turn();
+
             isFacingRight = !isFacingRight;            
             animator.SetBool("isFacingRight", isFacingRight);
             GetComponent<EnterBoat>().canEnter = false;
@@ -119,5 +122,6 @@ public class PlayerMove : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        
     }
 }
