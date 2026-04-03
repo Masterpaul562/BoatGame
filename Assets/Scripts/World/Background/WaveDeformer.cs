@@ -16,7 +16,7 @@ public class WaveDeformer : MonoBehaviour
     private Mesh mesh;
     private Vector3[] baseVertices;
     private Vector3[] vertices;
-    private float waveTime;
+    [HideInInspector] public float waveTime;
 
     void Start()
     {

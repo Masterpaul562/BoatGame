@@ -6280,7 +6280,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c98ad9ad68d8a4759ba79a5899a8fe10, type: 3}
-  m_Color: {r: 0.9622642, g: 0.86977446, b: 0.86694556, a: 1}
+  m_Color: {r: 1, g: 0.31064326, b: 0.25943398, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11302,6 +11302,7 @@ MonoBehaviour:
   horizontalOffset: 0
   engine: {fileID: 1602757267}
   knotSpeedMultiplier: 0.2
+  waveTime: 0
 --- !u!1 &1014687534
 GameObject:
   m_ObjectHideFlags: 0
@@ -11926,6 +11927,7 @@ MonoBehaviour:
   horizontalOffset: 0
   engine: {fileID: 1602757267}
   knotSpeedMultiplier: 0.2
+  waveTime: 0
 --- !u!64 &1284961696
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -16893,7 +16895,7 @@ MonoBehaviour:
     m_Bits: 64
   lightBar: {fileID: 273278425}
   powerLevel: 0
-  drainSpeed: 5
+  drainSpeed: 10
   shouldDrain: 1
   canFeed: 1
   powerStage: 0
@@ -17374,6 +17376,7 @@ MonoBehaviour:
   horizontalOffset: 0
   engine: {fileID: 1602757267}
   knotSpeedMultiplier: 0.2
+  waveTime: 0
 --- !u!64 &1688449574
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21253,6 +21256,7 @@ MonoBehaviour:
   horizontalOffset: -0.7
   engine: {fileID: 1602757267}
   knotSpeedMultiplier: 0.2
+  waveTime: 0
 --- !u!64 &1906464835
 MeshCollider:
   m_ObjectHideFlags: 0
