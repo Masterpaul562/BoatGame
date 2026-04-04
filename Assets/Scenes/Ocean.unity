@@ -184,7 +184,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2056419628}
-  - {fileID: 157874372}
   m_Father: {fileID: 610374925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &69378739
@@ -5714,11 +5713,11 @@ Transform:
   m_GameObject: {fileID: 157874371}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.23, y: 0, z: 0}
+  m_LocalPosition: {x: 4.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 45553093}
+  m_Father: {fileID: 610374925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &195862231
 GameObject:
@@ -7202,7 +7201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &610374925
 Transform:
   m_ObjectHideFlags: 0
@@ -7217,6 +7216,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1401774803}
+  - {fileID: 157874372}
   - {fileID: 45553093}
   m_Father: {fileID: 1014687535}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7904,12 +7904,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1351622656}
   harpoon: {fileID: 1014687534}
-  bobber: {fileID: 0}
-  line: {fileID: 0}
+  line: {fileID: 610374924}
+  harpHead: {fileID: 2056419627}
+  harpEnd: {fileID: 157874372}
+  power: 5
   rotationSpeed: 1
   inputKey: 122
   fireKey: 120
-  powerLevel: 0
   isFishing: 0
 --- !u!1 &900264481
 GameObject:
@@ -15864,7 +15865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!120 &1401774802
 LineRenderer:
   serializedVersion: 2
@@ -15906,7 +15907,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -22257,7 +22258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2056419628
 Transform:
   m_ObjectHideFlags: 0
@@ -22267,7 +22268,7 @@ Transform:
   m_GameObject: {fileID: 2056419627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0001, y: 0.091, z: 0}
+  m_LocalPosition: {x: 2.9, y: -0.08, z: 0}
   m_LocalScale: {x: 0.71, y: 1.0422803, z: 0.71}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -22280,7 +22281,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056419627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e561de9cf16edc43a6ee6f1be8df80e, type: 3}
   m_Name: 
@@ -22299,13 +22300,13 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056419627}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -22358,15 +22359,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 35
-  m_Sprite: {fileID: 21300000, guid: 97707c8633baf9b49a1965254f24c585, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 67f4ca400c5e48640afa72b2ef5494a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2056419633
@@ -22404,9 +22405,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.54, y: 4.19}
-    newSize: {x: 1, y: 1}
+    pivot: {x: 0.9431872, y: 0.49}
+    oldSize: {x: 19.2, y: 10.8}
+    newSize: {x: 19.2, y: 10.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
