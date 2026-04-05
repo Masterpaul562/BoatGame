@@ -9,48 +9,63 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private GameObject harpoon;
     [SerializeField] private GameObject line;
     [SerializeField] private GameObject harpHead;
+    [SerializeField] private Transform headHolder;
     [SerializeField] private Transform harpEnd;
     private Animator anim;
 
     [Header("Settings")]
     [SerializeField] private int power;
-    public float rotationSpeed;
+    public float rotSpeed;
     public KeyCode inputKey;
     public KeyCode fireKey;
+    public int lookAngle;
     private bool canCast = true;
     private bool canFire = false;
-    private Quaternion ogRotation;
-    private float distance;
+    private Quaternion quatZero;
+    private Quaternion quatUp;
+    private Quaternion quatDown;
+    private float distance;                                                           
+
 
     [Header("Info")]
     public bool isFishing;
     public bool hasFire;
 
+
     private void Start()
     {
         harpoon = transform.GetChild(0).gameObject;
         anim = harpoon.GetComponent<Animator>();
-        ogRotation = harpoon.transform.rotation;
+        quatZero = Quaternion.Euler(0, 0, 0);   
+        
     }
 
     private void Update()
     {
-        
-        if(canCast && Input.GetKeyDown(inputKey))
+      
+        anim.SetFloat("Speed", player.GetComponent<PlayerMove>().animator.GetFloat("Speed"));
+        Rotate();
+        InputCheck();
+        ReelCheck();
+    }
+
+
+    private void InputCheck()
+    {
+        if (canCast && Input.GetKeyDown(inputKey))
         {
             PrepHarpoon();
-        }else if (Input.GetKeyUp(inputKey))
+        }
+        else if (Input.GetKeyUp(inputKey))
         {
             anim.SetTrigger("Stow");
+            harpoon.transform.SetLocalPositionAndRotation(harpoon.transform.localPosition, quatZero);
         }
 
-        if(canFire && Input.GetKeyDown(fireKey))
+        if (canFire && Input.GetKeyDown(fireKey))
         {
             anim.SetTrigger("Fire");
         }
-        anim.SetFloat("Speed", player.GetComponent<PlayerMove>().animator.GetFloat("Speed"));
-
-        ReelCheck();
     }
 
     private void PrepHarpoon()
@@ -69,7 +84,7 @@ public class HarpoonGun2 : MonoBehaviour
         canFire= false;
         line.SetActive(false);
         harpoon.SetActive(false);
-        harpoon.transform.rotation = ogRotation;
+        
     }
 
     public void Fire()
@@ -77,20 +92,24 @@ public class HarpoonGun2 : MonoBehaviour
         line.SetActive(true);
         harpHead.GetComponent<Rigidbody2D>().simulated = true;
         hasFire = true;
+        canFire = false;
+        harpHead.transform.parent = null;
 
         if (player.GetComponent<Animator>().GetBool("isFacingRight"))
         {
             harpHead.GetComponent<Rigidbody2D>().AddForce(harpoon.transform.right * power, ForceMode2D.Impulse);
+            harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x,0), ForceMode2D.Impulse);
         }
         else
         {
-            harpHead.GetComponent<Rigidbody2D>().AddForce((harpoon.transform.right * power) * -1, ForceMode2D.Impulse);
+            harpHead.GetComponent<Rigidbody2D>().AddForce((-harpoon.transform.right * power), ForceMode2D.Impulse);
+            harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, 0), ForceMode2D.Impulse);
         }
     }
 
     public IEnumerator Reel()
     {
-        harpHead.GetComponent<Rigidbody2D>().simulated = false;
+        harpHead.GetComponent<Rigidbody2D>().simulated = false;     
 
         distance = 100f;
         while (distance > 0.1f)
@@ -103,6 +122,9 @@ public class HarpoonGun2 : MonoBehaviour
         anim.SetTrigger("Reeled");
         line.SetActive(false);
         hasFire = false;
+        canFire = true;
+        harpHead.transform.parent = headHolder.transform;
+        harpHead.transform.SetLocalPositionAndRotation(harpHead.transform.localPosition, quatZero);
         yield return null;
     }
     
@@ -114,6 +136,23 @@ public class HarpoonGun2 : MonoBehaviour
             StartCoroutine(Reel());
         }
     }
+
+    private void Rotate()
+    {
+        float vert = Input.GetAxisRaw("Vertical");
+        Quaternion quatUp = Quaternion.Euler(0, 0, lookAngle * -player.transform.localScale.x / -(Mathf.Abs(player.transform.localScale.x)));
+        Quaternion quatDown = Quaternion.Euler(0, 0, -lookAngle * -player.transform.localScale.x/-(Mathf.Abs(player.transform.localScale.x)));
+        if (vert > 0)
+        {           
+           harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation, quatUp, Time.deltaTime * rotSpeed);
+            
+        }
+        if (vert < 0)
+        {
+            harpoon.transform.rotation = Quaternion.Slerp(harpoon.transform.rotation, quatDown, Time.deltaTime * rotSpeed);
+        }
+    }
+
     private void SetInside()
     {
         var inside = player.GetComponent<EnterBoat>();
