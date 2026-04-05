@@ -44,7 +44,10 @@ public class HarpoonGun2 : MonoBehaviour
     {
       
         anim.SetFloat("Speed", player.GetComponent<PlayerMove>().animator.GetFloat("Speed"));
-        Rotate();
+        if (isFishing)
+        {
+            Rotate();
+        }
         InputCheck();
         ReelCheck();
     }
@@ -83,6 +86,7 @@ public class HarpoonGun2 : MonoBehaviour
         canCast = true;
         canFire= false;
         line.SetActive(false);
+        harpoon.transform.SetLocalPositionAndRotation(harpoon.transform.localPosition, quatZero);
         harpoon.SetActive(false);
         
     }
@@ -95,16 +99,17 @@ public class HarpoonGun2 : MonoBehaviour
         canFire = false;
         harpHead.transform.parent = null;
 
-        if (player.GetComponent<Animator>().GetBool("isFacingRight"))
-        {
-            harpHead.GetComponent<Rigidbody2D>().AddForce(harpoon.transform.right * power, ForceMode2D.Impulse);
+       // if (player.GetComponent<Animator>().GetBool("isFacingRight"))
+       // {
+       Vector2 direction = harpHead.transform.position - player.transform.position;
+            harpHead.GetComponent<Rigidbody2D>().AddForce(direction * power, ForceMode2D.Impulse);
             harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x,0), ForceMode2D.Impulse);
-        }
-        else
-        {
-            harpHead.GetComponent<Rigidbody2D>().AddForce((-harpoon.transform.right * power), ForceMode2D.Impulse);
-            harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, 0), ForceMode2D.Impulse);
-        }
+       // }
+       // else
+        //{
+         //   harpHead.GetComponent<Rigidbody2D>().AddForce((-harpoon.transform.right * power), ForceMode2D.Impulse);
+         //   harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, 0), ForceMode2D.Impulse);
+       // }
     }
 
     public IEnumerator Reel()

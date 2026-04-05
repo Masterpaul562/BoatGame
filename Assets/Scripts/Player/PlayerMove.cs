@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] public float horizontalInput;
     [SerializeField] private HarpoonGun2 harpoon;
+    [SerializeField] private GameObject harpHead;
     public bool isFacingRight;
     public Animator animator;
     public bool freeze;
@@ -107,6 +108,7 @@ public class PlayerMove : MonoBehaviour
 
             animator.SetTrigger("Turn");
             harpoon.Turn();
+           // harpHead.GetComponent<Rigidbody2D>().rotation = -harpHead.GetComponent<Rigidbody2D>().rotation;
 
             isFacingRight = !isFacingRight;            
             animator.SetBool("isFacingRight", isFacingRight);
@@ -117,6 +119,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void Flip()
     {
+        //harpHead.GetComponent<Rigidbody2D>().rotation = -harpHead.GetComponent<Rigidbody2D>().rotation;
         GetComponent<EnterBoat>().canEnter = true;
         canFlip = true;
         Vector3 localScale = transform.localScale;

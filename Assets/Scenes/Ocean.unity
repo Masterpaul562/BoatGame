@@ -11325,7 +11325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1014687535
 Transform:
   m_ObjectHideFlags: 0
@@ -15674,6 +15674,7 @@ MonoBehaviour:
   moveSpeed: 5
   horizontalInput: 0
   harpoon: {fileID: 863534863}
+  harpHead: {fileID: 2056419627}
   isFacingRight: 1
   animator: {fileID: 0}
   freeze: 0
@@ -16871,11 +16872,11 @@ MonoBehaviour:
     m_Bits: 64
   lightBar: {fileID: 273278425}
   fishing: {fileID: 863534863}
-  powerLevel: 0
+  powerLevel: 10
   drainSpeed: 10
   shouldDrain: 1
   canFeed: 1
-  powerStage: 0
+  powerStage: 10
   powerSet: 0
   knots: 0
 --- !u!61 &1602757268
@@ -21839,6 +21840,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1932731742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1932731743}
+  m_Layer: 9
+  m_Name: Direction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1932731743
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932731742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.88, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2056419628}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949189116
 GameObject:
   m_ObjectHideFlags: 0
@@ -22274,7 +22306,8 @@ Transform:
   m_LocalPosition: {x: 2.9, y: -0.08, z: 0}
   m_LocalScale: {x: 0.71, y: 1.0422803, z: 0.71}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1932731743}
   m_Father: {fileID: 45553093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2056419629
