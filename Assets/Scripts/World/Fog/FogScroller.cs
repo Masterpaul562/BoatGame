@@ -4,7 +4,10 @@ using UnityEngine;
 public class FogScroller : MonoBehaviour
 {
     [Header("Scroll Settings")]
-    public float scrollSpeed = 0.1f;
+    public float baseScrollSpeed = 0.1f;
+
+    [Header("Boat Engine Reference")]
+    public FishEngineReal engine;
 
     [Header("Opacity Settings")]
     [Range(0f, 1f)]
@@ -21,10 +24,18 @@ public class FogScroller : MonoBehaviour
 
     void Update()
     {
-        offset.x += scrollSpeed * Time.deltaTime;
+        float knots = 0f;
+
+        if (engine != null)
+        {
+            knots = engine.knots;
+        }
+
+        float speedMultiplier = 1f + (knots / 10f);
+
+        offset.x += baseScrollSpeed * speedMultiplier * Time.deltaTime;
         rend.material.mainTextureOffset = offset;
 
-        // Update opacity live in case you change it in Inspector
         ApplyOpacity();
     }
 
