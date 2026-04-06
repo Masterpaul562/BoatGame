@@ -1,4 +1,4 @@
-Shader "Custom/WaterEffect"
+Shader "Custom/WaterEffectFixed"
 {
     Properties
     {
@@ -19,8 +19,8 @@ Shader "Custom/WaterEffect"
 
             Stencil
             {
-                Ref 1
-                Comp Equal
+                Ref 0
+                Comp NotEqual
             }
 
             CGPROGRAM
@@ -44,7 +44,7 @@ Shader "Custom/WaterEffect"
                 float4 pos : SV_POSITION;
             };
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
@@ -52,12 +52,10 @@ Shader "Custom/WaterEffect"
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-
                 col.rgb = lerp(col.rgb, _Tint.rgb, _Strength);
-
                 return col;
             }
             ENDCG
