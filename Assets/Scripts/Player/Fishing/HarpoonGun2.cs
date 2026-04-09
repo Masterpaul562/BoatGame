@@ -17,6 +17,7 @@ public class HarpoonGun2 : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private int power;
+    [SerializeField] private float lineLength;
     public float rotSpeed;
     public KeyCode inputKey;
     public KeyCode fireKey;
@@ -155,7 +156,7 @@ public class HarpoonGun2 : MonoBehaviour
     
     private void ReelCheck()
     {
-        if (Vector2.Distance(harpEnd.position, harpHead.transform.position) > 7)
+        if (Vector2.Distance(harpEnd.position, harpHead.transform.position) > lineLength)
         {
             StopAllCoroutines();
             StartCoroutine(Reel());

@@ -7913,6 +7913,7 @@ MonoBehaviour:
   harpEnd: {fileID: 157874372}
   fishManager: {fileID: 900264483}
   power: 5
+  lineLength: 7
   rotSpeed: 2
   inputKey: 122
   fireKey: 120
