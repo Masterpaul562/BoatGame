@@ -171,7 +171,7 @@ public class HarpoonGun : MonoBehaviour
         line.gameObject.SetActive(false);
         bobber.GetComponent<Bobber>().rb.simulated = true;
         shouldFire = false;
-        fish.SecureFish();
+        //fish.SecureFish();
 
         yield return new WaitForSeconds(1f);
         freezePlayer.freeze = false;

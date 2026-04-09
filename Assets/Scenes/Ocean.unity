@@ -7257,7 +7257,6 @@ Transform:
   - {fileID: 1183558244}
   - {fileID: 1496981764}
   - {fileID: 1900979578}
-  - {fileID: 1972990814}
   m_Father: {fileID: 249506148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &666483289
@@ -7908,9 +7907,11 @@ MonoBehaviour:
   player: {fileID: 1351622656}
   harpoon: {fileID: 1014687534}
   line: {fileID: 610374924}
+  fishingLine: {fileID: 1401774802}
   harpHead: {fileID: 2056419627}
   headHolder: {fileID: 45553093}
   harpEnd: {fileID: 157874372}
+  fishManager: {fileID: 900264483}
   power: 5
   rotSpeed: 2
   inputKey: 122
@@ -7918,6 +7919,9 @@ MonoBehaviour:
   lookAngle: 40
   isFishing: 0
   hasFire: 0
+  isReeling: 0
+  fishHooked: 0
+  hookedFish: {fileID: 0}
 --- !u!1 &900264481
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,7 +7971,7 @@ MonoBehaviour:
   closestDistance: 0
   closestFish: {fileID: 0}
   closestFishIndex: 0
-  bobber: {fileID: 2056419629}
+  bobber: {fileID: 0}
   fishList: {fileID: 216235006}
   isFishing: {fileID: 0}
   inventory: {fileID: 1351622667}
@@ -11328,7 +11332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1014687535
 Transform:
   m_ObjectHideFlags: 0
@@ -11543,7 +11547,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.45, y: 1.14}
+  m_Offset: {x: 0.51, y: 1.14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -11554,7 +11558,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07, y: 3.68}
+  m_Size: {x: 0.18, y: 3.68}
   m_EdgeRadius: 0
 --- !u!61 &1017895118
 BoxCollider2D:
@@ -16880,7 +16884,7 @@ MonoBehaviour:
   drainSpeed: 10
   shouldDrain: 1
   canFeed: 1
-  powerStage: 10
+  powerStage: 0
   powerSet: 0
   knots: 0
 --- !u!61 &1602757268
@@ -22071,83 +22075,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1972990813
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1972990814}
-  - component: {fileID: 1972990815}
-  m_Layer: 9
-  m_Name: Bobber
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1972990814
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972990813}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11, y: 1.28, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 659888001}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1972990815
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972990813}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &2021121704
 GameObject:
   m_ObjectHideFlags: 0
@@ -22287,10 +22214,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056419628}
-  - component: {fileID: 2056419629}
   - component: {fileID: 2056419630}
   - component: {fileID: 2056419631}
   - component: {fileID: 2056419633}
+  - component: {fileID: 2056419634}
+  - component: {fileID: 2056419635}
   m_Layer: 9
   m_Name: HarpHead
   m_TagString: Bobber
@@ -22314,23 +22242,6 @@ Transform:
   - {fileID: 1932731743}
   m_Father: {fileID: 45553093}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2056419629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056419627}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e561de9cf16edc43a6ee6f1be8df80e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  y: -1.14
-  rb: {fileID: 2056419630}
-  gun: {fileID: 0}
-  player: {fileID: 1351622656}
-  hookedFish: 0
 --- !u!50 &2056419630
 Rigidbody2D:
   serializedVersion: 4
@@ -22455,6 +22366,70 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!331 &2056419634
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056419627}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 67f4ca400c5e48640afa72b2ef5494a5, type: 3}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &2056419635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056419627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6261736a6d3ff6644b993944aca1b857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harpoon: {fileID: 863534863}
 --- !u!1 &2091909025
 GameObject:
   m_ObjectHideFlags: 0

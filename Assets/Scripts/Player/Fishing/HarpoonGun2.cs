@@ -8,9 +8,11 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject harpoon;
     [SerializeField] private GameObject line;
+    [SerializeField] private LineRenderer fishingLine;
     [SerializeField] private GameObject harpHead;
     [SerializeField] private Transform headHolder;
     [SerializeField] private Transform harpEnd;
+    [SerializeField] private FishManager fishManager;
     private Animator anim;
 
     [Header("Settings")]
@@ -30,6 +32,9 @@ public class HarpoonGun2 : MonoBehaviour
     [Header("Info")]
     public bool isFishing;
     public bool hasFire;
+    public bool isReeling;
+    public bool fishHooked;
+    public GameObject hookedFish;
 
 
     private void Start()
@@ -44,6 +49,7 @@ public class HarpoonGun2 : MonoBehaviour
     {
       
         anim.SetFloat("Speed", player.GetComponent<PlayerMove>().animator.GetFloat("Speed"));
+        SetInside();
         if (isFishing)
         {
             Rotate();
@@ -114,7 +120,8 @@ public class HarpoonGun2 : MonoBehaviour
 
     public IEnumerator Reel()
     {
-        harpHead.GetComponent<Rigidbody2D>().simulated = false;     
+        harpHead.GetComponent<Rigidbody2D>().simulated = false;
+        isReeling = true;
 
         distance = 100f;
         while (distance > 0.1f)
@@ -130,7 +137,20 @@ public class HarpoonGun2 : MonoBehaviour
         canFire = true;
         harpHead.transform.parent = headHolder.transform;
         harpHead.transform.SetLocalPositionAndRotation(harpHead.transform.localPosition, quatZero);
+        isReeling = false;
+
+        if (fishHooked)
+        {
+            CatchFish();
+        }
         yield return null;
+    }
+
+    private void CatchFish()
+    {
+        player.GetComponent<FishInventory>().AddFishOutside(1);
+        fishManager.SecureFish(hookedFish);
+        fishHooked = false;
     }
     
     private void ReelCheck()
@@ -163,13 +183,17 @@ public class HarpoonGun2 : MonoBehaviour
         var inside = player.GetComponent<EnterBoat>();
         if (inside.inBoat)
         {
-           // line.GetComponent<LineRenderer>().sortingLayerName = "Inside";
-            //line.GetComponent<LineRenderer>().sortingOrder = 1;
+            fishingLine.sortingLayerName = "Inside";
+            fishingLine.sortingOrder = 1;
+
+            harpHead.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
         }
         else if (!inside.inBoat)
         {
-           // line.GetComponent<LineRenderer>().sortingLayerName = "Default";
-           // line.GetComponent<LineRenderer>().sortingOrder = 0;
+            fishingLine.sortingLayerName = "Default";
+            fishingLine.sortingOrder = 0;
+
+            harpHead.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         }
     }
 

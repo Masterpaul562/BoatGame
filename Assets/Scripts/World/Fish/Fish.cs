@@ -83,15 +83,14 @@ public class Fish : MonoBehaviour
     {
         if ( other.gameObject.tag == "Bobber")
         {
-            var script = other.GetComponent<Bobber>();
-            if (!script.hookedFish&& !script.gun.isReeling)
+            var script = other.GetComponent<HarpoonHead>();
+            if (!script.harpoon.fishHooked && !script.harpoon.isReeling)
             {
-                script.hookedFish = true;   
+                script.harpoon.fishHooked = true;
+                script.harpoon.hookedFish = this.gameObject;
                 transform.parent = other.gameObject.transform;
                 transform.position = other.transform.position;
-                swim = false;
-                isHooked = true;
-                Debug.Log("yay");
+                swim = false;               
             }
            
         }

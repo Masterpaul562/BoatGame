@@ -10,7 +10,7 @@ public class FishManager : MonoBehaviour
     [SerializeField] public int closestFishIndex;
     [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
-    [SerializeField] private HarpoonGun isFishing;
+    [SerializeField] private HarpoonGun2 isFishing;
     [SerializeField] private FishInventory inventory;
     private bool startCoVanity;
     private bool startCoReal;
@@ -25,7 +25,7 @@ public class FishManager : MonoBehaviour
     void Update()
     {
         DestroyRealFish();
-        FindClosestFish();
+       // FindClosestFish();
 
     }
 
@@ -33,24 +33,24 @@ public class FishManager : MonoBehaviour
 
 
 
-    private void FindClosestFish()
-    {
+  //  private void FindClosestFish()
+  //  {
 
-        closestDistance = 10000000000;
-        for (int i = 0; i < fishList.fish.Count; i++)
-        {
-            float distance = Vector2.Distance(bobber.transform.position, fishList.fish[i].transform.position);
-            if (closestDistance > distance)
-            {
-                closestDistance = distance;
-                closestFish = fishList.fish[i];
-                closestFishIndex = i;
-            }
+  //      closestDistance = 10000000000;
+ //       for (int i = 0; i < fishList.fish.Count; i++)
+ //       {
+//            float distance = Vector2.Distance(bobber.transform.position, fishList.fish[i].transform.position);
+ //           if (closestDistance > distance)
+ //           {
+ ///               closestDistance = distance;
+ //               closestFish = fishList.fish[i];
+//                closestFishIndex = i;
+ //           }
+//
+     //   }
 
-        }
 
-
-    }
+  //  }
 
   
     private void DestroyRealFish()
@@ -66,14 +66,12 @@ public class FishManager : MonoBehaviour
         }
     }   
 
-    public void SecureFish()
+    public void SecureFish(GameObject fish)
     {
         for (int i = 0; i < fishList.fish.Count; i++)
         {
-            if (fishList.fish[i].GetComponent<Fish>().isHooked)
+            if (fish == fishList.fish[i])
             {
-                Debug.Log("destroy");
-                bobber.hookedFish = false;
                 Destroy(fishList.fish[i]);
                 fishList.fish.RemoveAt(i);
                 inventory.AddFishOutside(1);
