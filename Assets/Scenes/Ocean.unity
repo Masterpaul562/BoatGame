@@ -7912,12 +7912,12 @@ MonoBehaviour:
   headHolder: {fileID: 45553093}
   harpEnd: {fileID: 157874372}
   fishManager: {fileID: 900264483}
-  power: 5
-  lineLength: 7
-  rotSpeed: 2
+  power: 40
+  lineLength: 10
+  rotSpeed: 5
   inputKey: 122
   fireKey: 120
-  lookAngle: 40
+  lookAngle: 70
   isFishing: 0
   hasFire: 0
   isReeling: 0
