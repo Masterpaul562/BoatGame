@@ -18,10 +18,10 @@ public class HarpoonGun2 : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int power;
     [SerializeField] private float lineLength;
+    public int lookAngle;
     public float rotSpeed;
     public KeyCode inputKey;
     public KeyCode fireKey;
-    public int lookAngle;
     private bool canCast = true;
     private bool canFire = false;
     private Quaternion quatZero;
