@@ -6067,7 +6067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScrollSpeed: 0.2
   engine: {fileID: 1602757267}
-  opacity: 0.08
+  opacity: 0.23
 --- !u!212 &248175358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7911,6 +7911,7 @@ MonoBehaviour:
   harpHead: {fileID: 2056419627}
   headHolder: {fileID: 45553093}
   harpEnd: {fileID: 157874372}
+  direction: {fileID: 0}
   fishManager: {fileID: 900264483}
   power: 40
   lineLength: 10
@@ -15638,7 +15639,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -1251775196, guid: da20c39676dbc3349a9f5001e6ac4154, type: 3}
-  m_Color: {r: 0.6462264, g: 0.91509426, b: 1, a: 1}
+  m_Color: {r: 0.8537736, g: 0.96425575, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -16435,7 +16436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseScrollSpeed: 0.25
   engine: {fileID: 1602757267}
-  opacity: 0.1
+  opacity: 0.51
 --- !u!1 &1530605708
 GameObject:
   m_ObjectHideFlags: 0
