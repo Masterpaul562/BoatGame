@@ -171,12 +171,12 @@ public class HarpoonGun2 : MonoBehaviour
         Quaternion quatDown = Quaternion.Euler(0, 0, -lookAngle * -player.transform.localScale.x/-(Mathf.Abs(player.transform.localScale.x)));
         if (vert > 0)
         {           
-           harpoon.transform.rotation = Quaternion.LerpUnclamped(harpoon.transform.rotation, quatUp, Time.deltaTime * rotSpeed);
+           harpoon.transform.rotation = Quaternion.RotateTowards(harpoon.transform.rotation, quatUp, Time.deltaTime * rotSpeed);
             
         }
         if (vert < 0)
         {
-            harpoon.transform.rotation = Quaternion.LerpUnclamped(harpoon.transform.rotation, quatDown, Time.deltaTime * rotSpeed);
+            harpoon.transform.rotation = Quaternion.RotateTowards(harpoon.transform.rotation, quatDown, Time.deltaTime * rotSpeed);
         }
     }
 

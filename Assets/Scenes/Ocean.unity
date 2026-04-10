@@ -7916,7 +7916,7 @@ MonoBehaviour:
   power: 40
   lineLength: 10
   lookAngle: 70
-  rotSpeed: 5
+  rotSpeed: 50
   inputKey: 122
   fireKey: 120
   isFishing: 0
