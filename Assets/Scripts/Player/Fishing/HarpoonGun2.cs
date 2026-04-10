@@ -12,6 +12,7 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private GameObject harpHead;
     [SerializeField] private Transform headHolder;
     [SerializeField] private Transform harpEnd;
+    [SerializeField] private Transform direction;
     [SerializeField] private FishManager fishManager;
     private Animator anim;
 
@@ -108,7 +109,7 @@ public class HarpoonGun2 : MonoBehaviour
 
        // if (player.GetComponent<Animator>().GetBool("isFacingRight"))
        // {
-       Vector2 direction = harpHead.transform.position - player.transform.position;
+       Vector2 direction = harpHead.transform.position - this.direction.position;
             harpHead.GetComponent<Rigidbody2D>().AddForce(direction * power, ForceMode2D.Impulse);
             harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x,0), ForceMode2D.Impulse);
        // }
