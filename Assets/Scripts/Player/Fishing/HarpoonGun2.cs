@@ -193,7 +193,7 @@ public class HarpoonGun2 : MonoBehaviour
         else if (!inside.inBoat)
         {
             fishingLine.sortingLayerName = "Default";
-            fishingLine.sortingOrder = 0;
+            fishingLine.sortingOrder = 2;
 
             harpHead.GetComponent<SpriteRenderer>().sortingLayerName = "Default";
         }
