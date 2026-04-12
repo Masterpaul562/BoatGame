@@ -19,7 +19,7 @@ public class CameraZoom : MonoBehaviour
 
 
 
-  private void Start() 
+  private void Awake() 
   {           
         cam = GetComponent<Camera>();
         ogZoom = cam.orthographicSize;

@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]  private GameObject[] waves;
     
 
-    private void Start()
+    private void Awake()
     {
         waves = new GameObject[this.transform.childCount];
 

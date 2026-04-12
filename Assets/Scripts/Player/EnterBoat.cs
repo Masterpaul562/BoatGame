@@ -16,7 +16,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject player; // Player Object
     [SerializeField] private GameObject harpoon; // Harpoon Object
     [SerializeField] private HarpoonGun2 harpScript;
-    [SerializeField] private GameObject spray;
+
 
     [Header("")]
     [SerializeField] private Transform enterLocation; // Locations for enter and exit 
@@ -54,6 +54,7 @@ public class EnterBoat : MonoBehaviour
         player = this.gameObject;
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+
     }
 
 

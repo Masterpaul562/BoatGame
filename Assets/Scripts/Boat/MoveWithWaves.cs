@@ -21,7 +21,6 @@ public class MoveWithWaves : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(wave);
         // Use the continuous wave phase from WaveDeformer
         float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
         y = waveValue * wave.amplitude;

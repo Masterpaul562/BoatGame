@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
             canFlip = false;
-            Debug.Log("Turned");
+
 
             animator.SetTrigger("Turn");
             harpoon.Turn();
