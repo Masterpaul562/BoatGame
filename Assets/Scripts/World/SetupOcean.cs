@@ -52,6 +52,7 @@ public class SetupOcean : MonoBehaviour
 
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
+        wakeUp.SetActive(true);
         insideBG.GetComponent<SpriteRenderer>().enabled = true;
 
         cam.orthographicSize = 4.7f;
