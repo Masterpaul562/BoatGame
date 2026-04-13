@@ -61,7 +61,7 @@ public class FishEngineReal : MonoBehaviour
         {
             powerLevel = 100f;
 
-            if (powerStage > 0)
+            if (powerStage > 1)
             {
                 powerStage--;
                 SetLightBar();
@@ -71,19 +71,28 @@ public class FishEngineReal : MonoBehaviour
                 if (powerSet > 0)
                 {
                     powerSet--;
-                    powerStage = 3; // full bar after level drops
-                    powerLevel = 100f;
 
-                    UpdateKnots();
-                    UpdateBarColor();
-                    SetLightBar();
+                    if (powerSet > 0)
+                    {
+                        powerStage = 3; // full bar after level drops
+                        powerLevel = 100f;
+
+                        UpdateKnots();
+                        UpdateBarColor();
+                        SetLightBar();
+                    }
+                    else
+                    {
+                        shouldDrain = false;
+                        StartCoroutine(Blink());    
+                    }
                 }
-                else
-                {
-                    shouldDrain = true;
-                    canFeed = true;
-                    StartCoroutine(Blink());
-                }
+               // else
+            //    {
+                //    shouldDrain = true;
+                 //   canFeed = true;
+                //    StartCoroutine(Blink());
+              //  }
             }
         }
     }
@@ -110,6 +119,7 @@ public class FishEngineReal : MonoBehaviour
     private void FeedFish()
     {
         inventory.fishAmountOutside--;
+        shouldDrain = true;
         powerLevel = 100f;
         powerStage++;
 
