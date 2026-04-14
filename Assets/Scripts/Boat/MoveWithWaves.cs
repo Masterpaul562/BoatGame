@@ -8,6 +8,7 @@ public class MoveWithWaves : MonoBehaviour
     float lastSprayTime;
 
     [SerializeField] private WaveDeformer wave;
+    [SerializeField] private FishEngineReal speed;
 
     [Header("Boat Movement")]
     public float yOffset;
@@ -21,29 +22,36 @@ public class MoveWithWaves : MonoBehaviour
 
     void Update()
     {
-        // Use the continuous wave phase from WaveDeformer
-        float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
-        y = waveValue * wave.amplitude;
-
-        // Move boat vertically
-        transform.position = new Vector2(transform.position.x, y + yOffset);
-
-        // Rotate boat based on wave tilt
-        Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
-
-        // Spray detection
-        float verticalSpeed = y - lastY;
-        bool goingUp = verticalSpeed > 0;
-        bool nearCrest = waveValue > crestThreshold;
-        bool cooldownReady = Time.time > lastSprayTime + sprayCooldown;
-
-        if (goingUp && nearCrest && cooldownReady)
+        if (speed.knots < 15)
         {
-            PlaySpray();
-        }
+            // Use the continuous wave phase from WaveDeformer
+            float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
+            y = waveValue * wave.amplitude;
 
-        lastY = y;
+            // Move boat vertically
+            transform.position = new Vector2(transform.position.x, y + yOffset);
+
+            // Rotate boat based on wave tilt
+            Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
+
+            // Spray detection
+            float verticalSpeed = y - lastY;
+            bool goingUp = verticalSpeed > 0;
+            bool nearCrest = waveValue > crestThreshold;
+            bool cooldownReady = Time.time > lastSprayTime + sprayCooldown;
+
+            if (goingUp && nearCrest && cooldownReady)
+            {
+                PlaySpray();
+            }
+
+            lastY = y;
+        }else
+        {
+            float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
+            y = waveValue * wave.amplitude;
+        }
     }
 
     void PlaySpray()
