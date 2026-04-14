@@ -1,5 +1,5 @@
 # Albatross
-#### You are a lone survivor in an abandoned world. In the aftermath of The Great Collapse, ocean waters have risen by 5000 feet. Biomechanical terrors hunt the last 'living' things. You just want to get home. Back to your family. You have stolen a sailboat. You need to learn how to sail fast, or you will be taken by the ocean.
+#### You are a lone survivor in an abandoned world. In the aftermath of The Great Collapse, ocean waters have risen by 5000 feet. Biomechanical terrors hunt the last 'living' things. You just want to get home. You have stolen a sailboat. You need to learn how to sail fast, or you will be taken by the ocean.
 
 <details>
 <summary>Team Members</summary>
