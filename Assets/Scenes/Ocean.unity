@@ -5977,7 +5977,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c98ad9ad68d8a4759ba79a5899a8fe10, type: 3}
-  m_Color: {r: 1, g: 0.31064326, b: 0.25943398, a: 1}
+  m_Color: {r: 0.9308176, g: 0.8691939, b: 0.5122423, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15568,7 +15568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1351622657
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16669,7 +16669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1538519216
 Transform:
   m_ObjectHideFlags: 0
@@ -17077,7 +17077,7 @@ MonoBehaviour:
   fishing: {fileID: 863534863}
   powerLevel: 10
   drainSpeed: 10
-  shouldDrain: 1
+  shouldDrain: 0
   canFeed: 1
   powerStage: 0
   powerSet: 0
@@ -21195,7 +21195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1797254786
 SpriteRenderer:
   m_ObjectHideFlags: 0

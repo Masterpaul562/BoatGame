@@ -14,7 +14,7 @@ public class FishEngineReal : MonoBehaviour
     [Header("Power")]
     [SerializeField] private float powerLevel = 100f;
     [SerializeField] private float drainSpeed = 10f;
-    [SerializeField] private bool shouldDrain = true;
+    [SerializeField] private bool shouldDrain;
     [SerializeField] private bool canFeed = true;
 
     private bool feedCD = false;
@@ -72,27 +72,22 @@ public class FishEngineReal : MonoBehaviour
                 {
                     powerSet--;
 
-                    if (powerSet > 0)
-                    {
-                        powerStage = 3; // full bar after level drops
-                        powerLevel = 100f;
 
-                        UpdateKnots();
-                        UpdateBarColor();
-                        SetLightBar();
-                    }
-                    else
-                    {
-                        shouldDrain = false;
-                        StartCoroutine(Blink());    
-                    }
+                    powerStage = 3; // full bar after level drops
+                    powerLevel = 100f;
+
+                    UpdateKnots();
+                    UpdateBarColor();
+                    SetLightBar();
+
                 }
-               // else
-            //    {
-                //    shouldDrain = true;
-                 //   canFeed = true;
-                //    StartCoroutine(Blink());
-              //  }
+                else
+                {
+                    shouldDrain = true;
+                    canFeed = true;
+                    powerStage = 0;
+                    StartCoroutine(Blink());
+                }
             }
         }
     }
@@ -122,6 +117,7 @@ public class FishEngineReal : MonoBehaviour
         shouldDrain = true;
         powerLevel = 100f;
         powerStage++;
+        StopAllCoroutines();
 
         if (powerStage > 3)
         {
@@ -129,9 +125,10 @@ public class FishEngineReal : MonoBehaviour
             powerSet++;
 
             UpdateKnots();
-            UpdateBarColor();
+            
         }
 
+        UpdateBarColor();
         SetLightBar();
 
         feedCD = true;
@@ -146,6 +143,10 @@ public class FishEngineReal : MonoBehaviour
     private void SetLightBar()
     {
         float scale = 0f;
+
+        Color color = sprite.color;
+        color.a = 1f;
+        sprite.color = color;   
 
         for (int i = 0; i < powerStage; i++)
         {
@@ -177,6 +178,7 @@ public class FishEngineReal : MonoBehaviour
         );
 
         Color color = sprite.color;
+        color.r = 1f; color.g = 0; color.b = 0f;
 
         for (int i = 0; i < 6; i++)
         {
