@@ -50,7 +50,14 @@ public class MoveWithWaves : MonoBehaviour
         }else
         {
             float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
+            float lastWaveValue = Mathf.Sin(transform.position.x * wave.frequency + (wave.waveTime - 2f));
             y = waveValue * wave.amplitude;
+            
+            bool goingUp = (waveValue - lastWaveValue) >0;
+
+            if(goingUp){
+                transform.position = new Vector2(transform.position.x, y + yOffset);
+            }
         }
     }
 
