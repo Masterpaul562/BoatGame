@@ -5892,6 +5892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wave: {fileID: 996416694}
+  speed: {fileID: 1602757267}
   yOffset: 0
   rotationPower: 1
   sprayObject: {fileID: 1800020384}
