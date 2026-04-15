@@ -5918,6 +5918,7 @@ MonoBehaviour:
   earwigSpeed: 10
   earwigDistance: 100
   maxEarwigDistance: 110
+  attackDistance: 15
 --- !u!1 &273278425
 GameObject:
   m_ObjectHideFlags: 0
