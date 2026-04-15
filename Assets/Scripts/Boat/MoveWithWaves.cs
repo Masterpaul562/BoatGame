@@ -50,13 +50,18 @@ public class MoveWithWaves : MonoBehaviour
         }else
         {
             float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
-            float lastWaveValue = Mathf.Sin(transform.position.x * wave.frequency + (wave.waveTime - 2f));
+            float lastWaveValue = Mathf.Sin(transform.position.x * wave.frequency + (wave.waveTime - 0.1f));
             y = waveValue * wave.amplitude;
+
             
             bool goingUp = (waveValue - lastWaveValue) >0;
+            bool atCrest = y > wave.amplitude - 1f;
 
-            if(goingUp){
-                transform.position = new Vector2(transform.position.x, y + yOffset);
+            if(goingUp && !atCrest){
+                transform.position = Vector2.MoveTowards(transform.position,new Vector2(transform.position.x, y + yOffset), Time.deltaTime);
+            } else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, -(y) + yOffset), Time.deltaTime);
             }
         }
     }
