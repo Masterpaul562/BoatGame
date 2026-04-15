@@ -14,6 +14,7 @@ public class SpeedManager : MonoBehaviour
     public float earwigSpeed;
     public float earwigDistance;
     public float maxEarwigDistance = 100f;
+    public float attackDistance;
 
     private void Start()
     {
@@ -66,6 +67,10 @@ public class SpeedManager : MonoBehaviour
                         transform.position,
                         Time.deltaTime * speedDifference * 3
                     );
+                }
+                if(earwigDistance < attackDistance)
+                {
+                    earwig.GetComponent<Earwiggy>().EarwigAttack();
                 }
             }
             else
