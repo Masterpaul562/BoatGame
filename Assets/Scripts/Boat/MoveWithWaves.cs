@@ -13,6 +13,9 @@ public class MoveWithWaves : MonoBehaviour
     [Header("Boat Movement")]
     public float yOffset;
     public float rotationPower;
+    public float speedWaveMult;
+    public float speedRotationPower;
+    public float speedWave;
 
     [Header("Spray Settings")]
     public GameObject sprayObject;     // Assign in Inspector
@@ -51,18 +54,24 @@ public class MoveWithWaves : MonoBehaviour
         {
             float waveValue = Mathf.Sin(transform.position.x * wave.frequency + wave.waveTime);
             float lastWaveValue = Mathf.Sin(transform.position.x * wave.frequency + (wave.waveTime - 0.1f));
-            y = waveValue * wave.amplitude;
+            y = waveValue * wave.amplitude*speedWaveMult;
+
 
             
             bool goingUp = (waveValue - lastWaveValue) >0;
             bool atCrest = y > wave.amplitude - 1f;
 
             if(goingUp && !atCrest){
-                transform.position = Vector2.MoveTowards(transform.position,new Vector2(transform.position.x, y + yOffset), Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position,new Vector2(transform.position.x, y + yOffset), Time.deltaTime * speedWave);
+                Quaternion rot = Quaternion.Euler(0, 0, y * speedRotationPower);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
             } else
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, -(y) + yOffset), Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, -(y) + yOffset), Time.deltaTime* speedWave);
+                Quaternion rot = Quaternion.Euler(0, 0, -y * speedRotationPower);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
             }
+            
         }
     }
 
