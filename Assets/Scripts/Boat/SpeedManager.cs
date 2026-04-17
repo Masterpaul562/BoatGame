@@ -10,7 +10,7 @@ public class SpeedManager : MonoBehaviour
     [Header("Earwig")]
     [SerializeField] private GameObject earwig;
     [SerializeField] private Transform spawnPos;
-    private bool earwigSpawned;
+    public bool earwigSpawned;
     public float earwigSpeed;
     public float earwigDistance;
     public float maxEarwigDistance = 100f;
@@ -44,9 +44,13 @@ public class SpeedManager : MonoBehaviour
     {
         while (true)
         {
+            var earwigScript = earwig.GetComponent<Earwiggy>();
             float speedDifference = Mathf.Abs(currentSpeed - earwigSpeed);
+            if (earwigScript.isSwiming)
+            {
 
-            if (currentSpeed < earwigSpeed)
+            }
+            else if (currentSpeed < earwigSpeed)
             {
                 // Earwig catches up
                 earwigDistance = Mathf.MoveTowards(
@@ -68,9 +72,10 @@ public class SpeedManager : MonoBehaviour
                         Time.deltaTime * speedDifference * 3
                     );
                 }
-                if(earwigDistance < attackDistance)
+                
+                if (earwigDistance < attackDistance && !earwigScript.hasAttack)
                 {
-                    earwig.GetComponent<Earwiggy>().EarwigAttack();
+                   earwigScript.EarwigAttack();
                 }
             }
             else

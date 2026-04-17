@@ -7,9 +7,11 @@ public class CameraShake : MonoBehaviour
     public bool rumble = false;
 
 
+
+
     public IEnumerator Shake(float duration, float magnitude)
     {
-        Vector2 ogPositon = transform.localPosition;
+        Vector3 ogPosition = transform.position;
         float elapse = 0.0f;
 
         while (elapse < duration)
@@ -18,18 +20,18 @@ public class CameraShake : MonoBehaviour
 
             float x = Random.Range(-1, 1) * magnitude;
             float y = Random.Range(-1, 1) * magnitude;
-            transform.localPosition = new Vector2(x, y);
+            transform.localPosition = new Vector3(x+ ogPosition.x, y+ogPosition.y, ogPosition.z);
 
             elapse += Time.deltaTime;
             yield return null;
         }
 
-        transform.localPosition = ogPositon;
+        transform.localPosition = ogPosition;
     }
 
     public IEnumerator Rumble(float magnitude)
     {
-        Vector3 ogPosition = transform.localPosition;
+        Vector3 ogPosition = transform.position;
         while (rumble)
         {
             float x = (Random.Range(-1, 1) * magnitude)+ogPosition.x;

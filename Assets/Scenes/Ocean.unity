@@ -5895,9 +5895,6 @@ MonoBehaviour:
   speed: {fileID: 1602757267}
   yOffset: 0
   rotationPower: 1
-  speedWaveMult: 2
-  speedRotationPower: 10
-  speedWave: 5
   sprayObject: {fileID: 1800020384}
   crestThreshold: -0.7
   sprayCooldown: 1.6
@@ -5921,7 +5918,7 @@ MonoBehaviour:
   earwigSpeed: 10
   earwigDistance: 100
   maxEarwigDistance: 110
-  attackDistance: 15
+  attackDistance: 17
 --- !u!1 &273278425
 GameObject:
   m_ObjectHideFlags: 0
@@ -17157,6 +17154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d135ae4566f14343b4693886c78dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camShake: {fileID: 519420034}
+  speedMan: {fileID: 249506153}
+  hasAttack: 0
+  isSwiming: 0
 --- !u!1 &1602757264
 GameObject:
   m_ObjectHideFlags: 0
