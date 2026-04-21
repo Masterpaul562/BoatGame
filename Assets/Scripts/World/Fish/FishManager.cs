@@ -8,7 +8,6 @@ public class FishManager : MonoBehaviour
     [SerializeField] float closestDistance;
     [SerializeField] public GameObject closestFish;
     [SerializeField] public int closestFishIndex;
-    [SerializeField] private Bobber bobber;
     [SerializeField] public FishSpawner fishList;
     [SerializeField] private HarpoonGun2 isFishing;
     [SerializeField] private FishInventory inventory;
@@ -74,7 +73,6 @@ public class FishManager : MonoBehaviour
             {
                 Destroy(fishList.fish[i]);
                 fishList.fish.RemoveAt(i);
-                inventory.AddFishOutside(1);
             }
         }
        

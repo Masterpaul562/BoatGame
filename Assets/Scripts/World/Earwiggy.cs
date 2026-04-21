@@ -28,10 +28,7 @@ public class Earwiggy : MonoBehaviour
         animator.SetTrigger("Attack");
         
     }
-    private void Update()
-    {
-        Debug.Log(Vector3.Distance(this.transform.position, camShake.transform.position));
-    }
+   
 
     public IEnumerator SwimAway()
     {

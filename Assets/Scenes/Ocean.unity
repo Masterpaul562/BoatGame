@@ -5629,7 +5629,6 @@ MonoBehaviour:
   fishPrefab: {fileID: 1981255956818205823, guid: 33b34d4d793aee0448ade45258ce21c4, type: 3}
   player: {fileID: 1351622656}
   bobber: {fileID: 2056419627}
-  enterFishing: {fileID: 0}
   cam: {fileID: 519420031}
   spawnLocation: {x: 0, y: 0}
   maxNumOfFish: 1
@@ -8049,7 +8048,6 @@ MonoBehaviour:
   closestDistance: 0
   closestFish: {fileID: 0}
   closestFishIndex: 0
-  bobber: {fileID: 0}
   fishList: {fileID: 216235006}
   isFishing: {fileID: 0}
   inventory: {fileID: 1351622667}
