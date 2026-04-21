@@ -32,8 +32,9 @@ public class PanCamera : MonoBehaviour
     }
     private void Pan()
     {
-        cam.transform.position = Vector2.MoveTowards(cam.transform.position,target.position, Time.deltaTime * speed);
-        cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, camOGpos.z);
+        float newPosition = Mathf.MoveTowards(cam.transform.position.x, target.position.x,Time.deltaTime* speed);
+        //cam.transform.position = Vector2.MoveTowards(cam.transform.position,target.position, Time.deltaTime * speed);
+        cam.transform.position = new Vector3(newPosition, cam.transform.position.y, camOGpos.z);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
