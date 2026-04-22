@@ -57,9 +57,10 @@ public class PanCamera : MonoBehaviour
     }
     private IEnumerator Reset()
     {
-        while (cam.transform.position != camOGpos)
+        while (cam.transform.position.x != camOGpos.x)
         {
-            cam.transform.position = Vector3.MoveTowards(cam.transform.position, camOGpos, Time.deltaTime * speed);
+            float reset  = Mathf.MoveTowards(cam.transform.position.x, camOGpos.x, Time.deltaTime * speed);
+            cam.transform.position = new Vector3(reset, cam.transform.position.y, camOGpos.z);
             yield return null;
         }
     }
