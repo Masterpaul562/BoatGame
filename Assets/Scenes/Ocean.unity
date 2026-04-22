@@ -17554,6 +17554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camShake: {fileID: 519420034}
   speedMan: {fileID: 249506153}
+  hole: {fileID: 249506154}
   hasAttack: 0
   isSwiming: 0
 --- !u!1 &1602757264

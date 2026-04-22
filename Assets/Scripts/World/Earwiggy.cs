@@ -8,6 +8,7 @@ public class Earwiggy : MonoBehaviour
 
     [SerializeField] private CameraShake camShake;
     [SerializeField] private SpeedManager speedMan;
+    [SerializeField] private HoleManager hole;
 
     public bool hasAttack;
     public bool isSwiming;
@@ -26,6 +27,7 @@ public class Earwiggy : MonoBehaviour
         hasAttack = true;
         StartCoroutine(camShake.Shake(0.7f, 0.5f));
         animator.SetTrigger("Attack");
+        hole.CreateHole();
         
     }
    

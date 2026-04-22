@@ -13,9 +13,7 @@ public class HoleManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
-CreateHole();
-        }
+
     }
 
     public void CreateHole()
