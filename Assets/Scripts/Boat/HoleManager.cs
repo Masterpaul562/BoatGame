@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HoleManager : MonoBehaviour
 {
-    public GameObject[] holes;
+    public List<GameObject> holes = new List<GameObject>();
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
@@ -13,13 +13,16 @@ public class HoleManager : MonoBehaviour
 
     private void Update()
     {
-
+       if( Input.GetMouseButtonDown(0)){
+        CreateHole();
+       }
     }
 
     public void CreateHole()
     {
        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
-        Instantiate(holePrefab,spawnPos, Quaternion.identity, boat);
+        var hole = Instantiate(holePrefab,spawnPos, Quaternion.identity, boat);
+        holes.Add(hole);
 
     }
 
