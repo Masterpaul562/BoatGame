@@ -10,6 +10,8 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private GameObject holePrefab;
     [SerializeField] private Collider2D spawnLocation;
     [SerializeField] private Transform boat;
+    [SerializeField] private Sprite spriteHole1;
+    [SerializeField] private Sprite spriteHole2;
 
     private void Update()
     {
@@ -21,6 +23,17 @@ public class HoleManager : MonoBehaviour
     public void CreateHole()
     {
        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
+       for(int i = 0; i < holes.Count; i++){
+
+       }
+
+       if(Random.Range(0,2) == 1){
+       holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
+       }else
+       {
+         holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole2;
+       }
+
         var hole = Instantiate(holePrefab,spawnPos, Quaternion.identity, boat);
         holes.Add(hole);
 
