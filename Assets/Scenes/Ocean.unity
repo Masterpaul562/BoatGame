@@ -5680,12 +5680,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentColor: {r: 0.78616345, g: 0.65513617, b: 0.65513617, a: 1}
-  industrialZoneColor: {r: 0.33659658, g: 0.57754934, b: 0.5849056, a: 1}
-  cityColor: {r: 0.22309242, g: 0.30108652, b: 0.3018868, a: 0.99607843}
-  theProjectColor: {r: 0.4528302, g: 0.41351008, b: 0.32609466, a: 1}
-  infestedZone: {r: 0.44025147, g: 0.0013843457, b: 0.0013843457, a: 1}
-  objects: []
-  shiftSpeed: 0.3
+  industrialZoneColor:
+  - {r: 0.53300893, g: 0.5914934, b: 0.61635214, a: 1}
+  - {r: 0.32109085, g: 0.47359103, b: 0.5345911, a: 1}
+  cityColor: []
+  theProjectColor: []
+  infestedZone: []
+  objects:
+  - {fileID: 471948656}
+  - {fileID: 1903553298}
+  waves:
+  - {fileID: 2100000, guid: 154ebcd1ea0ab441caccbbf287a2288d, type: 2}
+  - {fileID: 2100000, guid: f27c0e64857644ec1b80f297141812da, type: 2}
+  - {fileID: 2100000, guid: 3b2e1b5117b6345d8a39ed625e2d2e21, type: 2}
+  shiftSpeed: 0.04
 --- !u!1 &216235004
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,13 +7,14 @@ public class ColorManager : MonoBehaviour
     [SerializeField] private Color currentColor;
 
     [Header("LevelColors")]
-    public Color industrialZoneColor;
-    public Color cityColor;
-    public Color theProjectColor;
-    public Color infestedZone;
+    public Color[] industrialZoneColor;
+    public Color[] cityColor;
+    public Color[] theProjectColor;
+    public Color[] infestedZone;
 
     [Header("ObjectsToChange")]
     public SpriteRenderer[] objects;
+    public Material[] waves;
 
     [Header("Settings")]
     public float shiftSpeed;
@@ -22,7 +23,8 @@ public class ColorManager : MonoBehaviour
 
     private void Update()
     {
-        ColorShift(infestedZone);
+        ColorShift(industrialZoneColor[0]);
+        waves[1].color = currentColor;
     }
 
     public void ColorShift(Color targetColor)
