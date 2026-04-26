@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ColorManager : MonoBehaviour
 {
-    [SerializeField] private Color currentColor;
+    [SerializeField] private Color[] currentColor;
 
-    [Header("LevelColors")]
-    public Color[] industrialZoneColor;
-    public Color[] cityColor;
-    public Color[] theProjectColor;
-    public Color[] infestedZone;
+    [Header("LevelPalettes")]
+    public Color[] industrialZonePalette;
+    public Color[] cityPalette;
+    public Color[] theProjectPalette;
+    public Color[] infestedPalette;
 
     [Header("ObjectsToChange")]
     public SpriteRenderer[] objects;
@@ -19,19 +19,28 @@ public class ColorManager : MonoBehaviour
     [Header("Settings")]
     public float shiftSpeed;
 
-
+    private void Start()
+    {
+        currentColor = new Color[objects.Length];
+    }
 
     private void Update()
     {
-        ColorShift(industrialZoneColor[0]);
-        waves[1].color = currentColor;
+        for (int i = 0; i < objects.Length; i++)
+        {
+           objects[i].color = ColorShift(industrialZonePalette[i],i);
+        }
+        
     }
 
-    public void ColorShift(Color targetColor)
+    public Color ColorShift(Color targetColor, int index)
     {
-        Vector3 color = new Vector3(currentColor.r, currentColor.g, currentColor.b);
+        Vector3 color = new Vector3(currentColor[index].r, currentColor[index].g, currentColor[index].b);
         Vector3 newColor = new Vector3(targetColor.r, targetColor.g, targetColor.b);
         color = Vector3.MoveTowards(color, newColor, Time.deltaTime * shiftSpeed);
-        currentColor = new Color(color.x,color.y,color.z);
+        currentColor[index] = new Color(color.x, color.y, color.z);
+        Color returnColor = new Color(color.x,color.y,color.z);
+
+        return returnColor;
     }
 }

@@ -5674,18 +5674,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197150363}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 933b84d07e3a00f468c36411aebc1078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentColor: {r: 0.6189036, g: 0.6924618, b: 0.7169812, a: 1}
-  industrialZoneColor:
-  - {r: 0.6189036, g: 0.6924618, b: 0.7169812, a: 1}
-  - {r: 0.32109085, g: 0.47359103, b: 0.5345911, a: 1}
-  cityColor: []
-  theProjectColor: []
-  infestedZone: []
+  currentColor: []
+  industrialZonePalette:
+  - {r: 0.18654323, g: 0.4444761, b: 0.4528302, a: 1}
+  - {r: 0.3269548, g: 0.32484856, b: 0.45911938, a: 1}
+  - {r: 0.41123766, g: 0.5471698, b: 0.51300144, a: 1}
+  cityPalette: []
+  theProjectPalette: []
+  infestedPalette: []
   objects:
   - {fileID: 471948656}
   - {fileID: 1903553298}
