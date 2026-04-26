@@ -55,7 +55,7 @@ public class SetupOcean : MonoBehaviour
         wakeUp.SetActive(true);
         insideBG.GetComponent<SpriteRenderer>().enabled = true;
 
-        cam.orthographicSize = 4.7f;
+        cam.orthographicSize = player.GetComponent<EnterBoat>().insideZoom;
         cam.transform.position = new Vector3(cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
         //var zoom = cam.GetComponent<CameraZoom>();
         //zoom.targetZoom = 4.7f;

@@ -30,8 +30,8 @@ public class EnterBoat : MonoBehaviour
 
     [Header("Zoom Settings")]
     [SerializeField] private Camera cam;
-    [SerializeField] private float insideZoom;
-    [SerializeField] private float zoomSpeed;
+    public float insideZoom;
+    public float zoomSpeed;
 
 
     [Header("")]
