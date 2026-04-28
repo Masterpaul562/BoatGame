@@ -6063,10 +6063,7 @@ Transform:
   - {fileID: 1766219248}
   - {fileID: 1637979298}
   - {fileID: 1671012831}
-<<<<<<< HEAD
   - {fileID: 738942613}
-=======
->>>>>>> parent of 3238da4 (your changes?)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &249506152
@@ -6164,15 +6161,9 @@ MonoBehaviour:
   - {x: 2.3042884, y: 0.75007075, z: 0}
   - {x: 5.540002, y: 0.7339726, z: 0}
   - {x: 4.637205, y: -0.5321963, z: 0}
-<<<<<<< HEAD
   m_ShapePathHash: -1736727894
   m_Mesh: {fileID: 754670388}
   m_InstanceId: 29984
-=======
-  m_ShapePathHash: -1881446966
-  m_Mesh: {fileID: 1932269164}
-  m_InstanceId: 34298
->>>>>>> parent of 3238da4 (your changes?)
   m_LocalBounds:
     m_Center: {x: -0.037981033, y: -0.56997144, z: 0}
     m_Extent: {x: 5.577983, y: 1.8512787, z: 0}
@@ -8235,7 +8226,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
-<<<<<<< HEAD
 --- !u!43 &727663438
 Mesh:
   m_ObjectHideFlags: 0
@@ -8672,8 +8662,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
-=======
->>>>>>> parent of 3238da4 (your changes?)
 --- !u!1 &766111677
 GameObject:
   m_ObjectHideFlags: 0
@@ -17027,13 +17015,8 @@ MonoBehaviour:
   - {x: 0.35684857, y: 3.296215, z: -0.0000000036224428}
   - {x: -0.7953018, y: -3.6162405, z: -0.0000000036224428}
   m_ShapePathHash: -748073398
-<<<<<<< HEAD
   m_Mesh: {fileID: 727663438}
   m_InstanceId: 30296
-=======
-  m_Mesh: {fileID: 335172698}
-  m_InstanceId: 34610
->>>>>>> parent of 3238da4 (your changes?)
   m_LocalBounds:
     m_Center: {x: 0.014685154, y: -0.17265391, z: 0}
     m_Extent: {x: 0.80998695, y: 3.468869, z: 0}
