@@ -5744,6 +5744,7 @@ MonoBehaviour:
   insideBG: {fileID: 1606903420}
   boatInsideCollider: {fileID: 1538091464}
   rain: {fileID: 486619361}
+  sunbeams: {fileID: 853601814}
   wakeUp: {fileID: 1538519215}
   waves: {fileID: 549732236}
   harpScript: {fileID: 863534863}
@@ -16866,6 +16867,7 @@ MonoBehaviour:
   boatInside: {fileID: 1797254785}
   boatInsideCollider: {fileID: 1538091464}
   rain: {fileID: 486619361}
+  sunbeams: {fileID: 853601814}
   waves: {fileID: 549732236}
   player: {fileID: 0}
   harpoon: {fileID: 1014687534}

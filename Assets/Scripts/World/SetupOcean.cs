@@ -11,10 +11,12 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private GameObject insideBG;
     [SerializeField] private GameObject boatInsideCollider; // Inside boat Colliders
     [SerializeField] private GameObject rain;
+    [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject wakeUp;
     [SerializeField] private WaveManager waves;
     [SerializeField] private HarpoonGun2 harpScript;
     [SerializeField] private Camera cam;
+    
     
 
     [Header("Audio")]
@@ -47,6 +49,7 @@ public class SetupOcean : MonoBehaviour
         player.SetActive(false);
         boatCollider.SetActive(false);
         rain.SetActive(false);
+        sunbeams.SetActive(false);
         waves.ShowWaves(false);
 
 
