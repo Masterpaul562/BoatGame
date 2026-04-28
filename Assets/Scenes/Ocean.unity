@@ -6064,10 +6064,7 @@ Transform:
   - {fileID: 1637979298}
   - {fileID: 1671012831}
 <<<<<<< HEAD
-<<<<<<< HEAD
   - {fileID: 738942613}
-=======
->>>>>>> parent of 3238da4 (your changes?)
 =======
 >>>>>>> parent of 3238da4 (your changes?)
   m_Father: {fileID: 0}
@@ -6168,15 +6165,9 @@ MonoBehaviour:
   - {x: 5.540002, y: 0.7339726, z: 0}
   - {x: 4.637205, y: -0.5321963, z: 0}
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_ShapePathHash: -1736727894
   m_Mesh: {fileID: 754670388}
   m_InstanceId: 29984
-=======
-  m_ShapePathHash: -1881446966
-  m_Mesh: {fileID: 1932269164}
-  m_InstanceId: 34298
->>>>>>> parent of 3238da4 (your changes?)
 =======
   m_ShapePathHash: -1881446966
   m_Mesh: {fileID: 1932269164}
@@ -8245,7 +8236,6 @@ Mesh:
     size: 0
     path: 
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!43 &727663438
 Mesh:
   m_ObjectHideFlags: 0
@@ -8682,8 +8672,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
-=======
->>>>>>> parent of 3238da4 (your changes?)
 =======
 >>>>>>> parent of 3238da4 (your changes?)
 --- !u!1 &766111677
@@ -17040,13 +17028,8 @@ MonoBehaviour:
   - {x: -0.7953018, y: -3.6162405, z: -0.0000000036224428}
   m_ShapePathHash: -748073398
 <<<<<<< HEAD
-<<<<<<< HEAD
   m_Mesh: {fileID: 727663438}
   m_InstanceId: 30296
-=======
-  m_Mesh: {fileID: 335172698}
-  m_InstanceId: 34610
->>>>>>> parent of 3238da4 (your changes?)
 =======
   m_Mesh: {fileID: 335172698}
   m_InstanceId: 34610
