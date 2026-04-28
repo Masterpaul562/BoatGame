@@ -1,23 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingCity : MonoBehaviour
 {
-    [Range(-1, 1)] public int direction;
-    public float speed;
+    [Header("Base scrolling speed")]
+    public float scrollSpeed = 1f;
 
-    private float x;
+    [Header("How much boat knots affect scrolling")]
+    public float knotsMultiplier = 0.1f;
 
+    [Header("Boat reference")]
+    public FishEngineReal boat;
 
-    private void Update()
+    void Update()
     {
-        MoveCity();
+        MoveLeft();
     }
 
-    private void MoveCity()
+    void MoveLeft()
     {
+        float finalSpeed = scrollSpeed + (boat.knots * knotsMultiplier);
 
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x -1,transform.position.y), Time.deltaTime * direction * speed) ;
+        transform.Translate(Vector2.left * finalSpeed * Time.deltaTime);
     }
 }
