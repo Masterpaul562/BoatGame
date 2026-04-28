@@ -52,15 +52,18 @@ public class Albatross : MonoBehaviour
     private void Flying()
     {
         float speedDiffrence = Mathf.Abs(speed - boat.currentSpeed);
-        float camEdge = (cam.GetComponent<CamSizeManager>().worldWidth / 2) + 1;
+        float camEdge = (cam.GetComponent<CamSizeManager>().worldWidth / 2) + 10;
+
+        float y = Mathf.Sin(Time.time);
 
         if ( speed> boat.currentSpeed)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge,boat.transform.position.y+3 ), Time.deltaTime * speedDiffrence * speedMultiplier);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge,cam.GetComponent<CamSizeManager>().worldHeight), Time.deltaTime * speedDiffrence * speedMultiplier);
         } else
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, boat.transform.position.y + 1), Time.deltaTime * speedDiffrence * speedMultiplier);
         }
+       // transform.position = new Vector2(transform.position.x,transform.position.y + y);
     }
     
     private void Spawn()
