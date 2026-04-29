@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class HoleManager : MonoBehaviour
 {
+
+    [Header("Info")]
     public List<GameObject> holes = new List<GameObject>();
+    public float waterLevel;
+
+    [Header("Settings")]
+    public float waterSpeed;
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
@@ -12,16 +18,24 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private Transform boat;
     [SerializeField] private Sprite spriteHole1;
     [SerializeField] private Sprite spriteHole2;
+    [SerializeField] private GameObject floodWater;
+
+    
 
     private void Update()
     {
        if( Input.GetMouseButtonDown(0)){
         CreateHole();
        }
+       if(holes.Count > 0)
+        {
+            FloodBoat();
+        }
     }
 
     public void CreateHole()
     {
+        
        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
        for(int i = 0; i < holes.Count; i++){
 
@@ -36,6 +50,7 @@ public class HoleManager : MonoBehaviour
 
         var hole = Instantiate(holePrefab,spawnPos, Quaternion.identity, boat);
         holes.Add(hole);
+        floodWater.SetActive(true);
 
     }
 
@@ -45,6 +60,13 @@ public class HoleManager : MonoBehaviour
         Random.Range(bound.min.x,bound.max.x),
         Random.Range(bound.min.y,bound.max.y)
         );
+    }
+
+
+    private void FloodBoat()
+    {
+        waterLevel += waterSpeed * holes.Count * Time.deltaTime;
+        floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
     }
 
 }

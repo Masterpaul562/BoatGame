@@ -5743,6 +5743,8 @@ MonoBehaviour:
   boatInside: {fileID: 1797254785}
   insideBG: {fileID: 1606903420}
   boatInsideCollider: {fileID: 1538091464}
+  outsideBoatSprite: {fileID: 471948654}
+  propelor: {fileID: 82109671}
   rain: {fileID: 486619361}
   sunbeams: {fileID: 853601814}
   wakeUp: {fileID: 1538519215}
@@ -5844,7 +5846,7 @@ GameObject:
   - component: {fileID: 224600492}
   - component: {fileID: 224600493}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Needle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6122,11 +6124,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holes: []
+  waterLevel: 0
+  waterSpeed: 0.1
   holePrefab: {fileID: 832765794400603808, guid: e8f949a125918904ea0576a50d8ffe65, type: 3}
   spawnLocation: {fileID: 1876630111}
   boat: {fileID: 1797254787}
   spriteHole1: {fileID: 21300000, guid: 8d7f6551770a844ed8d8b7705b1d9360, type: 3}
   spriteHole2: {fileID: 21300000, guid: db271b889c90442ef8f8ad4fac34b746, type: 3}
+  floodWater: {fileID: 1119421216}
 --- !u!114 &249506155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12943,6 +12948,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119421216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119421217}
+  - component: {fileID: 1119421218}
+  m_Layer: 0
+  m_Name: FloodingWater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1119421217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119421216}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.31, y: -3.22, z: 0.22058824}
+  m_LocalScale: {x: 44.484104, y: 0.33, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1797254787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1119421218
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119421216}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -139475533
+  m_SortingLayer: 2
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: f3a54780f06cf4247a6b9e885751186a, type: 3}
+  m_Color: {r: 0.4337446, g: 0.5166579, b: 0.57232696, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 1
+  m_SpriteSortPoint: 1
 --- !u!1 &1183558243
 GameObject:
   m_ObjectHideFlags: 0
@@ -16879,6 +16968,8 @@ MonoBehaviour:
   boatCollider: {fileID: 1345763540}
   boatInside: {fileID: 1797254785}
   boatInsideCollider: {fileID: 1538091464}
+  outsideBoatSprite: {fileID: 471948654}
+  propelor: {fileID: 82109671}
   rain: {fileID: 486619361}
   sunbeams: {fileID: 853601814}
   waves: {fileID: 549732236}
@@ -23110,6 +23201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797254787}
   - component: {fileID: 1797254786}
+  - component: {fileID: 1797254788}
   m_Layer: 0
   m_Name: Boat Interior No background
   m_TagString: Untagged
@@ -23184,8 +23276,60 @@ Transform:
   m_Children:
   - {fileID: 1481207663}
   - {fileID: 224600492}
+  - {fileID: 1119421217}
   m_Father: {fileID: 536662836}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &1797254788
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797254785}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 15d0c3709176029428a0da2f8cecf0b5, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d6fdf2a56d5384f29af6207f9c89a973, type: 3}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1800020384
 GameObject:
   m_ObjectHideFlags: 0

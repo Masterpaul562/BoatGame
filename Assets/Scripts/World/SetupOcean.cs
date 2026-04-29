@@ -9,7 +9,9 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private GameObject boatCollider; // outside colliders
     [SerializeField] private GameObject boatInside; // inside boat art BG
     [SerializeField] private GameObject insideBG;
-    [SerializeField] private GameObject boatInsideCollider; // Inside boat Colliders
+    [SerializeField] private GameObject boatInsideCollider;// Inside boat Colliders
+    [SerializeField] private GameObject outsideBoatSprite;
+    [SerializeField] private GameObject propelor;
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject wakeUp;
@@ -48,6 +50,8 @@ public class SetupOcean : MonoBehaviour
     {
         player.SetActive(false);
         boatCollider.SetActive(false);
+        propelor.SetActive(false);
+        outsideBoatSprite.SetActive(false);
         rain.SetActive(false);
         sunbeams.SetActive(false);
         waves.ShowWaves(false);

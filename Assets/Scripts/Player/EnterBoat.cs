@@ -11,6 +11,8 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject boatCollider; // outside colliders
     [SerializeField] private GameObject boatInside; // inside boat art BG
     [SerializeField] private GameObject boatInsideCollider; // Inside boat Colliders
+    [SerializeField] private GameObject outsideBoatSprite;
+    [SerializeField] private GameObject propelor;
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
     [SerializeField] private WaveManager waves;
@@ -124,6 +126,8 @@ public class EnterBoat : MonoBehaviour
         StartCoroutine(zoom.FadeBG(true, 71));
         waves.ShowWaves(false);
         rain.SetActive(false);
+        propelor.SetActive(false);
+        outsideBoatSprite.SetActive(false);
         sunbeams.SetActive(false);
         inBoat = true;
         animator.SetBool("IsInside", true);
@@ -171,6 +175,8 @@ public class EnterBoat : MonoBehaviour
         EnterCd = true;
         inBoat = false;
         animator.SetBool("IsInside", false);
+        propelor.SetActive(true);
+        outsideBoatSprite.SetActive(true);
         rain.SetActive(true);
         sunbeams.SetActive(true);
         waves.ShowWaves(true);
