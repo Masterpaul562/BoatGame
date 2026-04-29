@@ -10,6 +10,7 @@ public class SpeedManager : MonoBehaviour
     [Header("Earwig")]
     [SerializeField] private GameObject earwig;
     [SerializeField] private Transform spawnPos;
+    public float earwigWaitTime;
     public bool earwigSpawned;
     public float earwigSpeed;
     public float earwigDistance;
@@ -19,7 +20,7 @@ public class SpeedManager : MonoBehaviour
     private void Start()
     {
         earwigSpawned = false;
-        StartCoroutine(EarwigMove());
+        StartCoroutine(EarwigWait());
     }
 
     private void Update()
@@ -38,6 +39,13 @@ public class SpeedManager : MonoBehaviour
         earwig.SetActive(true);
         earwig.transform.position = spawnPos.position;
         earwigSpawned = true;
+    }
+
+
+    private IEnumerator EarwigWait()
+    {
+        yield return new WaitForSeconds(earwigWaitTime);
+        StartCoroutine(EarwigMove());
     }
 
     private IEnumerator EarwigMove()

@@ -6103,6 +6103,7 @@ MonoBehaviour:
   engine: {fileID: 1602757267}
   earwig: {fileID: 1590926964}
   spawnPos: {fileID: 1585828785}
+  earwigWaitTime: 60
   earwigSpawned: 0
   earwigSpeed: 10
   earwigDistance: 100
@@ -17055,8 +17056,8 @@ MonoBehaviour:
   - {x: 0.35684857, y: 3.296215, z: -0.0000000036224428}
   - {x: -0.7953018, y: -3.6162405, z: -0.0000000036224428}
   m_ShapePathHash: -748073398
-  m_Mesh: {fileID: 1709234052}
-  m_InstanceId: 30344
+  m_Mesh: {fileID: 1729902340}
+  m_InstanceId: 30342
   m_LocalBounds:
     m_Center: {x: 0.014685154, y: -0.17265391, z: 0}
     m_Extent: {x: 0.80998695, y: 3.468869, z: 0}
@@ -22828,7 +22829,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!43 &1709234052
+--- !u!43 &1729902340
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -10,6 +10,9 @@ public class Earwiggy : MonoBehaviour
     [SerializeField] private SpeedManager speedMan;
     [SerializeField] private HoleManager hole;
 
+
+
+    [Header("Info")]
     public bool hasAttack;
     public bool isSwiming;
 
