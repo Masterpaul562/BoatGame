@@ -76,7 +76,10 @@ public class HarpoonGun2 : MonoBehaviour
         if (canFire && Input.GetKeyDown(fireKey))
         {
             anim.SetTrigger("Fire");
-            player.GetComponent<Animator>().SetTrigger("Fire");
+            if (!player.GetComponent<PlayerMove>().isMoving)
+            {
+                player.GetComponent<Animator>().SetTrigger("Fire");
+            }
 
             player.GetComponent<PlayerMove>().Recoil();
         }
