@@ -11,6 +11,7 @@ public class HoleManager : MonoBehaviour
 
     [Header("Settings")]
     public float waterSpeed;
+    public float sinkLevel;
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
