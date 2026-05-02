@@ -76,6 +76,9 @@ public class HarpoonGun2 : MonoBehaviour
         if (canFire && Input.GetKeyDown(fireKey))
         {
             anim.SetTrigger("Fire");
+            player.GetComponent<Animator>().SetTrigger("Fire");
+
+            player.GetComponent<PlayerMove>().Recoil();
         }
     }
 
@@ -106,6 +109,9 @@ public class HarpoonGun2 : MonoBehaviour
         hasFire = true;
         canFire = false;
         harpHead.transform.parent = player.transform.parent;
+
+       
+        
 
        // if (player.GetComponent<Animator>().GetBool("isFacingRight"))
        // {

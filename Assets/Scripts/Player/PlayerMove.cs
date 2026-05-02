@@ -31,6 +31,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+       // Recoil();
         if (canFlip)
         {
             FlipCheck();
@@ -126,5 +127,16 @@ public class PlayerMove : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
         
+    }
+    public void Recoil()
+    {
+        if (isFacingRight)
+        {
+            transform.Translate(Vector2.left * 0.1f);
+        } else
+        {
+            transform.Translate(Vector2.right * 0.1f);
+        }
+       
     }
 }
