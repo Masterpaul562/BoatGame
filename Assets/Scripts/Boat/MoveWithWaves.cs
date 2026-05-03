@@ -12,6 +12,7 @@ public class MoveWithWaves : MonoBehaviour
 
     [Header("Boat Movement")]
     public float yOffset;
+    public float rotationOffset;
     public float rotationPower;
    // public float speedWaveMult;
   //  public float speedRotationPower;
@@ -35,7 +36,7 @@ public class MoveWithWaves : MonoBehaviour
             transform.position = new Vector2(transform.position.x, y + yOffset);
 
             // Rotate boat based on wave tilt
-            Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower);
+            Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower + rotationOffset);
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * 2);
 
             // Spray detection

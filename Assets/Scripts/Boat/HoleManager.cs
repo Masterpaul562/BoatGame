@@ -12,6 +12,8 @@ public class HoleManager : MonoBehaviour
     [Header("Settings")]
     public float waterSpeed;
     public float sinkLevel;
+    public float sinkSpeed;
+    public float sinkRotSpeed;
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
@@ -25,12 +27,18 @@ public class HoleManager : MonoBehaviour
 
     private void Update()
     {
-       if( Input.GetMouseButtonDown(0)){
+        if( Input.GetMouseButtonDown(0))
+        {
         CreateHole();
-       }
-       if(holes.Count > 0)
+        }
+        if(holes.Count > 0)
         {
             FloodBoat();
+        }
+
+        if(waterLevel> sinkLevel)
+        {
+            SinkBoat();
         }
     }
 
@@ -38,9 +46,7 @@ public class HoleManager : MonoBehaviour
     {
         
        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
-       for(int i = 0; i < holes.Count; i++){
-
-       }
+     
 
        if(Random.Range(0,2) == 1){
        holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
@@ -68,6 +74,13 @@ public class HoleManager : MonoBehaviour
     {
         waterLevel += waterSpeed * holes.Count * Time.deltaTime;
         floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+    }
+    private void SinkBoat()
+    {
+        var wave = this.gameObject.GetComponent<MoveWithWaves>();
+        wave.yOffset -= sinkSpeed * waterLevel * Time.deltaTime;
+
+        wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
     }
 
 }
