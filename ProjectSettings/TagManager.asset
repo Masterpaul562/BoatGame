@@ -15,7 +15,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoPostProcessing
   - Water
   - UI
   - Interactable
@@ -26,7 +26,7 @@ TagManager:
   - Lines
   - Post Processing
   - Sky
-  - NoPost
+  - 
   - 
   - 
   - 
