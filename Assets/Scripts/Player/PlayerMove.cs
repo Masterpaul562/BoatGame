@@ -132,10 +132,10 @@ public class PlayerMove : MonoBehaviour
     {
         if (isFacingRight)
         {
-            transform.Translate(Vector2.left * 0.1f);
+            transform.Translate(Vector2.left * 0.05f);
         } else
         {
-            transform.Translate(Vector2.right * 0.1f);
+            transform.Translate(Vector2.right * 0.05f);
         }
        
     }
