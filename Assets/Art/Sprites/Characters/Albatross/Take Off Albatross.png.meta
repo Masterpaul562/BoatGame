@@ -127,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3240
+        y: 2160
         width: 1920
         height: 1080
       alignment: 0
@@ -148,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 3240
+        y: 2160
         width: 1920
         height: 1080
       alignment: 0
@@ -169,7 +169,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3840
-        y: 3240
+        y: 2160
         width: 1920
         height: 1080
       alignment: 0
@@ -190,7 +190,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5760
-        y: 3240
+        y: 2160
         width: 1920
         height: 1080
       alignment: 0
@@ -211,7 +211,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2160
+        y: 1080
         width: 1920
         height: 1080
       alignment: 0
@@ -232,7 +232,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 2160
+        y: 1080
         width: 1920
         height: 1080
       alignment: 0
@@ -253,7 +253,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3840
-        y: 2160
+        y: 1080
         width: 1920
         height: 1080
       alignment: 0
@@ -274,7 +274,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5760
-        y: 2160
+        y: 1080
         width: 1920
         height: 1080
       alignment: 0
@@ -295,7 +295,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1080
+        y: 0
         width: 1920
         height: 1080
       alignment: 0
@@ -316,7 +316,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1920
-        y: 1080
+        y: 0
         width: 1920
         height: 1080
       alignment: 0
@@ -337,7 +337,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3840
-        y: 1080
+        y: 0
         width: 1920
         height: 1080
       alignment: 0
@@ -349,48 +349,6 @@ TextureImporter:
       bones: []
       spriteID: de911715db321b5428d7f10d774967e4
       internalID: 1142856857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Take Off Albatross_11
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb227e8eb3d744f4981454b956354cf7
-      internalID: -943428011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Take Off Albatross_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7e0ec51007936948b7a45faa14792df
-      internalID: 1232764291
       vertices: []
       indices: 
       edges: []
@@ -409,8 +367,6 @@ TextureImporter:
       Take Off Albatross_0: -185759421
       Take Off Albatross_1: -704376325
       Take Off Albatross_10: 1142856857
-      Take Off Albatross_11: -943428011
-      Take Off Albatross_12: 1232764291
       Take Off Albatross_2: -958073244
       Take Off Albatross_3: -951821014
       Take Off Albatross_4: 473524652
