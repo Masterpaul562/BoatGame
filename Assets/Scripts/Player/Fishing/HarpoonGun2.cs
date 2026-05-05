@@ -81,7 +81,7 @@ public class HarpoonGun2 : MonoBehaviour
                 player.GetComponent<Animator>().SetTrigger("Fire");
             }
 
-            player.GetComponent<PlayerMove>().Recoil();
+            
         }
     }
 
@@ -113,6 +113,7 @@ public class HarpoonGun2 : MonoBehaviour
         canFire = false;
         harpHead.transform.parent = player.transform.parent;
 
+        player.GetComponent<PlayerMove>().Recoil();
         player.GetComponent<PlayerMove>().freeze = true;
 
 
