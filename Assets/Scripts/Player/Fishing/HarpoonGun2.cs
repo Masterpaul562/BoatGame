@@ -76,7 +76,7 @@ public class HarpoonGun2 : MonoBehaviour
         if (canFire && Input.GetKeyDown(fireKey))
         {
             anim.SetTrigger("Fire");
-            if (!player.GetComponent<PlayerMove>().isMoving)
+            if (!player.GetComponent<EnterBoat>().inBoat || player.GetComponent<EnterBoat>().inBoat && !player.GetComponent<PlayerMove>().isMoving)
             {
                 player.GetComponent<Animator>().SetTrigger("Fire");
             }
@@ -113,12 +113,12 @@ public class HarpoonGun2 : MonoBehaviour
         canFire = false;
         harpHead.transform.parent = player.transform.parent;
 
-       
-        
+        player.GetComponent<PlayerMove>().freeze = true;
 
-       // if (player.GetComponent<Animator>().GetBool("isFacingRight"))
-       // {
-       Vector2 direction = harpHead.transform.position - this.direction.position;
+
+        // if (player.GetComponent<Animator>().GetBool("isFacingRight"))
+        // {
+        Vector2 direction = harpHead.transform.position - this.direction.position;
             harpHead.GetComponent<Rigidbody2D>().AddForce(direction * power, ForceMode2D.Impulse);
             harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x,0), ForceMode2D.Impulse);
        // }
@@ -149,6 +149,7 @@ public class HarpoonGun2 : MonoBehaviour
         harpHead.transform.parent = headHolder.transform;
         harpHead.transform.SetLocalPositionAndRotation(harpHead.transform.localPosition, quatZero);
         isReeling = false;
+        player.GetComponent<PlayerMove>().freeze = false;
 
         if (fishHooked)
         {
