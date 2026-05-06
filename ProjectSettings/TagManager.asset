@@ -11,6 +11,7 @@ TagManager:
   - Bobber
   - Engine
   - Fish
+  - Hole
   layers:
   - Default
   - TransparentFX

@@ -40,25 +40,51 @@ public class HoleManager : MonoBehaviour
         {
             SinkBoat();
         }
+        
     }
 
     public void CreateHole()
     {
-        
-       Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
-     
 
-       if(Random.Range(0,2) == 1){
-       holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
-       }else
-       {
-         holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole2;
-       }
+        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
+        bool shouldSpawn = false;
+        if (holes.Count > 0)
+        {
+            for (int i = 0; i < holes.Count; i++)
+            {
+                if (spawnPos.x > holes[i].transform.position.x - 1 || spawnPos.x < holes[i].transform.position.x + 1)
+                {
+                    shouldSpawn = true;
+                    i = 1000;
+                }
+                else
+                {
+                    Debug.Log("Failed");
+                }
+            }
+        }
 
-        var hole = Instantiate(holePrefab,spawnPos, Quaternion.identity, boat);
-        holes.Add(hole);
-        floodWater.SetActive(true);
+        if (shouldSpawn || holes.Count<=0)
+        {
 
+
+            if (Random.Range(0, 2) == 1)
+            {
+                holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
+            }
+            else
+            {
+                holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole2;
+            }
+
+            var hole = Instantiate(holePrefab, spawnPos, Quaternion.identity, boat);
+            holes.Add(hole);
+            floodWater.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("Failed to Spawn");
+        }
     }
 
     private Vector2 FindSpawnLocation(Bounds bound)
