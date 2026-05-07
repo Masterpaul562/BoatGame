@@ -52,14 +52,16 @@ public class HoleManager : MonoBehaviour
         {
             for (int i = 0; i < holes.Count; i++)
             {
-                if (spawnPos.x > holes[i].transform.position.x - 1 || spawnPos.x < holes[i].transform.position.x + 1)
+                if (spawnPos.x > holes[i].transform.position.x - 0.1f && spawnPos.x < holes[i].transform.position.x + 0.1f)
                 {
-                    shouldSpawn = true;
-                    i = 1000;
+                  Debug.Log("Failed");
+                  shouldSpawn = false;
+                  i = 10000;
                 }
                 else
                 {
-                    Debug.Log("Failed");
+                    shouldSpawn = true;
+                    
                 }
             }
         }
