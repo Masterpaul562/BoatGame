@@ -100,6 +100,8 @@ public class PlayerMove : MonoBehaviour
             rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         }
     } 
+
+
     private void FlipCheck()
     {
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
@@ -118,6 +120,9 @@ public class PlayerMove : MonoBehaviour
 
 
     }
+
+
+
     public void Flip()
     {
         //harpHead.GetComponent<Rigidbody2D>().rotation = -harpHead.GetComponent<Rigidbody2D>().rotation;
@@ -128,6 +133,8 @@ public class PlayerMove : MonoBehaviour
         transform.localScale = localScale;
         
     }
+
+
     public void Recoil()
     {
         if (isFacingRight)
@@ -138,5 +145,11 @@ public class PlayerMove : MonoBehaviour
             transform.Translate(Vector2.right * 0.05f);
         }
        
+    }
+
+
+    public void Unfreeze()
+    {
+        freeze = false;
     }
 }

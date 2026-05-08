@@ -8,12 +8,17 @@ public class HoleManager : MonoBehaviour
     [Header("Info")]
     public List<GameObject> holes = new List<GameObject>();
     public float waterLevel;
+    private bool fixCD;
+    private int failedHoleSpawn;
 
     [Header("Settings")]
     public float waterSpeed;
     public float sinkLevel;
     public float sinkSpeed;
     public float sinkRotSpeed;
+    public float fixCDTime;
+    public bool shouldDrain;
+    
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
@@ -22,6 +27,9 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private Sprite spriteHole1;
     [SerializeField] private Sprite spriteHole2;
     [SerializeField] private GameObject floodWater;
+    [SerializeField] private GameObject player;
+    [SerializeField] private HarpoonGun2 fishing;
+    [SerializeField] private LayerMask interactable;
 
     
 
@@ -31,7 +39,7 @@ public class HoleManager : MonoBehaviour
         {
         CreateHole();
         }
-        if(holes.Count > 0)
+        if(holes.Count > 0 && shouldDrain)
         {
             FloodBoat();
         }
@@ -40,7 +48,14 @@ public class HoleManager : MonoBehaviour
         {
             SinkBoat();
         }
-        
+
+        float vert = Input.GetAxisRaw("Vertical");
+
+        if (vert < 0 && !fishing.isFishing && holes.Count > 0 && !fixCD)
+        {
+            FixHole();
+        }
+
     }
 
     public void CreateHole()
@@ -56,6 +71,7 @@ public class HoleManager : MonoBehaviour
                 {
                   Debug.Log("Failed");
                   shouldSpawn = false;
+                    
                   i = 10000;
                 }
                 else
@@ -69,7 +85,7 @@ public class HoleManager : MonoBehaviour
         if (shouldSpawn || holes.Count<=0)
         {
 
-
+            failedHoleSpawn = 0;
             if (Random.Range(0, 2) == 1)
             {
                 holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
@@ -85,7 +101,12 @@ public class HoleManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Failed to Spawn");
+            if (failedHoleSpawn < 4)
+            {
+                Debug.Log("Failed to Spawn");
+                CreateHole();
+                failedHoleSpawn++;
+            }
         }
     }
 
@@ -97,6 +118,38 @@ public class HoleManager : MonoBehaviour
         );
     }
 
+    private void FixHole()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(player.transform.position, Vector3.forward, 10, interactable);
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject.tag == "Hole")
+            {
+                int index = FindHole(hit.collider.gameObject);
+
+                player.GetComponent<PlayerMove>().freeze = true;
+                player.GetComponent<Animator>().SetTrigger("FixHole");
+
+                Destroy(holes[index]);
+                holes.RemoveAt(index);
+
+                fixCD = true;
+                StartCoroutine(FixCooldown());
+            }
+        }
+    }
+
+    private int FindHole(GameObject targetObj)
+    {
+        for(int i = 0; i < holes.Count; i++)
+        {
+            if (holes[i].gameObject == targetObj)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     private void FloodBoat()
     {
@@ -109,6 +162,11 @@ public class HoleManager : MonoBehaviour
         wave.yOffset -= sinkSpeed * waterLevel * Time.deltaTime;
 
         wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
+    }
+    private IEnumerator FixCooldown()
+    {
+        yield return new WaitForSeconds(fixCDTime);
+        fixCD = false;
     }
 
 }
