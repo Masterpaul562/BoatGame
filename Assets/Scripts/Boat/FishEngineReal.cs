@@ -25,17 +25,23 @@ public class FishEngineReal : MonoBehaviour
     [Header("Engine Levels")]
     public int powerStage = 0; // 0–3 bar sections
     public int powerSet = 0;   // engine level
+
+    [Header("Knots")]
     public float knots;
+    private float targetKnots;
+
+    [SerializeField] private float knotTransitionSpeed = 8f;
 
     private void Start()
     {
         shouldDrain = true;
         canFeed = true;
+
         inventory = player.GetComponent<FishInventory>();
         sprite = lightBar.GetComponent<SpriteRenderer>();
 
+        UpdateKnots(true);
         SetLightBar();
-        UpdateKnots();
     }
 
     private void Update()
@@ -51,11 +57,22 @@ public class FishEngineReal : MonoBehaviour
         {
             DrainPower();
         }
+
+        // Smoothly transition knots
+        knots = Mathf.MoveTowards(
+            knots,
+            targetKnots,
+            knotTransitionSpeed * Time.deltaTime
+        );
     }
 
     private void DrainPower()
     {
-        powerLevel = Mathf.MoveTowards(powerLevel, 0, Time.deltaTime * drainSpeed);
+        powerLevel = Mathf.MoveTowards(
+            powerLevel,
+            0,
+            Time.deltaTime * drainSpeed
+        );
 
         if (powerLevel <= 0)
         {
@@ -72,20 +89,19 @@ public class FishEngineReal : MonoBehaviour
                 {
                     powerSet--;
 
-
-                    powerStage = 3; // full bar after level drops
+                    powerStage = 3;
                     powerLevel = 100f;
 
                     UpdateKnots();
                     UpdateBarColor();
                     SetLightBar();
-
                 }
                 else
                 {
                     shouldDrain = true;
                     canFeed = true;
                     powerStage = 0;
+
                     StartCoroutine(Blink());
                 }
             }
@@ -114,9 +130,12 @@ public class FishEngineReal : MonoBehaviour
     private void FeedFish()
     {
         inventory.fishAmountOutside--;
+
         shouldDrain = true;
         powerLevel = 100f;
+
         powerStage++;
+
         StopAllCoroutines();
 
         if (powerStage > 3)
@@ -125,7 +144,6 @@ public class FishEngineReal : MonoBehaviour
             powerSet++;
 
             UpdateKnots();
-            
         }
 
         UpdateBarColor();
@@ -135,9 +153,14 @@ public class FishEngineReal : MonoBehaviour
         StartCoroutine(FeedCD());
     }
 
-    private void UpdateKnots()
+    private void UpdateKnots(bool instant = false)
     {
-        knots = powerSet * 5f;
+        targetKnots = powerSet * 5f;
+
+        if (instant)
+        {
+            knots = targetKnots;
+        }
     }
 
     private void SetLightBar()
@@ -146,7 +169,7 @@ public class FishEngineReal : MonoBehaviour
 
         Color color = sprite.color;
         color.a = 1f;
-        sprite.color = color;   
+        sprite.color = color;
 
         for (int i = 0; i < powerStage; i++)
         {
@@ -178,12 +201,17 @@ public class FishEngineReal : MonoBehaviour
         );
 
         Color color = sprite.color;
-        color.r = 1f; color.g = 0; color.b = 0f;
+
+        color.r = 1f;
+        color.g = 0f;
+        color.b = 0f;
 
         for (int i = 0; i < 6; i++)
         {
             color.a = (i % 2 == 0) ? 1f : 0f;
+
             sprite.color = color;
+
             yield return new WaitForSeconds(0.5f);
         }
     }
@@ -191,6 +219,7 @@ public class FishEngineReal : MonoBehaviour
     private IEnumerator FeedCD()
     {
         yield return new WaitForSeconds(0.5f);
+
         feedCD = false;
     }
 }
