@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 713f0c6a9f816421ab176796cfdbec8e
+guid: fabbd53651323b549bd01584baece6fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly Albatross_0
+      name: Glide Albatross_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 738442833025f4b42b07a1379ae66b41
-      internalID: -187822853
+      spriteID: e79e89b09e83ec646bf1085a28bae6d6
+      internalID: 1644168435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_1
+      name: Glide Albatross_1
       rect:
         serializedVersion: 2
         x: 1920
@@ -152,20 +152,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27e03b14bb9d147a24a6f3a48c1f21
-      internalID: -1979990379
+      spriteID: 53e7cef674f5ba74094b6792b53a3eb7
+      internalID: -315356979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_2
+      name: Glide Albatross_2
       rect:
         serializedVersion: 2
         x: 3840
@@ -173,20 +173,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dad7cc677d5ef7b41bf101ec81ef8816
-      internalID: -892599341
+      spriteID: c97fa623cab89d24fbabb47b116dfa61
+      internalID: -1450370718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_3
+      name: Glide Albatross_3
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d90df296e21272c43a34185d33da9f50
+      internalID: -1892074597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glide Albatross_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,20 +215,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05803cc7a59be1b44a591eb8aef73987
-      internalID: -68437052
+      spriteID: af812758a392e9b4a89243c79e7189c9
+      internalID: 2014461715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_4
+      name: Glide Albatross_5
       rect:
         serializedVersion: 2
         x: 1920
@@ -215,20 +236,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d063f7a0f9d717442929f89d8c2928a3
-      internalID: 615858036
+      spriteID: 6e903783b63845b458e8c2d9c58a4245
+      internalID: -1864480920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_5
+      name: Glide Albatross_6
       rect:
         serializedVersion: 2
         x: 3840
@@ -236,20 +257,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b7c1ef6fa0553479a26a434a8c2d84
-      internalID: -117052716
+      spriteID: 979aba5cec2336c439725c66229ed4b2
+      internalID: -31297170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_6
+      name: Glide Albatross_7
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68a4d79e947c0d549a1dcbbabdf713fc
+      internalID: -1020255599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glide Albatross_8
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +299,77 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbc092bfaf87804aa827d36512c9426
-      internalID: -956107583
+      spriteID: e1a3292397c4da0428e038cd335af121
+      internalID: 1031262094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glide Albatross_9
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b04b3ec67fdba4c97a36c2904deaff
+      internalID: 1568343515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glide Albatross_10
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd072974f18375b4491058841894b917
+      internalID: 1310484902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glide Albatross_11
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f451a62f48f6104b84d85828c3d36dd
+      internalID: -1429502719
       vertices: []
       indices: 
       edges: []
@@ -280,14 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fly Albatross_0: -187822853
-      Fly Albatross_1: -1979990379
-      Fly Albatross_2: -892599341
-      Fly Albatross_3: -68437052
-      Fly Albatross_4: 615858036
-      Fly Albatross_5: -117052716
-      Fly Albatross_6: -956107583
-      Fly Albatross_7: 593910470
+      Glide Albatross_0: 1644168435
+      Glide Albatross_1: -315356979
+      Glide Albatross_10: 1310484902
+      Glide Albatross_11: -1429502719
+      Glide Albatross_2: -1450370718
+      Glide Albatross_3: -1892074597
+      Glide Albatross_4: 2014461715
+      Glide Albatross_5: -1864480920
+      Glide Albatross_6: -31297170
+      Glide Albatross_7: -1020255599
+      Glide Albatross_8: 1031262094
+      Glide Albatross_9: 1568343515
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

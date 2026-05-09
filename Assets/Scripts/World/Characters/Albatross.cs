@@ -15,12 +15,18 @@ public class Albatross : MonoBehaviour
     public float waitMin;
     public float waitMax;
     public float speedMultiplier;
+    public int glideHeight;
+    private bool shouldGlide;
+    
 
     [Header("Info")]
     public bool perched;
     public bool isFlying;
+    public bool isGliding;
     public bool isSpawned;
     public float speed;
+    public int flaps;
+    public int flapAmount;
 
 
 
@@ -29,6 +35,7 @@ public class Albatross : MonoBehaviour
         animator = GetComponent<Animator>();
         perched = true;
         StartCoroutine(Emote());
+        flapAmount = Random.Range(2, 4);
     }
 
     private void Update()
@@ -44,6 +51,16 @@ public class Albatross : MonoBehaviour
 
         if ( isFlying )
         {
+            if (shouldGlide)
+            {
+                if (flaps > flapAmount)
+                {
+                    flaps = 0;
+                    flapAmount = flapAmount = Random.Range(2, 4);
+                    animator.SetTrigger("Glide");
+                    // isGliding = true;
+                }
+            }
             Flying();
         }
     }
@@ -53,16 +70,36 @@ public class Albatross : MonoBehaviour
     {
         float speedDiffrence = Mathf.Abs(speed - boat.currentSpeed);
         float camEdge = (cam.GetComponent<CamSizeManager>().worldWidth / 2) + 10;
+        float worldHeight = cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y;
 
-        float y = Mathf.Sin(Time.time);
-
+        float yOffset = Mathf.Sin(Time.time);
+       
         if ( speed> boat.currentSpeed)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge,cam.GetComponent<CamSizeManager>().worldHeight), Time.deltaTime * speedDiffrence * speedMultiplier);
+            if (isGliding) 
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, transform.position.y -1), Time.deltaTime * speedDiffrence * speedMultiplier);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, worldHeight -yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
+            }
         } else
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, boat.transform.position.y + 1), Time.deltaTime * speedDiffrence * speedMultiplier);
+            if (isGliding)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, transform.position.y - 1), Time.deltaTime * speedDiffrence * speedMultiplier);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, worldHeight - yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
+            }
+           
         }
+        if (transform.position.y > glideHeight)
+        {
+            shouldGlide = true;
+        }else { shouldGlide = false; }
        // transform.position = new Vector2(transform.position.x,transform.position.y + y);
     }
     
@@ -93,6 +130,7 @@ public class Albatross : MonoBehaviour
     public void TakeOff()
     {
         transform.parent = null;
+        perched = false;
         animator.SetBool("IsFlying", true);
         isFlying = true;
     }
@@ -103,6 +141,21 @@ public class Albatross : MonoBehaviour
         {
             animator.SetTrigger("TakeOff");
         }
+    }
+    private void Flap()
+    {
+        if (shouldGlide)
+        {
+            flaps++;
+        }
+    }
+    private void Gliding()
+    {
+        isGliding = true;
+    }
+    private void NotGliding()
+    {
+        isGliding = false;
     }
 
 }

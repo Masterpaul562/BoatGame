@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 713f0c6a9f816421ab176796cfdbec8e
+guid: f73b7e59efe6d894c83201faa43cd071
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,95 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly Albatross_0
+      name: Albatross Give Fish_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3240
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c3eee6de320cb4eafaf658d3679309
+      internalID: 1792457556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_1
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 3240
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36bd3174ea18934b899815cc53fff85
+      internalID: -1986294376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_2
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3240
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3f31ce74feba2419ea1342ea0798f9
+      internalID: -131031598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_3
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 3240
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a29c9aac03b0264e82e3b70c977de40
+      internalID: -761638181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_4
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +215,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 738442833025f4b42b07a1379ae66b41
-      internalID: -187822853
+      spriteID: bd7f84f48a1bdf14d912693c4e8f6c2e
+      internalID: -622581702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_1
+      name: Albatross Give Fish_5
       rect:
         serializedVersion: 2
         x: 1920
@@ -152,20 +236,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27e03b14bb9d147a24a6f3a48c1f21
-      internalID: -1979990379
+      spriteID: 4c782bccec65fcd4f8ccfaa4585b8eb9
+      internalID: 1762673500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_2
+      name: Albatross Give Fish_6
       rect:
         serializedVersion: 2
         x: 3840
@@ -173,20 +257,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dad7cc677d5ef7b41bf101ec81ef8816
-      internalID: -892599341
+      spriteID: b3685fcf20c25174b9d52f89d940f430
+      internalID: -607175225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_3
+      name: Albatross Give Fish_7
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66e6cd867b92b24ba59d27e10fa1336
+      internalID: -1626533581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_8
       rect:
         serializedVersion: 2
         x: 0
@@ -194,20 +299,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05803cc7a59be1b44a591eb8aef73987
-      internalID: -68437052
+      spriteID: 195a7110965be6b4abd58c33e8c97925
+      internalID: -1496514680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_4
+      name: Albatross Give Fish_9
       rect:
         serializedVersion: 2
         x: 1920
@@ -215,20 +320,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d063f7a0f9d717442929f89d8c2928a3
-      internalID: 615858036
+      spriteID: 97b30f4a49429f34fb9113c34fe69ed8
+      internalID: -1427775314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_5
+      name: Albatross Give Fish_10
       rect:
         serializedVersion: 2
         x: 3840
@@ -236,20 +341,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b7c1ef6fa0553479a26a434a8c2d84
-      internalID: -117052716
+      spriteID: 6a674b10503923446a2269f41288f554
+      internalID: 917213204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_6
+      name: Albatross Give Fish_11
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c6d61036bd59b48baa793f108aadc8
+      internalID: 76966841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_12
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +383,35 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbc092bfaf87804aa827d36512c9426
-      internalID: -956107583
+      spriteID: c913a4be9ca6a0b49a2151fde8a60961
+      internalID: -1618099290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Albatross Give Fish_13
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1f12ec0d05a624a8b6fad719aa5a69
+      internalID: -912126759
       vertices: []
       indices: 
       edges: []
@@ -280,14 +427,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fly Albatross_0: -187822853
-      Fly Albatross_1: -1979990379
-      Fly Albatross_2: -892599341
-      Fly Albatross_3: -68437052
-      Fly Albatross_4: 615858036
-      Fly Albatross_5: -117052716
-      Fly Albatross_6: -956107583
-      Fly Albatross_7: 593910470
+      Albatross Give Fish_0: 1792457556
+      Albatross Give Fish_1: -1986294376
+      Albatross Give Fish_10: 917213204
+      Albatross Give Fish_11: 76966841
+      Albatross Give Fish_12: -1618099290
+      Albatross Give Fish_13: -912126759
+      Albatross Give Fish_2: -131031598
+      Albatross Give Fish_3: -761638181
+      Albatross Give Fish_4: -622581702
+      Albatross Give Fish_5: 1762673500
+      Albatross Give Fish_6: -607175225
+      Albatross Give Fish_7: -1626533581
+      Albatross Give Fish_8: -1496514680
+      Albatross Give Fish_9: -1427775314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

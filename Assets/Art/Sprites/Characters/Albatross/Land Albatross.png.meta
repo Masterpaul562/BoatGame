@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 713f0c6a9f816421ab176796cfdbec8e
+guid: ceb75e4457ee69b41b68614f9bdcd0bd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly Albatross_0
+      name: Land Albatross_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 738442833025f4b42b07a1379ae66b41
-      internalID: -187822853
+      spriteID: 566b2eb31eafecb4a87a0700802f98cb
+      internalID: -1196785846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_1
+      name: Land Albatross_1
       rect:
         serializedVersion: 2
         x: 1920
@@ -152,20 +152,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27e03b14bb9d147a24a6f3a48c1f21
-      internalID: -1979990379
+      spriteID: fce1de2bc45d96b4b8e4c07e59d91198
+      internalID: 1852027901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_2
+      name: Land Albatross_2
       rect:
         serializedVersion: 2
         x: 3840
@@ -173,20 +173,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dad7cc677d5ef7b41bf101ec81ef8816
-      internalID: -892599341
+      spriteID: 210cb0963deb2084ea483dfb0575b7bb
+      internalID: 294077599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_3
+      name: Land Albatross_3
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 2160
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdc49515d6fc9240820135d3913b7f0
+      internalID: -666208041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land Albatross_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,20 +215,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05803cc7a59be1b44a591eb8aef73987
-      internalID: -68437052
+      spriteID: 031bf2e24f13bdc41bdcae38cca1dd14
+      internalID: 1831499789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_4
+      name: Land Albatross_5
       rect:
         serializedVersion: 2
         x: 1920
@@ -215,20 +236,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d063f7a0f9d717442929f89d8c2928a3
-      internalID: 615858036
+      spriteID: 3e637f23789d2164e9f5e7ac93c76ca6
+      internalID: -995415873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_5
+      name: Land Albatross_6
       rect:
         serializedVersion: 2
         x: 3840
@@ -236,20 +257,41 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b7c1ef6fa0553479a26a434a8c2d84
-      internalID: -117052716
+      spriteID: a259a3797d0f48548b3cc27cbec94793
+      internalID: -66522146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_6
+      name: Land Albatross_7
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 1080
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ac33e79e238f8479fca2ac95d2d229
+      internalID: -1092156943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land Albatross_8
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +299,56 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbc092bfaf87804aa827d36512c9426
-      internalID: -956107583
+      spriteID: 8395e875a6022794d9cdaa9283518905
+      internalID: 1879521299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land Albatross_9
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5045f3f7c619c7499c7d061df1d735d
+      internalID: -1205109163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Land Albatross_10
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a55eb8966fb7148919e3bb1bda284c
+      internalID: -1203090237
       vertices: []
       indices: 
       edges: []
@@ -280,14 +364,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fly Albatross_0: -187822853
-      Fly Albatross_1: -1979990379
-      Fly Albatross_2: -892599341
-      Fly Albatross_3: -68437052
-      Fly Albatross_4: 615858036
-      Fly Albatross_5: -117052716
-      Fly Albatross_6: -956107583
-      Fly Albatross_7: 593910470
+      Land Albatross_0: -1196785846
+      Land Albatross_1: 1852027901
+      Land Albatross_10: -1203090237
+      Land Albatross_2: 294077599
+      Land Albatross_3: -666208041
+      Land Albatross_4: 1831499789
+      Land Albatross_5: -995415873
+      Land Albatross_6: -66522146
+      Land Albatross_7: -1092156943
+      Land Albatross_8: 1879521299
+      Land Albatross_9: -1205109163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

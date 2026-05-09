@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 713f0c6a9f816421ab176796cfdbec8e
+guid: e9b0b1a8a4f4fd64990cc6ebcb6d9b9d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,6 +81,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fly Albatross_0
+      name: Soar Albatross_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,20 +131,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 738442833025f4b42b07a1379ae66b41
-      internalID: -187822853
+      spriteID: 6740d97078eaeec4d9e51b201e797e68
+      internalID: -1513487303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_1
+      name: Soar Albatross_1
       rect:
         serializedVersion: 2
         x: 1920
@@ -152,20 +152,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e27e03b14bb9d147a24a6f3a48c1f21
-      internalID: -1979990379
+      spriteID: c79b4e51bf5e61d409f0e9f870c2ef8b
+      internalID: 1373633816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_2
+      name: Soar Albatross_2
       rect:
         serializedVersion: 2
         x: 3840
@@ -173,20 +173,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dad7cc677d5ef7b41bf101ec81ef8816
-      internalID: -892599341
+      spriteID: 217f4ffc663904b428c9d3b5a3a92763
+      internalID: -240219844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_3
+      name: Soar Albatross_3
       rect:
         serializedVersion: 2
         x: 0
@@ -194,20 +194,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05803cc7a59be1b44a591eb8aef73987
-      internalID: -68437052
+      spriteID: c2092bf6d0a74d74cb95ade87d2321bc
+      internalID: -2081092070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_4
+      name: Soar Albatross_4
       rect:
         serializedVersion: 2
         x: 1920
@@ -215,20 +215,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d063f7a0f9d717442929f89d8c2928a3
-      internalID: 615858036
+      spriteID: 39db5278a239eab4aa00aff1ca097fbd
+      internalID: 29971163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_5
+      name: Soar Albatross_5
       rect:
         serializedVersion: 2
         x: 3840
@@ -236,20 +236,20 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90b7c1ef6fa0553479a26a434a8c2d84
-      internalID: -117052716
+      spriteID: 3e8467d6a0917074e80e8c636856cddc
+      internalID: -2023769475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fly Albatross_6
+      name: Soar Albatross_6
       rect:
         serializedVersion: 2
         x: 0
@@ -257,14 +257,14 @@ TextureImporter:
         width: 1920
         height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcbc092bfaf87804aa827d36512c9426
-      internalID: -956107583
+      spriteID: d648d4d30d52a6044b9ba155f224def4
+      internalID: 670051026
       vertices: []
       indices: 
       edges: []
@@ -280,14 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fly Albatross_0: -187822853
-      Fly Albatross_1: -1979990379
-      Fly Albatross_2: -892599341
-      Fly Albatross_3: -68437052
-      Fly Albatross_4: 615858036
-      Fly Albatross_5: -117052716
-      Fly Albatross_6: -956107583
-      Fly Albatross_7: 593910470
+      Soar Albatross_0: -1513487303
+      Soar Albatross_1: 1373633816
+      Soar Albatross_2: -240219844
+      Soar Albatross_3: -2081092070
+      Soar Albatross_4: 29971163
+      Soar Albatross_5: -2023769475
+      Soar Albatross_6: 670051026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
