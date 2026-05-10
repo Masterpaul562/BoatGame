@@ -10,12 +10,22 @@ public class Albatross : MonoBehaviour
     [SerializeField] private SpeedManager boat;
     [SerializeField] private Transform perchPosition;
     private Animator animator;
+    
 
     [Header("Settings")]
-    public float waitMin;
-    public float waitMax;
+    public int leaveWaitMin;
+    public int leaveWaitMax;  
+
+    public int emoteWaitMin;
+    public int emoteWaitMax;
+
     public float speedMultiplier;
     public int glideHeight;
+
+    public float bigFlySize;
+    public float sizeChangeSpeed;
+    
+
     private bool shouldGlide;
     
 
@@ -35,6 +45,7 @@ public class Albatross : MonoBehaviour
         animator = GetComponent<Animator>();
         perched = true;
         StartCoroutine(Emote());
+        StartCoroutine(NaturalLeave());
         flapAmount = Random.Range(2, 4);
     }
 
@@ -74,27 +85,32 @@ public class Albatross : MonoBehaviour
 
         float yOffset = Mathf.Sin(Time.time);
        
+        // flying to the right
         if ( speed> boat.currentSpeed)
         {
             if (isGliding) 
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, transform.position.y -1), Time.deltaTime * speedDiffrence * speedMultiplier);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, transform.position.y +1), Time.deltaTime * speedDiffrence * speedMultiplier);
             }
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, worldHeight -yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
+              
             }
+            transform.localScale = Vector2.MoveTowards(transform.localScale, new Vector2(bigFlySize, bigFlySize), Time.deltaTime * sizeChangeSpeed);
         } else
         {
+            // flying to the left
             if (isGliding)
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, transform.position.y - 1), Time.deltaTime * speedDiffrence * speedMultiplier);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, transform.position.y +1), Time.deltaTime * speedDiffrence * speedMultiplier);
             }
             else
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, worldHeight - yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
+               
             }
-           
+            transform.localScale = Vector2.MoveTowards(transform.localScale, Vector2.zero, Time.deltaTime * sizeChangeSpeed);
         }
         if (transform.position.y > glideHeight)
         {
@@ -112,7 +128,7 @@ public class Albatross : MonoBehaviour
     {
         while (perched)
         {
-            float time = Random.Range(waitMin, waitMax);
+            int time = Random.Range(emoteWaitMin, emoteWaitMax);
             yield return new WaitForSeconds(time);
 
             int emote = Random.Range(0, 2);
@@ -127,12 +143,20 @@ public class Albatross : MonoBehaviour
         }
     }
 
+    private IEnumerator NaturalLeave()
+    {
+        int waitTime = Random.Range(leaveWaitMin, leaveWaitMax);
+        yield return new WaitForSeconds(waitTime);
+        animator.SetTrigger("TakeOff");
+    }
+
     public void TakeOff()
     {
         transform.parent = null;
         perched = false;
         animator.SetBool("IsFlying", true);
         isFlying = true;
+        StopAllCoroutines();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
