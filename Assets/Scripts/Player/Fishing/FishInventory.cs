@@ -7,6 +7,7 @@ public class FishInventory : MonoBehaviour
     public int fishAmountOutside;
     public int fishAmountInside;
     public int junkAmount;
+    public FishEngineReal feed;
 
 
 
@@ -34,6 +35,10 @@ public class FishInventory : MonoBehaviour
             return fishAmountOutside;
         }
        
+    }
+    private void Feed()
+    {
+        feed.FeedFish();
     }
 
 }

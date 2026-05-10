@@ -20677,6 +20677,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   freeze: 0
   isMoving: 0
+  isTurning: 0
   maxSpeed: 4
   canFlip: 1
 --- !u!114 &1351622662
@@ -20735,6 +20736,7 @@ MonoBehaviour:
   fishAmountOutside: 20
   fishAmountInside: 0
   junkAmount: 0
+  feed: {fileID: 1602757267}
 --- !u!95 &1351622668
 Animator:
   serializedVersion: 5
@@ -22595,6 +22597,7 @@ Transform:
   - {fileID: 273278427}
   - {fileID: 1329958491}
   - {fileID: 1690719110}
+  - {fileID: 1945966502}
   m_Father: {fileID: 249506148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1602757266
@@ -22660,6 +22663,7 @@ MonoBehaviour:
     m_Bits: 64
   lightBar: {fileID: 273278425}
   fishing: {fileID: 863534863}
+  feedPos: {fileID: 1945966502}
   powerLevel: 10
   drainSpeed: 10
   shouldDrain: 0
@@ -30561,6 +30565,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 549732235}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1945966501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1945966502}
+  m_Layer: 6
+  m_Name: FeedPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1945966502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945966501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1602757265}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949189116
 GameObject:
   m_ObjectHideFlags: 0

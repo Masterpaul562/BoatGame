@@ -7,6 +7,7 @@ public class FishEngineReal : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private GameObject lightBar;
     [SerializeField] private HarpoonGun2 fishing;
+    [SerializeField] private Transform feedPos;
 
     private FishInventory inventory;
     private SpriteRenderer sprite;
@@ -121,13 +122,32 @@ public class FishEngineReal : MonoBehaviour
             hit.collider.CompareTag("Engine") &&
             inventory.fishAmountOutside > 0 &&
             canFeed &&
-            !feedCD)
+            !feedCD &&
+            !player.GetComponent<PlayerMove>().isTurning)
         {
-            FeedFish();
+            PlayerFeed();   
         }
     }
 
-    private void FeedFish()
+
+    private void PlayerFeed()
+    {
+        feedCD = true;
+        player.GetComponent<PlayerMove>().freeze = true;
+        player.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
+        player.transform.position = feedPos.position;
+        if (player.transform.localScale.x > 0)
+        {
+            player.transform.localScale = new Vector2(player.transform.localScale.x * -1, player.transform.localScale.y);
+        }
+
+
+        player.GetComponent<Animator>().SetTrigger("FeedFish");
+        player.GetComponent<Animator>().SetBool("isFacingRight", false);
+        player.GetComponent<PlayerMove>().isFacingRight = false;
+    }
+
+    public void FeedFish()
     {
         inventory.fishAmountOutside--;
 
@@ -149,7 +169,7 @@ public class FishEngineReal : MonoBehaviour
         UpdateBarColor();
         SetLightBar();
 
-        feedCD = true;
+        
         StartCoroutine(FeedCD());
     }
 

@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public Animator animator;
     public bool freeze;
     public bool isMoving;
+    public bool isTurning;
     private float currentVel;
     [SerializeField] private float maxSpeed;
     public bool canFlip;
@@ -32,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
        // Recoil();
-        if (canFlip)
+        if (canFlip&& !freeze)
         {
             FlipCheck();
         }
@@ -107,7 +108,7 @@ public class PlayerMove : MonoBehaviour
         if (isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
             canFlip = false;
-
+            isTurning = true;
 
             animator.SetTrigger("Turn");
             harpoon.Turn();
@@ -131,6 +132,7 @@ public class PlayerMove : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        isTurning = false;
         
     }
 
