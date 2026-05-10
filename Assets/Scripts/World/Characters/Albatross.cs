@@ -251,7 +251,7 @@ public class Albatross : MonoBehaviour
     private void CoughFish()
     {
         int random = Random.Range(0, 3);
-        Debug.Log(random);
+       
         if(random != 2)
         {
             animator.SetTrigger("Cough");
@@ -278,7 +278,7 @@ public class Albatross : MonoBehaviour
     private void GiveFish()
     {
         int random = Random.Range(1, 3);
-        Debug.Log(random + "YAY");
+       
         player.GetComponent<FishInventory>().AddFishOutside(random);
     }
 
