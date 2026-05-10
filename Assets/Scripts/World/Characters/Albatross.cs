@@ -9,6 +9,7 @@ public class Albatross : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private SpeedManager boat;
     [SerializeField] private Transform perchPosition;
+    private Vector2 ogSize;
     private Animator animator;
     
 
@@ -33,8 +34,11 @@ public class Albatross : MonoBehaviour
     public bool perched;
     public bool isFlying;
     public bool isGliding;
+
     public bool isSpawned;
+
     public float speed;
+
     public int flaps;
     public int flapAmount;
 
@@ -47,6 +51,7 @@ public class Albatross : MonoBehaviour
         StartCoroutine(Emote());
         StartCoroutine(NaturalLeave());
         flapAmount = Random.Range(2, 4);
+        ogSize = transform.localScale;
     }
 
     private void Update()
@@ -97,7 +102,7 @@ public class Albatross : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(camEdge, worldHeight -yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
               
             }
-            transform.localScale = Vector2.MoveTowards(transform.localScale, new Vector2(bigFlySize, bigFlySize), Time.deltaTime * sizeChangeSpeed);
+            ChangeSize(false);
         } else
         {
             // flying to the left
@@ -110,7 +115,7 @@ public class Albatross : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(-camEdge, worldHeight - yOffset), Time.deltaTime * speedDiffrence * speedMultiplier);
                
             }
-            transform.localScale = Vector2.MoveTowards(transform.localScale, Vector2.zero, Time.deltaTime * sizeChangeSpeed);
+            ChangeSize(true);
         }
         if (transform.position.y > glideHeight)
         {
@@ -166,6 +171,39 @@ public class Albatross : MonoBehaviour
             animator.SetTrigger("TakeOff");
         }
     }
+
+    private void ChangeSize(bool shrink)
+    {
+        if (shrink)
+        {
+            if(transform.position.x > boat.transform.position.x)
+            {
+                transform.localScale = Vector2.MoveTowards(transform.localScale,ogSize, Time.deltaTime * sizeChangeSpeed);
+            }
+            else
+            {
+                transform.localScale = Vector2.MoveTowards(transform.localScale, Vector2.zero, Time.deltaTime * sizeChangeSpeed);
+            }
+        }
+        else
+        {
+            if(transform.position.x < boat.transform.position.x)
+            {
+                transform.localScale = Vector2.MoveTowards(transform.localScale, ogSize, Time.deltaTime * sizeChangeSpeed);
+            }
+            else
+            {
+                transform.localScale = Vector2.MoveTowards(transform.localScale, new Vector2(bigFlySize,bigFlySize), Time.deltaTime * sizeChangeSpeed);
+            }
+        }
+    }
+
+
+
+
+
+
+    //animator functions
     private void Flap()
     {
         if (shouldGlide)
