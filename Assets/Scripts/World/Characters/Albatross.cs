@@ -25,10 +25,12 @@ public class Albatross : MonoBehaviour
 
     public float bigFlySize;
     public float sizeChangeSpeed;
+    public float perchSpeed;
     
 
     private bool shouldGlide;
     private bool shouldDespawn = true;
+    private bool perching = false;
     
 
     [Header("Info")]
@@ -78,7 +80,10 @@ public class Albatross : MonoBehaviour
                     // isGliding = true;
                 }
             }
-            Flying();
+            if (!perching)
+            {
+                Flying();
+            }
         }
         if (Mathf.Abs(transform.position.x) > cam.GetComponent<CamSizeManager>().worldWidth / 2 || transform.position.y > cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y)
         {
@@ -130,13 +135,10 @@ public class Albatross : MonoBehaviour
         {
             shouldGlide = true;
         }else { shouldGlide = false; }
-       // transform.position = new Vector2(transform.position.x,transform.position.y + y);
+      
     }
     
-    private void Spawn()
-    {
 
-    }
 
     private IEnumerator Emote()
     {
@@ -214,13 +216,47 @@ public class Albatross : MonoBehaviour
         if(Mathf.Abs(transform.position.x) > cam.GetComponent<CamSizeManager>().worldWidth / 2 || transform.position.y > cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y)
         {
             this.gameObject.SetActive(false);   
+            isSpawned = false;
         }
         shouldDespawn = true;
     }
 
+    public IEnumerator Perch()
+    {
+        shouldDespawn = false;
+        perching = true;
+        animator.SetTrigger("Soar");
+        while(Vector2.Distance(transform.position, perchPosition.position) > 0.1f)
+        {
+            transform.position = Vector2.MoveTowards(transform.position,perchPosition.position, Time.deltaTime * perchSpeed);
+            transform.localScale = transform.localScale = Vector2.MoveTowards(transform.localScale, ogSize, Time.deltaTime * sizeChangeSpeed);
+            yield return null;
+        }
 
+        transform.position = perchPosition.position;
 
+        animator.SetBool("IsFlying", false);
+        animator.SetTrigger("Perch");
 
+        isFlying = false;
+        perching = false;
+        perched = true;
+        shouldDespawn = true;
+
+        transform.parent = boat.transform;
+        CoughFish();
+        yield return null;
+    }
+
+    private void CoughFish()
+    {
+        int random = Random.Range(0, 3);
+        Debug.Log(random);
+        if(random != 2)
+        {
+            animator.SetTrigger("Cough");
+        }
+    }
 
 
     //animator functions
@@ -238,6 +274,12 @@ public class Albatross : MonoBehaviour
     private void NotGliding()
     {
         isGliding = false;
+    }
+    private void GiveFish()
+    {
+        int random = Random.Range(1, 3);
+        Debug.Log(random + "YAY");
+        player.GetComponent<FishInventory>().AddFishOutside(random);
     }
 
 }
