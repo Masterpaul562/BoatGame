@@ -277,9 +277,9 @@ public class Albatross : MonoBehaviour
     }
     private void GiveFish()
     {
-        int random = Random.Range(1, 3);
+       // int random = Random.Range(1, 3);
        
-        player.GetComponent<FishInventory>().AddFishOutside(random);
+        player.GetComponent<FishInventory>().AddFishOutside(1);
     }
 
 }
