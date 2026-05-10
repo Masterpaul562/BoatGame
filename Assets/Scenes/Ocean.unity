@@ -10847,8 +10847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581a43bf92c5da34e8be60186b12ea98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitMin: 3
-  waitMax: 5
+  waitMin: 30
+  waitMax: 200
   bird: {fileID: 974170260}
 --- !u!4 &594712442
 Transform:
