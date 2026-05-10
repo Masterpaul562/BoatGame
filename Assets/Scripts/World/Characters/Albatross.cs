@@ -28,6 +28,7 @@ public class Albatross : MonoBehaviour
     
 
     private bool shouldGlide;
+    private bool shouldDespawn = true;
     
 
     [Header("Info")]
@@ -78,6 +79,14 @@ public class Albatross : MonoBehaviour
                 }
             }
             Flying();
+        }
+        if (Mathf.Abs(transform.position.x) > cam.GetComponent<CamSizeManager>().worldWidth / 2 || transform.position.y > cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y)
+        {
+            if (shouldDespawn)
+            {
+                shouldDespawn = false;
+                StartCoroutine(Despawn());
+            }
         }
     }
 
@@ -196,6 +205,17 @@ public class Albatross : MonoBehaviour
                 transform.localScale = Vector2.MoveTowards(transform.localScale, new Vector2(bigFlySize,bigFlySize), Time.deltaTime * sizeChangeSpeed);
             }
         }
+    }
+
+    private IEnumerator Despawn()
+    {
+        Debug.Log("Despawning");
+        yield return new WaitForSeconds(5f);
+        if(Mathf.Abs(transform.position.x) > cam.GetComponent<CamSizeManager>().worldWidth / 2 || transform.position.y > cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y)
+        {
+            this.gameObject.SetActive(false);   
+        }
+        shouldDespawn = true;
     }
 
 
