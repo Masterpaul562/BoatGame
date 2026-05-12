@@ -6,6 +6,7 @@ using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
    private Camera cam;
+   public Camera secondaryCam;
    [Header("Zoom Settings")]
    public float ogZoom; // Pre zoom size
    public Vector3 ogPosition; // Pre zoom position
@@ -15,6 +16,7 @@ public class CameraZoom : MonoBehaviour
    [Header("Fade Settings")]
    [SerializeField] private SpriteRenderer insideBG;// the sprite renderer for the Black BG for inside
    private float alpha;
+
    
 
 
@@ -40,6 +42,8 @@ public class CameraZoom : MonoBehaviour
             float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime* Mathf.Abs(transform.position.y-targetPosition.y)*zoomSpeed);
             cam.transform.position = new Vector3(transform.position.x, y, transform.position.z);
         }
+        secondaryCam.orthographicSize = cam.orthographicSize;
+        secondaryCam.transform.position = cam.transform.position;
     }
 
     public IEnumerator FadeBG(bool black, float speed)

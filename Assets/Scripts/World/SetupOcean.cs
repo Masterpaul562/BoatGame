@@ -15,6 +15,8 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject wakeUp;
+    [SerializeField] private GameObject earwig;
+    [SerializeField] private FishManager fish;
     [SerializeField] private WaveManager waves;
     [SerializeField] private HarpoonGun2 harpScript;
     [SerializeField] private Camera cam;
@@ -55,6 +57,9 @@ public class SetupOcean : MonoBehaviour
         rain.SetActive(false);
         sunbeams.SetActive(false);
         waves.ShowWaves(false);
+
+        fish.HideFish(false);
+        earwig.GetComponent<SpriteMask>().enabled = false;
 
 
         boatInside.SetActive(true);

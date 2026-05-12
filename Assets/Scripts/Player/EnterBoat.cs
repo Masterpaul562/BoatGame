@@ -15,29 +15,31 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject propelor;
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
-    [SerializeField] private WaveManager waves;
     [SerializeField] private GameObject player; // Player Object
     [SerializeField] private GameObject harpoon; // Harpoon Object
+    [SerializeField] private GameObject earwig;
+
+    [SerializeField] private WaveManager waves;
     [SerializeField] private HarpoonGun2 harpScript;
+    [SerializeField] private FishManager fish;
 
-
-    [Header("")]
     [SerializeField] private Transform enterLocation; // Locations for enter and exit 
     [SerializeField] private Transform exitLocation;
-     
 
     [SerializeField] private string insideLayer, outsideLayer; // String to change layers 
 
     [SerializeField] private Animator animator; // 
     [SerializeField] private Animator doorAnim; // animator of the door
 
-    [Header("Zoom Settings")]
     [SerializeField] private Camera cam;
+    [SerializeField] private Camera secondaryCam;
+
+    [Header("Zoom Settings")]
     public float insideZoom;
     public float zoomSpeed;
 
 
-    [Header("")]
+    [Header("Info")]
     public bool canEnter = true;
     public bool inBoat;
     private bool EnterCd = true;
@@ -92,6 +94,12 @@ public class EnterBoat : MonoBehaviour
                 }
             }
         }
+
+        if(inBoat){
+            fish.HideFish(false);
+        }else {
+            fish.HideFish(true);
+        }
     }
     private IEnumerator Enter()
     {
@@ -103,8 +111,11 @@ public class EnterBoat : MonoBehaviour
         zoom.targetZoom = insideZoom;
         zoom.targetPosition = new Vector3 (cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
         zoom.zoomSpeed = 2.5f;
+       // secondaryCam.orthographicSize = zoom.targetZoom;
+       // secondaryCam.transform.position = zoom.targetPosition;
 
-
+       
+        earwig.GetComponent<SpriteMask>().enabled = false;
 
         //Play animation for door opening
         doorAnim.SetTrigger("Open");
@@ -162,6 +173,8 @@ public class EnterBoat : MonoBehaviour
         zoom.targetZoom = zoom.ogZoom;
         zoom.targetPosition = zoom.ogPosition;
         zoom.zoomSpeed = 1f;
+       //secondaryCam.orthographicSize = zoom.targetZoom;
+       // secondaryCam.transform.position = zoom.targetPosition;
         StartCoroutine(zoom.FadeBG(false, 42));
 
         // Audio
@@ -183,6 +196,10 @@ public class EnterBoat : MonoBehaviour
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
         boatInsideCollider.SetActive(false);
+
+
+       
+        earwig.GetComponent<SpriteMask>().enabled = true;
 
         //Play door animation
         doorAnim.SetBool("Open", false);
