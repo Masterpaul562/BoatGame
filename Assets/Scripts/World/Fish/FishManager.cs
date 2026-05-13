@@ -28,6 +28,13 @@ public class FishManager : MonoBehaviour
 
     }
 
+    public void HideFish(bool hide){
+         for (int i = 0; i < fishList.fish.Count; i++)
+        {
+            fishList.fish[i].transform.GetChild(0).GetComponent<SpriteMask>().enabled = hide;
+        }
+    }
+
 
 
 

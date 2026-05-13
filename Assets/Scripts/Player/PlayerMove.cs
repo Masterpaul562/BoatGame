@@ -1,21 +1,26 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    [Header("Refrence Objects")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] public float horizontalInput;
     [SerializeField] private HarpoonGun2 harpoon;
     [SerializeField] private GameObject harpHead;
-    public bool isFacingRight;
     public Animator animator;
+
+    [Header("Info")]
+    public bool isFacingRight;
     public bool freeze;
     public bool isMoving;
     public bool isTurning;
-    private float currentVel;
-    [SerializeField] private float maxSpeed;
+    public float currentVel;
+    public float horizontalInput;
+
+    [Header("Settings")]
+    public float maxSpeed;
+    public float moveSpeed;
     public bool canFlip;
     
 
@@ -24,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         animator = GetComponent<Animator>();
         animator.SetFloat("Speed", 0);
         animator.SetBool("isFacingRight", isFacingRight);
@@ -32,7 +38,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-       // Recoil();
+
         if (canFlip&& !freeze)
         {
             FlipCheck();
