@@ -28,7 +28,8 @@ public class HarpoonGun2 : MonoBehaviour
     private Quaternion quatZero;
     private Quaternion quatUp;
     private Quaternion quatDown;
-    private float distance;                                                           
+    private float distance;      
+    private float reelSpeed;                                                     
 
 
     [Header("Info")]
@@ -134,13 +135,25 @@ public class HarpoonGun2 : MonoBehaviour
     {
         harpHead.GetComponent<Rigidbody2D>().simulated = false;
         isReeling = true;
-
+        if(hookedFish){
+        yield return new WaitForSeconds(0.1f);
+        }
         distance = 100f;
+
+        if(hookedFish){
+         reelSpeed =0;
+        }else{
+            reelSpeed = 20;
+        }
         while (distance > 0.1f)
         {
-            Vector2 pos = Vector2.MoveTowards(harpHead.transform.position, harpEnd.position, Time.deltaTime * 20);
+            
+            Vector2 pos = Vector2.MoveTowards(harpHead.transform.position, harpEnd.position, Time.deltaTime * reelSpeed);
             harpHead.transform.position = pos;
             distance = Vector2.Distance(harpEnd.position, harpHead.transform.position);
+            if(fishHooked){
+                reelSpeed = Mathf.MoveTowards(reelSpeed,25f,Time.deltaTime*3);
+            }
             yield return null;
         }
         anim.SetTrigger("Reeled");

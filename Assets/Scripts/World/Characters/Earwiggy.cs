@@ -10,7 +10,9 @@ public class Earwiggy : MonoBehaviour
     [SerializeField] private SpeedManager speedMan;
     [SerializeField] private HoleManager hole;
 
-
+    [Header("Settings")]
+    public float swimAwaySpeed;
+    public float swimAwayAnimationSpeed;
 
     [Header("Info")]
     public bool hasAttack;
@@ -21,6 +23,13 @@ public class Earwiggy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         hasAttack = false;
+    }
+    
+    private void Update()
+    {
+        if(!isSwiming){
+            animator.SetFloat("Speed",1);
+        }
     }
 
 
@@ -37,13 +46,14 @@ public class Earwiggy : MonoBehaviour
 
     public IEnumerator SwimAway()
     {
+        animator.SetFloat("Speed",swimAwayAnimationSpeed);
         camShake.rumble = false;
         isSwiming = true;
         speedMan.earwigDistance = 100f;
         yield return null;
         while(Vector3.Distance(this.transform.position, camShake.transform.position) < 25)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 0.5f, transform.position.y - 1f, transform.position.z),Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x - 0.5f, transform.position.y - 1f, transform.position.z),Time.deltaTime*swimAwaySpeed);
             yield return null;
         }
         hasAttack = false;

@@ -217,6 +217,8 @@ public class Albatross : MonoBehaviour
         {
             this.gameObject.SetActive(false);   
             isSpawned = false;
+            transform.localScale = new Vector2 (0,0);
+            transform.position = new Vector2(-cam.GetComponent<CamSizeManager>().worldWidth / 2,cam.GetComponent<CamSizeManager>().worldHeight - cam.transform.position.y);
         }
         shouldDespawn = true;
     }
