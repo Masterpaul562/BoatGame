@@ -5,6 +5,7 @@ using UnityEngine;
 public class HarpoonHead : MonoBehaviour
 {
     public HarpoonGun2 harpoon;
+    public ParticleSystem blood;
     
     
     private void OnCollisionEnter2D(Collision2D other)
@@ -23,6 +24,8 @@ public class HarpoonHead : MonoBehaviour
         {
             Debug.Log("HIT");
             StopAllCoroutines();
+            blood.transform.parent = null;
+            blood.Play();
             StartCoroutine(harpoon.Reel());
         }
     }

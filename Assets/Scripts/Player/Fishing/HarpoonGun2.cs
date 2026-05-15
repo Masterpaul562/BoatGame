@@ -164,6 +164,8 @@ public class HarpoonGun2 : MonoBehaviour
         harpHead.transform.SetLocalPositionAndRotation(harpHead.transform.localPosition, quatZero);
         isReeling = false;
         player.GetComponent<PlayerMove>().freeze = false;
+        harpHead.GetComponent<HarpoonHead>().blood.transform.parent = harpHead.transform;
+        harpHead.GetComponent<HarpoonHead>().blood.transform.position = new Vector3(harpHead.transform.position.x,harpHead.transform.position.y,-14);
 
         if (fishHooked)
         {
