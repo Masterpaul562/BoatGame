@@ -43,10 +43,7 @@ public class HoleManager : MonoBehaviour
 
     private void Update()
     {
-        if (Physics2D.Raycast(drownCheck.position, Vector3.forward, 10, waterMask))
-        {
-            Debug.Log("ayay");
-        }
+        
         if( Input.GetMouseButtonDown(0))
         {
         CreateHole();
