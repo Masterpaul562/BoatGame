@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteMask))]
+[RequireComponent(typeof(SpriteRenderer))]
+
 public class MovingSpriteMask : MonoBehaviour
 {
     private SpriteRenderer render;

@@ -9,11 +9,15 @@ public class HoleManager : MonoBehaviour
     public List<GameObject> holes = new List<GameObject>();
     public float waterLevel;
     private bool fixCD;
+    public bool isSinking;
+
     private int failedHoleSpawn;
+    private bool hasDrown = false;
 
     [Header("Settings")]
     public float waterSpeed;
     public float sinkLevel;
+    public float drownLevel;
     public float sinkSpeed;
     public float sinkRotSpeed;
     public float fixCDTime;
@@ -28,6 +32,7 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private Sprite spriteHole2;
     [SerializeField] private GameObject floodWater;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerDrown;
     [SerializeField] private HarpoonGun2 fishing;
     [SerializeField] private LayerMask interactable;
 
@@ -46,7 +51,16 @@ public class HoleManager : MonoBehaviour
 
         if(waterLevel> sinkLevel)
         {
+            player.GetComponent<EnterBoat>().canEnter = false;
             SinkBoat();
+            if(waterLevel > drownLevel&& !hasDrown)
+            {
+                hasDrown = true;
+                if (player.GetComponent<EnterBoat>().inBoat)
+                {
+                    Drown();
+                }
+            }
         }
 
         float vert = Input.GetAxisRaw("Vertical");
@@ -153,16 +167,34 @@ public class HoleManager : MonoBehaviour
 
     private void FloodBoat()
     {
-        waterLevel += waterSpeed * holes.Count * Time.deltaTime;
-        floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+        if (!isSinking)
+        {
+            waterLevel += waterSpeed * holes.Count * Time.deltaTime;
+            floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+        }
+        else
+        {
+            waterSpeed = 0.7f;
+            waterLevel += waterSpeed* Time.deltaTime;
+            floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+        }
     }
     private void SinkBoat()
     {
+        isSinking = true;
         var wave = this.gameObject.GetComponent<MoveWithWaves>();
         wave.yOffset -= sinkSpeed * waterLevel * Time.deltaTime;
 
         wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
     }
+
+    private void Drown()
+    {
+        player.SetActive(false);
+        playerDrown.SetActive(true);
+        playerDrown.transform.position = player.transform.position;
+    }
+
     private IEnumerator FixCooldown()
     {
         yield return new WaitForSeconds(fixCDTime);
