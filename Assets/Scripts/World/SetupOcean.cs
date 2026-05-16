@@ -20,6 +20,7 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private WaveManager waves;
     [SerializeField] private HarpoonGun2 harpScript;
     [SerializeField] private Camera cam;
+    [SerializeField] private Camera secondaryCam;
     
     
 
@@ -60,6 +61,7 @@ public class SetupOcean : MonoBehaviour
 
         fish.HideFish(false);
         earwig.GetComponent<SpriteMask>().enabled = false;
+        secondaryCam.enabled = false;
 
 
         boatInside.SetActive(true);

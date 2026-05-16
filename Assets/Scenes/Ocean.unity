@@ -5623,6 +5623,7 @@ MonoBehaviour:
   waves: {fileID: 549732236}
   harpScript: {fileID: 863534863}
   cam: {fileID: 519420031}
+  secondaryCam: {fileID: 1485613952}
   insideWater: {fileID: 1458505803}
   insideCreak: {fileID: 687816666}
   musicPlayer: {fileID: 75165084}

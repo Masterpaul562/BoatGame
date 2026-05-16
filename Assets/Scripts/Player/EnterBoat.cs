@@ -145,6 +145,7 @@ public class EnterBoat : MonoBehaviour
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
+        secondaryCam.enabled = false;
 
         // change layers to display correctly
         player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
@@ -196,9 +197,10 @@ public class EnterBoat : MonoBehaviour
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
         boatInsideCollider.SetActive(false);
+        secondaryCam.enabled =true;
 
 
-       
+
         earwig.GetComponent<SpriteMask>().enabled = true;
 
         //Play door animation
