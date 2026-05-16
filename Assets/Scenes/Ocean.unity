@@ -6007,6 +6007,7 @@ MonoBehaviour:
   waterSpeed: 0.1
   sinkLevel: 6.8
   drownLevel: 12.5
+  outsideDrownLevel: 0
   sinkSpeed: 0.01
   sinkRotSpeed: 0.5
   fixCDTime: 1
@@ -6023,6 +6024,10 @@ MonoBehaviour:
   interactable:
     serializedVersion: 2
     m_Bits: 64
+  waterMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  drownCheck: {fileID: 901178554}
 --- !u!114 &249506155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12093,6 +12098,37 @@ MonoBehaviour:
   isFishing: {fileID: 0}
   inventory: {fileID: 1351622667}
   inEvent: 0
+--- !u!1 &901178553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901178554}
+  m_Layer: 0
+  m_Name: DrownCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &901178554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901178553}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.81, y: 3.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1351622660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &918149141
 Mesh:
   m_ObjectHideFlags: 0
@@ -12654,7 +12690,7 @@ GameObject:
   - component: {fileID: 996416689}
   - component: {fileID: 996416688}
   - component: {fileID: 996416694}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: WaveFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20583,6 +20619,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 863534862}
+  - {fileID: 901178554}
   m_Father: {fileID: 249506148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1351622661
@@ -26381,6 +26418,105 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1485074529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1485074530}
+  - component: {fileID: 1485074531}
+  - component: {fileID: 1485074532}
+  m_Layer: 14
+  m_Name: DrownLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1485074530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485074529}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.46581888, y: -2.1482382, z: -1.4293337}
+  m_LocalScale: {x: 11.32, y: 3.29, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1485074531
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485074529}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.24, y: 0.05}
+  m_EdgeRadius: 0
+--- !u!114 &1485074532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485074529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b169578ad083c4ec390a07da488a8dce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: {fileID: 996416694}
+  speed: {fileID: 1602757267}
+  yOffset: 0
+  rotationOffset: 0
+  rotationPower: 1
+  sprayObject: {fileID: 1800020384}
+  crestThreshold: -0.7
+  sprayCooldown: 1.6
+  sprayDuration: 1.7
 --- !u!1 &1485613951
 GameObject:
   m_ObjectHideFlags: 0
@@ -36010,6 +36146,7 @@ GameObject:
   - component: {fileID: 2049098423}
   - component: {fileID: 2049098426}
   - component: {fileID: 2049098425}
+  - component: {fileID: 2049098427}
   m_Layer: 0
   m_Name: PlayerDrown
   m_TagString: Untagged
@@ -36168,6 +36305,21 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2049098427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049098421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d46f24e088e2494189b7f1b5840b873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 1
+  knotsMultiplier: 0.1
+  boat: {fileID: 1602757267}
 --- !u!1 &2056419627
 GameObject:
   m_ObjectHideFlags: 0
@@ -41446,6 +41598,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 76359313}
   - {fileID: 566185720}
+  - {fileID: 1485074530}
   - {fileID: 249506148}
   - {fileID: 900264482}
   - {fileID: 486619362}

@@ -18,6 +18,7 @@ public class HoleManager : MonoBehaviour
     public float waterSpeed;
     public float sinkLevel;
     public float drownLevel;
+    public float outsideDrownLevel;
     public float sinkSpeed;
     public float sinkRotSpeed;
     public float fixCDTime;
@@ -35,11 +36,17 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private GameObject playerDrown;
     [SerializeField] private HarpoonGun2 fishing;
     [SerializeField] private LayerMask interactable;
+    [SerializeField] private LayerMask waterMask;
+    [SerializeField] private Transform drownCheck;
 
-    
+
 
     private void Update()
     {
+        if (Physics2D.Raycast(drownCheck.position, Vector3.forward, 10, waterMask))
+        {
+            Debug.Log("ayay");
+        }
         if( Input.GetMouseButtonDown(0))
         {
         CreateHole();
@@ -51,14 +58,18 @@ public class HoleManager : MonoBehaviour
 
         if(waterLevel> sinkLevel)
         {
+            var enter = player.GetComponent<EnterBoat>();
             player.GetComponent<EnterBoat>().canEnter = false;
             SinkBoat();
-            if(waterLevel > drownLevel&& !hasDrown)
+            if(waterLevel > drownLevel&& !hasDrown && enter.inBoat||!hasDrown&& !enter.inBoat && Physics2D.Raycast(drownCheck.position, Vector3.forward, 10, waterMask))
             {
-                hasDrown = true;
-                if (player.GetComponent<EnterBoat>().inBoat)
+                hasDrown = true;               
+                Drown();
+
+                if( !enter.inBoat )
                 {
-                    Drown();
+                    playerDrown.transform.parent = null;
+                    playerDrown.GetComponent<MovingCity>().enabled = true;
                 }
             }
         }
@@ -193,6 +204,8 @@ public class HoleManager : MonoBehaviour
         player.SetActive(false);
         playerDrown.SetActive(true);
         playerDrown.transform.position = player.transform.position;
+        playerDrown.transform.localScale = player.transform.localScale;
+
     }
 
     private IEnumerator FixCooldown()
