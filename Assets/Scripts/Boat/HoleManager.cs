@@ -38,15 +38,17 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private LayerMask interactable;
     [SerializeField] private LayerMask waterMask;
     [SerializeField] private Transform drownCheck;
+    [SerializeField] private Restart restarter;
 
 
 
     private void Update()
     {
         
-        if( Input.GetMouseButtonDown(0))
-        {
-        CreateHole();
+       if( Input.GetMouseButtonDown(0))
+       {
+       CreateHole();
+
         }
         if(holes.Count > 0 && shouldDrain)
         {
@@ -202,6 +204,7 @@ public class HoleManager : MonoBehaviour
         playerDrown.SetActive(true);
         playerDrown.transform.position = player.transform.position;
         playerDrown.transform.localScale = player.transform.localScale;
+        StartCoroutine(restarter.RestartLevel(5,true));
 
     }
 
@@ -209,6 +212,34 @@ public class HoleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(fixCDTime);
         fixCD = false;
+    }
+    public void Restart()
+    {
+
+       
+        GameObject[] array = new GameObject[holes.Count];
+            holes.CopyTo(array);
+        for(int i =0; i < array.Length; i++)
+       {
+            Destroy(array[i]);
+       }
+        for (int i = holes.Count-1; i >= 0; i--)
+        {
+            holes.RemoveAt(i);
+        }
+        // Destroy(holes[i]);
+        // holes.RemoveAt(i);
+
+
+        waterLevel = 0;
+        floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+        floodWater.SetActive(false);
+        isSinking = false;
+        hasDrown = false;
+
+        var wave = this.gameObject.GetComponent<MoveWithWaves>();
+        wave.rotationOffset = 0;
+        wave.yOffset = 0;
     }
 
 }

@@ -13,12 +13,14 @@ public class LevelManager : MonoBehaviour
     [Header("Settings")]
     public float maxLevelDistance;
 
-    [Header("")]
+
+    [Header("Refrence")]
     [SerializeField] private SpeedManager speed;
+    private SetupOcean setter;
 
     private void Start()
     {
-        currentLevel = 1;
+        currentLevel = 0;
         levelDistance = maxLevelDistance;
     }
 
@@ -48,5 +50,13 @@ public class LevelManager : MonoBehaviour
     private void ChangeLevel(int levelNum)
     {
         currentLevel = levelNum;
+    }
+
+    public void Restart()
+    {
+        currentLevel = 0;
+        totalDistance = 0f;
+        levelDistance = maxLevelDistance;
+
     }
 }

@@ -80,7 +80,7 @@ public class Albatross : MonoBehaviour
                     // isGliding = true;
                 }
             }
-            if (!perching)
+            if (!perching&& !perched)
             {
                 Flying();
             }
@@ -282,6 +282,21 @@ public class Albatross : MonoBehaviour
        // int random = Random.Range(1, 3);
        
         player.GetComponent<FishInventory>().AddFishOutside(1);
+    }
+
+    public void Restart()
+    {
+        StopAllCoroutines();
+        isFlying = false;
+        isGliding = false;
+        isSpawned = true;
+        shouldDespawn = true;
+        perched = true;
+        transform.position = perchPosition.position;
+        transform.localScale = ogSize;
+        transform.parent = boat.transform;
+        animator.SetBool("IsFlying", false);
+        animator.SetTrigger("Restart");
     }
 
 }

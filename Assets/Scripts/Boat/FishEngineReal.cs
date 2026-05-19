@@ -242,4 +242,10 @@ public class FishEngineReal : MonoBehaviour
 
         feedCD = false;
     }
+
+    public void Restart()
+    {
+        powerStage = 0;
+        powerSet = 0;
+    }
 }

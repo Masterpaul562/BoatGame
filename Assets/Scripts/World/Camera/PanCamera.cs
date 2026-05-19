@@ -64,7 +64,7 @@ public class PanCamera : MonoBehaviour
             yield return null;
         }
     }
-    private void StopCoroutine()
+    public void StopCoroutine()
     {
         StopAllCoroutines();
     }

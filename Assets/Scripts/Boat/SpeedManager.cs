@@ -114,4 +114,16 @@ public class SpeedManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    public void Restart()
+    {
+        StopAllCoroutines();
+        earwig.SetActive(false );
+        earwig.transform.position = spawnPos.position;
+        earwigDistance = maxEarwigDistance;
+        earwigSpawned = false;
+        StartCoroutine(EarwigWait());
+        
+
+    }
 }

@@ -15,6 +15,7 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject wakeUp;
+    [SerializeField] private GameObject drown;
     [SerializeField] private GameObject earwig;
     [SerializeField] private FishManager fish;
     [SerializeField] private WaveManager waves;
@@ -49,15 +50,17 @@ public class SetupOcean : MonoBehaviour
         }
     }
 
-    private void SetScene()
+    public void SetScene()
     {
         player.SetActive(false);
+        drown.SetActive(false); 
         boatCollider.SetActive(false);
         propelor.SetActive(false);
         outsideBoatSprite.SetActive(false);
         rain.SetActive(false);
         sunbeams.SetActive(false);
         waves.ShowWaves(false);
+        awakened = false;
 
         fish.HideFish(false);
         earwig.GetComponent<SpriteMask>().enabled = false;
@@ -67,10 +70,14 @@ public class SetupOcean : MonoBehaviour
         boatInside.SetActive(true);
         boatInsideCollider.SetActive(true);
         wakeUp.SetActive(true);
+        insideBG.SetActive( true);
         insideBG.GetComponent<SpriteRenderer>().enabled = true;
+        insideBG.GetComponent<SpriteRenderer>().color =new Color (0,0,0,1);
 
         cam.orthographicSize = player.GetComponent<EnterBoat>().insideZoom;
-        cam.transform.position = new Vector3(cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
+        cam.transform.position = new Vector3(boatInside.transform.localPosition.x, boatInside.transform.localPosition.y, cam.transform.position.z);
+        cam.GetComponent<CameraZoom>().targetZoom = player.GetComponent<EnterBoat>().insideZoom;
+        cam.GetComponent<CameraZoom>().targetPosition =  new Vector3(boatInside.transform.localPosition.x, boatInside.transform.localPosition.y, cam.transform.position.z);
         //var zoom = cam.GetComponent<CameraZoom>();
         //zoom.targetZoom = 4.7f;
         //zoom.targetPosition = new Vector3(cam.transform.position.x, boatInside.transform.position.y, cam.transform.position.z);
@@ -83,6 +90,15 @@ public class SetupOcean : MonoBehaviour
 
         player.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
+
+
+        player.GetComponent<FishInventory>().fishAmountOutside = 0;
+        if(player.transform.localScale.x > 0)
+        {
+            player.transform.localScale = new Vector3 (player.transform.localScale.x*-1, player.transform.localScale.y, player.transform.localScale.z); 
+        }
+        player.GetComponent<PlayerMove>().isFacingRight = false;
+        player.GetComponent<Animator>().SetBool("IsFacingRight", false);
     }
 
     public void WakeUp()
