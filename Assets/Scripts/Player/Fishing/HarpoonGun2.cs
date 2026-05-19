@@ -15,6 +15,7 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private Transform direction;
     [SerializeField] private FishManager fishManager;
     private Animator anim;
+    public Vector2 ogPos;
 
     [Header("Settings")]
     [SerializeField] private int power;
@@ -23,6 +24,8 @@ public class HarpoonGun2 : MonoBehaviour
     public float rotSpeed;
     public KeyCode inputKey;
     public KeyCode fireKey;
+    public float fishReelSpeed;
+    public float maxFishReelSpeed;
     private bool canCast = true;
     private bool canFire = false;
     private Quaternion quatZero;
@@ -45,6 +48,7 @@ public class HarpoonGun2 : MonoBehaviour
         harpoon = transform.GetChild(0).gameObject;
         anim = harpoon.GetComponent<Animator>();
         quatZero = Quaternion.Euler(0, 0, 0);   
+        ogPos = harpoon.transform.position;
         
     }
 
@@ -152,7 +156,7 @@ public class HarpoonGun2 : MonoBehaviour
             harpHead.transform.position = pos;
             distance = Vector2.Distance(harpEnd.position, harpHead.transform.position);
             if(fishHooked){
-                reelSpeed = Mathf.MoveTowards(reelSpeed,25f,Time.deltaTime*3);
+                reelSpeed = Mathf.MoveTowards(reelSpeed,maxFishReelSpeed,Time.deltaTime*fishReelSpeed);
             }
             yield return null;
         }
@@ -228,6 +232,23 @@ public class HarpoonGun2 : MonoBehaviour
     public void Turn()
     {
         anim.SetTrigger("Turn");
+    }
+    public void Restart(){
+        harpHead.GetComponent<Rigidbody2D>().simulated = false;
+        isFishing = false;  
+        canCast = true;
+        canFire= false;
+        hasFire = false;
+        line.SetActive(false);
+        harpoon.transform.SetLocalPositionAndRotation(ogPos, quatZero);
+        harpoon.SetActive(false);
+        harpHead.transform.parent = headHolder.transform;
+        harpHead.transform.SetLocalPositionAndRotation(ogPos, quatZero);
+        isReeling = false;
+        player.GetComponent<PlayerMove>().freeze = false;
+        harpHead.GetComponent<HarpoonHead>().blood.transform.parent = harpHead.transform;
+        harpHead.GetComponent<HarpoonHead>().blood.transform.position = new Vector3(harpHead.transform.position.x,harpHead.transform.position.y,-14);
+        harpoon.transform.position = harpEnd.position;
     }
 
 }

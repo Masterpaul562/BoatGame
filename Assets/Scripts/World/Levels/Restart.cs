@@ -14,6 +14,7 @@ public class Restart : MonoBehaviour
     [SerializeField] Albatross bird;
     [SerializeField] PanCamera panLeft;
     [SerializeField] PanCamera panRight;
+    [SerializeField] HarpoonGun2 gun;
 
     [SerializeField] GameObject boat;
     private Transform ogBoatPos;
@@ -43,6 +44,7 @@ public class Restart : MonoBehaviour
 
         panLeft.StopCoroutine();
         panRight.StopCoroutine();
+        gun.Restart();
         hole.Restart();
         setter.SetScene();
         level.Restart();
