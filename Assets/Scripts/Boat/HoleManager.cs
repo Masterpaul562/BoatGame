@@ -47,7 +47,7 @@ public class HoleManager : MonoBehaviour
         
        if( Input.GetMouseButtonDown(0))
        {
-       CreateHole();
+       //CreateHole();
 
         }
         if(holes.Count > 0 && shouldDrain)
