@@ -48,7 +48,7 @@ public class HarpoonGun2 : MonoBehaviour
         harpoon = transform.GetChild(0).gameObject;
         anim = harpoon.GetComponent<Animator>();
         quatZero = Quaternion.Euler(0, 0, 0);   
-        ogPos = harpoon.transform.position;
+         ogPos = harpoon.transform.localPosition;
         
     }
 
@@ -97,6 +97,7 @@ public class HarpoonGun2 : MonoBehaviour
         canFire = true;
         harpoon.SetActive(true);
         anim.SetTrigger("Prep");
+       
     }
 
     public void StowHarpoon()
@@ -248,7 +249,7 @@ public class HarpoonGun2 : MonoBehaviour
         player.GetComponent<PlayerMove>().freeze = false;
         harpHead.GetComponent<HarpoonHead>().blood.transform.parent = harpHead.transform;
         harpHead.GetComponent<HarpoonHead>().blood.transform.position = new Vector3(harpHead.transform.position.x,harpHead.transform.position.y,-14);
-        harpoon.transform.position = harpEnd.position;
+        harpHead.transform.position = harpEnd.position;
     }
 
 }
