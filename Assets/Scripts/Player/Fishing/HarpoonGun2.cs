@@ -8,12 +8,12 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject harpoon;
     [SerializeField] private GameObject line;
-    [SerializeField] private LineRenderer fishingLine;
-    [SerializeField] private GameObject harpHead;
-    [SerializeField] private Transform headHolder;
-    [SerializeField] private Transform harpEnd;
+    [SerializeField] private LineRenderer fishingLine;    
+    [SerializeField] private Transform headHolder;   
     [SerializeField] private Transform direction;
     [SerializeField] private FishManager fishManager;
+    public GameObject harpHead;
+    public Transform harpEnd;
     private Animator anim;
     public Vector2 ogPos;
 

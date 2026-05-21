@@ -205,6 +205,8 @@ public class HoleManager : MonoBehaviour
         playerDrown.transform.position = player.transform.position;
         playerDrown.transform.localScale = player.transform.localScale;
         StartCoroutine(restarter.RestartLevel(5,true));
+        fishing.harpHead.transform.position = fishing.harpEnd.position;
+        fishing.harpHead.transform.parent = fishing.harpEnd;
 
     }
 

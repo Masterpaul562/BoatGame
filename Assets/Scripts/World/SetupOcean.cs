@@ -93,11 +93,13 @@ public class SetupOcean : MonoBehaviour
 
 
         player.GetComponent<FishInventory>().fishAmountOutside = 0;
+        
         if(player.transform.localScale.x > 0)
         {
             player.transform.localScale = new Vector3 (player.transform.localScale.x*-1, player.transform.localScale.y, player.transform.localScale.z); 
         }
         player.GetComponent<PlayerMove>().isFacingRight = false;
+        player.GetComponent<EnterBoat>().canEnter = true;
         player.GetComponent<Animator>().SetBool("IsFacingRight", false);
     }
 
