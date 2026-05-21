@@ -96,6 +96,7 @@ public class MoveWithWaves : MonoBehaviour
         if (anim != null)
         {
             anim.Play(0, 0, 0f);
+           
         }
 
         yield return new WaitForSeconds(sprayDuration);
