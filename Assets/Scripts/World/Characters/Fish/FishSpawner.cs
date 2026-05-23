@@ -10,11 +10,14 @@ public class FishSpawner : MonoBehaviour
     [SerializeField] private GameObject bobber;
     [SerializeField] private Camera cam;
     [SerializeField] private Vector2 spawnLocation;
+    [SerializeField] private FishEngineReal boat;
     public int maxNumOfFish;
 
     [SerializeField] public bool shouldBeSpawning;
    
     public bool isCity;
+    public float waitTime;
+    public float knotMult;
 
 
 
@@ -56,6 +59,7 @@ public class FishSpawner : MonoBehaviour
             var fishScript = fishs.GetComponent<Fish>();          
                 
             fishScript.bobber = bobber.transform;
+            fishScript.boat = boat;
             fishScript.GetComponent<FloaterMovement>().enabled = false;
             fishScript.speed = speedTemp;
             fishScript.cam = cam;
@@ -77,7 +81,13 @@ public class FishSpawner : MonoBehaviour
     {
         while (shouldBeSpawning)
         {
-            yield return new WaitForSeconds(Random.Range(3, 7));
+            waitTime = Random.Range(3, 7);
+            waitTime = waitTime - (boat.knots * knotMult);
+            if(waitTime <= 0)
+            {
+                waitTime = 0;
+            }
+            yield return new WaitForSeconds(waitTime);
             if (fish.Count < maxNumOfFish)
             {
                 SpawnFish(1);

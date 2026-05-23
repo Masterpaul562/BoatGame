@@ -262,11 +262,13 @@ MonoBehaviour:
   fishSwimRender: {fileID: 0}
   mask: {fileID: 6595649034024586890}
   bobber: {fileID: 0}
+  boat: {fileID: 0}
   randomY: 0
   swimDirection: 0
   leftX: 0
   rightX: 0
   speed: 0
+  knotsMultiplier: 0.25
   shouldFlip: 1
   cam: {fileID: 0}
   shouldBeDestroyed: 0

@@ -8,15 +8,17 @@ public class Fish : MonoBehaviour
     [SerializeField] private SpriteMask mask;
     private float size;
     public Transform bobber;
+    public FishEngineReal boat;
     public float randomY;
     public int swimDirection;
     public float leftX;
     public float rightX;
     public float speed;
+    public float knotsMultiplier;
     [SerializeField] public bool shouldFlip = true;
     public Camera cam;
     public bool shouldBeDestroyed;
-    private BgScroller scroller;
+   // private BgScroller scroller;
     private bool swim = true;
     public bool isHooked = false;
    
@@ -26,7 +28,7 @@ public class Fish : MonoBehaviour
     private void Awake()
     {
       
-        scroller = GetComponent<BgScroller>();
+       // scroller = GetComponent<BgScroller>();
         shouldBeDestroyed = false;
         size = Random.Range(0.3f, .5f);
         transform.localScale = new Vector2(size, size);
@@ -58,7 +60,7 @@ public class Fish : MonoBehaviour
         //  transform.position = Vector2.MoveTowards(transform.position, bobber.position, Time.deltaTime / speed);
 
         leftX = cam.transform.position.x - cam.GetComponent<CamSizeManager>().worldWidth / 2;
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX - 6, randomY), Time.deltaTime / speed);
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(leftX - 6, randomY), Time.deltaTime * (speed +(boat.knots * knotsMultiplier)));
     }
 
     public void Flip()

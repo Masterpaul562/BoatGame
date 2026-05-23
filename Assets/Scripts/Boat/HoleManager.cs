@@ -68,7 +68,7 @@ public class HoleManager : MonoBehaviour
                 if( !enter.inBoat )
                 {
                     playerDrown.transform.parent = null;
-                    playerDrown.GetComponent<MovingCity>().enabled = true;
+                    playerDrown.GetComponent<BackGroundScroller>().enabled = true;
                 }
             }
         }

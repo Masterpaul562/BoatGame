@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingCity : MonoBehaviour
+public class BackGroundScroller : MonoBehaviour
 {
     [Header("Base scrolling speed")]
     public float scrollSpeed = 1f;
@@ -19,7 +19,8 @@ public class MovingCity : MonoBehaviour
     void MoveLeft()
     {
         float finalSpeed = scrollSpeed + (boat.knots * knotsMultiplier);
-
+       // Vector2 left = new Vector3 (transform.position.x -(finalSpeed*Time.deltaTime),transform.position.y,transform.position.z);
+        //transform.position = left; 
         transform.Translate(Vector2.left * finalSpeed * Time.deltaTime);
     }
 }

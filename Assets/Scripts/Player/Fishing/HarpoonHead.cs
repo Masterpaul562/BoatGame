@@ -24,8 +24,11 @@ public class HarpoonHead : MonoBehaviour
         {
             Debug.Log("HIT");
             StopAllCoroutines();
-            blood.transform.parent = null;
-            blood.Play();
+            Vector3 bloodPos = new Vector3(other.transform.position.x, other.transform.position.y, blood.transform.position.z); 
+            var bloodClone = Instantiate(blood, bloodPos , Quaternion.Euler(0, 0, 0));
+            bloodClone.gameObject.SetActive(true);
+            //blood.transform.parent = null;
+            //blood.Play();
             StartCoroutine(harpoon.Reel());
         }
     }
