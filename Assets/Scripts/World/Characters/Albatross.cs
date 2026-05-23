@@ -287,6 +287,7 @@ public class Albatross : MonoBehaviour
     public void Restart()
     {
         StopAllCoroutines();
+        this.gameObject.SetActive(true);
         isFlying = false;
         isGliding = false;
         isSpawned = true;

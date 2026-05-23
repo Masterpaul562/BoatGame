@@ -234,6 +234,7 @@ public class HoleManager : MonoBehaviour
 
 
         waterLevel = 0;
+        waterSpeed = 0.1f;
         floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
         floodWater.SetActive(false);
         isSinking = false;
