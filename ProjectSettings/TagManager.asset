@@ -12,6 +12,7 @@ TagManager:
   - Engine
   - Fish
   - Hole
+  - Water
   layers:
   - Default
   - TransparentFX

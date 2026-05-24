@@ -139,6 +139,7 @@ public class HarpoonGun2 : MonoBehaviour
     public IEnumerator Reel()
     {
         harpHead.GetComponent<Rigidbody2D>().simulated = false;
+        harpHead.GetComponent<HarpoonHead>().Stop();
         isReeling = true;
         if(hookedFish){
         yield return new WaitForSeconds(0.1f);
@@ -250,6 +251,10 @@ public class HarpoonGun2 : MonoBehaviour
         harpHead.GetComponent<HarpoonHead>().blood.transform.parent = harpHead.transform;
         harpHead.GetComponent<HarpoonHead>().blood.transform.position = new Vector3(harpHead.transform.position.x,harpHead.transform.position.y,-14);
         harpHead.transform.position = harpEnd.position;
+    }
+    public void StartReel()
+    {
+        StartCoroutine(Reel());
     }
 
 }
