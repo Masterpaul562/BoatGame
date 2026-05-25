@@ -16,6 +16,7 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject rain;
     [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject player; // Player Object
+    [SerializeField] private GameObject playerAnimations;
     [SerializeField] private GameObject harpoon; // Harpoon Object
     [SerializeField] private GameObject earwig;
 
@@ -25,6 +26,9 @@ public class EnterBoat : MonoBehaviour
 
     [SerializeField] private Transform enterLocation; // Locations for enter and exit 
     [SerializeField] private Transform exitLocation;
+    [SerializeField] private Transform insideAnimationExitPos;
+    [SerializeField] private Transform insideAnimationEnterPos;
+
 
     [SerializeField] private string insideLayer, outsideLayer; // String to change layers 
 
@@ -90,7 +94,8 @@ public class EnterBoat : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Exit"&&canEnter && !harpScript.isFishing)
                 {
                     StopAllCoroutines();
-                    Exit();
+                    ExitAnimation();
+                    //Exit();
                 }
             }
         }
@@ -119,6 +124,10 @@ public class EnterBoat : MonoBehaviour
 
         //Play animation for door opening
         doorAnim.SetTrigger("Open");
+
+
+       // player.SetActive(false);
+        
         this.GetComponent<PlayerMove>().freeze = true;
         GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
 
@@ -129,9 +138,13 @@ public class EnterBoat : MonoBehaviour
         insideWater.Play();
         musicPlayer.Stop();
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.5f); // change to when enter for outside animation done
 
-        this.GetComponent<PlayerMove>().freeze = false;
+
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        playerAnimations.SetActive(true);
+        playerAnimations.GetComponent<Animator>().SetTrigger("InsideEnter");
+        playerAnimations.transform.position =  insideAnimationEnterPos.position; 
 
         //Set stuff active/inactive for inside        
         StartCoroutine(zoom.FadeBG(true, 71));
@@ -149,10 +162,12 @@ public class EnterBoat : MonoBehaviour
 
         // change layers to display correctly
         player.GetComponent<SpriteRenderer>().sortingLayerName= insideLayer;
+        playerAnimations.GetComponent<SpriteRenderer>().sortingLayerName = insideLayer;
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = insideLayer;
 
         // Set Position and make sure character is facing right
         transform.position = enterLocation.position;
+        playerAnimations.transform.position = enterLocation.position;
         Vector3 localScale = transform.localScale;
         if (localScale.x < 0)
         {
@@ -164,11 +179,25 @@ public class EnterBoat : MonoBehaviour
         animator.SetBool("isFacingRight", true);
         animator.SetBool("Turn", false);
         this.GetComponent<PlayerMove>().isFacingRight = true;
-
+        
         yield return null;
     }
+
+
+
+    private void ExitAnimation()
+    {
+        player.SetActive(false);
+        playerAnimations.SetActive(true);
+        playerAnimations.GetComponent<Animator>().SetTrigger("InsideExit");
+        playerAnimations.transform.position = insideAnimationExitPos.transform.position;
+    }
+
     private void Exit()
     {
+        player.SetActive(true);
+        playerAnimations.SetActive(false);
+
         // Zoom and move camera when exiting boat. 
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = zoom.ogZoom;
@@ -207,8 +236,11 @@ public class EnterBoat : MonoBehaviour
         doorAnim.SetBool("Open", false);
         doorAnim.SetTrigger("Close");
         
+        
+
         //Change layer
         player.GetComponent<SpriteRenderer>().sortingLayerName= outsideLayer;
+        playerAnimations.GetComponent<SpriteRenderer>().sortingLayerName = outsideLayer;
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = outsideLayer;
       
 
@@ -227,4 +259,9 @@ public class EnterBoat : MonoBehaviour
 
     }
    
+    public void StartExit()
+    {
+        Exit();
+    }
+    
 }

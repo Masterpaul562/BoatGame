@@ -22,6 +22,7 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private HarpoonGun2 harpScript;
     [SerializeField] private Camera cam;
     [SerializeField] private Camera secondaryCam;
+    public GameObject playerAnimations;
     
     
 
@@ -89,6 +90,7 @@ public class SetupOcean : MonoBehaviour
 
 
         player.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
+        playerAnimations.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
 
 
