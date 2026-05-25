@@ -152,6 +152,7 @@ public class HoleManager : MonoBehaviour
                 int index = FindHole(hit.collider.gameObject);
 
                 player.GetComponent<PlayerMove>().freeze = true;
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
                 player.GetComponent<Animator>().SetTrigger("FixHole");
 
                 Destroy(holes[index]);
