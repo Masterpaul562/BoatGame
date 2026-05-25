@@ -17,4 +17,6 @@ public class BoatAnimations : MonoBehaviour
         player.GetComponent<EnterBoat>().StartExit();
 
     }
+
+    //Add function to start second enter function in player
 }

@@ -82,6 +82,7 @@ public class EnterBoat : MonoBehaviour
                 {
                     StopAllCoroutines();
                     StartCoroutine(Enter());
+                    //Enterone();
                    
                 }
             }
@@ -108,6 +109,15 @@ public class EnterBoat : MonoBehaviour
     }
     private IEnumerator Enter()
     {
+
+        // for outside enter:
+        // move hiding player sprite up
+        //Change into 2 diffrent functions, first one starts on button down and starts animation, other plays after outside enter is done and starts inside enter
+
+
+        //First function
+        // private void Enter()
+        //{
         EnterCd = false;
         
 
@@ -138,8 +148,16 @@ public class EnterBoat : MonoBehaviour
         insideWater.Play();
         musicPlayer.Stop();
 
+
+        //}
+
         yield return new WaitForSeconds(.5f); // change to when enter for outside animation done
 
+
+        //Second Function
+
+        // private void Enter()
+        //{
 
         player.GetComponent<SpriteRenderer>().enabled = false;
         playerAnimations.SetActive(true);
@@ -179,7 +197,10 @@ public class EnterBoat : MonoBehaviour
         animator.SetBool("isFacingRight", true);
         animator.SetBool("Turn", false);
         this.GetComponent<PlayerMove>().isFacingRight = true;
-        
+
+
+
+        //}
         yield return null;
     }
 

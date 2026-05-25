@@ -90,7 +90,7 @@ public class SetupOcean : MonoBehaviour
 
 
         player.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
-        playerAnimations.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
+        playerAnimations.GetComponent<SpriteRenderer>().sortingLayerName = "Inside"; // Set rendering layer for objects that are both inside and out
         harpoon.GetComponent<SpriteRenderer>().sortingLayerName = "Inside";
 
 
