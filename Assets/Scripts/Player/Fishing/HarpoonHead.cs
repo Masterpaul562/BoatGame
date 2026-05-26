@@ -19,7 +19,7 @@ public class HarpoonHead : MonoBehaviour
         {
             
             StopAllCoroutines();
-            StartCoroutine(harpoon.Reel());
+            harpoon.StartReel();
         }
 
     }
