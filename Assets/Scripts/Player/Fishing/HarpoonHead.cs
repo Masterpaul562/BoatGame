@@ -8,7 +8,9 @@ public class HarpoonHead : MonoBehaviour
 
     public ParticleSystem blood;
 
-    [SerializeField] private GameObject bubble;
+    [SerializeField] private ParticleSystem bubble;
+
+    public ParticleSystem bubbleSystem;
 
     
     
@@ -38,26 +40,27 @@ public class HarpoonHead : MonoBehaviour
         }
         if(other.gameObject.tag == "Water")
         {
-            StartCoroutine(Bubbles());
+            Bubbles();
         }
 
     }
 
 
-    private IEnumerator Bubbles()
+    private void Bubbles()
     {
-        yield return new WaitForSeconds(0.2f);
-        while (true)
-        {
-            Vector3 bubblePos = new Vector3(transform.position.x, transform.position.y, bubble.transform.position.z);
-            var newBubble = Instantiate(bubble, bubblePos, Quaternion.Euler(0,0,0));
-            // newBubble.GetComponent<
-            yield return null;
-            //yield return new WaitForSeconds(0.1f);
+        
+       bubbleSystem =Instantiate(bubble,bubble.transform.position,Quaternion.Euler(0,0,-37),transform);
+       bubbleSystem.gameObject.SetActive(true);
+    }
+    public void DestroyBubble(){
 
+        if(bubbleSystem != null){
+            bubbleSystem.transform.parent = null;
+            bubbleSystem.transform.localScale = new Vector3(2,2,2);
+            bubbleSystem.Stop();
+            //Destroy(bubbleSystem.gameObject);
         }
     }
-
     public void Stop()
     {
         StopAllCoroutines();
