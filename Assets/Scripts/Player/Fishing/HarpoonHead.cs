@@ -40,6 +40,17 @@ public class HarpoonHead : MonoBehaviour
         }
         if(other.gameObject.tag == "Water")
         {
+            if (transform.localScale.x < 0)
+            {
+                var shape = bubble.shape;
+                shape.rotation = new Vector3(-95, -90, 180);
+                //bubbleSystem.shape = shape;
+            }
+            else
+            {
+                var shape = bubble.shape;
+                shape.rotation = new Vector3(-65, -90, 180);
+            }
             Bubbles();
         }
 
@@ -51,6 +62,7 @@ public class HarpoonHead : MonoBehaviour
         
        bubbleSystem =Instantiate(bubble,bubble.transform.position,Quaternion.Euler(0,0,-37),transform);
        bubbleSystem.gameObject.SetActive(true);
+       
     }
     public void DestroyBubble(){
 
