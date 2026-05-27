@@ -16,6 +16,7 @@ public class HarpoonGun2 : MonoBehaviour
     public Transform harpEnd;
     private Animator anim;
     public Vector2 ogPos;
+    public AudioSource source;
 
     [Header("Settings")]
     [SerializeField] private int power;
@@ -49,7 +50,7 @@ public class HarpoonGun2 : MonoBehaviour
         anim = harpoon.GetComponent<Animator>();
         quatZero = Quaternion.Euler(0, 0, 0);   
          ogPos = harpoon.transform.localPosition;
-        
+        source = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -86,7 +87,7 @@ public class HarpoonGun2 : MonoBehaviour
                 player.GetComponent<Animator>().SetTrigger("Fire");
             }
 
-            
+            source.Play();
         }
     }
 
