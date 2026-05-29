@@ -140,7 +140,6 @@ public class HarpoonGun2 : MonoBehaviour
     public IEnumerator Reel()
     {
         harpHead.GetComponent<Rigidbody2D>().simulated = false;
-        harpHead.GetComponent<HarpoonHead>().Stop();
         harpHead.GetComponent<HarpoonHead>().DestroyBubble();
         isReeling = true;
         if(hookedFish){
@@ -191,9 +190,9 @@ public class HarpoonGun2 : MonoBehaviour
     
     private void ReelCheck()
     {
-        if (Vector2.Distance(harpEnd.position, harpHead.transform.position) > lineLength)
+        if (Vector2.Distance(harpEnd.position, harpHead.transform.position) > lineLength && !isReeling)
         {
-            StopAllCoroutines();
+            //StopAllCoroutines();
             StartCoroutine(Reel());
         }
     }

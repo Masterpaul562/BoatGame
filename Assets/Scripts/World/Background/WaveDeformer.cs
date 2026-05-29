@@ -9,6 +9,7 @@ public class WaveDeformer : MonoBehaviour
     public float speed = 1f;
     public float horizontalOffset = 0f;
 
+
     [Header("Boat Speed Influence")]
     public FishEngineReal engine;
     public float knotSpeedMultiplier = 0.2f;
@@ -49,6 +50,8 @@ public class WaveDeformer : MonoBehaviour
 
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
+
+        
     }
 
     public float GetWaveHeight(float worldX)
