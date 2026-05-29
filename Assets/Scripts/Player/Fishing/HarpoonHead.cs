@@ -11,6 +11,8 @@ public class HarpoonHead : MonoBehaviour
     [SerializeField] private ParticleSystem bubble;
 
     public ParticleSystem bubbleSystem;
+    public float particleSize;
+    public float bubbleOffsetY;
 
     
     
@@ -40,17 +42,9 @@ public class HarpoonHead : MonoBehaviour
         }
         if(other.gameObject.tag == "Water")
         {
-            if (transform.localScale.x < 0)
-            {
-                var shape = bubble.shape;
-                shape.rotation = new Vector3(-95, -90, 180);
-                //bubbleSystem.shape = shape;
-            }
-            else
-            {
-                var shape = bubble.shape;
-                shape.rotation = new Vector3(-65, -90, 180);
-            }
+            var shape = bubble.shape;
+            Debug.Log(harpoon.transform.GetChild(0).transform.localRotation.z);
+            shape.rotation = new Vector3 (harpoon.transform.GetChild(0).transform.localRotation.z, bubble.shape.rotation.y, bubble.shape.rotation.z);
             Bubbles();
         }
 
@@ -60,7 +54,11 @@ public class HarpoonHead : MonoBehaviour
     private void Bubbles()
     {
         
-       bubbleSystem =Instantiate(bubble,bubble.transform.position,Quaternion.Euler(0,0,-37),transform);
+       Vector3 bubblePosition = new Vector3(bubble.transform.position.x, bubble.transform.position.y - bubbleOffsetY, bubble.transform.position.z);
+       Quaternion rotation = Quaternion.Euler(harpoon.transform.GetChild(0).transform.rotation.x, harpoon.transform.GetChild(0).transform.rotation.y, harpoon.transform.GetChild(0).transform.rotation.z * -1);
+
+       bubbleSystem =Instantiate(bubble,bubblePosition, rotation );
+       bubbleSystem.transform.localScale = new Vector3(particleSize, particleSize, particleSize);
        bubbleSystem.gameObject.SetActive(true);
        
     }
@@ -68,7 +66,7 @@ public class HarpoonHead : MonoBehaviour
 
         if(bubbleSystem != null){
             bubbleSystem.transform.parent = null;
-            bubbleSystem.transform.localScale = new Vector3(2,2,2);
+            //bubbleSystem.transform.localScale = new Vector3(particleSize,particleSize,particleSize);
             bubbleSystem.Stop();
             //Destroy(bubbleSystem.gameObject);
         }

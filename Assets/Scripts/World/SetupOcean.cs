@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SetupOcean : MonoBehaviour
 {
+
     [SerializeField] private GameObject player; // Player Object
     [SerializeField] private GameObject harpoon; // Harpoon Object
     [SerializeField] private GameObject boatCollider; // outside colliders
@@ -62,6 +63,9 @@ public class SetupOcean : MonoBehaviour
         sunbeams.SetActive(false);
         waves.ShowWaves(false);
         awakened = false;
+
+        drown.GetComponent<BackGroundScroller>().enabled = false;
+        drown.transform.parent = wakeUp.transform.parent;
 
         fish.HideFish(false);
         earwig.GetComponent<SpriteMask>().enabled = false;

@@ -93,6 +93,10 @@ public class Albatross : MonoBehaviour
                 StartCoroutine(Despawn());
             }
         }
+        if(boat.GetComponent<HoleManager>().isSinking && perched)
+        {
+            animator.SetTrigger("TakeOff");
+        }
     }
 
 
