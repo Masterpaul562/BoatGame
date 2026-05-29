@@ -44,6 +44,7 @@ public class HarpoonHead : MonoBehaviour
         {
             var shape = bubble.shape;
             Debug.Log(harpoon.transform.GetChild(0).transform.localRotation.z);
+            //Figure out if this is because they are not euler
             shape.rotation = new Vector3 (harpoon.transform.GetChild(0).transform.localRotation.z, bubble.shape.rotation.y, bubble.shape.rotation.z);
             Bubbles();
         }
