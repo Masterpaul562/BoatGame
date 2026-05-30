@@ -12,6 +12,7 @@ public class Earwiggy : MonoBehaviour
     [SerializeField] private SpeedManager speedMan;
     [SerializeField] private HoleManager hole;
     [SerializeField] private DustCloud impactCloud;
+    public AudioSource source;
 
     [Header("Settings")]
     public float swimAwaySpeed;
@@ -26,6 +27,7 @@ public class Earwiggy : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         hasAttack = false;
+        source = GetComponent<AudioSource>();
     }
     
     private void Update()
@@ -41,8 +43,8 @@ public class Earwiggy : MonoBehaviour
         //camShake.rumble = true;
         hasAttack = true;
         animator.SetTrigger("Attack");
-        
-        
+
+        source.Play();
     }
 
     private void AttackDamage()
