@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         {
             waves[i].GetComponent<WaveDeformer>().enabled = false;
         }
+        Time.timeScale = 0f;
     }
     private void Unpause()
     {
@@ -52,5 +53,6 @@ public class PauseMenu : MonoBehaviour
         {
             waves[i].GetComponent<WaveDeformer>().enabled = true;
         }
+        Time.timeScale = 1f;
     }
 }
