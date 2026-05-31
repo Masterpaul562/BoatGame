@@ -8,7 +8,7 @@ public class HoleManager : MonoBehaviour
     [Header("Info")]
     public List<GameObject> holes = new List<GameObject>();
     public float waterLevel;
-    private bool fixCD;
+    public bool fixCD;
     public bool isSinking;
 
     private int failedHoleSpawn;

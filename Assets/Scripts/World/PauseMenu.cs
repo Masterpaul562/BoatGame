@@ -7,10 +7,14 @@ public class PauseMenu : MonoBehaviour
     [Header("Refrences")]
     public GameObject player;
     public GameObject bird;
-    public GameObject[] waves;
+   
     public HoleManager holes;
     public SpeedManager speed;
+    public HarpoonGun2 harp;
     public KeyCode pauseButton;
+
+    [SerializeField] private KeyCode ogFire;
+    [SerializeField] private KeyCode ogInput;
     
 
 
@@ -18,6 +22,12 @@ public class PauseMenu : MonoBehaviour
     public bool isPause;
 
 
+
+    private void Start()
+    {
+        ogFire = harp.fireKey;
+        ogInput = harp.inputKey;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(pauseButton))
@@ -39,20 +49,20 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("PAUSE");
         player.GetComponent<PlayerMove>().freeze = true;
-        for (int i = 0; i < waves.Length; i++)
-        {
-            waves[i].GetComponent<WaveDeformer>().enabled = false;
-        }
+        harp.fireKey = KeyCode.None;
+        harp.inputKey = KeyCode.None;
+        holes.fixCD = true;
+       
         Time.timeScale = 0f;
     }
     private void Unpause()
     {
         Debug.Log("UNPAUSE");
         player.GetComponent<PlayerMove>().freeze = false;
-        for (int i = 0; i < waves.Length; i++)
-        {
-            waves[i].GetComponent<WaveDeformer>().enabled = true;
-        }
+        harp.fireKey = ogFire;
+        harp.inputKey = ogInput;
+        holes.fixCD = false;
+
         Time.timeScale = 1f;
     }
 }
