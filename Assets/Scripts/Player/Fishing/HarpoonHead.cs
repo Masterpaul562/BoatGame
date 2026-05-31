@@ -40,11 +40,11 @@ public class HarpoonHead : MonoBehaviour
             bloodClone.gameObject.SetActive(true);
             harpoon.StartReel();
         }
-        if(other.gameObject.tag == "Water")
-        {
+       // if(other.gameObject.tag == "Water")
+      //  {
           
-            Bubbles();
-        }
+           // Bubbles();
+       // }
 
     }
 
