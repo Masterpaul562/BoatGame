@@ -5745,6 +5745,7 @@ GameObject:
   - component: {fileID: 197150366}
   - component: {fileID: 197150367}
   - component: {fileID: 197150368}
+  - component: {fileID: 197150369}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -5857,6 +5858,29 @@ MonoBehaviour:
   panRight: {fileID: 1637979299}
   gun: {fileID: 863534863}
   boat: {fileID: 249506147}
+--- !u!114 &197150369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197150363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b016354e32f0047a5b9eaed45585ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1351622656}
+  waves:
+  - {fileID: 1906464833}
+  - {fileID: 1284961694}
+  - {fileID: 1688449572}
+  - {fileID: 361201736}
+  - {fileID: 996416687}
+  holes: {fileID: 249506154}
+  speed: {fileID: 249506153}
+  pauseButton: 112
+  isPause: 0
 --- !u!1 &216235004
 GameObject:
   m_ObjectHideFlags: 0

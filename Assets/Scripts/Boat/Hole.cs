@@ -11,7 +11,7 @@ public class Hole : MonoBehaviour
     { 
         if(other.tag == "Player")
         {
-            Debug.Log("YAY");
+           
         }
     }
 }
