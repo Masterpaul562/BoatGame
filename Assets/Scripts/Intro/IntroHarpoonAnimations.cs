@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class IntroHarpoonAnimations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private IntroHarpoon harpoon;
+
+    public void Stow()
     {
-        
+        harpoon.StowHarpoon();
+    }
+    public void Fire()
+    {
+        harpoon.Fire();
     }
 }

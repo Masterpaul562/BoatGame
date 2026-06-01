@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class IntroWalls : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int maxHitAmount;
+    private int hitAmount;
+
+
+
+
+
+    private void Update()
     {
-        
+        if (maxHitAmount <= hitAmount)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+
+
+   private void OnCollisionEnter2D (Collision2D other) 
+    { 
+
+        if( other.gameObject.tag == "Bobber")
+        {
+            hitAmount++;
+        }
     }
+
 }
