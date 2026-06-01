@@ -8,13 +8,14 @@ public class IntroMovement : MonoBehaviour
     public float moveSpeed;
     public bool canFlip;
     public bool isMoving;
+    public bool freeze;
 
     public float horizontalInput;
     public bool isFacingRight;
     public float currentVel;
 
     private Rigidbody2D rb;
-    private Animator animator;
+    public Animator animator;
 
 
     private void Start()
@@ -27,11 +28,17 @@ public class IntroMovement : MonoBehaviour
     }
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (!freeze)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+        }else
+        {
+            horizontalInput = 0;
+        }
 
         isMoving = horizontalInput != 0f;
 
-        if(canFlip )
+        if(canFlip && !freeze)
         {
             FlipCheck();
         }
@@ -72,7 +79,18 @@ public class IntroMovement : MonoBehaviour
 
         }
     }
+    public void Recoil()
+    {
+        if (isFacingRight)
+        {
+            transform.Translate(Vector2.left * 0.05f);
+        }
+        else
+        {
+            transform.Translate(Vector2.right * 0.05f);
+        }
 
+    }
 
     private void IntroFlip()
     {
