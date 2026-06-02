@@ -6,6 +6,7 @@ public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
     public Transform leftBound;
+    public Transform rightBound;
     public Transform target;
     private Vector3 targetPosition;
     [Header("Settings")]
@@ -50,7 +51,7 @@ public class FollowPlayer : MonoBehaviour
 
         target.position = Vector3.MoveTowards(target.position, targetPosition, Time.deltaTime * targetMoveSpeed);
 
-        if(target.transform.position.x > leftBound.position.x)
+        if(target.transform.position.x > leftBound.position.x && target.transform.position.x < rightBound.position.x)
         {
             Vector3 position = transform.position;
             position.x = Mathf.MoveTowards(position.x, target.transform.position.x, Time.deltaTime* speed);    
@@ -59,7 +60,7 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position,leftBound.position,Time.deltaTime* speed);
+            transform.position = transform.position;
         }
     }
 
