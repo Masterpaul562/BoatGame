@@ -5,6 +5,7 @@ using UnityEngine;
 public class IntroWalls : MonoBehaviour
 {
     public GameObject sparks;
+    public GameObject dust;
     public int maxHitAmount;
     public float maxRotation;
     public float rotation;
@@ -63,14 +64,14 @@ public class IntroWalls : MonoBehaviour
 
     private void Move()
     {
-
-            transform.position = lastPosition;
-            Vector2 direction = new Vector2(transform.position.x, transform.position.y - 1);
-            transform.position = Vector2.MoveTowards(transform.position, direction, Time.deltaTime * 2);
-            lastPosition = transform.position;
-        if(Vector3.Distance(startPosition, transform.position) < 20)
+        rotationSpeed += 2;
+        Quaternion flat = Quaternion.Euler(0, 0, 270);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, flat,Time.deltaTime*rotationSpeed);
+        GetComponent< BoxCollider2D >().enabled = false;
+        if(transform.rotation == flat)
         {
-            Destroy(this.gameObject);
+            dust.SetActive(true);
+            Destroy(this);
         }
     }
 
