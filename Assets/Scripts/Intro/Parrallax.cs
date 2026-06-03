@@ -1,19 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Parrallax : MonoBehaviour
+public class ParallaxLayer : MonoBehaviour
 {
-    public float horzInput;
-    public float moveSpeed;
+    [Header("References")]
+    public Transform cameraTransform;
 
-    // Update is called once per frame
-    void Update()
+    [Header("Parallax")]
+    [Tooltip("0 = fixed far background, 1 = matches camera, >1 = moves faster than camera")]
+    public float parallaxFactor = 0.5f;
+
+    private Vector3 lastCameraPosition;
+
+    private void Start()
     {
-        horzInput = Input.GetAxisRaw("Horizontal");
-        Vector3 position = transform.position;
-        position.x = position.x - (horzInput * moveSpeed);
-        transform.position = position;
-        
+        if (cameraTransform == null)
+            cameraTransform = Camera.main.transform;
+
+        lastCameraPosition = cameraTransform.position;
+    }
+
+    private void LateUpdate()
+    {
+        Vector3 cameraDelta = cameraTransform.position - lastCameraPosition;
+
+        // Apply parallax (can be > 1 for foreground speed boost)
+        Vector3 moveAmount = cameraDelta * parallaxFactor;
+
+        transform.position += new Vector3(moveAmount.x, moveAmount.y, 0f);
+
+        lastCameraPosition = cameraTransform.position;
     }
 }
