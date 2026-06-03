@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
     public Transform leftBound;
     public Transform rightBound;
     public Transform target;
-    private Vector3 targetPosition;
+   [SerializeField] private Vector3 targetPosition;
     [Header("Settings")]
     public float maxSpeed;
     public float xOffset;
@@ -30,7 +30,7 @@ public class FollowPlayer : MonoBehaviour
        {
             if (target.position.x > player.transform.position.x - xOffset)
             {
-                targetPosition = targetPosition;
+                targetPosition = target.position;
             }
             else
             {
@@ -41,7 +41,7 @@ public class FollowPlayer : MonoBehaviour
         {
             if (target.position.x < player.transform.position.x + xOffset)
             {
-                targetPosition = targetPosition;
+                targetPosition = target.position;
             }
             else
             {
