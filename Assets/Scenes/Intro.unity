@@ -773,6 +773,7 @@ MonoBehaviour:
   leftBound: {fileID: 1327625362}
   rightBound: {fileID: 476500457}
   target: {fileID: 1580348068}
+  targetPosition: {x: 0, y: 0, z: 0}
   maxSpeed: 3
   xOffset: 0.7
   speed: 0
