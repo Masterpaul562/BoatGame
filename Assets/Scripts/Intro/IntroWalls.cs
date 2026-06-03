@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class IntroWalls : MonoBehaviour
 {
+    public GameObject sparks;
     public int maxHitAmount;
-    public Quaternion rotation;
+    public float maxRotation;
+    public float rotation;
     public float displaceAmount;
+    public float rotationSpeed;
+    public bool moveAway;
+    
 
-    private int hitAmount;
+    [SerializeField] private int hitAmount;
     private bool started = false;
     private bool shouldRumble;
     private Vector3 startPosition;
     private Vector3 lastPosition;
+   
     
 
 
@@ -20,39 +26,52 @@ public class IntroWalls : MonoBehaviour
     {
         startPosition = transform.position; 
         lastPosition = transform.position;
+        rotation = 0;
     }
 
 
     private void Update()
     {
-        if (maxHitAmount <= hitAmount && !started)
+        if (moveAway)
         {
-            started = true;
-            StartCoroutine(DestroyWall());
+            Move();
         }
+       
     }
 
 
-    private IEnumerator DestroyWall()
+    private void DestroyWall()
     {
-        //StartCoroutine(Rumble());
-        while (transform.rotation.z != rotation.z)
+        rotation += maxRotation / 3;
+        transform.rotation = Quaternion.Euler(0, 0, rotation);
+        if(rotation == maxRotation )
         {
-           // transform.Translate(Vector2.down);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, Time.deltaTime);
-          
-            yield return null ;
+            moveAway = true;
         }
-        while (Vector3.Distance(startPosition, transform.position) < 20)
-        {
+      //  while (Vector3.Distance(startPosition, transform.position) < 20)
+       // {
+       //     transform.position = lastPosition;
+       //     Vector2 direction = new Vector2(transform.position.x, transform.position.y - 1);
+        //    transform.position = Vector2.MoveTowards(transform.position, direction, Time.deltaTime * 2);
+        ///    lastPosition = transform.position;
+            
+        //    yield return null ;
+      //  }
+        
+    }
+
+
+    private void Move()
+    {
+
             transform.position = lastPosition;
             Vector2 direction = new Vector2(transform.position.x, transform.position.y - 1);
             transform.position = Vector2.MoveTowards(transform.position, direction, Time.deltaTime * 2);
             lastPosition = transform.position;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, Time.deltaTime);
-            yield return null ;
+        if(Vector3.Distance(startPosition, transform.position) < 20)
+        {
+            Destroy(this.gameObject);
         }
-        Destroy(this.gameObject);
     }
 
     private IEnumerator Rumble()
@@ -76,6 +95,8 @@ public class IntroWalls : MonoBehaviour
         if( other.gameObject.tag == "Bobber")
         {
             hitAmount++;
+            Instantiate(sparks, other.contacts[0].point,sparks.transform.rotation);
+            DestroyWall();
         }
     }
 
