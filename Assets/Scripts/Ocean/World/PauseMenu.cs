@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     [Header("Refrences")]
     public GameObject player;
     public GameObject bird;
+    public GameObject pauseMenu;
    
     public HoleManager holes;
     public SpeedManager speed;
@@ -48,6 +49,7 @@ public class PauseMenu : MonoBehaviour
     private void Pause()
     {
         Debug.Log("PAUSE");
+        pauseMenu.SetActive(true);
         player.GetComponent<PlayerMove>().freeze = true;
         harp.fireKey = KeyCode.None;
         harp.inputKey = KeyCode.None;
@@ -58,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     private void Unpause()
     {
         Debug.Log("UNPAUSE");
+        pauseMenu.SetActive(false);
         player.GetComponent<PlayerMove>().freeze = false;
         harp.fireKey = ogFire;
         harp.inputKey = ogInput;
