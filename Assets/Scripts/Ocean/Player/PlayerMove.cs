@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
 
     [Header("Settings")]
     public float maxSpeed;
+    public float insideSpeed;
     public float moveSpeed;
     public bool canFlip;
     
@@ -54,7 +55,7 @@ public class PlayerMove : MonoBehaviour
         
         if (this.GetComponent<EnterBoat>().inBoat)
         {
-            moveSpeed = 3;
+            moveSpeed = insideSpeed;
         }
 
         if (horizontalInput != 0)
