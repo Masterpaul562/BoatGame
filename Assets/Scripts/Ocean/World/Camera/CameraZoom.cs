@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 [RequireComponent(typeof(Camera))]
 public class CameraZoom : MonoBehaviour
@@ -15,7 +16,10 @@ public class CameraZoom : MonoBehaviour
    public float zoomSpeed;
    [Header("Fade Settings")]
    [SerializeField] private SpriteRenderer insideBG;// the sprite renderer for the Black BG for inside
+    [SerializeField] private SpriteRenderer lightInside;
+    [SerializeField] private GameObject lightEffect;
    private float alpha;
+
 
    
 
@@ -63,16 +67,51 @@ public class CameraZoom : MonoBehaviour
         }else
         if (!black)
         {
+            insideBG.enabled = false;
+            //  while (alpha != 0)
+            //  {
+            //      alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * speed);
+            //     insideBG.color = new Color(0, 0, 0, alpha / 255);
+            //     yield return null;
+            //  }
+            // insideBG.enabled = false;
+            // insideBG.color = new Color(0, 0, 0, 223);
+        }
+
+    }
+    public IEnumerator LightEffect (bool black, float speed)
+    {
+        float alpha = 1f;
+        lightInside.enabled = true;
+        if(black) {
+            alpha = 0.8f;
+            lightInside.color = Color.black;
+            lightInside.color = new Color (0,0,0,alpha);
+            yield return new WaitForSeconds(0.2f);
+
+            while (alpha != 0)
+            {
+                alpha = Mathf.MoveTowards(alpha,0,Time.deltaTime * speed);
+                lightInside.color = new Color(0, 0, 0, alpha);
+                yield return null;
+            }
+            lightInside.enabled = false;
+        }
+        else
+        {
+            alpha = 2f;
+            // lightEffect.SetActive(true);
+            lightInside.enabled = false;
+            lightEffect.GetComponent<Light2D>().intensity = alpha;
+
             while (alpha != 0)
             {
                 alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * speed);
-                insideBG.color = new Color(0, 0, 0, alpha / 255);
+                lightEffect.GetComponent<Light2D>().intensity = alpha; 
                 yield return null;
             }
-            insideBG.enabled = false;
-           // insideBG.color = new Color(0, 0, 0, 223);
+            lightEffect.GetComponent<Light2D>().intensity = 0;
         }
-
     }
     
 }

@@ -153,7 +153,8 @@ public class EnterBoat : MonoBehaviour
 
         yield return new WaitForSeconds(.5f); // change to when enter for outside animation done
 
-
+        StartCoroutine(zoom.LightEffect(true, 0.5f));
+        StartCoroutine(zoom.FadeBG(true, 71));
         //Second Function
 
         // private void Enter()
@@ -165,7 +166,7 @@ public class EnterBoat : MonoBehaviour
         playerAnimations.transform.position =  insideAnimationEnterPos.position; 
 
         //Set stuff active/inactive for inside        
-        StartCoroutine(zoom.FadeBG(true, 71));
+        
         waves.ShowWaves(false);
         rain.SetActive(false);
         propelor.SetActive(false);
@@ -227,6 +228,8 @@ public class EnterBoat : MonoBehaviour
        //secondaryCam.orthographicSize = zoom.targetZoom;
        // secondaryCam.transform.position = zoom.targetPosition;
         StartCoroutine(zoom.FadeBG(false, 42));
+
+        StartCoroutine(zoom.LightEffect(false, 1f));
 
         // Audio
         audioSource.clip = doorCreak;

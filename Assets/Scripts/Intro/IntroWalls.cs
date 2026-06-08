@@ -15,7 +15,7 @@ public class IntroWalls : MonoBehaviour
     
 
     [SerializeField] private int hitAmount;
-    private bool started = false;
+  //  private bool started = false;
     private bool shouldRumble;
     private Vector3 startPosition;
     private Vector3 lastPosition;
