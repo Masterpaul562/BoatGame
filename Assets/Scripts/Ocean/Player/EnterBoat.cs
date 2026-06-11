@@ -35,6 +35,8 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private Animator animator; // 
     [SerializeField] private Animator doorAnim; // animator of the door
 
+    [SerializeField] private RainSounds rainSounds;
+
     [SerializeField] private Camera cam;
     [SerializeField] private Camera secondaryCam;
 
@@ -46,7 +48,8 @@ public class EnterBoat : MonoBehaviour
     [Header("Info")]
     public bool canEnter = true;
     public bool inBoat;
-    private bool EnterCd = true;
+    private bool enterCd = true;
+    public bool exitCd = false;
 
 
     [Header("Audio")]
@@ -78,7 +81,7 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10,interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Enter"&&canEnter && EnterCd && !harpScript.isFishing)
+                if (hit.collider.gameObject.tag == "Enter"&&canEnter && enterCd && !harpScript.isFishing)
                 {
                     StopAllCoroutines();
                     StartCoroutine(Enter());
@@ -92,7 +95,7 @@ public class EnterBoat : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 10, interactable);
             if (hit.collider != null)
             {
-                if (hit.collider.gameObject.tag == "Exit"&&canEnter && !harpScript.isFishing)
+                if (hit.collider.gameObject.tag == "Exit"&&canEnter && !harpScript.isFishing&&!exitCd)
                 {
                     StopAllCoroutines();
                     ExitAnimation();
@@ -118,7 +121,10 @@ public class EnterBoat : MonoBehaviour
         //First function
         // private void Enter()
         //{
-        EnterCd = false;
+        enterCd = false;
+        exitCd = true;
+
+      
         
 
         // Zoom and move camera when entering boat. 
@@ -173,6 +179,7 @@ public class EnterBoat : MonoBehaviour
         outsideBoatSprite.SetActive(false);
         sunbeams.SetActive(false);
         inBoat = true;
+        rainSounds.switched = false;
         animator.SetBool("IsInside", true);
         boatCollider.SetActive(false);
         boatInside.SetActive(true);
@@ -220,6 +227,8 @@ public class EnterBoat : MonoBehaviour
         player.SetActive(true);
         playerAnimations.SetActive(false);
 
+        rainSounds.switched = false;
+
         // Zoom and move camera when exiting boat. 
         var zoom = cam.GetComponent<CameraZoom>();
         zoom.targetZoom = zoom.ogZoom;
@@ -239,7 +248,7 @@ public class EnterBoat : MonoBehaviour
         musicPlayer.Play();
 
         //Set stuff active/inactive for outside
-        EnterCd = true;
+        enterCd = true;
         inBoat = false;
         animator.SetBool("IsInside", false);
         propelor.SetActive(true);

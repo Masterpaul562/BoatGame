@@ -8,6 +8,7 @@ public class FishEngineReal : MonoBehaviour
     [SerializeField] private GameObject lightBar;
     [SerializeField] private HarpoonGun2 fishing;
     [SerializeField] private Transform feedPos;
+    public AudioSource source;
 
     private FishInventory inventory;
     private SpriteRenderer sprite;
@@ -132,6 +133,7 @@ public class FishEngineReal : MonoBehaviour
 
     private void PlayerFeed()
     {
+        source.Play();
         feedCD = true;
         player.GetComponent<PlayerMove>().freeze = true;
         player.GetComponent<Rigidbody2D>().velocity= Vector2.zero;

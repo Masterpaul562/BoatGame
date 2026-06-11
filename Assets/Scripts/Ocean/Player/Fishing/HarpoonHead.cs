@@ -14,6 +14,7 @@ public class HarpoonHead : MonoBehaviour
     public float particleSize;
     public float bubbleOffsetY;
     public LayerMask water;
+    public AudioSource source;
 
     
     
@@ -34,6 +35,7 @@ public class HarpoonHead : MonoBehaviour
         if( other.gameObject.tag == "Fish")
         {
             Debug.Log("HIT");
+            source.Play();  
             StopAllCoroutines();
             Vector3 bloodPos = new Vector3(other.transform.position.x, other.transform.position.y, blood.transform.position.z); 
             var bloodClone = Instantiate(blood, bloodPos , Quaternion.Euler(0, 0, 0));

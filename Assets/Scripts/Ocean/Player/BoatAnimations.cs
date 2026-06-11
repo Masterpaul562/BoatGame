@@ -11,6 +11,7 @@ public class BoatAnimations : MonoBehaviour
         this.gameObject.SetActive(false);
         player.GetComponent<SpriteRenderer>().enabled = true;
         player.GetComponent<PlayerMove>().freeze = false;
+        player.GetComponent<EnterBoat>().exitCd = false;
     }
     private void Exit()
     {
