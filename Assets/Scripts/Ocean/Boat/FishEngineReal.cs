@@ -133,7 +133,7 @@ public class FishEngineReal : MonoBehaviour
 
     private void PlayerFeed()
     {
-        source.Play();
+        
         feedCD = true;
         player.GetComponent<PlayerMove>().freeze = true;
         player.GetComponent<Rigidbody2D>().velocity= Vector2.zero;

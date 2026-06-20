@@ -13,6 +13,7 @@ public class HoleManager : MonoBehaviour
 
     private int failedHoleSpawn;
     private bool hasDrown = false;
+    public bool isPlaying = false;
 
     [Header("Settings")]
     public float waterSpeed;
@@ -39,6 +40,9 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private LayerMask waterMask;
     [SerializeField] private Transform drownCheck;
     [SerializeField] private Restart restarter;
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioSource waterLeaking;
+
 
 
 
@@ -71,6 +75,15 @@ public class HoleManager : MonoBehaviour
                     playerDrown.GetComponent<BackGroundScroller>().enabled = true;
                 }
             }
+        }
+        if( holes.Count > 0 && !isPlaying && player.GetComponent<EnterBoat>().inBoat)
+        {
+            waterLeaking.Play();
+            isPlaying = true;
+        }else if (!player.GetComponent<EnterBoat>().inBoat || holes.Count <= 0)
+        {
+            waterLeaking.Stop();
+            isPlaying = false;
         }
 
         float vert = Input.GetAxisRaw("Vertical");
@@ -154,6 +167,8 @@ public class HoleManager : MonoBehaviour
                 player.GetComponent<PlayerMove>().freeze = true;
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
                 player.GetComponent<Animator>().SetTrigger("FixHole");
+
+                source.Play();
 
                 Destroy(holes[index]);
                 holes.RemoveAt(index);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoatAnimations : MonoBehaviour
 {
     public GameObject player;
+     
     private void ShowPlayer()
     {
         player.SetActive(true);

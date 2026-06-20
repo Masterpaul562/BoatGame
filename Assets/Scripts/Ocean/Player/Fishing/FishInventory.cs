@@ -39,6 +39,7 @@ public class FishInventory : MonoBehaviour
     private void Feed()
     {
         feed.FeedFish();
+        feed.source.Play();
     }
 
 }
