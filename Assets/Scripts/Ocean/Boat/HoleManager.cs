@@ -30,8 +30,7 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private GameObject holePrefab;
     [SerializeField] private Collider2D spawnLocation;
     [SerializeField] private Transform boat;
-    [SerializeField] private Sprite spriteHole1;
-    [SerializeField] private Sprite spriteHole2;
+    [SerializeField] private Sprite[] spriteHole;
     [SerializeField] private GameObject floodWater;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject playerDrown;
@@ -49,7 +48,7 @@ public class HoleManager : MonoBehaviour
     private void Update()
     {
         
-       if( Input.GetMouseButtonDown(0))
+       if ( Input.GetMouseButtonDown(0))
        {
        CreateHole();
 
@@ -123,14 +122,8 @@ public class HoleManager : MonoBehaviour
         {
 
             failedHoleSpawn = 0;
-            if (Random.Range(0, 2) == 1)
-            {
-                holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole1;
-            }
-            else
-            {
-                holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole2;
-            }
+            int holeSprite = Random.Range(0, spriteHole.Length);
+            holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole[holeSprite];
 
             var hole = Instantiate(holePrefab, spawnPos, Quaternion.identity, boat);
             holes.Add(hole);
