@@ -151,7 +151,7 @@ public class Albatross : MonoBehaviour
             int time = Random.Range(emoteWaitMin, emoteWaitMax);
             yield return new WaitForSeconds(time);
 
-            int emote = Random.Range(0, 2);
+            int emote = Random.Range(0, 3);
             
             if (emote == 0 )
             {
@@ -159,6 +159,9 @@ public class Albatross : MonoBehaviour
             }else if (emote == 1)
             {
                 animator.SetTrigger("Ruffle");
+            }else if ( emote == 2)
+            {
+                animator.SetTrigger("Squak");
             }
         }
     }
@@ -302,6 +305,10 @@ public class Albatross : MonoBehaviour
         transform.parent = boat.transform;
         animator.SetBool("IsFlying", false);
         animator.SetTrigger("Restart");
+    }
+    public void SquakeSound()
+    {
+        //source.play
     }
 
 }
