@@ -6,44 +6,55 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(Camera))]
 public class CameraZoom : MonoBehaviour
 {
-   private Camera cam;
-   public Camera secondaryCam;
-   [Header("Zoom Settings")]
-   public float ogZoom; // Pre zoom size
-   public Vector3 ogPosition; // Pre zoom position
-   public float targetZoom; // Target zoom size
-   public Vector3 targetPosition; // Target zoom position
-   public float zoomSpeed;
-   [Header("Fade Settings")]
-   [SerializeField] private SpriteRenderer insideBG;// the sprite renderer for the Black BG for inside
+    private Camera cam;
+    public Camera secondaryCam;
+    [Header("Zoom Settings")]
+    public float ogZoom; // Pre zoom size
+    public Vector3 ogPosition; // Pre zoom position
+    public float targetZoom; // Target zoom size
+    public Vector3 targetPosition; // Target zoom position
+    public float zoomSpeed;
+    [Header("Fade Settings")]
+    [SerializeField] private SpriteRenderer insideBG;// the sprite renderer for the Black BG for inside
     [SerializeField] private SpriteRenderer lightInside;
     [SerializeField] private GameObject lightEffect;
-   private float alpha;
+    private float alpha;
+    public bool drown = false;
+    public float drownSpeed;
+    public Transform boat;
 
 
-   
 
 
 
-  private void Awake() 
-  {           
+
+    private void Awake()
+    {
         cam = GetComponent<Camera>();
         ogZoom = cam.orthographicSize;
         ogPosition = cam.transform.position;
         targetZoom = cam.orthographicSize;
         targetPosition = cam.transform.position;
-  }
-  private void Update() {
-
-    Zoom();
-  }
+    }
+    private void Update()
+    {
+        if (!drown)
+        {
+            Zoom();
+        }
+        else
+        {
+            Drown();
+        }
+    }
 
     private void Zoom()
     {
         //ogZoom = cam.orthographicSize;
-        cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime*Mathf.Abs(cam.orthographicSize - targetZoom)*zoomSpeed);
-        if( targetPosition != null){
-            float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime* Mathf.Abs(transform.position.y-targetPosition.y)*zoomSpeed);
+        cam.orthographicSize = Mathf.MoveTowards(cam.orthographicSize, targetZoom, Time.deltaTime * Mathf.Abs(cam.orthographicSize - targetZoom) * zoomSpeed);
+        if (targetPosition != null)
+        {
+            float y = Mathf.MoveTowards(transform.position.y, targetPosition.y, Time.deltaTime * Mathf.Abs(transform.position.y - targetPosition.y) * zoomSpeed);
             cam.transform.position = new Vector3(transform.position.x, y, transform.position.z);
         }
         secondaryCam.orthographicSize = cam.orthographicSize;
@@ -64,7 +75,8 @@ public class CameraZoom : MonoBehaviour
                 insideBG.color = new Color(0, 0, 0, alpha / 255);
                 yield return null;
             }
-        }else
+        }
+        else
         if (!black)
         {
             insideBG.enabled = false;
@@ -79,19 +91,29 @@ public class CameraZoom : MonoBehaviour
         }
 
     }
-    public IEnumerator LightEffect (bool black, float speed)
+
+
+    private void Drown()
+    {
+        Vector2 direction = new Vector2(transform.position.x,transform.position.y-2);
+        Vector2 movePosition = Vector2.MoveTowards(transform.position, direction, Time.deltaTime * drownSpeed);
+        transform.position = new Vector3 (movePosition.x, movePosition.y, transform.position.z);
+    }
+
+    public IEnumerator LightEffect(bool black, float speed)
     {
         float alpha = 1f;
         lightInside.enabled = true;
-        if(black) {
+        if (black)
+        {
             alpha = 0.8f;
             lightInside.color = Color.black;
-            lightInside.color = new Color (0,0,0,alpha);
+            lightInside.color = new Color(0, 0, 0, alpha);
             yield return new WaitForSeconds(0.2f);
 
             while (alpha != 0)
             {
-                alpha = Mathf.MoveTowards(alpha,0,Time.deltaTime * speed);
+                alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * speed);
                 lightInside.color = new Color(0, 0, 0, alpha);
                 yield return null;
             }
@@ -107,11 +129,11 @@ public class CameraZoom : MonoBehaviour
             while (alpha != 0)
             {
                 alpha = Mathf.MoveTowards(alpha, 0, Time.deltaTime * speed);
-                lightEffect.GetComponent<Light2D>().intensity = alpha; 
+                lightEffect.GetComponent<Light2D>().intensity = alpha;
                 yield return null;
             }
             lightEffect.GetComponent<Light2D>().intensity = 0;
         }
     }
-    
+
 }

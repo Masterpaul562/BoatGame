@@ -15,13 +15,16 @@ public class Restart : MonoBehaviour
     [SerializeField] PanCamera panLeft;
     [SerializeField] PanCamera panRight;
     [SerializeField] HarpoonGun2 gun;
+    [SerializeField] CameraZoom cam;
 
     [SerializeField] GameObject boat;
-    private Transform ogBoatPos;
+    public Vector3 ogBoatPos;
+    public Vector3 ogBoatRot;
 
     private void Start()
     {
-        ogBoatPos = boat.transform;
+        ogBoatPos = boat.transform.position;
+        ogBoatRot = boat.transform.rotation.eulerAngles;
     }
 
 
@@ -36,9 +39,10 @@ public class Restart : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
         }
 
-        boat.transform.position = ogBoatPos.position;
+        cam.drown = false;
+        boat.transform.position = ogBoatPos;
 
-        Quaternion rotation = Quaternion.Euler(0f, 0f, ogBoatPos.transform.rotation.z);
+        Quaternion rotation = Quaternion.Euler(0f, 0f, ogBoatPos.z);
         boat.transform.rotation = rotation;
         yield return null;
 

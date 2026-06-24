@@ -21,10 +21,12 @@ public class HoleManager : MonoBehaviour
     public float drownLevel;
     public float outsideDrownLevel;
     public float sinkSpeed;
+    public float drownSpeed;
+    public float insideSinkSpeed;
     public float sinkRotSpeed;
     public float fixCDTime;
     public bool shouldDrain;
-    
+
 
     [Header("Refrences")]
     [SerializeField] private GameObject holePrefab;
@@ -39,6 +41,7 @@ public class HoleManager : MonoBehaviour
     [SerializeField] private LayerMask waterMask;
     [SerializeField] private Transform drownCheck;
     [SerializeField] private Restart restarter;
+    [SerializeField] private CameraZoom cam;
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioSource waterLeaking;
 
@@ -47,39 +50,47 @@ public class HoleManager : MonoBehaviour
 
     private void Update()
     {
-        
-       if ( Input.GetMouseButtonDown(0))
-       {
-       CreateHole();
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            CreateHole();
 
         }
-        if(holes.Count > 0 && shouldDrain)
+        if (holes.Count > 0 && shouldDrain)
         {
             FloodBoat();
+            SinkBoat();
         }
 
-        if(waterLevel> sinkLevel)
+        if (waterLevel > sinkLevel)
         {
             var enter = player.GetComponent<EnterBoat>();
             player.GetComponent<EnterBoat>().canEnter = false;
-            SinkBoat();
-            if(waterLevel > drownLevel&& !hasDrown && enter.inBoat||!hasDrown&& !enter.inBoat && Physics2D.Raycast(drownCheck.position, Vector3.forward, 10, waterMask))
+            isSinking = true;
+
+            if (!player.GetComponent<EnterBoat>().inBoat)
             {
-                hasDrown = true;               
+                cam.drown = true;
+            }
+
+            if (waterLevel > drownLevel && !hasDrown && enter.inBoat || !hasDrown && !enter.inBoat && Physics2D.Raycast(drownCheck.position, Vector3.forward, 10, waterMask))
+            {
+                hasDrown = true;
                 Drown();
 
-                if( !enter.inBoat )
+                if (!enter.inBoat)
                 {
                     playerDrown.transform.parent = null;
                     playerDrown.GetComponent<BackGroundScroller>().enabled = true;
                 }
             }
         }
-        if( holes.Count > 0 && !isPlaying && player.GetComponent<EnterBoat>().inBoat)
+        if (holes.Count > 0 && !isPlaying && player.GetComponent<EnterBoat>().inBoat)
         {
             waterLeaking.Play();
             isPlaying = true;
-        }else if (!player.GetComponent<EnterBoat>().inBoat || holes.Count <= 0)
+        }
+        else if (!player.GetComponent<EnterBoat>().inBoat || holes.Count <= 0)
         {
             waterLeaking.Stop();
             isPlaying = false;
@@ -105,20 +116,20 @@ public class HoleManager : MonoBehaviour
             {
                 if (spawnPos.x > holes[i].transform.position.x - 0.1f && spawnPos.x < holes[i].transform.position.x + 0.1f)
                 {
-                  Debug.Log("Failed");
-                  shouldSpawn = false;
-                    
-                  i = 10000;
+                    Debug.Log("Failed");
+                    shouldSpawn = false;
+
+                    i = 10000;
                 }
                 else
                 {
                     shouldSpawn = true;
-                    
+
                 }
             }
         }
 
-        if (shouldSpawn || holes.Count<=0)
+        if (shouldSpawn || holes.Count <= 0)
         {
 
             failedHoleSpawn = 0;
@@ -142,9 +153,9 @@ public class HoleManager : MonoBehaviour
 
     private Vector2 FindSpawnLocation(Bounds bound)
     {
-        return new Vector2 (
-        Random.Range(bound.min.x,bound.max.x),
-        Random.Range(bound.min.y,bound.max.y)
+        return new Vector2(
+        Random.Range(bound.min.x, bound.max.x),
+        Random.Range(bound.min.y, bound.max.y)
         );
     }
 
@@ -158,7 +169,7 @@ public class HoleManager : MonoBehaviour
                 int index = FindHole(hit.collider.gameObject);
 
                 player.GetComponent<PlayerMove>().freeze = true;
-                player.GetComponent<Rigidbody2D>().velocity = new Vector2 (0,0);
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 player.GetComponent<Animator>().SetTrigger("FixHole");
 
                 source.Play();
@@ -174,7 +185,7 @@ public class HoleManager : MonoBehaviour
 
     private int FindHole(GameObject targetObj)
     {
-        for(int i = 0; i < holes.Count; i++)
+        for (int i = 0; i < holes.Count; i++)
         {
             if (holes[i].gameObject == targetObj)
             {
@@ -194,17 +205,31 @@ public class HoleManager : MonoBehaviour
         else
         {
             waterSpeed = 0.7f;
-            waterLevel += waterSpeed* Time.deltaTime;
+            waterLevel += waterSpeed * Time.deltaTime;
             floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
         }
     }
     private void SinkBoat()
     {
-        isSinking = true;
         var wave = this.gameObject.GetComponent<MoveWithWaves>();
-        wave.yOffset -= sinkSpeed * waterLevel * Time.deltaTime;
+        // isSinking = true;
+        if (!isSinking)
+        {           
+            wave.yOffset = sinkSpeed * waterLevel;
+        }
+        else if(!player.GetComponent<EnterBoat>().inBoat)
+        {
+            wave.yOffset -= drownSpeed * waterLevel * Time.deltaTime;
+            // transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x,transform.position.y-1,transform.position.z), Time.deltaTime *drownSpeed);
+            wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
+        }
+        else
+        {
+            wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
+            wave.yOffset -= insideSinkSpeed * waterLevel * Time.deltaTime;
+        }
 
-        wave.rotationOffset += sinkRotSpeed * Time.deltaTime;
+        
     }
 
     private void Drown()
@@ -213,7 +238,13 @@ public class HoleManager : MonoBehaviour
         playerDrown.SetActive(true);
         playerDrown.transform.position = player.transform.position;
         playerDrown.transform.localScale = player.transform.localScale;
-        StartCoroutine(restarter.RestartLevel(5,true));
+
+       // if (!player.GetComponent<EnterBoat>().inBoat)
+       // {
+            
+       // }
+
+        StartCoroutine(restarter.RestartLevel(7, true));
         fishing.harpHead.transform.position = fishing.harpEnd.position;
         fishing.harpHead.transform.parent = fishing.harpEnd;
 
@@ -227,14 +258,14 @@ public class HoleManager : MonoBehaviour
     public void Restart()
     {
 
-       
+
         GameObject[] array = new GameObject[holes.Count];
-            holes.CopyTo(array);
-        for(int i =0; i < array.Length; i++)
-       {
+        holes.CopyTo(array);
+        for (int i = 0; i < array.Length; i++)
+        {
             Destroy(array[i]);
-       }
-        for (int i = holes.Count-1; i >= 0; i--)
+        }
+        for (int i = holes.Count - 1; i >= 0; i--)
         {
             holes.RemoveAt(i);
         }
@@ -247,9 +278,11 @@ public class HoleManager : MonoBehaviour
         floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
         floodWater.SetActive(false);
         isSinking = false;
+        cam.drown = false;
         hasDrown = false;
 
         var wave = this.gameObject.GetComponent<MoveWithWaves>();
+        wave.enabled = true;
         wave.rotationOffset = 0;
         wave.yOffset = 0;
     }
