@@ -28,4 +28,10 @@ public class RainSounds : MonoBehaviour
             source.Play();
         }
     }
+
+    public void Restart()
+    {
+        source.clip = insideRain;  
+        source.Play();
+    }
 }

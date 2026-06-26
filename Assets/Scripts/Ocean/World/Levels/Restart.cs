@@ -16,6 +16,7 @@ public class Restart : MonoBehaviour
     [SerializeField] PanCamera panRight;
     [SerializeField] HarpoonGun2 gun;
     [SerializeField] CameraZoom cam;
+    [SerializeField] RainSounds rain;
 
     [SerializeField] GameObject boat;
     public Vector3 ogBoatPos;
@@ -56,6 +57,7 @@ public class Restart : MonoBehaviour
         engine.Restart();
         speed.Restart();
         bird.Restart();
+        rain.Restart();
        
 
        
