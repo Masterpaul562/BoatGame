@@ -223,7 +223,7 @@ public class HoleManager : MonoBehaviour
            float yOffset = sinkSpeed * waterLevel;
             
             wave.yOffset = Mathf.MoveTowards(wave.yOffset, yOffset, Time.deltaTime);
-            Debug.Log(yOffset);
+           
         }
         else if(!player.GetComponent<EnterBoat>().inBoat)
         {
