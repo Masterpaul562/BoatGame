@@ -22,10 +22,12 @@ public class HoleManager : MonoBehaviour
     public float outsideDrownLevel;
     public float sinkSpeed;
     public float drownSpeed;
+    public float drainSpeed;
     public float insideSinkSpeed;
     public float sinkRotSpeed;
     public float fixCDTime;
     public bool shouldDrain;
+    
 
 
     [Header("Refrences")]
@@ -60,6 +62,9 @@ public class HoleManager : MonoBehaviour
         {
             FloodBoat();
             SinkBoat();
+        }else
+        {
+            DrainBoat();
         }
 
         if (waterLevel > sinkLevel)
@@ -200,13 +205,13 @@ public class HoleManager : MonoBehaviour
         if (!isSinking)
         {
             waterLevel += waterSpeed * holes.Count * Time.deltaTime;
-            floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+            SetWaterLevel(waterLevel);
         }
         else
         {
             waterSpeed = 0.7f;
             waterLevel += waterSpeed * Time.deltaTime;
-            floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);
+            SetWaterLevel(waterLevel);
         }
     }
     private void SinkBoat()
@@ -253,6 +258,13 @@ public class HoleManager : MonoBehaviour
 
     }
 
+
+    private void DrainBoat()
+    {
+        waterLevel = Mathf.MoveTowards(waterLevel, 0, Time.deltaTime*drainSpeed);
+        SetWaterLevel(waterLevel);
+    }
+
     private IEnumerator FixCooldown()
     {
         yield return new WaitForSeconds(fixCDTime);
@@ -288,6 +300,10 @@ public class HoleManager : MonoBehaviour
         wave.enabled = true;
         wave.rotationOffset = 0;
         wave.yOffset = 0;
+    }
+    private void SetWaterLevel(float level)
+    {
+        floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, level);
     }
 
 }
