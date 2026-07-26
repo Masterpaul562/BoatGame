@@ -14,7 +14,6 @@ public class SetupOcean : MonoBehaviour
     [SerializeField] private GameObject outsideBoatSprite;
     [SerializeField] private GameObject propelor;
     [SerializeField] private GameObject rain;
-    [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject wakeUp;
     [SerializeField] private GameObject drown;
     [SerializeField] private GameObject earwig;
@@ -60,7 +59,6 @@ public class SetupOcean : MonoBehaviour
         propelor.SetActive(false);
         outsideBoatSprite.SetActive(false);
         rain.SetActive(false);
-        sunbeams.SetActive(false);
         waves.ShowWaves(false);
         awakened = false;
 

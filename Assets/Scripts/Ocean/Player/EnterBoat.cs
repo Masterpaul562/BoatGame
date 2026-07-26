@@ -14,7 +14,6 @@ public class EnterBoat : MonoBehaviour
     [SerializeField] private GameObject outsideBoatSprite;
     [SerializeField] private GameObject propelor;
     [SerializeField] private GameObject rain;
-    [SerializeField] private GameObject sunbeams;
     [SerializeField] private GameObject player; // Player Object
     [SerializeField] private GameObject playerAnimations;
     [SerializeField] private GameObject harpoon; // Harpoon Object
@@ -177,7 +176,6 @@ public class EnterBoat : MonoBehaviour
         rain.SetActive(false);
         propelor.SetActive(false);
         outsideBoatSprite.SetActive(false);
-        sunbeams.SetActive(false);
         inBoat = true;
         rainSounds.switched = false;
         animator.SetBool("IsInside", true);
@@ -254,7 +252,6 @@ public class EnterBoat : MonoBehaviour
         propelor.SetActive(true);
         outsideBoatSprite.SetActive(true);
         rain.SetActive(true);
-        sunbeams.SetActive(true);
         waves.ShowWaves(true);
         boatCollider.SetActive(true);
         boatInside.SetActive(false);
