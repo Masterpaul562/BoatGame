@@ -13,6 +13,7 @@ TagManager:
   - Fish
   - Hole
   - Water
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Post Processing
   - Sky
   - WaterMask
-  - 
+  - Seamine
   - 
   - 
   - 

@@ -8,6 +8,7 @@ public class SeamineSpawner : MonoBehaviour
     [SerializeField] private GameObject SeaminePrefab;
     [SerializeField] private LevelManager levels;
     [SerializeField] private CamSizeManager size;
+    //private AnimatorController animController;
     public Floater floatScript;
     [Header("Settings")]
     public float spawnTimeMin;
