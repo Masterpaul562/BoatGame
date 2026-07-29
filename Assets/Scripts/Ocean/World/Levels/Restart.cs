@@ -17,6 +17,7 @@ public class Restart : MonoBehaviour
     [SerializeField] HarpoonGun2 gun;
     [SerializeField] CameraZoom cam;
     [SerializeField] RainSounds rain;
+    [SerializeField] SeamineSpawner mines;
 
     [SerializeField] GameObject boat;
     public Vector3 ogBoatPos;
@@ -58,6 +59,7 @@ public class Restart : MonoBehaviour
         speed.Restart();
         bird.Restart();
         rain.Restart();
+        mines.Restart();
        
 
        

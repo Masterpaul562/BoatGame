@@ -7,6 +7,7 @@ public class SeaMine : MonoBehaviour
     public Animator animator;
     public AudioSource source;
     public float size;
+    public bool shouldDestroy;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

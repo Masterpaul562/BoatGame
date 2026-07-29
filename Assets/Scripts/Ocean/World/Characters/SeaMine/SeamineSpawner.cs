@@ -5,6 +5,7 @@ using UnityEngine;
 public class SeamineSpawner : MonoBehaviour
 {
     [Header("Refrences")]
+    [SerializeField] public List<GameObject> mines = new List<GameObject>();
     [SerializeField] private GameObject SeaminePrefab;
     [SerializeField] private LevelManager levels;
     [SerializeField] private CamSizeManager size;
@@ -43,6 +44,7 @@ public class SeamineSpawner : MonoBehaviour
             spawning = true;
             StartCoroutine(SpawnMine());
         }
+        RemoveDestroyed();
     }
     
 
@@ -67,7 +69,29 @@ public class SeamineSpawner : MonoBehaviour
         mineFloater.speedMult = floatScript.speedMult;  
         mineFloater.defaultSpeed = floatScript.defaultSpeed;
 
+        mines.Add(mine);
 
         spawning = false;
+    }
+
+
+    public void Restart()
+    {
+        for (int i = 0; i < mines.Count; i++)
+        {
+            Destroy(mines[i]);
+            mines.RemoveAt(i);
+        }
+        StartCoroutine(Grace());
+    }
+    private void RemoveDestroyed()
+    {
+        for(int i = 0; i < mines.Count; i++)
+        {
+            if (mines[i].gameObject == null)
+            {
+                mines.RemoveAt(i);
+            }
+        }
     }
 }
