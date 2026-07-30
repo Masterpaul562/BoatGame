@@ -12,6 +12,8 @@ public class Earwiggy : MonoBehaviour
     [SerializeField] private SpeedManager speedMan;
     [SerializeField] private HoleManager hole;
     [SerializeField] private DustCloud impactCloud;
+    [SerializeField] private int holeMin;
+    [SerializeField] private int holeMax;
     public AudioSource source;
 
     [Header("Settings")]
@@ -51,7 +53,7 @@ public class Earwiggy : MonoBehaviour
     {
         
         StartCoroutine(camShake.Shake(0.7f, 0.5f));
-        int random = Random.Range(1, 3);
+        int random = Random.Range(holeMin, holeMax);
         hole.CreateHole(random);
         impactCloud.Spawn();
     }

@@ -8,12 +8,14 @@ public class SeamineTrigger : MonoBehaviour
     [SerializeField] private HoleManager hole;
     [SerializeField] private CameraShake camShake;
     [SerializeField] private DustCloud impactCloud;
+    [SerializeField] private int holeMin;
+    [SerializeField] private int holeMax;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Bomb")
         {
-            int random = Random.Range(1, 3);
+            int random = Random.Range(holeMin, holeMax);
             hole.CreateHole(random);
             StartCoroutine(camShake.Shake(0.7f, 0.5f));
             impactCloud.Spawn();
