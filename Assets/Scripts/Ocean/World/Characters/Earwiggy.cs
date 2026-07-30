@@ -51,7 +51,8 @@ public class Earwiggy : MonoBehaviour
     {
         
         StartCoroutine(camShake.Shake(0.7f, 0.5f));
-        hole.CreateHole();
+        int random = Random.Range(1, 3);
+        hole.CreateHole(random);
         impactCloud.Spawn();
     }
    

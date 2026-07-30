@@ -55,7 +55,7 @@ public class HoleManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            CreateHole();
+            CreateHole(2);
 
         }
         if (holes.Count > 0 && shouldDrain)
@@ -110,48 +110,52 @@ public class HoleManager : MonoBehaviour
 
     }
 
-    public void CreateHole()
+    public void CreateHole(int amount)
     {
 
-        Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
-        bool shouldSpawn = false;
-        if (holes.Count > 0)
+        for (int j = 0; j < amount; j++)
         {
-            for (int i = 0; i < holes.Count; i++)
+
+            Vector2 spawnPos = FindSpawnLocation(spawnLocation.bounds);
+            bool shouldSpawn = false;
+            if (holes.Count > 0)
             {
-                if (spawnPos.x > holes[i].transform.position.x - 0.1f && spawnPos.x < holes[i].transform.position.x + 0.1f)
+                for (int i = 0; i < holes.Count; i++)
                 {
-                    Debug.Log("Failed");
-                    shouldSpawn = false;
+                    if (spawnPos.x > holes[i].transform.position.x - 0.1f && spawnPos.x < holes[i].transform.position.x + 0.1f)
+                    {
+                        Debug.Log("Failed");
+                        shouldSpawn = false;
 
-                    i = 10000;
-                }
-                else
-                {
-                    shouldSpawn = true;
+                        i = 10000;
+                    }
+                    else
+                    {
+                        shouldSpawn = true;
 
+                    }
                 }
             }
-        }
 
-        if (shouldSpawn || holes.Count <= 0)
-        {
-
-            failedHoleSpawn = 0;
-            int holeSprite = Random.Range(0, spriteHole.Length);
-            holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole[holeSprite];
-
-            var hole = Instantiate(holePrefab, spawnPos, Quaternion.identity, boat);
-            holes.Add(hole);
-            floodWater.SetActive(true);
-        }
-        else
-        {
-            if (failedHoleSpawn < 4)
+            if (shouldSpawn || holes.Count <= 0)
             {
-                Debug.Log("Failed to Spawn");
-                CreateHole();
-                failedHoleSpawn++;
+
+                failedHoleSpawn = 0;
+                int holeSprite = Random.Range(0, spriteHole.Length);
+                holePrefab.GetComponent<SpriteRenderer>().sprite = spriteHole[holeSprite];
+
+                var hole = Instantiate(holePrefab, spawnPos, Quaternion.identity, boat);
+                holes.Add(hole);
+                floodWater.SetActive(true);
+            }
+            else
+            {
+                if (failedHoleSpawn < 4)
+                {
+                    Debug.Log("Failed to Spawn");
+                    CreateHole(1);
+                    failedHoleSpawn++;
+                }
             }
         }
     }

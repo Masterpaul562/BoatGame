@@ -13,7 +13,8 @@ public class SeamineTrigger : MonoBehaviour
     {
         if(other.gameObject.tag == "Bomb")
         {
-            hole.CreateHole();
+            int random = Random.Range(1, 3);
+            hole.CreateHole(random);
             StartCoroutine(camShake.Shake(0.7f, 0.5f));
             impactCloud.Spawn();
         }
