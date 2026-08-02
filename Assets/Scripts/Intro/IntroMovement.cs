@@ -52,17 +52,17 @@ public class IntroMovement : MonoBehaviour
     {
         if (isMoving)
         {
-            rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
-            currentVel = rb.velocity.x;
+            rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
+            currentVel = rb.linearVelocity.x;
             animator.SetBool("isMoving", true);
         }
         else
         {
             animator.SetBool("isMoving", false);
             currentVel = Mathf.MoveTowards(currentVel, 0, Time.deltaTime * 10);
-            rb.velocity = new Vector2(currentVel, rb.velocity.y);
+            rb.linearVelocity = new Vector2(currentVel, rb.linearVelocity.y);
         }
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
     }
 
 

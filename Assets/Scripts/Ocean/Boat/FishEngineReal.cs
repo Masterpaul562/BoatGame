@@ -136,7 +136,7 @@ public class FishEngineReal : MonoBehaviour
         
         feedCD = true;
         player.GetComponent<PlayerMove>().freeze = true;
-        player.GetComponent<Rigidbody2D>().velocity= Vector2.zero;
+        player.GetComponent<Rigidbody2D>().linearVelocity= Vector2.zero;
         player.transform.position = feedPos.position;
         if (player.transform.localScale.x > 0)
         {

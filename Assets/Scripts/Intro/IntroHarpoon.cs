@@ -125,7 +125,7 @@ public class IntroHarpoon : MonoBehaviour
         // {
         Vector2 direction = harpHead.transform.position - this.direction.position;
         harpHead.GetComponent<Rigidbody2D>().AddForce(direction * power, ForceMode2D.Impulse);
-        harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().velocity.x, 0), ForceMode2D.Impulse);
+        harpHead.GetComponent<Rigidbody2D>().AddForce(new Vector2(player.GetComponent<Rigidbody2D>().linearVelocity.x, 0), ForceMode2D.Impulse);
         // }
         // else
         //{

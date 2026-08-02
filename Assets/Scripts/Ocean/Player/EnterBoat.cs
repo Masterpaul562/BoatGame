@@ -144,7 +144,7 @@ public class EnterBoat : MonoBehaviour
        // player.SetActive(false);
         
         this.GetComponent<PlayerMove>().freeze = true;
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0,0);
 
         //Audio
         audioSource.clip = doorCreak;
