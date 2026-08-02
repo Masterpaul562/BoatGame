@@ -6,7 +6,7 @@ public class FishInventory : MonoBehaviour
 {
     public int fishAmountOutside;
     public int fishAmountInside;
-    public int junkAmount;
+    public int scrapAmount;
     public FishEngineReal feed;
 
 
@@ -23,7 +23,7 @@ public class FishInventory : MonoBehaviour
     }
     public void AddJunk(int amount)
     {
-        junkAmount += amount;
+        scrapAmount += amount;
     }
     public int GetFishAmount(bool inside)
     {

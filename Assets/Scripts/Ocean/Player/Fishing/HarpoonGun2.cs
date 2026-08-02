@@ -41,6 +41,7 @@ public class HarpoonGun2 : MonoBehaviour
     public bool hasFire;
     public bool isReeling;
     public bool fishHooked;
+    public bool scrapHooked;
     public GameObject hookedFish;
 
 
@@ -183,10 +184,19 @@ public class HarpoonGun2 : MonoBehaviour
 
     private void CatchFish()
     {
-        player.GetComponent<FishInventory>().AddFishOutside(1);
-        fishManager.SecureFish(hookedFish);
+        if (scrapHooked)
+        {
+            player.GetComponent<FishInventory>().AddJunk(1);
+        }
+        else
+        {
+            player.GetComponent<FishInventory>().AddFishOutside(1);
+            fishManager.SecureFish(hookedFish);
+        }
+        scrapHooked = false;
         fishHooked = false;
     }
+       
     
     private void ReelCheck()
     {
