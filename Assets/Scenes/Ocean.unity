@@ -17352,7 +17352,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674071350}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22e5a8a0159ea5f40b270d468a44afd3, type: 3}
   m_Name: 
@@ -18421,6 +18421,7 @@ MonoBehaviour:
   hasFire: 0
   isReeling: 0
   fishHooked: 0
+  scrapHooked: 0
   hookedFish: {fileID: 0}
 --- !u!82 &863534864
 AudioSource:
