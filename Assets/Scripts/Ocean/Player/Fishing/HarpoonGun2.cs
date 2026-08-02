@@ -187,6 +187,7 @@ public class HarpoonGun2 : MonoBehaviour
         if (scrapHooked)
         {
             player.GetComponent<FishInventory>().AddJunk(1);
+            Destroy(hookedFish);
         }
         else
         {

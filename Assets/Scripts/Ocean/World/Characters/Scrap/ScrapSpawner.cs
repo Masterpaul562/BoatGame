@@ -60,6 +60,10 @@ public class ScrapSpawner : MonoBehaviour
         var scrap = Instantiate(scrapPrefab, spawnLocation, Quaternion.identity);
         scrap.AddComponent<Floater>();
 
+        int randomSprite = Random.Range(0, 6);
+        scrap.GetComponent<SpriteRenderer>().sprite = scrapSprites[randomSprite];
+        scrap.GetComponent<SpriteMask>().sprite = scrap.GetComponent<SpriteRenderer>().sprite;
+
         var scrapFloater = scrap.GetComponent<Floater>();
 
 
