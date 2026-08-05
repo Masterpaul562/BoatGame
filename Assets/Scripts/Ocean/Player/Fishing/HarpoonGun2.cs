@@ -12,6 +12,7 @@ public class HarpoonGun2 : MonoBehaviour
     [SerializeField] private Transform headHolder;   
     [SerializeField] private Transform direction;
     [SerializeField] private FishManager fishManager;
+    public NotificationUI notificationUI;
     public GameObject harpHead;
     public Transform harpEnd;
     private Animator anim;
@@ -151,7 +152,7 @@ public class HarpoonGun2 : MonoBehaviour
         if(hookedFish){
          reelSpeed =0;
         }else{
-            reelSpeed = 20;
+            reelSpeed = 45;
         }
         while (distance > 0.1f)
         {
@@ -188,11 +189,13 @@ public class HarpoonGun2 : MonoBehaviour
         {
             player.GetComponent<FishInventory>().AddJunk(1);
             Destroy(hookedFish);
+            notificationUI.ShowMessage("+1 Scrap");
         }
         else
         {
             player.GetComponent<FishInventory>().AddFishOutside(1);
             fishManager.SecureFish(hookedFish);
+            notificationUI.ShowMessage("+1 Fish");
         }
         scrapHooked = false;
         fishHooked = false;

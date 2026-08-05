@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 0bf37f62b664f466aa2c860a3b2b51c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1490783179429289449
+    second: Torn Jib_0
+  - first:
+      213: -1231731554286948654
+    second: Torn Jib_1
+  - first:
+      213: -2979661953003921546
+    second: Torn Jib_2
+  - first:
+      213: 8319983816373079511
+    second: Torn Jib_3
+  - first:
+      213: -7414825877945713364
+    second: Torn Jib_4
+  - first:
+      213: -5109706687481916600
+    second: Torn Jib_5
+  - first:
+      213: -4800160543137026246
+    second: Torn Jib_6
+  - first:
+      213: -7332099088306627355
+    second: Torn Jib_7
+  - first:
+      213: -3216335162610435029
+    second: Torn Jib_8
+  - first:
+      213: 8775062305895520270
+    second: Torn Jib_9
+  - first:
+      213: -419678824689281040
+    second: Torn Jib_10
+  - first:
+      213: 3625573375524643100
+    second: Torn Jib_11
+  - first:
+      213: 6360843045016338450
+    second: Torn Jib_12
+  - first:
+      213: -3949452227590870763
+    second: Torn Jib_13
+  - first:
+      213: 5611541106815809478
+    second: Torn Jib_14
+  - first:
+      213: 8663269335258191664
+    second: Torn Jib_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Torn Jib_0
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 4993
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7126df8c89caf4be0800000000000000
+      internalID: -1490783179429289449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_1
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 4989
+        width: 116
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de26186da208eee0800000000000000
+      internalID: -1231731554286948654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_2
+      rect:
+        serializedVersion: 2
+        x: 2774
+        y: 4985
+        width: 121
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f547c9d3d16a6d0800000000000000
+      internalID: -2979661953003921546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_3
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 4596
+        width: 243
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd8ae72335867370800000000000000
+      internalID: 8319983816373079511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_4
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 4593
+        width: 248
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2dfba1462f391990800000000000000
+      internalID: -7414825877945713364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_5
+      rect:
+        serializedVersion: 2
+        x: 2835
+        y: 4590
+        width: 214
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843d33217dca619b0800000000000000
+      internalID: -5109706687481916600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_6
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 3063
+        width: 115
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3fa8791b67626db0800000000000000
+      internalID: -4800160543137026246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_7
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 3060
+        width: 120
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec948fe9b62f3a90800000000000000
+      internalID: -7332099088306627355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_8
+      rect:
+        serializedVersion: 2
+        x: 2786
+        y: 3056
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cb102e5384d53d0800000000000000
+      internalID: -3216335162610435029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_9
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 2652
+        width: 215
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0892d8cca847c970800000000000000
+      internalID: 8775062305895520270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_10
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 2662
+        width: 219
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f754ae15500d2af0800000000000000
+      internalID: -419678824689281040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_11
+      rect:
+        serializedVersion: 2
+        x: 2820
+        y: 2662
+        width: 232
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c11a243a6cf905230800000000000000
+      internalID: 3625573375524643100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 1140
+        width: 119
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210863a5c01464850800000000000000
+      internalID: 6360843045016338450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_13
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 1146
+        width: 103
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5192215cf1ab039c0800000000000000
+      internalID: -3949452227590870763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_14
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 765
+        width: 221
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7324ac7e230ed40800000000000000
+      internalID: 5611541106815809478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torn Jib_15
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 764
+        width: 225
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03759997f8d1a3870800000000000000
+      internalID: 8663269335258191664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Torn Jib_0: -1490783179429289449
+      Torn Jib_1: -1231731554286948654
+      Torn Jib_10: -419678824689281040
+      Torn Jib_11: 3625573375524643100
+      Torn Jib_12: 6360843045016338450
+      Torn Jib_13: -3949452227590870763
+      Torn Jib_14: 5611541106815809478
+      Torn Jib_15: 8663269335258191664
+      Torn Jib_2: -2979661953003921546
+      Torn Jib_3: 8319983816373079511
+      Torn Jib_4: -7414825877945713364
+      Torn Jib_5: -5109706687481916600
+      Torn Jib_6: -4800160543137026246
+      Torn Jib_7: -7332099088306627355
+      Torn Jib_8: -3216335162610435029
+      Torn Jib_9: 8775062305895520270
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

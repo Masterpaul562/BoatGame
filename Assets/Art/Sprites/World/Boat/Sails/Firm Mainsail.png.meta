@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 9a7708abecf2947109f5783cdda784a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 925324387126471119
+    second: Firm Mainsail_0
+  - first:
+      213: -8481605798533817056
+    second: Firm Mainsail_1
+  - first:
+      213: -6747936470123726756
+    second: Firm Mainsail_2
+  - first:
+      213: 5057216300576318907
+    second: Firm Mainsail_3
+  - first:
+      213: -547031301682367452
+    second: Firm Mainsail_4
+  - first:
+      213: 4560017613925926748
+    second: Firm Mainsail_5
+  - first:
+      213: 5168657982259662438
+    second: Firm Mainsail_6
+  - first:
+      213: -3038348491807322391
+    second: Firm Mainsail_7
+  - first:
+      213: -1031457646855073631
+    second: Firm Mainsail_8
+  - first:
+      213: 1445192652322946270
+    second: Firm Mainsail_9
+  - first:
+      213: -581076348680765940
+    second: Firm Mainsail_10
+  - first:
+      213: -5103942515215391632
+    second: Firm Mainsail_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Firm Mainsail_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 4464
+        width: 476
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc9eda4a0a967dc00800000000000000
+      internalID: 925324387126471119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_1
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 5476
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d9f75b6784b4a80800000000000000
+      internalID: -8481605798533817056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_2
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 4456
+        width: 707
+        height: 1119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c583f5358838a52a0800000000000000
+      internalID: -6747936470123726756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_3
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 4468
+        width: 500
+        height: 1101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5aa2c5e67de2640800000000000000
+      internalID: 5057216300576318907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_4
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 5294
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424f33eeded8868f0800000000000000
+      internalID: -547031301682367452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_5
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2540
+        width: 552
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57449f1cdf684f30800000000000000
+      internalID: 4560017613925926748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_6
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 2547
+        width: 456
+        height: 1113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e0316dc03cab740800000000000000
+      internalID: 5168657982259662438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_7
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 2541
+        width: 505
+        height: 1118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee0bf1052e95d5d0800000000000000
+      internalID: -3038348491807322391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 627
+        width: 448
+        height: 1110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a0d75e2cb68fa1f0800000000000000
+      internalID: -1031457646855073631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_9
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1422
+        width: 14
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edcb6b17f0b5e0410800000000000000
+      internalID: 1445192652322946270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_10
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 623
+        width: 463
+        height: 1116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e7089b32a9fe7f0800000000000000
+      internalID: -581076348680765940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Firm Mainsail_11
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1340
+        width: 12
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074a29203572b29b0800000000000000
+      internalID: -5103942515215391632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Firm Mainsail_0: 925324387126471119
+      Firm Mainsail_1: -8481605798533817056
+      Firm Mainsail_10: -581076348680765940
+      Firm Mainsail_11: -5103942515215391632
+      Firm Mainsail_2: -6747936470123726756
+      Firm Mainsail_3: 5057216300576318907
+      Firm Mainsail_4: -547031301682367452
+      Firm Mainsail_5: 4560017613925926748
+      Firm Mainsail_6: 5168657982259662438
+      Firm Mainsail_7: -3038348491807322391
+      Firm Mainsail_8: -1031457646855073631
+      Firm Mainsail_9: 1445192652322946270
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

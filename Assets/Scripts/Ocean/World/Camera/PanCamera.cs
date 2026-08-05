@@ -1,71 +1,91 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PanCamera : MonoBehaviour
 {
-    public Transform target; //Location to pan to
-    public Camera cam; // Cam to move
-    public float speed; // speed of pan
-   [SerializeField] private bool pan; // should pan or not
-    private Vector3 camOGpos; // position to reset to
-    [SerializeField] private bool moveY; // if it changes the cams y position
+    [Header("References")]
+    public Transform target;
+    public Camera cam;
     public PanCamera otherPan;
+    [SerializeField] private CameraZoom cameraZoom;
 
-    private void Start()
-    {
-        // sets target's y same as cam so it doesn't move y
-        if (!moveY)
-        {
-            target.position = new Vector2(target.position.x, cam.transform.position.y);
-        }
-        target.position = new Vector3(target.position.x, target.position.y, cam.transform.position.z);
-        camOGpos = cam.transform.position;
-    }
+    [Header("Settings")]
+    [SerializeField] private bool moveY = false;
+    [SerializeField] private bool pan = false;
+    [SerializeField] private float smoothTime = 0.3f;
+
+    private Vector3 camVelocity;
 
     private void Update()
     {
-        if (this.pan)
+        if (pan)
         {
             Pan();
         }
     }
+
     private void Pan()
     {
-        float newPosition = Mathf.MoveTowards(cam.transform.position.x, target.position.x,Time.deltaTime* speed);
-        //cam.transform.position = Vector2.MoveTowards(cam.transform.position,target.position, Time.deltaTime * speed);
-        cam.transform.position = new Vector3(newPosition, cam.transform.position.y, camOGpos.z);
+        Vector3 desiredPos = new Vector3(
+            target.position.x,
+            moveY ? target.position.y : cam.transform.position.y,
+            cameraZoom.ogPosition.z
+        );
+
+        cam.transform.position = Vector3.SmoothDamp(
+            cam.transform.position,
+            desiredPos,
+            ref camVelocity,
+            smoothTime
+        );
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
-        {
-            // camOGpos = cam.transform.position;
-            otherPan.StopCoroutine();
-            StopAllCoroutines();
-            pan = true;
-        }
+        if (!other.CompareTag("Player"))
+            return;
+
+        otherPan?.StopCoroutine();
+
+        StopAllCoroutines();
+        camVelocity = Vector3.zero;
+        pan = true;
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            pan = false;
-            StopAllCoroutines();
-            StartCoroutine(Reset());
-        }
+        if (!other.CompareTag("Player"))
+            return;
+
+        pan = false;
+        StopAllCoroutines();
+        StartCoroutine(Reset());
     }
+
     private IEnumerator Reset()
     {
-        while (cam.transform.position.x != camOGpos.x)
+        camVelocity = Vector3.zero;
+
+        while (Vector3.Distance(cam.transform.position, cameraZoom.ogPosition) > 0.01f)
         {
-            float reset  = Mathf.MoveTowards(cam.transform.position.x, camOGpos.x, Time.deltaTime * speed);
-            cam.transform.position = new Vector3(reset, cam.transform.position.y, camOGpos.z);
+            cam.transform.position = Vector3.SmoothDamp(
+                cam.transform.position,
+                cameraZoom.ogPosition,
+                ref camVelocity,
+                smoothTime
+            );
+
             yield return null;
         }
+
+        cam.transform.position = cameraZoom.ogPosition;
+        camVelocity = Vector3.zero;
     }
+
     public void StopCoroutine()
     {
+        pan = false;
+        camVelocity = Vector3.zero;
         StopAllCoroutines();
     }
 }
