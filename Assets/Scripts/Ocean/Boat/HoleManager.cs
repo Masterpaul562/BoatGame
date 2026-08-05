@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HoleManager : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class HoleManager : MonoBehaviour
     public float sinkRotSpeed;
     public float fixCDTime;
     public bool shouldDrain;
+
+    [Header("Audio")]
+    public AudioMixer audioMixer;
     
 
 
@@ -246,6 +250,8 @@ public class HoleManager : MonoBehaviour
 
     private void Drown()
     {
+        audioMixer.SetFloat("LowPassCutoff", 500f);
+
         player.SetActive(false);
         playerDrown.SetActive(true);
         playerDrown.transform.position = player.transform.position;
@@ -277,7 +283,6 @@ public class HoleManager : MonoBehaviour
     public void Restart()
     {
 
-
         GameObject[] array = new GameObject[holes.Count];
         holes.CopyTo(array);
         for (int i = 0; i < array.Length; i++)
@@ -291,7 +296,7 @@ public class HoleManager : MonoBehaviour
         // Destroy(holes[i]);
         // holes.RemoveAt(i);
 
-
+        audioMixer.SetFloat("LowPassCutoff", 22000f);
         waterLevel = 0;
         waterSpeed = 0.1f;
         floodWater.transform.localScale = new Vector2(floodWater.transform.localScale.x, waterLevel);

@@ -34,7 +34,7 @@ public class MoveWithWaves : MonoBehaviour
         y = waveValue * wave.amplitude;
 
         // Move boat vertically
-        transform.position = new Vector2(transform.position.x, y + yOffset);
+        transform.position = new Vector2(transform.position.x, y * yOffset);
 
         // Rotate boat based on wave tilt
         Quaternion rot = Quaternion.Euler(0, 0, y * rotationPower + rotationOffset);
