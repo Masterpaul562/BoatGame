@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 88b198f188df24d539b05ed56091b339
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4567347748093794095
+    second: Tech Vent Foreground Lights_0
+  - first:
+      213: -5097955048942335130
+    second: Tech Vent Foreground Lights_1
+  - first:
+      213: 5054906798218932408
+    second: Tech Vent Foreground Lights_2
+  - first:
+      213: -7360513785367587207
+    second: Tech Vent Foreground Lights_3
+  - first:
+      213: 2849532230250436304
+    second: Tech Vent Foreground Lights_4
+  - first:
+      213: 4276280857940250071
+    second: Tech Vent Foreground Lights_5
+  - first:
+      213: 7814621914511684502
+    second: Tech Vent Foreground Lights_6
+  - first:
+      213: -2912428436479070381
+    second: Tech Vent Foreground Lights_7
+  - first:
+      213: 6902295810333950040
+    second: Tech Vent Foreground Lights_8
+  - first:
+      213: -590582456932585775
+    second: Tech Vent Foreground Lights_9
+  - first:
+      213: 8803934453757042741
+    second: Tech Vent Foreground Lights_10
+  - first:
+      213: 6331056710363638839
+    second: Tech Vent Foreground Lights_11
+  - first:
+      213: 2774278839473670865
+    second: Tech Vent Foreground Lights_12
+  - first:
+      213: 5410906675463585828
+    second: Tech Vent Foreground Lights_13
+  - first:
+      213: -182005373514925225
+    second: Tech Vent Foreground Lights_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_0
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 906
+        width: 86
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d860350c658d90c0800000000000000
+      internalID: -4567347748093794095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_1
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 864
+        width: 89
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66b02e2a4ec6049b0800000000000000
+      internalID: -5097955048942335130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_2
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 808
+        width: 87
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b0fb8073f2a62640800000000000000
+      internalID: 5054906798218932408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_3
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 736
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9769ccab5b33ad990800000000000000
+      internalID: -7360513785367587207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_4
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 737
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d69a1847729b8720800000000000000
+      internalID: 2849532230250436304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_5
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 731
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ddc45998c6685b30800000000000000
+      internalID: 4276280857940250071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_6
+      rect:
+        serializedVersion: 2
+        x: 1678
+        y: 741
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 693b3744a3d137c60800000000000000
+      internalID: 7814621914511684502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_7
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 693
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f2be984c9f497d0800000000000000
+      internalID: -2912428436479070381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_8
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 549
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8504f953871e9cf50800000000000000
+      internalID: 6902295810333950040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_9
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 551
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dea4fb6264ddc7f0800000000000000
+      internalID: -590582456932585775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_10
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 554
+        width: 32
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530e20e8dbbdd2a70800000000000000
+      internalID: 8803934453757042741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_11
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 356
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ce312e88e6cd750800000000000000
+      internalID: 6331056710363638839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_12
+      rect:
+        serializedVersion: 2
+        x: 1633
+        y: 362
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da06bed7e7308620800000000000000
+      internalID: 2774278839473670865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_13
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 356
+        width: 20
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4200ccff3f6671b40800000000000000
+      internalID: 5410906675463585828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tech Vent Foreground Lights_14
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 303
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b3e6cb313697df0800000000000000
+      internalID: -182005373514925225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tech Vent Foreground Lights_0: -4567347748093794095
+      Tech Vent Foreground Lights_1: -5097955048942335130
+      Tech Vent Foreground Lights_10: 8803934453757042741
+      Tech Vent Foreground Lights_11: 6331056710363638839
+      Tech Vent Foreground Lights_12: 2774278839473670865
+      Tech Vent Foreground Lights_13: 5410906675463585828
+      Tech Vent Foreground Lights_14: -182005373514925225
+      Tech Vent Foreground Lights_2: 5054906798218932408
+      Tech Vent Foreground Lights_3: -7360513785367587207
+      Tech Vent Foreground Lights_4: 2849532230250436304
+      Tech Vent Foreground Lights_5: 4276280857940250071
+      Tech Vent Foreground Lights_6: 7814621914511684502
+      Tech Vent Foreground Lights_7: -2912428436479070381
+      Tech Vent Foreground Lights_8: 6902295810333950040
+      Tech Vent Foreground Lights_9: -590582456932585775
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
