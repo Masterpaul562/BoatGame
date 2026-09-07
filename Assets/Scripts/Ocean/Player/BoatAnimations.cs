@@ -13,12 +13,14 @@ public class BoatAnimations : MonoBehaviour
         player.GetComponent<SpriteRenderer>().enabled = true;
         player.GetComponent<PlayerMove>().freeze = false;
         player.GetComponent<EnterBoat>().exitCd = false;
+       player.GetComponent<Rigidbody2D>().simulated = true;
     }
     private void Exit()
     {
         player.GetComponent<EnterBoat>().StartExit();
 
     }
+   
 
     //Add function to start second enter function in player
 }

@@ -6,6 +6,7 @@ public class FishEngineReal : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private LayerMask interactable;
     [SerializeField] private GameObject lightBar;
+    [SerializeField] private GameObject prop; 
     [SerializeField] private HarpoonGun2 fishing;
     [SerializeField] private Transform feedPos;
     public AudioSource source;
@@ -103,7 +104,7 @@ public class FishEngineReal : MonoBehaviour
                     shouldDrain = true;
                     canFeed = true;
                     powerStage = 0;
-
+                    prop.GetComponent<Animator>().SetBool("Moving",false);
                     StartCoroutine(Blink());
                 }
             }
@@ -157,6 +158,7 @@ public class FishEngineReal : MonoBehaviour
         powerLevel = 100f;
 
         powerStage++;
+        prop.GetComponent<Animator>().SetBool("Moving",true);
 
         StopAllCoroutines();
 

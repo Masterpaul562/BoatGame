@@ -100,7 +100,7 @@ public class CameraZoom : MonoBehaviour
         transform.position = new Vector3 (movePosition.x, movePosition.y, transform.position.z);
     }
 
-    public IEnumerator LightEffect(bool black, float speed)
+    private IEnumerator LightEffect(bool black, float speed)
     {
         float alpha = 1f;
         lightInside.enabled = true;
@@ -134,6 +134,14 @@ public class CameraZoom : MonoBehaviour
             }
             lightEffect.GetComponent<Light2D>().intensity = 0;
         }
+    }
+    public void StartLightEffect(bool black, float speed)
+    {
+            StartCoroutine(LightEffect(black,speed));
+    }
+    public void StartFadeBG(bool black, float speed)
+    {
+             StartCoroutine(FadeBG(black,speed));
     }
 
 }

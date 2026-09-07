@@ -25,6 +25,7 @@ public class EnterBoat : MonoBehaviour
 
     [SerializeField] private Transform enterLocation; // Locations for enter and exit 
     [SerializeField] private Transform exitLocation;
+    [SerializeField] private Transform playerExitLoc;
     [SerializeField] private Transform insideAnimationExitPos;
     [SerializeField] private Transform insideAnimationEnterPos;
 
@@ -97,7 +98,8 @@ public class EnterBoat : MonoBehaviour
                 if (hit.collider.gameObject.tag == "Exit"&&canEnter && !harpScript.isFishing&&!exitCd)
                 {
                     StopAllCoroutines();
-                    ExitAnimation();
+                    InsideExitAnimation();
+                    exitCd = true;
                     //Exit();
                 }
             }
@@ -158,8 +160,8 @@ public class EnterBoat : MonoBehaviour
 
         yield return new WaitForSeconds(.5f); // change to when enter for outside animation done
 
-        StartCoroutine(zoom.LightEffect(true, 0.5f));
-        StartCoroutine(zoom.FadeBG(true, 71));
+        zoom.StartLightEffect(true, 0.5f);
+        zoom.StartFadeBG(true, 71);
         //Second Function
 
         // private void Enter()
@@ -212,18 +214,32 @@ public class EnterBoat : MonoBehaviour
 
 
 
-    private void ExitAnimation()
+    private void InsideExitAnimation()
     {
-        player.SetActive(false);
+        // Setup for outside enter animation
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        transform.position = playerExitLoc.position;
+        GetComponent<Rigidbody2D>().position = playerExitLoc.position;
+        GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0,0);
+        GetComponent<Rigidbody2D>().simulated = false;
+        this.GetComponent<PlayerMove>().freeze = true;
+        doorAnim.SetTrigger("Open");
+
+
         playerAnimations.SetActive(true);
+        playerAnimations.GetComponent<SpriteRenderer>().sortingOrder = 1;
+       
         playerAnimations.GetComponent<Animator>().SetTrigger("InsideExit");
+
+        
         playerAnimations.transform.position = insideAnimationExitPos.transform.position;
     }
 
     private void Exit()
     {
-        player.SetActive(true);
-        playerAnimations.SetActive(false);
+        //player.SetActive(true);
+        //playerAnimations.SetActive(false);
+        OutsideEnterAnimation();
 
         rainSounds.switched = false;
 
@@ -234,9 +250,9 @@ public class EnterBoat : MonoBehaviour
         zoom.zoomSpeed = 1f;
        //secondaryCam.orthographicSize = zoom.targetZoom;
        // secondaryCam.transform.position = zoom.targetPosition;
-        StartCoroutine(zoom.FadeBG(false, 42));
+        zoom.StartFadeBG(false, 42);
 
-        StartCoroutine(zoom.LightEffect(false, 1f));
+       zoom.StartLightEffect(false, 1f);
 
         // Audio
         audioSource.clip = doorCreak;
@@ -263,8 +279,8 @@ public class EnterBoat : MonoBehaviour
         earwig.GetComponent<SpriteMask>().enabled = true;
 
         //Play door animation
-        doorAnim.SetBool("Open", false);
-        doorAnim.SetTrigger("Close");
+       // doorAnim.SetBool("Open", false);
+        //doorAnim.SetTrigger("Close");
         
         
 
@@ -275,7 +291,7 @@ public class EnterBoat : MonoBehaviour
       
 
         // move outside and make character face left
-        transform.position = exitLocation.position;
+       
         Vector3 localScale = transform.localScale;
         if (localScale.x > 0)
         {
@@ -287,6 +303,18 @@ public class EnterBoat : MonoBehaviour
         animator.SetBool("Turn", false);
         this.GetComponent<PlayerMove>().isFacingRight = false;
 
+    }
+
+    private void OutsideEnterAnimation()
+    {
+        
+
+        playerAnimations.GetComponent<Animator>().SetBool("InsideEnter", false);
+        playerAnimations.SetActive(true);
+        playerAnimations.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        playerAnimations.transform.position = exitLocation.position;
+
+        playerAnimations.GetComponent<Animator>().SetTrigger("OutsideEnter");
     }
    
     public void StartExit()
